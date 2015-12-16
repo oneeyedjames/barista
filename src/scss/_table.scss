@@ -1,0 +1,44 @@
+@import '_color';
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 18px;
+
+	thead th {
+		padding: 6px 12px;
+		border-bottom: 2px solid $gray;
+		font-weight: bold;
+		text-align: left;
+	}
+
+	tbody {
+		th, td {
+			padding: 6px 12px;
+			border-top: 1px solid $gray;
+			text-align: left;
+		}
+
+		tr:first-child {
+			th, td { border-width: 0px; }
+		}
+
+		tr:hover {
+			th, td { background-color: darken( $white, 15% ); }
+		}
+	}
+
+	&.outline { border: 1px solid $gray; }
+
+	&.striped {
+		tbody {
+			tr:nth-child(even) {
+				th, td { background-color: darken( $white, 7% );}
+
+				&:hover {
+					th, td { background-color: darken( $white, 20% ); }
+				}
+			}
+		}
+	}
+}

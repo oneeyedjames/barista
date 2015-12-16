@@ -1,0 +1,20 @@
+@import '_color';
+@import '_dimen';
+
+* {
+	font-size: #{$base_font_size}px;
+	font-family: sans-serif;
+	font-weight: 400;
+	line-height: #{$base_line_height / $base_font_size};
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+@import '_text';
+@import '_card';
+@import '_grid';
+@import '_button';
+@import '_table';

@@ -1,0 +1,49 @@
+@import '_color';
+
+@mixin btn-color($color) {
+	$light: lighten($color, 10%);
+	$dark:  darken($color, 10%);
+
+	color: $white;
+	background: linear-gradient(0deg, $color, $light);
+	border-color: $dark;
+
+	text-shadow: 1px 2px $dark;
+
+	&:active {
+		background: linear-gradient(180deg, $color, $light);
+	}
+}
+
+a.btn { text-decoration: none; }
+
+.btn {
+	display: inline-block;
+	border-radius: 6px;
+	border-width: 1px;
+	border-style: solid;
+	padding: 6px 12px;
+	font-family: sans-serif;
+	letter-spacing: .05em;
+	cursor: pointer;
+	box-shadow: 2px 3px 1px $gray;
+
+	&:active { box-shadow: 1px 2px 1px $gray; }
+
+	&.sm { padding: 3px 6px; }
+	&.lg { padding: 12px 24px; }
+
+	@include btn-color($gray);
+
+	&.blue   { @include btn-color($blue);   }
+	&.red    { @include btn-color($red);    }
+	&.yellow { @include btn-color($yellow); }
+	&.green  { @include btn-color($green);  }
+	&.purple { @include btn-color($purple); }
+	&.orange { @include btn-color($orange); }
+}
+
+.btn-toolbar > .btn {
+	margin-right: 3px;
+	margin-bottom: 6px;
+}

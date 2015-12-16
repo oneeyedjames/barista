@@ -1,0 +1,110 @@
+@import '_color';
+
+@mixin card-color($color, $light, $dark) {
+	$lighter: lighten($color, 10%);
+	$darker:  darken($color, 10%);
+
+	border-color: $darker;
+
+	&.alert {
+		background-color: $light;
+		color: $dark;
+	}
+
+	header {
+		background: linear-gradient(0deg, $color, $lighter);
+		text-shadow: 1px 2px $darker;
+	}
+
+	footer { background-color: $light; }
+}
+
+.card {
+	margin-bottom: 18px;
+	padding: 6px 12px;
+	border-radius: 6px;
+	border-width: 1px;
+	border-style: solid;
+	background: $white;
+
+	header {
+		margin: -6px -12px 6px;
+		padding: 6px 12px;
+		border-radius: 6px 6px 0px 0px;
+		color: $white;
+	}
+
+	footer {
+		margin: 6px -12px -6px;
+		padding: 6px 12px;
+		border-radius: 0px 0px 6px 6px;
+	}
+
+	&.modal {
+		visibility: hidden;
+		position: fixed;
+		z-index: 101;
+		left: 12px;
+		right: 12px;
+
+		&.visible { visibility: visible; }
+	}
+
+	@include card-color($gray, $light_gray, $dark_gray);
+
+	&.blue   { @include card-color($blue,   $light_blue,   $dark_blue);   }
+	&.red    { @include card-color($red,    $light_red,    $dark_red);    }
+	&.yellow { @include card-color($yellow, $light_yellow, $dark_yellow); }
+	&.green  { @include card-color($green,  $light_green,  $dark_green);  }
+	&.purple { @include card-color($purple, $light_purple, $dark_purple); }
+	&.orange { @include card-color($orange, $light_orange, $dark_orange); }
+}
+
+.overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+
+	&.dim { background: rgba(63, 63, 63, 0.75); }
+}
+
+.no-scroll {
+	height: 100%;
+	overflow: hidden;
+}
+
+@media only screen and (min-width: #{$sm_base}px) {
+	.card.modal {
+		left: 50%;
+		margin-left: -#{$sm_base / 2 - 12}px;
+		width: #{$sm_base - 24}px;
+		box-sizing: border-box;
+	}
+}
+
+@media only screen and (min-width: #{$md_base}px) {
+	.card.modal {
+		margin-left: -#{$md_base / 12 * 3 - 12}px;
+		width: #{$md_base / 12 * 6 - 24}px;
+
+		&.wide {
+			margin-left: -#{$md_base / 12 * 4 - 12}px;
+			width: #{$md_base / 12 * 8 - 24}px;
+		}
+	}
+}
+
+@media only screen and (min-width: #{$lg_base}px) {
+	.card.modal {
+		margin-left: -#{$lg_base / 12 * 2 - 12}px;
+		width: #{$lg_base / 12 * 4 - 24}px;
+
+		&.wide {
+			margin-left: -#{$lg_base / 12 * 4 - 12}px;
+			width: #{$lg_base / 12 * 8 - 24}px;
+		}
+	}
+}
