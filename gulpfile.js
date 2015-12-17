@@ -15,7 +15,7 @@ var minifyJs = require('gulp-uglify');
 
 var paths = {
 	sass: {
-		src: 'src/scss/mosaic.scss',
+		src: 'src/scss/**/*.scss',
 		dest: 'dist/css'
 	},
 	coffee: {
@@ -25,7 +25,7 @@ var paths = {
 };
 
 gulp.task('sass', ['clean-sass'], function() {
-	return gulp.src(paths.sass.src)
+	return gulp.src('src/scss/mosaic.scss')
 	.pipe(sass({ style: 'expanded' }))
 	.pipe(prefixCss())
 	.pipe(gulp.dest(paths.sass.dest))

@@ -40,7 +40,7 @@
 			</div>
 			<br>
 			<div class="btn-toolbar">
-				<a class="btn blue" data-target="#modal-blue" data-action="modal" data-dim="true">Blue</a>
+				<a class="btn blue" data-target="#modal-blue" data-action="modal">Blue</a>
 				<a class="btn red" data-target="#modal-red" data-action="modal" data-dim="true">Red</a>
 				<a class="btn yellow" data-target="#modal-yellow" data-action="modal" data-dim="true">Yellow</a>
 				<a class="btn green" data-target="#modal-green" data-action="modal" data-dim="true">Green</a>
@@ -49,49 +49,47 @@
 			</div>
 			<br>
 			<div class="card">
-				<header>
-					<div class="title">Card Title</div>
-				</header>
+				<header>Card Title</header>
 				Card Content
 				<footer>Footer</footer>
 			</div>
-			<div class="grid-row">
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+			<div class="row">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card blue">
 						<header>Card Title</header>
 						Card Content
 						<footer>Footer</footer>
 					</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card red">
 						<header>Card Title</header>
 						Card Content
 						<footer>Footer</footer>
 					</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card yellow">
 						<header>Card Title</header>
 						Card Content
 						<footer>Footer</footer>
 					</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card green">
 						<header>Card Title</header>
 						Card Content
 						<footer>Footer</footer>
 					</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card purple">
 						<header>Card Title</header>
 						Card Content
 						<footer>Footer</footer>
 					</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card orange">
 						<header>Card Title</header>
 						Card Content
@@ -100,23 +98,23 @@
 				</div>
 			</div>
 			<div class="card alert">Alert Card</div>
-			<div class="grid-row">
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+			<div class="row">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card alert blue">Blue Alert</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card alert red">Red Alert</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card alert yellow">Yellow Alert</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card alert green">Green Alert</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card alert purple">Purple Alert</div>
 				</div>
-				<div class="grid-col-xs-6 grid-col-md-4 grid-col-lg-2">
+				<div class="col-xs-6 col-md-4 col-lg-2">
 					<div class="card alert orange">Orange Alert</div>
 				</div>
 			</div>
@@ -154,8 +152,96 @@
 						<td>Cell</td>
 						<td>Cell</td>
 					</tr>
+					<tr>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
 				</tbody>
 			</table>
+			<form class="row">
+				<div class="col-xs-12 col-md-4">
+					<label>Input</label>
+					<input type="text">
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<label>Textarea</label>
+					<textarea rows="1"></textarea>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<label>Select</label>
+					<select></select>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox">
+							<span>Checkbox</span>
+						</label>
+						<label>
+							<input type="checkbox">
+							<span>Checkbox</span>
+						</label>
+						<label>
+							<input type="checkbox">
+							<span>Checkbox</span>
+						</label>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="radio">
+						<label>
+							<input type="radio">
+							<span>Radio</span>
+						</label>
+						<label>
+							<input type="radio">
+							<span>Radio</span>
+						</label>
+						<label>
+							<input type="radio">
+							<span>Radio</span>
+						</label>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="checkbox inline">
+						<label>
+							<input type="checkbox">
+							<span>Checkbox</span>
+						</label>
+						<label>
+							<input type="checkbox">
+							<span>Checkbox</span>
+						</label>
+						<label>
+							<input type="checkbox">
+							<span>Checkbox</span>
+						</label>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="radio inline">
+						<label>
+							<input type="radio">
+							<span>Radio</span>
+						</label>
+						<label>
+							<input type="radio">
+							<span>Radio</span>
+						</label>
+						<label>
+							<input type="radio">
+							<span>Radio</span>
+						</label>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<button>Button</button>
+					<input type="button" value="Input[Button]">
+					<input type="submit" value="Input[Submit]">
+				</div>
+			</form>
 		</div>
 		<div class="card modal blue" id="modal-blue">
 			<header>Modal Dialog</header>

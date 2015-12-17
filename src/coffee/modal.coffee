@@ -30,5 +30,6 @@ jQuery document
 
 			$('body').addClass 'no-scroll'
 
+			dialog.addClass 'dim' if opts.dim
 			dialog.addClass 'visible'
 			dialog.css 'top', '32px'

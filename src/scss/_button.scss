@@ -17,12 +17,13 @@
 
 a.btn { text-decoration: none; }
 
-.btn {
+.btn, button, input[type="button"], input[type="submit"] {
 	display: inline-block;
+	margin-right: 3px;
+	padding: 6px 12px;
 	border-radius: 6px;
 	border-width: 1px;
 	border-style: solid;
-	padding: 6px 12px;
 	font-family: sans-serif;
 	letter-spacing: .05em;
 	cursor: pointer;

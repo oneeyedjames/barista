@@ -6,26 +6,27 @@
 
 	border-color: $darker;
 
-	&.alert {
-		background-color: $light;
-		color: $dark;
-	}
-
 	header {
 		background: linear-gradient(0deg, $color, $lighter);
 		text-shadow: 1px 2px $darker;
 	}
 
 	footer { background-color: $light; }
+
+	&.alert {
+		background-color: $light;
+		color: $dark;
+	}
 }
 
 .card {
-	margin-bottom: 18px;
+	margin-bottom: 12px;
 	padding: 6px 12px;
 	border-radius: 6px;
 	border-width: 1px;
 	border-style: solid;
 	background: $white;
+	box-shadow: 2px 3px 1px $gray;
 
 	header {
 		margin: -6px -12px 6px;
@@ -48,6 +49,7 @@
 		right: 12px;
 
 		&.visible { visibility: visible; }
+		&.dim { box-shadow: none; }
 	}
 
 	@include card-color($gray, $light_gray, $dark_gray);

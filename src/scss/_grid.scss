@@ -8,13 +8,10 @@ $grid_base: 12;
 	float: left;
 	padding-left: 12px;
 	padding-right: 12px;
-
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.grid-row {
+.row {
 	margin: 0px -12px;
 
 	&:before, &:after {
@@ -27,39 +24,36 @@ $grid_base: 12;
 	}
 }
 
-.grid-col {
+.col {
 	width: percentage(1 / $grid_base);
 }
 
 @for $num from 1 through $grid_base {
-	.grid-col-xs-#{$num} { @include grid-col-num($num); }
+	.col-xs-#{$num} { @include grid-col-num($num); }
 }
 
 .wrapper, .wrapper-fluid { margin: 0px 12px; }
 
 @media only screen and (min-width: #{$sm_base}px) {
 	@for $num from 1 through $grid_base {
-		.grid-col-sm-#{$num} { @include grid-col-num($num); }
+		.col-sm-#{$num} { @include grid-col-num($num); }
 	}
 
 	.wrapper { width: #{$sm_base - 24}px; margin: 0px auto; }
-	//.wrapper-fluid { margin: 0px 12px; }
 }
 
 @media only screen and (min-width: #{$md_base}px) {
 	@for $num from 1 through $grid_base {
-		.grid-col-md-#{$num} { @include grid-col-num($num); }
+		.col-md-#{$num} { @include grid-col-num($num); }
 	}
 
 	.wrapper { width: #{$md_base - 24}px; margin: 0px auto; }
-	//.wrapper-fluid { margin: 0px 32px; }
 }
 
 @media only screen and (min-width: #{$lg_base}px) {
 	@for $num from 1 through $grid_base {
-		.grid-col-lg-#{$num} { @include grid-col-num($num); }
+		.col-lg-#{$num} { @include grid-col-num($num); }
 	}
 
 	.wrapper { width: #{$lg_base - 24}px; margin: 0px auto; }
-	//.wrapper-fluid { margin: 0px 32px; }
 }

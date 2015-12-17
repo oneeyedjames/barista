@@ -25,6 +25,9 @@ jQuery(document).ready(function($) {
         return $(this).remove();
       });
       $('body').addClass('no-scroll');
+      if (opts.dim) {
+        dialog.addClass('dim');
+      }
       dialog.addClass('visible');
       return dialog.css('top', '32px');
     }
