@@ -1,0 +1,110 @@
+#!/bin/bash
+
+run () {
+	local task=$1
+
+	echo -e "[\033[0;36m`date`\033[0m] Starting '\033[0;35m$task\033[0m'"
+
+	case "$task" in
+		build)
+			run build:css
+			run build:js
+			;;
+		build:css|css)
+			run clean:css
+			build css
+			;;
+		build:js|js)
+			run clean:js
+			build js
+			;;
+		clean)
+			run clean:css
+			run clean:js
+			;;
+		clean:css)
+			clean css
+			;;
+		clean:js)
+			clean js
+			;;
+		watch)
+			trap 'jobs -p | xargs kill && exit' SIGINT SIGTERM EXIT
+
+			watch src/sass build:css &
+			watch src/coffee build:js &
+
+			wait
+			;;
+		watch:css)
+			watch src/scss build:css
+			;;
+		watch:js)
+			watch src/coffee build:js
+			;;
+		*)
+			echo "Task '$task' is undefined"
+	esac
+
+	echo -e "[\033[0;36m`date`\033[0m] Finished '\033[0;35m$task\033[0m'"
+}
+
+clean () {
+	local folder=$1
+
+	if [ ! -d dist ]
+	then
+		mkdir dist
+	fi
+
+	if [ -d "dist/$folder" ]
+	then
+		rm -f dist/$folder/*
+	else
+		mkdir dist/$folder
+	fi
+}
+
+build () {
+	case "$1" in
+		css)
+			sass -t expanded src/sass/mosaic.scss > dist/css/mosaic.css
+			sass -t compressed src/sass/mosaic.scss > dist/css/mosaic.min.css
+			;;
+		js)
+			find src/coffee/ -type f -exec cat {} \; | coffee -sbp > dist/js/mosaic.js
+			java -jar /usr/local/jar/closure-compiler.jar dist/js/mosaic.js > dist/js/mosaic.min.js
+			;;
+	esac
+}
+
+watch () {
+	src=$1
+	task=$2
+
+	old=`find $src -type f -exec md5 {} \;`
+
+	echo -e "Watching \033[0;36m$src\033[0m for changes..."
+
+	while [[ true ]]
+	do
+		new=`find $src -type f -exec md5 {} \;`
+
+		if [[ $old != $new ]]
+		then
+			run $task
+			old=$new
+		fi
+	done
+}
+
+#path="$( ... && pwd )"
+
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+
+if [ ! -z $1 ]
+then
+	run $1
+else
+	run build
+fi

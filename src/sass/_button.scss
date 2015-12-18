@@ -4,15 +4,14 @@
 	$light: lighten($color, 10%);
 	$dark:  darken($color, 10%);
 
+	@include linear-gradient(0deg, $color, $light);
+
 	color: $white;
-	background: linear-gradient(0deg, $color, $light);
 	border-color: $dark;
 
 	text-shadow: 1px 2px $dark;
 
-	&:active {
-		background: linear-gradient(180deg, $color, $light);
-	}
+	&:active { @include linear-gradient(180deg, $color, $light); }
 }
 
 a.btn { text-decoration: none; }
@@ -44,7 +43,9 @@ a.btn { text-decoration: none; }
 	&.orange { @include btn-color($orange); }
 }
 
-.btn-toolbar > .btn {
-	margin-right: 3px;
-	margin-bottom: 6px;
+.btn-toolbar {
+	.btn, button, input[type="button"], input[type="submit"] {
+		margin-right: 3px;
+		margin-bottom: 6px;
+	}
 }

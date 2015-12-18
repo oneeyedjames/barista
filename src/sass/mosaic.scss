@@ -1,5 +1,7 @@
-@import '_color';
-@import '_dimen';
+@import '../bourbon/bourbon';
+
+@import 'color';
+@import 'dimen';
 
 * {
 	font-size: #{$base_font_size}px;
@@ -13,9 +15,9 @@ html, body {
 	padding: 0px;
 }
 
-@import '_text';
-@import '_card';
-@import '_grid';
-@import '_button';
-@import '_table';
-@import '_form';
+@import 'text';
+@import 'card';
+@import 'grid';
+@import 'button';
+@import 'table';
+@import 'form';
