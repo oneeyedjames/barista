@@ -12,6 +12,7 @@ run () {
 			;;
 		build:css|css)
 			run clean:css
+			run install:css
 			build css
 			;;
 		build:js|js)
@@ -42,6 +43,26 @@ run () {
 		watch:js)
 			watch src/coffee build:js
 			;;
+		install:css)
+			if [ ! -d .sass-build ]
+			then
+				mkdir .sass-build
+			fi
+
+			cd .sass-build
+
+			if [ ! -d bourbon ]
+			then
+				bourbon install
+			fi
+
+			if [ ! -d neat ]
+			then
+				neat install
+			fi
+
+			cd ..
+			;;
 		*)
 			echo "Task '$task' is undefined"
 	esac
@@ -68,12 +89,12 @@ clean () {
 build () {
 	case "$1" in
 		css)
-			sass -t expanded src/sass/mosaic.scss > dist/css/mosaic.css
-			sass -t compressed src/sass/mosaic.scss > dist/css/mosaic.min.css
+			sass -I .sass-build/ -t expanded src/sass/barista.scss > dist/css/barista.css
+			sass -I .sass-build/ -t compressed src/sass/barista.scss > dist/css/barista.min.css
 			;;
 		js)
-			find src/coffee/ -type f -exec cat {} \; | coffee -sbp > dist/js/mosaic.js
-			java -jar /usr/local/jar/closure-compiler.jar dist/js/mosaic.js > dist/js/mosaic.min.js
+			find src/coffee/ -type f -exec cat {} \; | coffee -sbp > dist/js/barista.js
+			java -jar /usr/local/jar/closure-compiler.jar dist/js/barista.js > dist/js/barista.min.js
 			;;
 	esac
 }
@@ -98,9 +119,7 @@ watch () {
 	done
 }
 
-#path="$( ... && pwd )"
-
-cd "$( dirname "${BASH_SOURCE[0]}" )"
+path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if [ ! -z $1 ]
 then

@@ -1,35 +1,40 @@
-jQuery document
-.ready ($) ->
-	$ '*[data-action="modal"]'
-	.click (event) ->
-		button = $ this
-		target = button.data 'target'
+do ($=jQuery) ->
+	$ ->
+		$.fn.extend
+			modal : (opts) ->
+				dialog = $ this
 
-		$(target).modal
-			dim : button.data 'dim'
+				attr =
+					class : 'overlay'
 
-		event.preventDefault()
+				attr.class += ' dim' if opts.dim
 
-	$.fn.extend
-		modal : (opts) ->
-			dialog = $ this
+				$('.overlay').remove()
 
-			attr =
-				class : 'overlay'
+				$ '<div>', attr
+				.appendTo 'body'
+				.click ->
+					$('body').removeClass 'no-scroll'
+					dialog.removeClass 'visible'
+					$(this).remove()
 
-			attr.class += ' dim' if opts.dim
+				$('body').addClass 'no-scroll'
 
-			$('.overlay').remove()
+				dialog.addClass 'dim' if opts.dim
+				dialog.addClass 'visible'
+				dialog.css 'top', '32px'
 
-			$ '<div>', attr
-			.appendTo 'body'
-			.click ->
-				$('body').removeClass 'no-scroll'
-				dialog.removeClass 'visible'
-				$(this).remove()
+				return
 
-			$('body').addClass 'no-scroll'
+		$ '*[data-action="modal"]'
+		.click (event) ->
+			button = $ this
+			target = button.data 'target'
 
-			dialog.addClass 'dim' if opts.dim
-			dialog.addClass 'visible'
-			dialog.css 'top', '32px'
+			$(target).modal
+				dim : button.data 'dim'
+
+			event.preventDefault()
+
+		return
+	return
