@@ -1,49 +1,64 @@
-fs = require 'fs'
+fs   = require 'fs'
 proc = require 'child_process'
 
-coffee_src = 'src/coffee'
+coffee_src  = 'src/coffee'
 coffee_dest = 'dist/js'
-coffee_temp = "#{coffee_dest}/barista.coffee"
+coffee_root = 'barista'
 
-sass_src = 'src/sass/barista.scss'
-sass_dest = 'dist/css/barista.css'
-sass_opts = '-t expanded --trace'
-sass_min_dest = 'dist/css/barista.min.css'
-sass_min_opts = '-t compressed --trace'
+sass_src  = 'src/sass'
+sass_dest = 'dist/css'
+sass_root = 'barista'
 
 task 'build', 'Build all source files into destination', ->
-	#record 'build:all', ->
+	record 'build', ->
 		invoke 'build:js'
 		invoke 'build:css'
 
 task 'build:js', 'Build CoffeeScript files into JS', ->
 	invoke 'clean:js'
 	record 'build:js', ->
+		closure = "/usr/local/jar/closure-compiler.jar"
+
 		source = fs.readdirSync coffee_src
 		.map (file) ->
 			fs.readFileSync "#{coffee_src}/#{file}", 'utf8'
 		.join '\n'
 
-		compile = proc.spawn 'coffee', ['-sbp']
+		compile = proc.spawnSync 'coffee', ['-sbp'], input: source
 
-		compile.on 'error', (err) ->
-			console.error error
+		script = do compile.stdout.toString
 
-		compile.on 'exit', ->
-			proc.execSync "java -jar /usr/local/jar/closure-compiler.jar #{coffee_dest}/barista.js > #{coffee_dest}/barista.min.js", handle
+		fs.createWriteStream "#{coffee_dest}/#{coffee_root}.js"
+		.write script, 'utf8'
 
-		compile.stdout.pipe fs.createWriteStream "#{coffee_dest}/barista.js"
-		compile.stdin.write source
-		compile.stdin.end()
+		minify = proc.spawnSync "java", ['-jar', closure], input: script
+
+		minified = do minify.stdout.toString
+
+		fs.createWriteStream "#{coffee_dest}/#{coffee_root}.min.js"
+		.write minified, 'utf8'
 
 task 'build:css', 'Build Sass files into CSS', ->
 	invoke 'clean:css'
 	record 'build:css', ->
-		proc.execSync "sass #{sass_opts} #{sass_src} > #{sass_dest}", handle
-		proc.execSync "sass #{sass_min_opts} #{sass_src} > #{sass_min_dest}", handle
+		opts = [
+			'-t expanded'
+			'--trace'
+		]
+
+		inFile = "#{sass_src}/#{sass_root}.scss"
+		outFile = "#{sass_dest}/#{sass_root}.css"
+
+		proc.execSync "sass #{opts.join ' '} #{inFile} > #{outFile}", handle
+
+		opts[0] = '-t compressed'
+
+		outFile = "#{sass_dest}/#{sass_root}.min.css"
+
+		proc.execSync "sass #{opts.join ' '} #{inFile} > #{outFile}", handle
 
 task 'clean', 'Clean all files from destination folder', ->
-	#record 'clean:all', ->
+	record 'clean', ->
 		invoke 'clean:js'
 		invoke 'clean:css'
 
@@ -59,6 +74,20 @@ task 'clean:css', 'Clean CSS files from destination folder', ->
 		.map (file) -> "dist/css/#{file}"
 		fs.unlinkSync file for file in files
 
+task 'watch', 'Watch all source files for changes', ->
+	invoke 'watch:js'
+	invoke 'watch:css'
+
+task 'watch:js', 'Watch CoffeeScript files for changes', ->
+	console.log "[#{new Date}] : Watching #{coffee_src} for changes ..."
+	fs.watch coffee_src, ->
+		invoke 'build:js'
+
+task 'watch:css', 'Watch Sass files for changes', ->
+	console.log "[#{new Date}] : Watching #{sass_src} for changes ..."
+	fs.watch sass_src, ->
+		invoke 'build:css'
+
 record = (name, something) ->
 	starting = new Date
 	console.log "[#{starting}] : Starting task '#{name}' ..."
@@ -70,6 +99,6 @@ record = (name, something) ->
 	console.log "[#{finished}] : Finished task '#{name}' in #{ellapsed} millisecond(s)"
 
 handle = (err, stdout, stderr) ->
+	console.error err if err
 	console.error stderr if stderr
 	console.log stdout if stdout
-	throw err if err

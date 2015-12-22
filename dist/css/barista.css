@@ -1,39 +1,61 @@
-* {
-  font-size: 14px;
-  font-family: "'Helvetica Neue', Helvetica, Arial, sans-serif";
-  line-height: 1.42857;
+html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 }
 
-/* html, body {
-	margin: 0px;
-	padding: 0px;
-} */
+.wrapper {
+  margin: 0 0.75em;
+}
+
+@media only screen and (min-width: 480px) {
+  .wrapper {
+    width: 28.5em;
+    margin: 0 auto;
+  }
+  .wrapper.fluid {
+    width: inherit;
+    margin: 0 0.75em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    width: 46.5em;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .wrapper {
+    width: 78.5em;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: .75em 0 .25em;
+}
+
 h1 {
-  font-size: modular-scale(5);
+  font-size: 4.20873em;
 }
 
 h2 {
-  font-size: modular-scale(4);
+  font-size: 3.15733em;
 }
 
 h3 {
-  font-size: modular-scale(3);
+  font-size: 2.36859em;
 }
 
 h4 {
-  font-size: modular-scale(2);
+  font-size: 1.77689em;
 }
 
 h5 {
-  font-size: modular-scale(1);
+  font-size: 1.333em;
 }
 
 h6 {
-  font-size: modular-scale(0);
+  font-size: 1em;
 }
 
 .lead {
-  font-size: modular-scale(1);
+  font-size: 1.333em;
   font-weight: 300;
 }
 
@@ -41,7 +63,7 @@ small, .small {
   color: #999999;
   font-style: italic;
   font-weight: normal;
-  font-size: modular-scale(-1);
+  font-size: 0.75019em;
   line-height: inherit;
 }
 
@@ -54,7 +76,7 @@ small, .small {
   background-color: #F4C3B7;
 }
 .txt.yellow {
-  color: #804d00;
+  color: #663d00;
   background-color: #FEE0B2;
 }
 .txt.green {
@@ -72,18 +94,18 @@ small, .small {
 
 .lbl {
   display: inline-block;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 0.375em 0.75em;
+  border-radius: 0.5em;
   background-color: #999999;
   color: #FFFFFF;
-  font-weight: bold;
-  letter-spacing: .05em;
 }
 .lbl.sm {
-  padding: 3px 6px;
+  padding: 0.1875em 0.375em;
+  border-radius: 0.25em;
 }
 .lbl.lg {
-  padding: 12px 24px;
+  padding: 0.75em 1.5em;
+  border-radius: 0.75em;
 }
 .lbl.blue {
   background-color: #3366CC;
@@ -105,20 +127,21 @@ small, .small {
 }
 
 .card {
-  margin-bottom: 12px;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border-width: 1px;
-  border-style: solid;
+  margin-bottom: 0.75em;
+  padding: 0.375em 0.75em;
+  border-radius: 0.5em;
+  border: 1px solid #999999;
   background: #FFFFFF;
   box-shadow: 2px 3px 1px #999999;
   border-color: gray;
 }
 .card header {
-  margin: -6px -12px 6px;
-  padding: 6px 12px;
-  border-radius: 6px 6px 0px 0px;
+  background: inherit;
+  margin: -0.375em -0.75em 0.375em;
+  padding: 0.375em 0.75em;
   color: #FFFFFF;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
 }
 .card footer {
   margin: 6px -12px -6px;
@@ -139,27 +162,25 @@ small, .small {
   box-shadow: none;
 }
 .card header {
-  background: linear-gradient(0deg, #999999, #b3b3b3);
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
   text-shadow: 1px 2px gray;
 }
-.card footer {
-  background-color: #CCCCCC;
-}
-.card.alert {
-  background-color: #CCCCCC;
-  color: #3C3C3C;
+.card footer, .card.alert {
+  background-color: #DDDDDD;
+  color: #444444;
 }
 .card.blue {
   border-color: #2952a3;
 }
 .card.blue header {
-  background: linear-gradient(0deg, #3366CC, #5c85d6);
+  background-color: #3366CC;
+  background-image: -webkit-linear-gradient(-270deg, #3366CC, #5c85d6);
+  background-image: linear-gradient(0deg,#3366CC, #5c85d6);
   text-shadow: 1px 2px #2952a3;
 }
-.card.blue footer {
-  background-color: #C1D0EF;
-}
-.card.blue.alert {
+.card.blue footer, .card.blue.alert {
   background-color: #C1D0EF;
   color: #1a3366;
 }
@@ -167,13 +188,12 @@ small, .small {
   border-color: #ad2d0e;
 }
 .card.red header {
-  background: linear-gradient(0deg, #DC3912, #ee5733);
+  background-color: #DC3912;
+  background-image: -webkit-linear-gradient(-270deg, #DC3912, #ee5733);
+  background-image: linear-gradient(0deg,#DC3912, #ee5733);
   text-shadow: 1px 2px #ad2d0e;
 }
-.card.red footer {
-  background-color: #F4C3B7;
-}
-.card.red.alert {
+.card.red footer, .card.red.alert {
   background-color: #F4C3B7;
   color: #7e210a;
 }
@@ -181,27 +201,25 @@ small, .small {
   border-color: #cc7a00;
 }
 .card.yellow header {
-  background: linear-gradient(0deg, #FF9900, #ffad33);
+  background-color: #FF9900;
+  background-image: -webkit-linear-gradient(-270deg, #FF9900, #ffad33);
+  background-image: linear-gradient(0deg,#FF9900, #ffad33);
   text-shadow: 1px 2px #cc7a00;
 }
-.card.yellow footer {
+.card.yellow footer, .card.yellow.alert {
   background-color: #FEE0B2;
-}
-.card.yellow.alert {
-  background-color: #FEE0B2;
-  color: #804d00;
+  color: #663d00;
 }
 .card.green {
   border-color: #0b6811;
 }
 .card.green header {
-  background: linear-gradient(0deg, #109618, #15c41f);
+  background-color: #109618;
+  background-image: -webkit-linear-gradient(-270deg, #109618, #15c41f);
+  background-image: linear-gradient(0deg,#109618, #15c41f);
   text-shadow: 1px 2px #0b6811;
 }
-.card.green footer {
-  background-color: #B6DFB9;
-}
-.card.green.alert {
+.card.green footer, .card.green.alert {
   background-color: #B6DFB9;
   color: #063a09;
 }
@@ -209,13 +227,12 @@ small, .small {
   border-color: #660066;
 }
 .card.purple header {
-  background: linear-gradient(0deg, #990099, #cc00cc);
+  background-color: #990099;
+  background-image: -webkit-linear-gradient(-270deg, #990099, #cc00cc);
+  background-image: linear-gradient(0deg,#990099, #cc00cc);
   text-shadow: 1px 2px #660066;
 }
-.card.purple footer {
-  background-color: #E0B2E0;
-}
-.card.purple.alert {
+.card.purple footer, .card.purple.alert {
   background-color: #E0B2E0;
   color: #330033;
 }
@@ -223,13 +240,12 @@ small, .small {
   border-color: #cc5200;
 }
 .card.orange header {
-  background: linear-gradient(0deg, #FF6600, #ff8533);
+  background-color: #FF6600;
+  background-image: -webkit-linear-gradient(-270deg, #FF6600, #ff8533);
+  background-image: linear-gradient(0deg,#FF6600, #ff8533);
   text-shadow: 1px 2px #cc5200;
 }
-.card.orange footer {
-  background-color: #FFB280;
-}
-.card.orange.alert {
+.card.orange footer, .card.orange.alert {
   background-color: #FFB280;
   color: #662900;
 }
@@ -279,12 +295,8 @@ small, .small {
     width: 829.33333px;
   }
 }
-.wrapper, .wrapper-fluid {
-  margin: 0px 12px;
-}
-
 .row {
-  margin: 0px -12px;
+  margin: 0px -0.75em;
 }
 .row:before, .row:after {
   display: table;
@@ -298,8 +310,7 @@ small, .small {
   width: 8.33333%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -307,8 +318,7 @@ small, .small {
   width: 16.66667%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -316,8 +326,7 @@ small, .small {
   width: 25%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -325,8 +334,7 @@ small, .small {
   width: 33.33333%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -334,8 +342,7 @@ small, .small {
   width: 41.66667%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -343,8 +350,7 @@ small, .small {
   width: 50%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -352,8 +358,7 @@ small, .small {
   width: 58.33333%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -361,8 +366,7 @@ small, .small {
   width: 66.66667%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -370,8 +374,7 @@ small, .small {
   width: 75%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -379,8 +382,7 @@ small, .small {
   width: 83.33333%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -388,8 +390,7 @@ small, .small {
   width: 91.66667%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -397,8 +398,7 @@ small, .small {
   width: 100%;
   position: relative;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0 0.75em;
   box-sizing: border-box;
 }
 
@@ -407,8 +407,7 @@ small, .small {
     width: 8.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -416,8 +415,7 @@ small, .small {
     width: 16.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -425,8 +423,7 @@ small, .small {
     width: 25%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -434,8 +431,7 @@ small, .small {
     width: 33.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -443,8 +439,7 @@ small, .small {
     width: 41.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -452,8 +447,7 @@ small, .small {
     width: 50%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -461,8 +455,7 @@ small, .small {
     width: 58.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -470,8 +463,7 @@ small, .small {
     width: 66.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -479,8 +471,7 @@ small, .small {
     width: 75%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -488,8 +479,7 @@ small, .small {
     width: 83.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -497,8 +487,7 @@ small, .small {
     width: 91.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -506,14 +495,8 @@ small, .small {
     width: 100%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
-  }
-
-  .wrapper {
-    width: 456px;
-    margin: 0px auto;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -521,8 +504,7 @@ small, .small {
     width: 8.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -530,8 +512,7 @@ small, .small {
     width: 16.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -539,8 +520,7 @@ small, .small {
     width: 25%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -548,8 +528,7 @@ small, .small {
     width: 33.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -557,8 +536,7 @@ small, .small {
     width: 41.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -566,8 +544,7 @@ small, .small {
     width: 50%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -575,8 +552,7 @@ small, .small {
     width: 58.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -584,8 +560,7 @@ small, .small {
     width: 66.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -593,8 +568,7 @@ small, .small {
     width: 75%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -602,8 +576,7 @@ small, .small {
     width: 83.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -611,8 +584,7 @@ small, .small {
     width: 91.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -620,14 +592,8 @@ small, .small {
     width: 100%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
-  }
-
-  .wrapper {
-    width: 744px;
-    margin: 0px auto;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -635,8 +601,7 @@ small, .small {
     width: 8.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -644,8 +609,7 @@ small, .small {
     width: 16.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -653,8 +617,7 @@ small, .small {
     width: 25%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -662,8 +625,7 @@ small, .small {
     width: 33.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -671,8 +633,7 @@ small, .small {
     width: 41.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -680,8 +641,7 @@ small, .small {
     width: 50%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -689,8 +649,7 @@ small, .small {
     width: 58.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -698,8 +657,7 @@ small, .small {
     width: 66.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -707,8 +665,7 @@ small, .small {
     width: 75%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -716,8 +673,7 @@ small, .small {
     width: 83.33333%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -725,8 +681,7 @@ small, .small {
     width: 91.66667%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
 
@@ -734,164 +689,18 @@ small, .small {
     width: 100%;
     position: relative;
     float: left;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 0.75em;
     box-sizing: border-box;
   }
-
-  .wrapper {
-    width: 1256px;
-    margin: 0px auto;
-  }
 }
-a.btn {
-  text-decoration: none;
-}
-
-a.btn, button, input[type="button"], input[type="submit"], input[type="reset"] {
-  display: inline-block;
-  margin-right: 3px;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border-width: 1px;
-  border-style: solid;
-  font-family: sans-serif;
-  letter-spacing: .05em;
-  cursor: pointer;
-  box-shadow: 2px 3px 1px #999999;
-  background: linear-gradient(0deg, #999999, #b3b3b3);
-  color: #FFFFFF;
-  border-color: gray;
-  text-shadow: 1px 2px gray;
-}
-a.btn:active, button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active {
-  box-shadow: 1px 2px 1px #999999;
-}
-a.btn.sm, button.sm, input[type="button"].sm, input[type="submit"].sm, input[type="reset"].sm {
-  padding: 3px 6px;
-}
-a.btn.lg, button.lg, input[type="button"].lg, input[type="submit"].lg, input[type="reset"].lg {
-  padding: 12px 24px;
-}
-a.btn:active, button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active {
-  background: linear-gradient(180deg, #999999, #b3b3b3);
-}
-a.btn.blue, button.blue, input[type="button"].blue, input[type="submit"].blue, input[type="reset"].blue {
-  background: linear-gradient(0deg, #3366CC, #5c85d6);
-  color: #FFFFFF;
-  border-color: #2952a3;
-  text-shadow: 1px 2px #2952a3;
-}
-a.btn.blue:active, button.blue:active, input[type="button"].blue:active, input[type="submit"].blue:active, input[type="reset"].blue:active {
-  background: linear-gradient(180deg, #3366CC, #5c85d6);
-}
-a.btn.red, button.red, input[type="button"].red, input[type="submit"].red, input[type="reset"].red {
-  background: linear-gradient(0deg, #DC3912, #ee5733);
-  color: #FFFFFF;
-  border-color: #ad2d0e;
-  text-shadow: 1px 2px #ad2d0e;
-}
-a.btn.red:active, button.red:active, input[type="button"].red:active, input[type="submit"].red:active, input[type="reset"].red:active {
-  background: linear-gradient(180deg, #DC3912, #ee5733);
-}
-a.btn.yellow, button.yellow, input[type="button"].yellow, input[type="submit"].yellow, input[type="reset"].yellow {
-  background: linear-gradient(0deg, #FF9900, #ffad33);
-  color: #FFFFFF;
-  border-color: #cc7a00;
-  text-shadow: 1px 2px #cc7a00;
-}
-a.btn.yellow:active, button.yellow:active, input[type="button"].yellow:active, input[type="submit"].yellow:active, input[type="reset"].yellow:active {
-  background: linear-gradient(180deg, #FF9900, #ffad33);
-}
-a.btn.green, button.green, input[type="button"].green, input[type="submit"].green, input[type="reset"].green {
-  background: linear-gradient(0deg, #109618, #15c41f);
-  color: #FFFFFF;
-  border-color: #0b6811;
-  text-shadow: 1px 2px #0b6811;
-}
-a.btn.green:active, button.green:active, input[type="button"].green:active, input[type="submit"].green:active, input[type="reset"].green:active {
-  background: linear-gradient(180deg, #109618, #15c41f);
-}
-a.btn.purple, button.purple, input[type="button"].purple, input[type="submit"].purple, input[type="reset"].purple {
-  background: linear-gradient(0deg, #990099, #cc00cc);
-  color: #FFFFFF;
-  border-color: #660066;
-  text-shadow: 1px 2px #660066;
-}
-a.btn.purple:active, button.purple:active, input[type="button"].purple:active, input[type="submit"].purple:active, input[type="reset"].purple:active {
-  background: linear-gradient(180deg, #990099, #cc00cc);
-}
-a.btn.orange, button.orange, input[type="button"].orange, input[type="submit"].orange, input[type="reset"].orange {
-  background: linear-gradient(0deg, #FF6600, #ff8533);
-  color: #FFFFFF;
-  border-color: #cc5200;
-  text-shadow: 1px 2px #cc5200;
-}
-a.btn.orange:active, button.orange:active, input[type="button"].orange:active, input[type="submit"].orange:active, input[type="reset"].orange:active {
-  background: linear-gradient(180deg, #FF6600, #ff8533);
-}
-
-.btn-toolbar .btn, .btn-toolbar button, .btn-toolbar input[type="button"], .btn-toolbar input[type="submit"] {
-  margin-right: 3px;
-  margin-bottom: 6px;
-}
-
-table {
-  width: 100%;
-  margin-bottom: 18px;
-  border-collapse: separate;
-  border-spacing: 0px;
-  border-radius: 6px;
-}
-table th {
-  font-weight: bold;
-}
-table thead th, table thead td {
-  padding: 6px 12px;
-  border-bottom: 2px solid #999999;
-  text-align: left;
-}
-table thead tr:first-child th:first-child, table thead tr:first-child td:first-child {
-  border-radius: 6px 0px 0px 0px;
-}
-table thead tr:first-child th:last-child, table thead tr:first-child td:last-child {
-  border-radius: 0px 6px 0px 0px;
-}
-table tbody th, table tbody td {
-  padding: 6px 12px;
-  border-top: 1px solid #999999;
-  text-align: left;
-}
-table tbody tr:hover th, table tbody tr:hover td {
-  background-color: #d9d9d9;
-}
-table tbody tr:first-child th, table tbody tr:first-child td {
-  border-width: 0px;
-}
-table tbody tr:last-child th:first-child, table tbody tr:last-child td:first-child {
-  border-radius: 0px 0px 0px 6px;
-}
-table tbody tr:last-child th:last-child, table tbody tr:last-child td:last-child {
-  border-radius: 0px 0px 6px 0px;
-}
-table.outline {
-  border: 1px solid #999999;
-}
-table.striped tbody tr:nth-child(even) th, table.striped tbody tr:nth-child(even) td {
-  background-color: #ededed;
-}
-table.striped tbody tr:nth-child(even):hover th, table.striped tbody tr:nth-child(even):hover td {
-  background-color: #cccccc;
-}
-
 label {
   display: block;
-  padding: 6px 0px;
+  padding: 0.375em 0;
   font-weight: bold;
 }
 
 .checkbox, .radio {
-  margin: 0px 0px 12px 0px;
+  margin: 0px 0px 0.75em 0px;
 }
 .checkbox label, .radio label {
   font-weight: normal;
@@ -905,25 +714,170 @@ label {
   margin: 0px 12px 0px 0px;
 }
 
-input, textarea, select, button {
-  margin-bottom: 6px;
-}
-
-textarea, input[type="text"], input[type="password"], select {
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
   width: 100%;
-  height: 33px;
-  margin: 0px 0px 12px 0px;
-  padding: 6px 12px;
+  margin: 0 0 0.75em;
+  padding: 0.75em;
+  border-radius: 0.5em;
   border: 1px solid #999999;
-  border-radius: 6px;
   box-sizing: border-box;
+  font-size: .75em;
 }
-form.inline textarea, form.inline input[type="text"], form.inline input[type="password"], form.inline select {
+form.inline input[type="color"], form.inline input[type="date"], form.inline input[type="datetime"], form.inline input[type="datetime-local"], form.inline input[type="email"], form.inline input[type="month"], form.inline input[type="number"], form.inline input[type="password"], form.inline input[type="search"], form.inline input[type="tel"], form.inline input[type="text"], form.inline input[type="time"], form.inline input[type="url"], form.inline input[type="week"], form.inline input:not([type]), form.inline textarea, form.inline select {
   width: auto;
   margin-right: 3px;
 }
 
+input:disabled, textarea:disabled, select:disabled, button:disabled {
+  cursor: not-allowed;
+}
+input:focus, textarea:focus, select:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #999999;
+}
+
 textarea {
-  height: auto;
   vertical-align: top;
+}
+
+select {
+  height: 2.75em;
+}
+
+.btn, button, input[type="button"], input[type="reset"], input[type="submit"] {
+  display: inline-block;
+  margin-right: 0.1875em;
+  padding: 0.375em 0.75em;
+  border-radius: 0.5em;
+  border: 1px solid #999999;
+  cursor: pointer;
+  box-shadow: 2px 3px 1px #999999;
+  text-decoration: none;
+  font-size: 1em;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  color: #FFFFFF;
+  border-color: gray;
+  text-shadow: 1px 2px gray;
+}
+.btn:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
+  box-shadow: 1px 2px 1px #999999;
+}
+.btn.sm, button.sm, input[type="button"].sm, input[type="reset"].sm, input[type="submit"].sm {
+  padding: 0.1875em 0.375em;
+  border-radius: 0.25em;
+}
+.btn.lg, button.lg, input[type="button"].lg, input[type="reset"].lg, input[type="submit"].lg {
+  padding: 0.75em 1.5em;
+  border-radius: 0.75em;
+}
+.btn:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+  box-shadow: 2px 3px 1px #999999, inset 0 0 6px #FFFFFF;
+}
+.btn:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-450deg, #999999, #b3b3b3);
+  background-image: linear-gradient(180deg,#999999, #b3b3b3);
+}
+.btn.blue, button.blue, input[type="button"].blue, input[type="reset"].blue, input[type="submit"].blue {
+  background-color: #3366CC;
+  background-image: -webkit-linear-gradient(-270deg, #3366CC, #5c85d6);
+  background-image: linear-gradient(0deg,#3366CC, #5c85d6);
+  color: #FFFFFF;
+  border-color: #2952a3;
+  text-shadow: 1px 2px #2952a3;
+}
+.btn.blue:hover, button.blue:hover, input[type="button"].blue:hover, input[type="reset"].blue:hover, input[type="submit"].blue:hover {
+  box-shadow: 2px 3px 1px #999999, inset 0 0 6px #FFFFFF;
+}
+.btn.blue:active, button.blue:active, input[type="button"].blue:active, input[type="reset"].blue:active, input[type="submit"].blue:active {
+  background-color: #3366CC;
+  background-image: -webkit-linear-gradient(-450deg, #3366CC, #5c85d6);
+  background-image: linear-gradient(180deg,#3366CC, #5c85d6);
+}
+.btn.red, button.red, input[type="button"].red, input[type="reset"].red, input[type="submit"].red {
+  background-color: #DC3912;
+  background-image: -webkit-linear-gradient(-270deg, #DC3912, #ee5733);
+  background-image: linear-gradient(0deg,#DC3912, #ee5733);
+  color: #FFFFFF;
+  border-color: #ad2d0e;
+  text-shadow: 1px 2px #ad2d0e;
+}
+.btn.red:hover, button.red:hover, input[type="button"].red:hover, input[type="reset"].red:hover, input[type="submit"].red:hover {
+  box-shadow: 2px 3px 1px #999999, inset 0 0 6px #FFFFFF;
+}
+.btn.red:active, button.red:active, input[type="button"].red:active, input[type="reset"].red:active, input[type="submit"].red:active {
+  background-color: #DC3912;
+  background-image: -webkit-linear-gradient(-450deg, #DC3912, #ee5733);
+  background-image: linear-gradient(180deg,#DC3912, #ee5733);
+}
+.btn.yellow, button.yellow, input[type="button"].yellow, input[type="reset"].yellow, input[type="submit"].yellow {
+  background-color: #FF9900;
+  background-image: -webkit-linear-gradient(-270deg, #FF9900, #ffad33);
+  background-image: linear-gradient(0deg,#FF9900, #ffad33);
+  color: #FFFFFF;
+  border-color: #cc7a00;
+  text-shadow: 1px 2px #cc7a00;
+}
+.btn.yellow:hover, button.yellow:hover, input[type="button"].yellow:hover, input[type="reset"].yellow:hover, input[type="submit"].yellow:hover {
+  box-shadow: 2px 3px 1px #999999, inset 0 0 6px #FFFFFF;
+}
+.btn.yellow:active, button.yellow:active, input[type="button"].yellow:active, input[type="reset"].yellow:active, input[type="submit"].yellow:active {
+  background-color: #FF9900;
+  background-image: -webkit-linear-gradient(-450deg, #FF9900, #ffad33);
+  background-image: linear-gradient(180deg,#FF9900, #ffad33);
+}
+.btn.green, button.green, input[type="button"].green, input[type="reset"].green, input[type="submit"].green {
+  background-color: #109618;
+  background-image: -webkit-linear-gradient(-270deg, #109618, #15c41f);
+  background-image: linear-gradient(0deg,#109618, #15c41f);
+  color: #FFFFFF;
+  border-color: #0b6811;
+  text-shadow: 1px 2px #0b6811;
+}
+.btn.green:hover, button.green:hover, input[type="button"].green:hover, input[type="reset"].green:hover, input[type="submit"].green:hover {
+  box-shadow: 2px 3px 1px #999999, inset 0 0 6px #FFFFFF;
+}
+.btn.green:active, button.green:active, input[type="button"].green:active, input[type="reset"].green:active, input[type="submit"].green:active {
+  background-color: #109618;
+  background-image: -webkit-linear-gradient(-450deg, #109618, #15c41f);
+  background-image: linear-gradient(180deg,#109618, #15c41f);
+}
+.btn.purple, button.purple, input[type="button"].purple, input[type="reset"].purple, input[type="submit"].purple {
+  background-color: #990099;
+  background-image: -webkit-linear-gradient(-270deg, #990099, #cc00cc);
+  background-image: linear-gradient(0deg,#990099, #cc00cc);
+  color: #FFFFFF;
+  border-color: #660066;
+  text-shadow: 1px 2px #660066;
+}
+.btn.purple:hover, button.purple:hover, input[type="button"].purple:hover, input[type="reset"].purple:hover, input[type="submit"].purple:hover {
+  box-shadow: 2px 3px 1px #999999, inset 0 0 6px #FFFFFF;
+}
+.btn.purple:active, button.purple:active, input[type="button"].purple:active, input[type="reset"].purple:active, input[type="submit"].purple:active {
+  background-color: #990099;
+  background-image: -webkit-linear-gradient(-450deg, #990099, #cc00cc);
+  background-image: linear-gradient(180deg,#990099, #cc00cc);
+}
+.btn.orange, button.orange, input[type="button"].orange, input[type="reset"].orange, input[type="submit"].orange {
+  background-color: #FF6600;
+  background-image: -webkit-linear-gradient(-270deg, #FF6600, #ff8533);
+  background-image: linear-gradient(0deg,#FF6600, #ff8533);
+  color: #FFFFFF;
+  border-color: #cc5200;
+  text-shadow: 1px 2px #cc5200;
+}
+.btn.orange:hover, button.orange:hover, input[type="button"].orange:hover, input[type="reset"].orange:hover, input[type="submit"].orange:hover {
+  box-shadow: 2px 3px 1px #999999, inset 0 0 6px #FFFFFF;
+}
+.btn.orange:active, button.orange:active, input[type="button"].orange:active, input[type="reset"].orange:active, input[type="submit"].orange:active {
+  background-color: #FF6600;
+  background-image: -webkit-linear-gradient(-450deg, #FF6600, #ff8533);
+  background-image: linear-gradient(180deg,#FF6600, #ff8533);
+}
+
+.btn-toolbar .btn, .btn-toolbar button, .btn-toolbar input[type="button"], .btn-toolbar input[type="reset"], .btn-toolbar input[type="submit"] {
+  margin-right: 0.1875em;
+  margin-bottom: 0.375em;
 }

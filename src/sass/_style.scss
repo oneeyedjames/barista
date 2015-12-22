@@ -1,0 +1,23 @@
+@import 'color';
+@import 'dimen';
+
+$base-border-radius: .5em;
+$small-border-radius: $base-border-radius / 2;
+$large-border-radius: $base-border-radius * 1.5;
+
+$base-border-color: $gray;
+$base-border-style: solid;
+$base-border-width: 1px;
+
+$base-border: $base-border-width $base-border-style $base-border-color;
+
+
+$base-spacing: .75em;
+
+$base-padding: ($base-spacing / 2) $base-spacing;
+$small-padding: ($base-spacing / 4) ($base-spacing / 2);
+$large-padding: $base-spacing ($base-spacing * 2);
+
+$base-font-family: $helvetica;
+
+$base-margin-bottom: $base-spacing;

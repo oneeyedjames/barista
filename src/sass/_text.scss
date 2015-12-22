@@ -1,10 +1,13 @@
-@import '_color';
+h1, h2, h3, h4, h5, h6 { margin: .75em 0 .25em; }
 
 @for $num from 1 through 6 {
 	h#{$num} { font-size: modular-scale(6 - $num); }
 }
 
-.lead { font-size: modular-scale(1); font-weight: 300; }
+.lead {
+	font-size: modular-scale(1);
+	font-weight: 300;
+}
 
 small, .small {
 	color: $gray;
@@ -25,15 +28,14 @@ small, .small {
 
 .lbl {
 	display: inline-block;
-	padding: 6px 12px;
-	border-radius: 6px;
+	padding: $base-padding;
+	// margin-bottom: $base-spacing / 4;
+	border-radius: $base-border-radius;
 	background-color: $gray;
 	color: $white;
-	font-weight: bold;
-	letter-spacing: .05em;
 
-	&.sm { padding: 3px 6px; }
-	&.lg { padding: 12px 24px; }
+	&.sm { padding: $small-padding; border-radius: $small-border-radius; }
+	&.lg { padding: $large-padding; border-radius: $large-border-radius; }
 
 	&.blue   { background-color: $blue;   }
 	&.red    { background-color: $red;    }

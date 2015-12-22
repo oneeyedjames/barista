@@ -1,30 +1,13 @@
-//@import '_dimen';
-
-//.row {
-//	@include outer-container();
-//}
-
-//@for $num from 1 through $grid-columns {
-//	.col-xs-#{$num} { @include span-columns($num); }
-//}
-
-//.col-xs-6 {
-//	@include omega(2n);
-//}
-
 @mixin grid-col-num($num) {
 	width: percentage($num / $grid-columns);
 	position: relative;
 	float: left;
-	padding-left: 12px;
-	padding-right: 12px;
+	padding: 0 $base-spacing;
 	box-sizing: border-box;
 }
 
-.wrapper, .wrapper-fluid { margin: 0px 12px; }
-
 .row {
-	margin: 0px -12px;
+	margin: 0px (-$base-spacing);
 
 	&:before, &:after {
 		display: table;
@@ -40,26 +23,20 @@
 	.col-xs-#{$num} { @include grid-col-num($num); }
 }
 
-@media only screen and (min-width: #{$sm_base}px) {
+@media only screen and (min-width: #{$screen-sm-width}px) {
 	@for $num from 1 through $grid-columns {
 		.col-sm-#{$num} { @include grid-col-num($num); }
 	}
-
-	.wrapper { width: #{$sm_base - 24}px; margin: 0px auto; }
 }
 
-@media only screen and (min-width: #{$md_base}px) {
+@media only screen and (min-width: #{$screen-md-width}px) {
 	@for $num from 1 through $grid-columns {
 		.col-md-#{$num} { @include grid-col-num($num); }
 	}
-
-	.wrapper { width: #{$md_base - 24}px; margin: 0px auto; }
 }
 
-@media only screen and (min-width: #{$lg_base}px) {
+@media only screen and (min-width: #{$screen-lg-width}px) {
 	@for $num from 1 through $grid-columns {
 		.col-lg-#{$num} { @include grid-col-num($num); }
 	}
-
-	.wrapper { width: #{$lg_base - 24}px; margin: 0px auto; }
 }

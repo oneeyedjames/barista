@@ -1,37 +1,38 @@
-@import '_color';
-
 @mixin btn-color($color) {
-	$light: lighten($color, 10%);
-	$dark:  darken($color, 10%);
+	$lighter: lighten($color, 10%);
+	$darker:  darken($color, 10%);
 
-	@include linear-gradient(0deg, $color, $light);
+	@include linear-gradient(0deg, $color, $lighter);
 
 	color: $white;
-	border-color: $dark;
+	border-color: $darker;
 
-	text-shadow: 1px 2px $dark;
+	text-shadow: 1px 2px $darker;
 
-	&:active { @include linear-gradient(180deg, $color, $light); }
+	&:hover { box-shadow: $button-shadow, inset 0 0 6px $white; }
+	&:active { @include linear-gradient(180deg, $color, $lighter); }
 }
 
-a.btn { text-decoration: none; }
+$button-shadow: 2px 3px 1px $gray;
 
-a.btn, #{$all-buttons} {
+$button-margin-right: $base-spacing / 4;
+$button-margin-bottom: $base-spacing / 2;
+
+.btn, #{$all-buttons} {
 	display: inline-block;
-	margin-right: 3px;
-	padding: 6px 12px;
-	border-radius: 6px;
-	border-width: 1px;
-	border-style: solid;
-	font-family: sans-serif;
-	letter-spacing: .05em;
+	margin-right: $button-margin-right;
+	padding: $base-padding;
+	border-radius: $base-border-radius;
+	border: $base-border;
 	cursor: pointer;
-	box-shadow: 2px 3px 1px $gray;
+	box-shadow: $button-shadow;
+	text-decoration: none;
+	font-size: 1em;
 
 	&:active { box-shadow: 1px 2px 1px $gray; }
 
-	&.sm { padding: 3px 6px; }
-	&.lg { padding: 12px 24px; }
+	&.sm { padding: $small-padding; border-radius: $small-border-radius; }
+	&.lg { padding: $large-padding; border-radius: $large-border-radius; }
 
 	@include btn-color($gray);
 
@@ -44,8 +45,8 @@ a.btn, #{$all-buttons} {
 }
 
 .btn-toolbar {
-	.btn, button, input[type="button"], input[type="submit"] {
-		margin-right: 3px;
-		margin-bottom: 6px;
+	.btn, #{$all-buttons} {
+		margin-right: $button-margin-right;
+		margin-bottom: $button-margin-bottom;
 	}
 }

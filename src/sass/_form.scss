@@ -1,14 +1,11 @@
-@import '_color';
-@import '_dimen';
-
 label {
 	display: block;
-	padding: 6px 0px;
+	padding: ($base-spacing / 2) 0;
 	font-weight: bold;
 }
 
 .checkbox, .radio {
-	margin: 0px 0px 12px 0px;
+	margin: 0px 0px $base-spacing 0px;
 
 	label { font-weight: normal; }
 
@@ -25,16 +22,14 @@ label {
 	}
 }
 
-input, textarea, select, button { margin-bottom: 6px; }
-
 #{$all-text-inputs}, select {
 	width: 100%;
-	height: 33px;
-	margin: 0px 0px 12px 0px;
-	padding: 6px 12px;
-	border: 1px solid $gray;
-	border-radius: 6px;
+	margin: 0 0 $base-margin-bottom;
+	padding: $base-spacing;
+	border-radius: $base-border-radius;
+	border: $base-border;
 	box-sizing: border-box;
+	font-size: .75em;
 
 	form.inline & {
 		width: auto;
@@ -42,7 +37,17 @@ input, textarea, select, button { margin-bottom: 6px; }
 	}
 }
 
-textarea {
-	height: auto;
-	vertical-align: top;
+input, textarea, select, button {
+	&:disabled {
+		cursor: not-allowed;
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 2px 2px $gray;
+	}
 }
+
+textarea { vertical-align: top; }
+
+select { height: $base-spacing * 2 + 1em + em(4); }

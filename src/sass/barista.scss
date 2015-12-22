@@ -1,39 +1,36 @@
-//@import 'bourbon/bourbon';
-//@import 'base/base';
-//@import 'neat/neat';
-
-// Bourbon stand-ins
-$helvetica: "'Helvetica Neue', Helvetica, Arial, sans-serif";
-
-@mixin linear-gradient($dir, $color1, $color2) {
-	background: linear-gradient($dir, $color1, $color2);
-}
-
-$grid-columns: 12;
-
-$all-buttons: 'button, input[type="button"], input[type="submit"], input[type="reset"]';
-$all-text-inputs: 'textarea, input[type="text"], input[type="password"]';
-// end stand-ins
-
-
+@import 'bourbon/bourbon';
 
 @import 'color';
 @import 'dimen';
+@import 'style';
 
-* {
-	font-size: #{$base_font_size}px;
-	font-family: $helvetica;
-	line-height: #{$base_line_height / $base_font_size};
+html, body { font-family: $base-font-family; }
+
+.wrapper { margin: 0 $base-spacing; }
+
+@media only screen and (min-width: #{$screen-sm-width}px) {
+	.wrapper {
+		width: em($screen-sm-width) - $base-spacing * 2;
+		margin: 0 auto;
+
+		&.fluid {
+			width: inherit;
+			margin: 0 $base-spacing;
+		}
+	}
 }
 
-/* html, body {
-	margin: 0px;
-	padding: 0px;
-} */
+@media only screen and (min-width: #{$screen-md-width}px) {
+	.wrapper { width: em($screen-md-width) - $base-spacing * 2; }
+}
+
+@media only screen and (min-width: #{$screen-lg-width}px) {
+	.wrapper { width: em($screen-lg-width) - $base-spacing * 2; }
+}
 
 @import 'text';
 @import 'card';
 @import 'grid';
-@import 'button';
-@import 'table';
 @import 'form';
+@import 'button';
+//@import 'table';
