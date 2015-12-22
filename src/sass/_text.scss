@@ -1,32 +1,16 @@
 @import '_color';
-@import '_dimen';
 
-p { margin: 0 0 #{$base_line_height / 2}px; }
-
-.lead {
-	font-size: #{$base_font_size * 1.5}px;
-	font-weight: 300;
+@for $num from 1 through 6 {
+	h#{$num} { font-size: modular-scale(6 - $num); }
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 24px 0px 12px;
-	padding: 0px;
-	font-weight: 600;
-	line-height: 1.2;
-}
-
-h1 { font-size: 36px; }
-h2 { font-size: 30px; }
-h3 { font-size: 24px; }
-h4 { font-size: 18px; }
-h5 { font-size: 14px; }
-h6 { font-size: 12px; }
+.lead { font-size: modular-scale(1); font-weight: 300; }
 
 small, .small {
 	color: $gray;
-	font-size: smaller;
 	font-style: italic;
-	font-weight: 300;
+	font-weight: normal;
+	font-size: modular-scale(-1);
 	line-height: inherit;
 }
 

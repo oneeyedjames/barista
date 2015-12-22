@@ -1,5 +1,21 @@
-@import 'bourbon/bourbon';
-@import 'neat/neat';
+//@import 'bourbon/bourbon';
+//@import 'base/base';
+//@import 'neat/neat';
+
+// Bourbon stand-ins
+$helvetica: "'Helvetica Neue', Helvetica, Arial, sans-serif";
+
+@mixin linear-gradient($dir, $color1, $color2) {
+	background: linear-gradient($dir, $color1, $color2);
+}
+
+$grid-columns: 12;
+
+$all-buttons: 'button, input[type="button"], input[type="submit"], input[type="reset"]';
+$all-text-inputs: 'textarea, input[type="text"], input[type="password"]';
+// end stand-ins
+
+
 
 @import 'color';
 @import 'dimen';
@@ -7,14 +23,13 @@
 * {
 	font-size: #{$base_font_size}px;
 	font-family: $helvetica;
-	font-weight: 400;
 	line-height: #{$base_line_height / $base_font_size};
 }
 
-html, body {
+/* html, body {
 	margin: 0px;
 	padding: 0px;
-}
+} */
 
 @import 'text';
 @import 'card';

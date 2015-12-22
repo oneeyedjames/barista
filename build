@@ -38,7 +38,7 @@ run () {
 			wait
 			;;
 		watch:css)
-			watch src/scss build:css
+			watch src/sass build:css
 			;;
 		watch:js)
 			watch src/coffee build:js
@@ -59,6 +59,11 @@ run () {
 			if [ ! -d neat ]
 			then
 				neat install
+			fi
+
+			if [ ! -d base ]
+			then
+				bitters install
 			fi
 
 			cd ..
@@ -93,7 +98,7 @@ build () {
 			sass -I .sass-build/ -t compressed src/sass/barista.scss > dist/css/barista.min.css
 			;;
 		js)
-			find src/coffee/ -type f -exec cat {} \; | coffee -sbp > dist/js/barista.js
+			find src/coffee/ -type f -iname *.coffee -exec cat {} \; | coffee -sbp > dist/js/barista.js
 			java -jar /usr/local/jar/closure-compiler.jar dist/js/barista.js > dist/js/barista.min.js
 			;;
 	esac

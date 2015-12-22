@@ -1,15 +1,27 @@
-@import '_dimen';
+//@import '_dimen';
 
-$grid_base: 12;
+//.row {
+//	@include outer-container();
+//}
+
+//@for $num from 1 through $grid-columns {
+//	.col-xs-#{$num} { @include span-columns($num); }
+//}
+
+//.col-xs-6 {
+//	@include omega(2n);
+//}
 
 @mixin grid-col-num($num) {
-	width: percentage($num / $grid_base);
+	width: percentage($num / $grid-columns);
 	position: relative;
 	float: left;
 	padding-left: 12px;
 	padding-right: 12px;
 	box-sizing: border-box;
 }
+
+.wrapper, .wrapper-fluid { margin: 0px 12px; }
 
 .row {
 	margin: 0px -12px;
@@ -24,18 +36,12 @@ $grid_base: 12;
 	}
 }
 
-.col {
-	width: percentage(1 / $grid_base);
-}
-
-@for $num from 1 through $grid_base {
+@for $num from 1 through $grid-columns {
 	.col-xs-#{$num} { @include grid-col-num($num); }
 }
 
-.wrapper, .wrapper-fluid { margin: 0px 12px; }
-
 @media only screen and (min-width: #{$sm_base}px) {
-	@for $num from 1 through $grid_base {
+	@for $num from 1 through $grid-columns {
 		.col-sm-#{$num} { @include grid-col-num($num); }
 	}
 
@@ -43,7 +49,7 @@ $grid_base: 12;
 }
 
 @media only screen and (min-width: #{$md_base}px) {
-	@for $num from 1 through $grid_base {
+	@for $num from 1 through $grid-columns {
 		.col-md-#{$num} { @include grid-col-num($num); }
 	}
 
@@ -51,7 +57,7 @@ $grid_base: 12;
 }
 
 @media only screen and (min-width: #{$lg_base}px) {
-	@for $num from 1 through $grid_base {
+	@for $num from 1 through $grid-columns {
 		.col-lg-#{$num} { @include grid-col-num($num); }
 	}
 

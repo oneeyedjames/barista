@@ -3,25 +3,28 @@ do ($=jQuery) ->
 		$.fn.extend
 			modal : (opts) ->
 				dialog = $ this
+				body = $ 'body'
 
 				attr =
 					class : 'overlay'
 
 				attr.class += ' dim' if opts.dim
 
-				$('.overlay').remove()
+				$ '.overlay'
+				.remove()
 
 				$ '<div>', attr
 				.appendTo 'body'
 				.click ->
-					$('body').removeClass 'no-scroll'
+					overlay = $ this
+					overlay.remove()
 					dialog.removeClass 'visible'
-					$(this).remove()
+					body.removeClass 'no-scroll'
 
-				$('body').addClass 'no-scroll'
+				body.addClass 'no-scroll'
 
-				dialog.addClass 'dim' if opts.dim
 				dialog.addClass 'visible'
+				dialog.addClass 'dim' if opts.dim
 				dialog.css 'top', '32px'
 
 				return

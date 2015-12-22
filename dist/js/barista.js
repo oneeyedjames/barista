@@ -2,8 +2,9 @@
   $(function() {
     $.fn.extend({
       modal: function(opts) {
-        var attr, dialog;
+        var attr, body, dialog;
         dialog = $(this);
+        body = $('body');
         attr = {
           "class": 'overlay'
         };
@@ -12,15 +13,17 @@
         }
         $('.overlay').remove();
         $('<div>', attr).appendTo('body').click(function() {
-          $('body').removeClass('no-scroll');
+          var overlay;
+          overlay = $(this);
+          overlay.remove();
           dialog.removeClass('visible');
-          return $(this).remove();
+          return body.removeClass('no-scroll');
         });
-        $('body').addClass('no-scroll');
+        body.addClass('no-scroll');
+        dialog.addClass('visible');
         if (opts.dim) {
           dialog.addClass('dim');
         }
-        dialog.addClass('visible');
         dialog.css('top', '32px');
       }
     });
