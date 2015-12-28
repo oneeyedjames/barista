@@ -1,6 +1,9 @@
 fs   = require 'fs'
 proc = require 'child_process'
 
+# Specify path to YUI Compressor jar
+yui = '/usr/local/jar/yuicompressor.jar'
+
 coffee_src  = 'src/coffee'
 coffee_dest = 'dist/js'
 coffee_root = 'barista'
@@ -17,45 +20,38 @@ task 'build', 'Build all source files into destination', ->
 task 'build:js', 'Build CoffeeScript files into JS', ->
 	invoke 'clean:js'
 	record 'build:js', ->
-		closure = "/usr/local/jar/closure-compiler.jar"
-
 		source = fs.readdirSync coffee_src
 		.map (file) ->
 			fs.readFileSync "#{coffee_src}/#{file}", 'utf8'
 		.join '\n'
 
-		compile = proc.spawnSync 'coffee', ['-sbp'], input: source
+		outFile = "#{coffee_dest}/#{coffee_root}.js"
+		minFile = "#{coffee_dest}/#{coffee_root}.min.js"
 
-		script = do compile.stdout.toString
+		try
+			script = proc.execSync 'coffee -sp', input: source
+			minify = proc.execSync "java -jar #{yui} --type js", input: script
 
-		fs.createWriteStream "#{coffee_dest}/#{coffee_root}.js"
-		.write script, 'utf8'
-
-		minify = proc.spawnSync "java", ['-jar', closure], input: script
-
-		minified = do minify.stdout.toString
-
-		fs.createWriteStream "#{coffee_dest}/#{coffee_root}.min.js"
-		.write minified, 'utf8'
+			fs.writeFileSync outFile, script
+			fs.writeFileSync minFile, minify
+		catch err
+			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
 task 'build:css', 'Build Sass files into CSS', ->
 	invoke 'clean:css'
 	record 'build:css', ->
-		opts = [
-			'-t expanded'
-			'--trace'
-		]
-
-		inFile = "#{sass_src}/#{sass_root}.scss"
+		inFile  = "#{sass_src}/#{sass_root}.scss"
 		outFile = "#{sass_dest}/#{sass_root}.css"
+		minFile = "#{sass_dest}/#{sass_root}.min.css"
 
-		proc.execSync "sass #{opts.join ' '} #{inFile} > #{outFile}", handle
+		try
+			css = proc.execSync "sass -t expanded --trace #{inFile}"
+			min = proc.execSync "java -jar #{yui} --type css", input: css
 
-		opts[0] = '-t compressed'
-
-		outFile = "#{sass_dest}/#{sass_root}.min.css"
-
-		proc.execSync "sass #{opts.join ' '} #{inFile} > #{outFile}", handle
+			fs.writeFileSync outFile, css
+			fs.writeFileSync minFile, min
+		catch err
+			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
 task 'clean', 'Clean all files from destination folder', ->
 	record 'clean', ->
@@ -79,14 +75,19 @@ task 'watch', 'Watch all source files for changes', ->
 	invoke 'watch:css'
 
 task 'watch:js', 'Watch CoffeeScript files for changes', ->
+	invoke 'build:js'
 	console.log "[#{new Date}] : Watching #{coffee_src} for changes ..."
 	fs.watch coffee_src, ->
 		invoke 'build:js'
 
 task 'watch:css', 'Watch Sass files for changes', ->
+	invoke 'build:css'
 	console.log "[#{new Date}] : Watching #{sass_src} for changes ..."
-	fs.watch sass_src, ->
+	csswatch = fs.watch sass_src, ->
 		invoke 'build:css'
+
+	csswatch.on 'error', (err) ->
+		console.log err
 
 record = (name, something) ->
 	starting = new Date
@@ -97,8 +98,3 @@ record = (name, something) ->
 	finished = new Date
 	ellapsed = finished.valueOf() - starting.valueOf()
 	console.log "[#{finished}] : Finished task '#{name}' in #{ellapsed} millisecond(s)"
-
-handle = (err, stdout, stderr) ->
-	console.error err if err
-	console.error stderr if stderr
-	console.log stdout if stdout

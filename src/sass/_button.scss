@@ -1,19 +1,22 @@
 @mixin btn-color($color) {
-	$lighter: lighten($color, 10%);
-	$darker:  darken($color, 10%);
+	$lighter: tint($color, 25%);
+	$darker: shade($color, 25%);
 
 	@include linear-gradient(0deg, $color, $lighter);
 
 	color: $white;
 	border-color: $darker;
 
-	text-shadow: 1px 2px $darker;
+	text-shadow: text-shadow($darker);
 
-	&:hover { box-shadow: $button-shadow, inset 0 0 6px $white; }
-	&:active { @include linear-gradient(180deg, $color, $lighter); }
+	&:hover { box-shadow: box-shadow($gray), $button-glow; }
+	&:active {
+		@include linear-gradient(180deg, $color, $lighter);
+		&:hover { box-shadow: box-shadow($gray, 2px, 1px), $button-glow; }
+	}
 }
 
-$button-shadow: 2px 3px 1px $gray;
+$button-glow: inset 0 0 6px $white;
 
 $button-margin-right: $base-spacing / 4;
 $button-margin-bottom: $base-spacing / 2;
@@ -21,18 +24,19 @@ $button-margin-bottom: $base-spacing / 2;
 .btn, #{$all-buttons} {
 	display: inline-block;
 	margin-right: $button-margin-right;
+	margin-bottom: $button-margin-bottom;
 	padding: $base-padding;
-	border-radius: $base-border-radius;
+	border-radius: $small-border-radius;
 	border: $base-border;
 	cursor: pointer;
-	box-shadow: $button-shadow;
+	box-shadow: box-shadow($gray);
 	text-decoration: none;
 	font-size: 1em;
 
-	&:active { box-shadow: 1px 2px 1px $gray; }
+	&:active { box-shadow: box-shadow($gray); }
 
 	&.sm { padding: $small-padding; border-radius: $small-border-radius; }
-	&.lg { padding: $large-padding; border-radius: $large-border-radius; }
+	&.lg { padding: $large-padding; border-radius: $small-border-radius; }
 
 	@include btn-color($gray);
 
@@ -42,11 +46,4 @@ $button-margin-bottom: $base-spacing / 2;
 	&.green  { @include btn-color($green);  }
 	&.purple { @include btn-color($purple); }
 	&.orange { @include btn-color($orange); }
-}
-
-.btn-toolbar {
-	.btn, #{$all-buttons} {
-		margin-right: $button-margin-right;
-		margin-bottom: $button-margin-bottom;
-	}
 }

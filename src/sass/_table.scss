@@ -1,59 +1,83 @@
-@import '_color';
+@mixin table-color($color, $light, $dark) {
+	$lighter: tint($color, 25%);
+	$darker: shade($color, 25%);
+
+	border-color: $darker;
+
+	thead {
+		@include linear-gradient(0deg, $color, $lighter);
+
+		th, td {
+			color: $white;
+			text-shadow: text-shadow($darker);
+		}
+	}
+
+	tbody {
+		th, td { border-color: $lighter; }
+	}
+
+	&.striped {
+		tbody {
+			tr:nth-child(even) {
+				th, td { background-color: $light; color: $dark; }
+			}
+		}
+	}
+}
 
 table {
 	width: 100%;
-	margin-bottom: 18px;
+	margin-bottom: $base-margin-bottom;
+	border-radius: $base-border-radius;
 	border-collapse: separate;
-	border-spacing: 0px;
-	border-radius: 6px;
+	border-spacing: 0;
+	border: $base-border;
+	box-shadow: box-shadow($gray);
+
+	@include table-color($gray, $light_gray, $dark_gray);
 
 	th { font-weight: bold; }
 
 	thead {
 		th, td {
-			padding: 6px 12px;
-			border-bottom: 2px solid $gray;
+			padding: $base-padding;
 			text-align: left;
 		}
 
 		tr:first-child {
-			th:first-child, td:first-child { border-radius: 6px 0px 0px 0px; }
-			th:last-child, td:last-child { border-radius: 0px 6px 0px 0px; }
+			@include border-top-radius($base-border-radius);
+			th:first-child, td:first-child { border-top-left-radius: $base-border-radius; }
+			th:last-child, td:last-child { border-top-right-radius: $base-border-radius; }
 		}
 	}
 
 	tbody {
 		th, td {
-			padding: 6px 12px;
-			border-top: 1px solid $gray;
+			border-top: $base-border;
+			padding: $base-padding;
 			text-align: left;
 		}
 
-		tr:hover {
-			th, td { background-color: darken( $white, 15% ); }
-		}
+		// tr:hover { background-color: darken( $white, 15% ); }
 
 		tr:first-child {
-			th, td { border-width: 0px; }
+			th, td { border-style: none; }
 		}
 
 		tr:last-child {
-			th:first-child, td:first-child { border-radius: 0px 0px 0px 6px; }
-			th:last-child, td:last-child { border-radius: 0px 0px 6px 0px; }
+			@include border-bottom-radius($base-border-radius);
+			th:first-child, td:first-child { border-bottom-left-radius: $base-border-radius; }
+			th:last-child, td:last-child { border-bottom-right-radius: $base-border-radius; }
 		}
 	}
 
-	&.outline { border: 1px solid $gray; }
+	&.outline { border: $base-border; }
 
-	&.striped {
-		tbody {
-			tr:nth-child(even) {
-				th, td { background-color: darken( $white, 7% );}
-
-				&:hover {
-					th, td { background-color: darken( $white, 20% ); }
-				}
-			}
-		}
-	}
+	&.blue   { @include table-color($blue,   $light_blue,   $dark_blue);   }
+	&.red    { @include table-color($red,    $light_red,    $dark_red);    }
+	&.yellow { @include table-color($yellow, $light_yellow, $dark_yellow); }
+	&.green  { @include table-color($green,  $light_green,  $dark_green);  }
+	&.purple { @include table-color($purple, $light_purple, $dark_purple); }
+	&.orange { @include table-color($orange, $light_orange, $dark_orange); }
 }

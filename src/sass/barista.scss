@@ -4,7 +4,12 @@
 @import 'dimen';
 @import 'style';
 
-html, body { font-family: $base-font-family; }
+html, body {
+	margin: 0px;
+	padding: 0px;
+	font-family: $base-font-family;
+	font-size: $em-base;
+}
 
 .wrapper { margin: 0 $base-spacing; }
 
@@ -33,4 +38,4 @@ html, body { font-family: $base-font-family; }
 @import 'grid';
 @import 'form';
 @import 'button';
-//@import 'table';
+@import 'table';

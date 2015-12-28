@@ -1,12 +1,12 @@
 @mixin card-color($color, $light, $dark) {
-	$lighter: lighten($color, 10%);
-	$darker:  darken($color, 10%);
+	$lighter: tint($color, 25%);
+	$darker: shade($color, 25%);
 
 	border-color: $darker;
 
 	header {
 		@include linear-gradient(0deg, $color, $lighter);
-		text-shadow: 1px 2px $darker;
+		text-shadow: 1px 2px 1px $darker;
 	}
 
 	footer, &.alert {
@@ -21,7 +21,7 @@
 	border-radius: $base-border-radius;
 	border: $base-border;
 	background: $white;
-	box-shadow: 2px 3px 1px $gray;
+	box-shadow: box-shadow($gray);
 
 	header {
 		background: inherit;
@@ -77,8 +77,6 @@
 
 @media only screen and (min-width: #{$screen-sm-width}px) {
 	.card.modal {
-		left: 50%;
-		margin-left: -#{$screen-sm-width / 2 - 12}px;
 		width: #{$screen-sm-width - 24}px;
 		box-sizing: border-box;
 	}
@@ -86,24 +84,14 @@
 
 @media only screen and (min-width: #{$screen-md-width}px) {
 	.card.modal {
-		margin-left: -#{$screen-md-width / 12 * 3 - 12}px;
 		width: #{$screen-md-width / 12 * 6 - 24}px;
-
-		&.wide {
-			margin-left: -#{$screen-md-width / 12 * 4 - 12}px;
-			width: #{$screen-md-width / 12 * 8 - 24}px;
-		}
+		&.wide { width: #{$screen-md-width / 12 * 8 - 24}px; }
 	}
 }
 
 @media only screen and (min-width: #{$screen-lg-width}px) {
 	.card.modal {
-		margin-left: -#{$screen-lg-width / 12 * 2 - 12}px;
 		width: #{$screen-lg-width / 12 * 4 - 24}px;
-
-		&.wide {
-			margin-left: -#{$screen-lg-width / 12 * 4 - 12}px;
-			width: #{$screen-lg-width / 12 * 8 - 24}px;
-		}
+		&.wide { width: #{$screen-lg-width / 12 * 8 - 24}px; }
 	}
 }

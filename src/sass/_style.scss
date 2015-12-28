@@ -16,8 +16,28 @@ $base-spacing: .75em;
 
 $base-padding: ($base-spacing / 2) $base-spacing;
 $small-padding: ($base-spacing / 4) ($base-spacing / 2);
-$large-padding: $base-spacing ($base-spacing * 2);
-
-$base-font-family: $helvetica;
+$large-padding: $base-spacing ($base-spacing * 1.5);
 
 $base-margin-bottom: $base-spacing;
+
+
+$base-shadow-top:    3px !default;
+$base-shadow-left:   2px !default;
+$base-shadow-blur:   1px !default;
+$base-shadow-spread: 0px !default;
+
+@function box-shadow($color, $top: $base-shadow-top, $left: $base-shadow-left, $blur: $base-shadow-blur, $spread: $base-shadow-spread) {
+	@return $left $top $blur $spread $color;
+}
+
+$text-shadow-top:  2px !default;
+$text-shadow-left: 1px !default;
+$text-shadow-blur: 1px !default;
+
+@function text-shadow($color, $top: $text-shadow-top, $left: $text-shadow-left, $blur: $text-shadow-blur) {
+	@return $left $top $blur $color;
+}
+
+
+
+$base-font-family: $helvetica;

@@ -1,6 +1,17 @@
-(function($) {
-  $(function() {
+(function() {
+  jQuery(function($) {
     $.fn.extend({
+      center: function() {
+        var element, hOffset, vOffset, viewport;
+        viewport = $(window);
+        element = $(this);
+        vOffset = (viewport.height() - element.outerHeight()) / 2;
+        hOffset = (viewport.width() - element.outerWidth()) / 2;
+        element.css({
+          'top': vOffset + "px",
+          'left': hOffset + "px"
+        });
+      },
       modal: function(opts) {
         var attr, body, dialog;
         dialog = $(this);
@@ -24,7 +35,10 @@
         if (opts.dim) {
           dialog.addClass('dim');
         }
-        dialog.css('top', '32px');
+        dialog.center();
+        $(window).resize(function() {
+          return dialog.center();
+        });
       }
     });
     $('*[data-action="modal"]').click(function(event) {
@@ -37,4 +51,5 @@
       return event.preventDefault();
     });
   });
-})(jQuery);
+
+}).call(this);

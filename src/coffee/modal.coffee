@@ -1,43 +1,59 @@
-do ($=jQuery) ->
-	$ ->
-		$.fn.extend
-			modal : (opts) ->
-				dialog = $ this
-				body = $ 'body'
+jQuery ($) ->
+	$.fn.extend
+		center : ->
+			viewport = $ window
+			element = $ this
 
-				attr =
-					class : 'overlay'
+			vOffset = ( viewport.height() - element.outerHeight() ) / 2
+			hOffset = ( viewport.width() - element.outerWidth() ) / 2
 
-				attr.class += ' dim' if opts.dim
+			element.css
+				'top'  : "#{vOffset}px"
+				'left' : "#{hOffset}px"
 
-				$ '.overlay'
-				.remove()
+			return
 
-				$ '<div>', attr
-				.appendTo 'body'
-				.click ->
-					overlay = $ this
-					overlay.remove()
-					dialog.removeClass 'visible'
-					body.removeClass 'no-scroll'
+		modal : (opts) ->
+			dialog = $ this
+			body = $ 'body'
 
-				body.addClass 'no-scroll'
+			attr =
+				class : 'overlay'
 
-				dialog.addClass 'visible'
-				dialog.addClass 'dim' if opts.dim
-				dialog.css 'top', '32px'
+			attr.class += ' dim' if opts.dim
 
-				return
+			$ '.overlay'
+			.remove()
 
-		$ '*[data-action="modal"]'
-		.click (event) ->
-			button = $ this
-			target = button.data 'target'
+			$ '<div>', attr
+			.appendTo 'body'
+			.click ->
+				overlay = $ this
+				overlay.remove()
+				dialog.removeClass 'visible'
+				body.removeClass 'no-scroll'
 
-			$(target).modal
-				dim : button.data 'dim'
+			body.addClass 'no-scroll'
 
-			event.preventDefault()
+			dialog.addClass 'visible'
+			dialog.addClass 'dim' if opts.dim
 
-		return
+			do dialog.center
+
+			$ window
+			.resize ->
+				do dialog.center
+
+			return
+
+	$ '*[data-action="modal"]'
+	.click (event) ->
+		button = $ this
+		target = button.data 'target'
+
+		$(target).modal
+			dim : button.data 'dim'
+
+		event.preventDefault()
+
 	return
