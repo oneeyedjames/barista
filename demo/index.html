@@ -8,402 +8,398 @@
 
 		<link rel="stylesheet" href="../dist/css/barista.css">
 		<script src="../dist/js/barista.js"></script>
+
+		<style type="text/css">
+			.section { border-bottom: 1px solid #999; }
+		</style>
 	</head>
 	<body>
-		<div class="wrapper">
-			<h1>Heading 1 <small>small text</small></h1>
-			<h2>Heading 2 <small>small text</small></h2>
-			<h3>Heading 3 <small>small text</small></h3>
-			<h4>Heading 4 <small>small text</small></h4>
-			<h5>Heading 5 <small>small text</small></h5>
-			<h6>Heading 6 <small>small text</small></h6>
-			<p class="lead">Lead Text <small>small text</small></p>
-			<p>Normal Text <small>small text</small></p>
-			<br>
-			<div>
-				<span class="lbl sm">Small</span>
+		<article class="wrapper">
+			<ul class="inline tabs menu">
+				<li><a href="#typography">Typography</a></li>
+				<li><a href="#labels">Labels</a></li>
+				<li><a href="#buttons">Buttons</a></li>
+				<li><a href="#cards">Cards</a></li>
+				<li><a href="#tables">Tables</a></li>
+				<li><a href="#forms">Forms</a></li>
+				<li><a href="#menus">Menus</a></li>
+			</ul>
+			<section id="typography">
+				<h3 class="section">Typography</h3>
+				<h1>Heading 1 <small>small text</small></h1>
+				<h2>Heading 2 <small>small text</small></h2>
+				<h3>Heading 3 <small>small text</small></h3>
+				<h4>Heading 4 <small>small text</small></h4>
+				<h5>Heading 5 <small>small text</small></h5>
+				<h6>Heading 6 <small>small text</small></h6>
+				<p class="lead">Lead Text <small>small text</small></p>
+				<p>Normal Text <small>small text</small></p>
+				<p><a href="#">Hyperlink</a></p>
+			</section>
+			<section id="labels">
+				<h3 class="section">Labels</h3>
 				<span class="lbl">Label</span>
-				<span class="lbl lg">Large</span>
-			</div>
-			<br>
-			<div>
 				<span class="lbl blue">Blue</span>
 				<span class="lbl red">Red</span>
 				<span class="lbl yellow">Yellow</span>
 				<span class="lbl green">Green</span>
 				<span class="lbl purple">Purple</span>
 				<span class="lbl orange">Orange</span>
-			</div>
-			<br>
-			<div>
-				<a class="btn sm">Small</a>
-				<a class="btn">Button</a>
-				<a class="btn lg">Large</a>
-			</div>
-			<br>
-			<div>
-				<a class="btn blue" data-target="#modal-blue" data-action="modal">Blue</a>
-				<a class="btn red" data-target="#modal-red" data-action="modal" data-dim="true">Red</a>
-				<a class="btn yellow" data-target="#modal-yellow" data-action="modal" data-dim="true">Yellow</a>
-				<a class="btn green" data-target="#modal-green" data-action="modal" data-dim="true">Green</a>
-				<a class="btn purple" data-target="#modal-purple" data-action="modal" data-dim="true">Purple</a>
-				<a class="btn orange" data-target="#modal-orange" data-action="modal" data-dim="true">Orange</a>
-			</div>
-			<br>
-			<div class="card">
-				<header>Card Title</header>
-				Card Content
-				<footer>Footer</footer>
-			</div>
-			<div class="row">
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card blue">
-						<header>Card Title</header>
-						Card Content
-						<footer>Footer</footer>
+				<br><span class="lbl lg">Large</span>
+				<br><span class="lbl sm">Small</span>
+			</section>
+			<section id="buttons">
+				<h3 class="section">Buttons</h3>
+				<a class="btn" data-target="#modal-card" data-action="modal">Button</a>
+				<a class="btn blue">Blue</a>
+				<a class="btn red">Red</a>
+				<a class="btn yellow">Yellow</a>
+				<a class="btn green">Green</a>
+				<a class="btn purple">Purple</a>
+				<a class="btn orange">Orange</a>
+				<br><a class="btn lg" data-target="#modal-card" data-action="modal" data-dim="true">Large</a>
+				<br><a class="btn sm" data-target="#modal-card" data-action="modal" data-alert="true">Small</a>
+			</section>
+			<section id="cards">
+				<h3 class="section">Cards</h3>
+				<div class="row" id="cards">
+					<div class="col-xs-12">
+						<div class="card">
+							<header>Generic Card</header>
+							Card Content
+							<footer>Footer</footer>
+						</div>
+						<div class="card alert">Alert Card</div>
+					</div>
+					<div class="col-xs-6 col-md-4 col-lg-2">
+						<div class="card blue">
+							<header>Blue Card</header>
+							Content
+							<footer>Footer</footer>
+						</div>
+						<div class="card blue alert">Blue Alert</div>
+					</div>
+					<div class="col-xs-6 col-md-4 col-lg-2">
+						<div class="card red">
+							<header>Red Card</header>
+							Content
+							<footer>Footer</footer>
+						</div>
+						<div class="card red alert">Red Alert</div>
+					</div>
+					<div class="col-xs-6 col-md-4 col-lg-2">
+						<div class="card yellow">
+							<header>Yellow Card</header>
+							Content
+							<footer>Footer</footer>
+						</div>
+						<div class="card yellow alert">Yellow Alert</div>
+					</div>
+					<div class="col-xs-6 col-md-4 col-lg-2">
+						<div class="card green">
+							<header>Green Card</header>
+							Content
+							<footer>Footer</footer>
+						</div>
+						<div class="card green alert">Green Alert</div>
+					</div>
+					<div class="col-xs-6 col-md-4 col-lg-2">
+						<div class="card purple">
+							<header>Purple Card</header>
+							Content
+							<footer>Footer</footer>
+						</div>
+						<div class="card purple alert">Purple Alert</div>
+					</div>
+					<div class="col-xs-6 col-md-4 col-lg-2">
+						<div class="card orange">
+							<header>Orange Card</header>
+							Content
+							<footer>Footer</footer>
+						</div>
+						<div class="card orange alert">Orange Alert</div>
 					</div>
 				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card red">
-						<header>Card Title</header>
-						Card Content
-						<footer>Footer</footer>
+			</section>
+			<section id="tables">
+				<h3 class="section">Tables</h3>
+				<div class="row" id="tables">
+					<div class="col-xs-12">
+						<table class="striped">
+							<thead>
+								<tr>
+									<th>Column Header</th>
+									<th>Column Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-xs-12 col-md-6 col-lg-4">
+						<table class="striped blue">
+							<thead>
+								<tr>
+									<th>Column Header</th>
+									<th>Column Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-xs-12 col-md-6 col-lg-4">
+						<table class="striped red">
+							<thead>
+								<tr>
+									<th>Column Header</th>
+									<th>Column Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-xs-12 col-md-6 col-lg-4">
+						<table class="striped yellow">
+							<thead>
+								<tr>
+									<th>Column Header</th>
+									<th>Column Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-xs-12 col-md-6 col-lg-4">
+						<table class="striped green">
+							<thead>
+								<tr>
+									<th>Column Header</th>
+									<th>Column Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-xs-12 col-md-6 col-lg-4">
+						<table class="striped purple">
+							<thead>
+								<tr>
+									<th>Column Header</th>
+									<th>Column Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-xs-12 col-md-6 col-lg-4">
+						<table class="striped orange">
+							<thead>
+								<tr>
+									<th>Column Header</th>
+									<th>Column Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+								<tr>
+									<td>Cell</td>
+									<td>Cell</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card yellow">
-						<header>Card Title</header>
-						Card Content
-						<footer>Footer</footer>
+			</section>
+			<section id="forms">
+				<h3 class="section">Forms</h3>
+				<form class="row" id="forms">
+					<div class="col-xs-12 col-md-4">
+						<label>Input</label>
+						<input type="text">
 					</div>
-				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card green">
-						<header>Card Title</header>
-						Card Content
-						<footer>Footer</footer>
+					<div class="col-xs-12 col-md-4">
+						<label>Textarea</label>
+						<textarea rows="1"></textarea>
 					</div>
-				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card purple">
-						<header>Card Title</header>
-						Card Content
-						<footer>Footer</footer>
+					<div class="col-xs-12 col-md-4">
+						<label>Select</label>
+						<select></select>
 					</div>
-				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card orange">
-						<header>Card Title</header>
-						Card Content
-						<footer>Footer</footer>
+					<div class="col-xs-12 col-sm-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox">
+								<span>Checkbox</span>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span>Checkbox</span>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span>Checkbox</span>
+							</label>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="card alert">Alert Card</div>
-			<div class="row">
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card alert blue">Blue Alert</div>
-				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card alert red">Red Alert</div>
-				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card alert yellow">Yellow Alert</div>
-				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card alert green">Green Alert</div>
-				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card alert purple">Purple Alert</div>
-				</div>
-				<div class="col-xs-6 col-md-4 col-lg-2">
-					<div class="card alert orange">Orange Alert</div>
-				</div>
-			</div>
-			<form class="row">
-				<div class="col-xs-12 col-md-4">
-					<label>Input</label>
-					<input type="text">
-				</div>
-				<div class="col-xs-12 col-md-4">
-					<label>Textarea</label>
-					<textarea rows="1"></textarea>
-				</div>
-				<div class="col-xs-12 col-md-4">
-					<label>Select</label>
-					<select></select>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<div class="checkbox">
-						<label>
-							<input type="checkbox">
-							<span>Checkbox</span>
-						</label>
-						<label>
-							<input type="checkbox">
-							<span>Checkbox</span>
-						</label>
-						<label>
-							<input type="checkbox">
-							<span>Checkbox</span>
-						</label>
+					<div class="col-xs-12 col-sm-6">
+						<div class="radio">
+							<label>
+								<input type="radio">
+								<span>Radio</span>
+							</label>
+							<label>
+								<input type="radio">
+								<span>Radio</span>
+							</label>
+							<label>
+								<input type="radio">
+								<span>Radio</span>
+							</label>
+						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<div class="radio">
-						<label>
-							<input type="radio">
-							<span>Radio</span>
-						</label>
-						<label>
-							<input type="radio">
-							<span>Radio</span>
-						</label>
-						<label>
-							<input type="radio">
-							<span>Radio</span>
-						</label>
+					<div class="col-xs-12 col-sm-6">
+						<div class="checkbox inline">
+							<label>
+								<input type="checkbox">
+								<span>Checkbox</span>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span>Checkbox</span>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span>Checkbox</span>
+							</label>
+						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<div class="checkbox inline">
-						<label>
-							<input type="checkbox">
-							<span>Checkbox</span>
-						</label>
-						<label>
-							<input type="checkbox">
-							<span>Checkbox</span>
-						</label>
-						<label>
-							<input type="checkbox">
-							<span>Checkbox</span>
-						</label>
+					<div class="col-xs-12 col-sm-6">
+						<div class="radio inline">
+							<label>
+								<input type="radio">
+								<span>Radio</span>
+							</label>
+							<label>
+								<input type="radio">
+								<span>Radio</span>
+							</label>
+							<label>
+								<input type="radio">
+								<span>Radio</span>
+							</label>
+						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<div class="radio inline">
-						<label>
-							<input type="radio">
-							<span>Radio</span>
-						</label>
-						<label>
-							<input type="radio">
-							<span>Radio</span>
-						</label>
-						<label>
-							<input type="radio">
-							<span>Radio</span>
-						</label>
+					<div class="col-xs-12">
+						<button>Button</button>
+						<input type="button" value="Input [Button]">
+						<input type="submit" value="Input [Submit]">
+						<input type="reset" value="Input [Reset]">
 					</div>
-				</div>
-				<div class="col-xs-12">
-					<button>Button</button>
-					<input type="button" value="Input [Button]">
-					<input type="submit" value="Input [Submit]">
-					<input type="reset" value="Input [Reset]">
-				</div>
-			</form>
-			<br>
-			<div class="row">
-				<div class="col-xs-12">
-					<table class="striped">
-						<thead>
-							<tr>
-								<th>Column Header</th>
-								<th>Column Header</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<table class="striped blue">
-						<thead>
-							<tr>
-								<th>Column Header</th>
-								<th>Column Header</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<table class="striped red">
-						<thead>
-							<tr>
-								<th>Column Header</th>
-								<th>Column Header</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<table class="striped yellow">
-						<thead>
-							<tr>
-								<th>Column Header</th>
-								<th>Column Header</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<table class="striped green">
-						<thead>
-							<tr>
-								<th>Column Header</th>
-								<th>Column Header</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<table class="striped purple">
-						<thead>
-							<tr>
-								<th>Column Header</th>
-								<th>Column Header</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<table class="striped orange">
-						<thead>
-							<tr>
-								<th>Column Header</th>
-								<th>Column Header</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-							<tr>
-								<td>Cell</td>
-								<td>Cell</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="card modal blue" id="modal-blue">
-			<header>Modal Dialog</header>
-			Modal Content
-			<footer>Footer</footer>
-		</div>
-		<div class="card modal red alert" id="modal-red">
-			<header>Modal Dialog</header>
-			Modal Content
-			<footer>Footer</footer>
-		</div>
-		<div class="card modal yellow" id="modal-yellow">
-			<header>Modal Dialog</header>
-			Modal Content
-			<footer>Footer</footer>
-		</div>
-		<div class="card modal green" id="modal-green">
-			<header>Modal Dialog</header>
-			Modal Content
-			<footer>Footer</footer>
-		</div>
-		<div class="card modal purple" id="modal-purple">
-			<header>Modal Dialog</header>
-			Modal Content
-			<footer>Footer</footer>
-		</div>
-		<div class="card modal orange" id="modal-orange">
-			<header>Modal Dialog</header>
-			Modal Content
+				</form>
+			</section>
+			<section id="menus">
+				<h3 class="section">Menus</h3>
+				<ul class="menu">
+					<li><a href="#">Menu Item</a></li>
+					<li class="active"><a href="#">Menu Item</a></li>
+					<li><a href="#">Menu Item</a></li>
+					<li><a href="#">Menu Item</a></li>
+				</ul>
+				<ul class="inline menu">
+					<li><a href="#">Menu Item</a></li>
+					<li><a href="#">Menu Item</a></li>
+					<li><a href="#">Menu Item</a></li>
+					<li><a href="#">Menu Item</a></li>
+				</ul>
+			</section>
+		</article>
+		<div class="card modal" id="modal-card">
+			<header>Modal Card</header>
+			Content
 			<footer>Footer</footer>
 		</div>
 	</body>

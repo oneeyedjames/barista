@@ -7,8 +7,9 @@
 html, body {
 	margin: 0px;
 	padding: 0px;
+	font-size: $base-font-size;
 	font-family: $base-font-family;
-	font-size: $em-base;
+	font-weight: $base-font-weight;
 }
 
 .wrapper { margin: 0 $base-spacing; }
@@ -34,8 +35,10 @@ html, body {
 }
 
 @import 'text';
-@import 'card';
-@import 'grid';
 @import 'form';
-@import 'button';
 @import 'table';
+
+@import 'card';
+@import 'menu';
+@import 'grid';
+@import 'button';

@@ -14,11 +14,11 @@ $base-border: $base-border-width $base-border-style $base-border-color;
 
 $base-spacing: .75em;
 
+$base-margin-bottom: $base-spacing;
+
 $base-padding: ($base-spacing / 2) $base-spacing;
 $small-padding: ($base-spacing / 4) ($base-spacing / 2);
 $large-padding: $base-spacing ($base-spacing * 1.5);
-
-$base-margin-bottom: $base-spacing;
 
 
 $base-shadow-top:    3px !default;
@@ -39,5 +39,9 @@ $text-shadow-blur: 1px !default;
 }
 
 
-
+$base-font-size: $em-base;
 $base-font-family: $helvetica;
+$base-font-weight: normal;
+
+$semi-bold: 500;
+$light: 300;

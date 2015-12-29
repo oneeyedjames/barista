@@ -11,8 +11,6 @@ jQuery ($) ->
 				'top'  : "#{vOffset}px"
 				'left' : "#{hOffset}px"
 
-			return
-
 		modal : (opts) ->
 			dialog = $ this
 			body = $ 'body'
@@ -29,31 +27,33 @@ jQuery ($) ->
 			.appendTo 'body'
 			.click ->
 				overlay = $ this
-				overlay.remove()
+				do overlay.remove
 				dialog.removeClass 'visible'
 				body.removeClass 'no-scroll'
 
 			body.addClass 'no-scroll'
 
 			dialog.addClass 'visible'
-			dialog.addClass 'dim' if opts.dim
-
-			do dialog.center
+			dialog.toggleClass 'dim', opts.dim
+			dialog.toggleClass 'alert', opts.alert
 
 			$ window
 			.resize ->
 				do dialog.center
 
-			return
+			do dialog.center
 
 	$ '*[data-action="modal"]'
 	.click (event) ->
+		do event.preventDefault
+
 		button = $ this
 		target = button.data 'target'
 
-		$(target).modal
-			dim : button.data 'dim'
+		data = button.data()
+		data.alert ?= false
+		data.dim   ?= false
 
-		event.preventDefault()
+		$(target).modal data
 
 	return

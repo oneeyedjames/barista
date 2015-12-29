@@ -49,14 +49,18 @@
 		&.dim { box-shadow: none; }
 	}
 
-	@include card-color($gray, $light_gray, $dark_gray);
+	&.alert {
+		header, footer { display: none; }
+	}
 
-	&.blue   { @include card-color($blue,   $light_blue,   $dark_blue);   }
-	&.red    { @include card-color($red,    $light_red,    $dark_red);    }
-	&.yellow { @include card-color($yellow, $light_yellow, $dark_yellow); }
-	&.green  { @include card-color($green,  $light_green,  $dark_green);  }
-	&.purple { @include card-color($purple, $light_purple, $dark_purple); }
-	&.orange { @include card-color($orange, $light_orange, $dark_orange); }
+	@include card-color($gray, $light-gray, $dark-gray);
+
+	&.blue   { @include card-color($blue,   $light-blue,   $dark-blue);   }
+	&.red    { @include card-color($red,    $light-red,    $dark-red);    }
+	&.yellow { @include card-color($yellow, $light-yellow, $dark-yellow); }
+	&.green  { @include card-color($green,  $light-green,  $dark-green);  }
+	&.purple { @include card-color($purple, $light-purple, $dark-purple); }
+	&.orange { @include card-color($orange, $light-orange, $dark-orange); }
 }
 
 .overlay {

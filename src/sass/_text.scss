@@ -1,40 +1,51 @@
-h1, h2, h3, h4, h5, h6 { margin: .75em 0 .25em; }
+h1, h2, h3, h4, h5, h6 {
+	margin: .75em 0 .25em;
+	font-weight: $semi-bold;
+}
 
 @for $num from 1 through 6 {
-	h#{$num} { font-size: modular-scale(6 - $num); }
+	h#{$num} { font-size: modular-scale(6 - $num, 1em, $minor-third); }
 }
 
 .lead {
-	font-size: modular-scale(1);
-	font-weight: 300;
+	font-size: modular-scale(2, 1em, $minor-third);
+	font-weight: $light;
 }
 
 small, .small {
 	color: $gray;
-	font-style: italic;
-	font-weight: normal;
 	font-size: modular-scale(-1);
+	font-weight: normal;
 	line-height: inherit;
 }
 
+a {
+	color: $blue;
+	text-decoration: underline;
+
+	&:visited { color: $purple; }
+}
+
 .txt {
-	&.blue   { color: $dark_blue;   background-color: $light_blue;   }
-	&.red    { color: $dark_red;    background-color: $light_red;    }
-	&.yellow { color: $dark_yellow; background-color: $light_yellow; }
-	&.green  { color: $dark_green;  background-color: $light_green;  }
-	&.purple { color: $dark_purple; background-color: $light_purple; }
-	&.orange { color: $dark_orange; background-color: $light_orange; }
+	&.blue   { color: $dark-blue;   background-color: $light-blue;   }
+	&.red    { color: $dark-red;    background-color: $light-red;    }
+	&.yellow { color: $dark-yellow; background-color: $light-yellow; }
+	&.green  { color: $dark-green;  background-color: $light-green;  }
+	&.purple { color: $dark-purple; background-color: $light-purple; }
+	&.orange { color: $dark-orange; background-color: $light-orange; }
 }
 
 .lbl {
 	display: inline-block;
+	margin-bottom: $base-spacing / 4;
 	padding: $base-padding;
 	border-radius: $base-border-radius;
 	background-color: $gray;
 	color: $white;
+	font-weight: $semi-bold;
 
-	&.sm { padding: $small-padding; border-radius: $small-border-radius; }
-	&.lg { padding: $large-padding; border-radius: $large-border-radius; }
+	&.sm { padding: $small-padding; border-radius: $base-border-radius; }
+	&.lg { padding: $large-padding; border-radius: $base-border-radius; }
 
 	&.blue   { background-color: $blue;   }
 	&.red    { background-color: $red;    }

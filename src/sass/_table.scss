@@ -21,6 +21,10 @@
 		tbody {
 			tr:nth-child(even) {
 				th, td { background-color: $light; color: $dark; }
+
+				&:hover {
+					th, td { background-color: shade($light, 15%); }
+				}
 			}
 		}
 	}
@@ -35,11 +39,11 @@ table {
 	border: $base-border;
 	box-shadow: box-shadow($gray);
 
-	@include table-color($gray, $light_gray, $dark_gray);
-
-	th { font-weight: bold; }
+	@include table-color($gray, $light-gray, $dark-gray);
 
 	thead {
+		th { font-weight: normal; }
+
 		th, td {
 			padding: $base-padding;
 			text-align: left;
@@ -53,13 +57,17 @@ table {
 	}
 
 	tbody {
+		th { font-weight: $semi-bold; }
+
 		th, td {
 			border-top: $base-border;
 			padding: $base-padding;
 			text-align: left;
 		}
 
-		// tr:hover { background-color: darken( $white, 15% ); }
+		tr:hover {
+			th, td { background-color: shade( $white, 15% ); }
+		}
 
 		tr:first-child {
 			th, td { border-style: none; }
@@ -74,10 +82,10 @@ table {
 
 	&.outline { border: $base-border; }
 
-	&.blue   { @include table-color($blue,   $light_blue,   $dark_blue);   }
-	&.red    { @include table-color($red,    $light_red,    $dark_red);    }
-	&.yellow { @include table-color($yellow, $light_yellow, $dark_yellow); }
-	&.green  { @include table-color($green,  $light_green,  $dark_green);  }
-	&.purple { @include table-color($purple, $light_purple, $dark_purple); }
-	&.orange { @include table-color($orange, $light_orange, $dark_orange); }
+	&.blue   { @include table-color($blue,   $light-blue,   $dark-blue);   }
+	&.red    { @include table-color($red,    $light-red,    $dark-red);    }
+	&.yellow { @include table-color($yellow, $light-yellow, $dark-yellow); }
+	&.green  { @include table-color($green,  $light-green,  $dark-green);  }
+	&.purple { @include table-color($purple, $light-purple, $dark-purple); }
+	&.orange { @include table-color($orange, $light-orange, $dark-orange); }
 }
