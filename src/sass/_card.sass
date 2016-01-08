@@ -1,0 +1,109 @@
+=card-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	border-color: $darker
+
+	header
+		+linear-gradient(0deg, $color, $lighter)
+
+		text-shadow: 1px 2px 1px $darker
+
+	footer, &.alert
+		background-color: $light
+		color: $dark
+
+=card-width($screen, $cols, $margin: 12)
+	width: #{$screen / 12 * $cols - $margin * 2}px
+
+.card
+	margin-bottom: $base-margin-bottom
+	padding: $base-padding
+	border-radius: $base-border-radius
+	border: $base-border
+	background: $white
+	box-shadow: box-shadow($gray)
+
+	header
+		background: inherit
+		margin: (-$base-spacing / 2) (-$base-spacing) ($base-spacing / 2)
+		padding: $base-padding
+		color: $white
+
+		+border-top-radius($base-border-radius)
+
+	footer
+		margin: 6px -12px -6px
+		padding: 6px 12px
+		border-radius: 0px 0px 6px 6px
+
+	&.modal
+		visibility: hidden
+		position: fixed
+		z-index: 101
+		left: 12px
+		right: 12px
+
+		&.visible
+			visibility: visible
+
+		&.dim
+			box-shadow: none
+
+	&.alert
+		header, footer
+			display: none
+
+	+card-color($gray, $light-gray, $dark-gray)
+
+	&.blue
+		+card-color($blue, $light-blue, $dark-blue)
+
+	&.red
+		+card-color($red, $light-red, $dark-red)
+
+	&.yellow
+		+card-color($yellow, $light-yellow, $dark-yellow)
+
+	&.green
+		+card-color($green, $light-green, $dark-green)
+
+	&.purple
+		+card-color($purple, $light-purple, $dark-purple)
+
+	&.orange
+		+card-color($orange, $light-orange, $dark-orange)
+
+.overlay
+	position: fixed
+	top: 0px
+	left: 0px
+	width: 100%
+	height: 100%
+	z-index: 100
+
+	&.dim
+		background: rgba(63, 63, 63, 0.75)
+
+.no-scroll
+	height: 100%
+	overflow: hidden
+
++screen-width($screen-sm-width)
+	.card.modal
+		+card-width($screen-sm-width, 12)
+		box-sizing: border-box
+
++screen-width($screen-md-width)
+	.card.modal
+		+card-width($screen-md-width, 6)
+
+		&.wide
+			+card-width($screen-md-width, 8)
+
++screen-width($screen-lg-width)
+	.card.modal
+		+card-width($screen-md-width, 4)
+
+		&.wide
+			+card-width($screen-md-width, 8)

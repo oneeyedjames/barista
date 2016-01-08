@@ -1,0 +1,37 @@
+.row
+	+clearfix
+	margin: 0px (-$base-spacing)
+
+$all-cols: ()
+
+$sizes: xs sm md lg
+
+@each $size in $sizes
+	@for $num from 1 through $grid-columns
+		$all-cols: append($all-cols, ".col-#{$size}-#{$num}", comma)
+
+#{$all-cols}
+	position: relative
+	float: left
+	width: 100%
+	padding: 0 $base-spacing
+	box-sizing: border-box
+
+@for $num from 1 through $grid-columns
+	.col-xs-#{$num}
+		width: percentage($num / $grid-columns)
+
++screen-width($screen-sm-width)
+	@for $num from 1 through $grid-columns
+		.col-sm-#{$num}
+			width: percentage($num / $grid-columns)
+
++screen-width($screen-md-width)
+	@for $num from 1 through $grid-columns
+		.col-md-#{$num}
+			width: percentage($num / $grid-columns)
+
++screen-width($screen-lg-width)
+	@for $num from 1 through $grid-columns
+		.col-lg-#{$num}
+			width: percentage($num / $grid-columns)

@@ -1,47 +1,43 @@
-jQuery ($) ->
-	console.log location
-
-	$.fn.extend
-		refreshTabs : ->
-			$ this
-			.find 'li a'
+$.fn.extend
+	refreshTabs : ->
+		$ this
+		.children 'li'
+		.each ->
+			tab = $ this
+			tab.children 'a'
 			.each ->
-				button = $ this
-				tab = do button.parent
-				target = this.hash
-
-				$ target
+				$ this.hash
 				.toggle tab.hasClass 'active'
 
-	$('.menu').each ->
-		menu = $ this
-		active = menu.children 'li.active'
-		hashed = menu.find "a[href='#{location.hash}']"
+$ '.menu'
+.each ->
+	menu = $ this
 
-		if active.length
-			active.removeClass 'active'
-			active.first().addClass 'active'
-		else if hashed.length and menu.hasClass 'tabs'
-			hashed.first().parent().addClass 'active'
-		else
-			menu.children 'li:first'
-			.addClass 'active'
+	active = menu.children 'li.active'
+	hashed = menu.children 'li'
+	.children "a[href='#{location.hash}']"
 
-		if menu.hasClass 'tabs'
-			do menu.refreshTabs
+	if active.length
+		active.removeClass 'active'
+		active.first().addClass 'active'
+	else if hashed.length and menu.hasClass 'tabs'
+		hashed.first().parent().addClass 'active'
+	else
+		menu.children 'li:first'
+		.addClass 'active'
 
-			menu.find 'li a'
+	if menu.hasClass 'tabs'
+		menu.children 'li'
+		.each ->
+			tab = $ this
+			tab.children 'a'
 			.click (event) ->
-				do event.preventDefault
-
-				tab = $ this
-					.parent()
-
 				tab.siblings 'li'
 				.removeClass 'active'
 
 				tab.addClass 'active'
 
 				do menu.refreshTabs
+				do event.preventDefault
 
-	return
+		do menu.refreshTabs

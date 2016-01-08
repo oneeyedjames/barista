@@ -1,6 +1,8 @@
-@mixin btn-color($color) {
+@mixin btn-color($color, $light) {
 	$lighter: tint($color, 25%);
 	$darker: shade($color, 25%);
+
+	$button-glow: inset 0 0 6px 2px $light;
 
 	@include linear-gradient(0deg, $color, $lighter);
 
@@ -11,12 +13,11 @@
 
 	&:hover { box-shadow: box-shadow($gray), $button-glow; }
 	&:active {
+		text-shadow: text-shadow($darker, -$text-shadow-top);
 		@include linear-gradient(180deg, $color, $lighter);
 		&:hover { box-shadow: box-shadow($gray, 2px, 1px), $button-glow; }
 	}
 }
-
-$button-glow: inset 0 0 6px $white;
 
 $button-margin-right: $base-spacing / 4;
 $button-margin-bottom: $base-spacing / 2;
@@ -31,19 +32,19 @@ $button-margin-bottom: $base-spacing / 2;
 	cursor: pointer;
 	box-shadow: box-shadow($gray);
 	text-decoration: none;
-	font-size: 1em;
+	font-size: $base-font-size;
 
 	&:active { box-shadow: box-shadow($gray); }
 
 	&.sm { padding: $small-padding; border-radius: $small-border-radius; }
 	&.lg { padding: $large-padding; border-radius: $small-border-radius; }
 
-	@include btn-color($gray);
+	@include btn-color($gray, $light-gray);
 
-	&.blue   { @include btn-color($blue);   }
-	&.red    { @include btn-color($red);    }
-	&.yellow { @include btn-color($yellow); }
-	&.green  { @include btn-color($green);  }
-	&.purple { @include btn-color($purple); }
-	&.orange { @include btn-color($orange); }
+	&.blue   { @include btn-color($blue,   $light-blue);   }
+	&.red    { @include btn-color($red,    $light-red);    }
+	&.yellow { @include btn-color($yellow, $light-yellow); }
+	&.green  { @include btn-color($green,  $light-green);  }
+	&.purple { @include btn-color($purple, $light-purple); }
+	&.orange { @include btn-color($orange, $light-orange); }
 }

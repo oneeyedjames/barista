@@ -1,0 +1,68 @@
+=btn-color($color, $light)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	$button-glow: inset 0 0 6px 2px $light
+
+	+linear-gradient(0deg, $color, $lighter)
+
+	color: $white
+	border-color: $darker
+	text-shadow: text-shadow($darker)
+
+	&:hover
+		box-shadow: box-shadow($gray), $button-glow
+
+	&:active
+		text-shadow: text-shadow($darker, -$text-shadow-top)
+
+		+linear-gradient(180deg, $color, $lighter)
+
+		&:hover
+			box-shadow: box-shadow($gray, 2px, 1px), $button-glow
+
+$button-margin-right: $base-spacing / 4
+$button-margin-bottom: $base-spacing / 2
+
+.btn, #{$all-buttons}
+	display: inline-block
+	margin-right: $button-margin-right
+	margin-bottom: $button-margin-bottom
+	padding: $base-padding
+	border-radius: $small-border-radius
+	border: $base-border
+	cursor: pointer
+	box-shadow: box-shadow($gray)
+	text-decoration: none
+	font-size: $base-font-size
+
+	&:active
+		box-shadow: box-shadow($gray)
+
+	&.sm
+		padding: $small-padding
+		border-radius: $small-border-radius
+
+	&.lg
+		padding: $large-padding
+		border-radius: $small-border-radius
+
+	+btn-color($gray, $light-gray)
+
+	&.blue
+		+btn-color($blue, $light-blue)
+
+	&.red
+		+btn-color($red, $light-red)
+
+	&.yellow
+		+btn-color($yellow, $light-yellow)
+
+	&.green
+		+btn-color($green, $light-green)
+
+	&.purple
+		+btn-color($purple, $light-purple)
+
+	&.orange
+		+btn-color($orange, $light-orange)

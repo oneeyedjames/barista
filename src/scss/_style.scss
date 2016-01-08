@@ -30,9 +30,9 @@ $base-shadow-spread: 0px !default;
 	@return $left $top $blur $spread $color;
 }
 
-$text-shadow-top:  2px !default;
-$text-shadow-left: 1px !default;
-$text-shadow-blur: 1px !default;
+$text-shadow-top:  -1px !default;
+$text-shadow-left: 0px !default;
+$text-shadow-blur: 0px !default;
 
 @function text-shadow($color, $top: $text-shadow-top, $left: $text-shadow-left, $blur: $text-shadow-blur) {
 	@return $left $top $blur $color;

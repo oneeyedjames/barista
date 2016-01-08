@@ -1,59 +1,56 @@
-jQuery ($) ->
-	$.fn.extend
-		center : ->
-			viewport = $ window
-			element = $ this
+$.fn.extend
+	center : ->
+		viewport = $ window
+		element = $ this
 
-			vOffset = ( viewport.height() - element.outerHeight() ) / 2
-			hOffset = ( viewport.width() - element.outerWidth() ) / 2
+		vOffset = ( viewport.height() - element.outerHeight() ) / 2
+		hOffset = ( viewport.width() - element.outerWidth() ) / 2
 
-			element.css
-				'top'  : "#{vOffset}px"
-				'left' : "#{hOffset}px"
+		element.css
+			'top'  : "#{vOffset}px"
+			'left' : "#{hOffset}px"
 
-		modal : (opts) ->
-			dialog = $ this
-			body = $ 'body'
+	modal : (opts) ->
+		dialog = $ this
+		body = $ 'body'
 
-			attr =
-				class : 'overlay'
+		attr =
+			class : 'overlay'
 
-			attr.class += ' dim' if opts.dim
+		attr.class += ' dim' if opts.dim
 
-			$ '.overlay'
-			.remove()
+		$ '.overlay'
+		.remove()
 
-			$ '<div>', attr
-			.appendTo 'body'
-			.click ->
-				overlay = $ this
-				do overlay.remove
-				dialog.removeClass 'visible'
-				body.removeClass 'no-scroll'
+		$ '<div>', attr
+		.appendTo 'body'
+		.click ->
+			overlay = $ this
+			do overlay.remove
+			dialog.removeClass 'visible'
+			body.removeClass 'no-scroll'
 
-			body.addClass 'no-scroll'
+		body.addClass 'no-scroll'
 
-			dialog.addClass 'visible'
-			dialog.toggleClass 'dim', opts.dim
-			dialog.toggleClass 'alert', opts.alert
+		dialog.addClass 'visible'
+		dialog.toggleClass 'dim', opts.dim
+		dialog.toggleClass 'alert', opts.alert
 
-			$ window
-			.resize ->
-				do dialog.center
-
+		$ window
+		.resize ->
 			do dialog.center
 
-	$ '*[data-action="modal"]'
-	.click (event) ->
-		do event.preventDefault
+		do dialog.center
 
-		button = $ this
-		target = button.data 'target'
+$ '*[data-action="modal"]'
+.click (event) ->
+	do event.preventDefault
 
-		data = button.data()
-		data.alert ?= false
-		data.dim   ?= false
+	button = $ this
+	target = button.data 'target'
 
-		$(target).modal data
+	data = do button.data
+	data.alert ?= false
+	data.dim   ?= false
 
-	return
+	$(target).modal data

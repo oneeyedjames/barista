@@ -1,0 +1,47 @@
+=menu-color($color, $light)
+	li
+		color: $color
+
+		a
+			color: $color
+
+		&:hover
+			background-color: $light
+
+		&.active
+			background-color: $color
+
+	&.tabs
+		border-color: $color
+
+ul.menu
+	margin: (-$base-spacing / 4) 0
+	padding: 0
+	list-style: none
+	background-color: $white
+
+	li
+		margin: ($base-spacing / 4) 0
+		padding: $base-padding
+		border-radius: $base-border-radius
+
+		a
+			text-decoration: none
+
+		&.active
+			color: $white
+
+			a
+				color: $white
+
+	&.inline
+		+clearfix
+
+		li
+			display: inline-block
+
+		&.tabs
+			margin-bottom: $base-margin-bottom
+			border-bottom: $base-border
+
+	+menu-color($blue, $light-blue)

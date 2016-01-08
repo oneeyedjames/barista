@@ -1,0 +1,103 @@
+=table-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	border-color: $darker
+
+	thead
+		+linear-gradient(0deg, $color, $lighter)
+
+		th, td
+			color: $white
+			text-shadow: text-shadow($darker)
+
+	tbody
+		th, td
+			border-color: $lighter
+
+	&.striped
+		tbody
+			tr:nth-child(even)
+				th, td
+					background-color: $light
+					color: $dark
+
+				&:hover
+					th, td
+						background-color: shade($light, 15%)
+
+table
+	width: 100%
+	margin-bottom: $base-margin-bottom
+	border-radius: $base-border-radius
+	border-collapse: separate
+	border-spacing: 0
+	border: $base-border
+	box-shadow: box-shadow($gray)
+
+	+table-color($gray, $light-gray, $dark-gray)
+
+	thead
+		th
+			font-weight: normal
+
+		th, td
+			padding: $base-padding
+			text-align: left
+
+		tr:first-child
+			+border-top-radius($base-border-radius)
+
+			th:first-child, td:first-child
+				border-top-left-radius: $base-border-radius
+
+			th:last-child, td:last-child
+				border-top-right-radius: $base-border-radius
+
+	tbody
+		th
+			font-weight: $semi-bold
+
+		th, td
+			border-top: $base-border
+			padding: $base-padding
+			text-align: left
+			background-color: $white
+
+		tr:hover
+			th, td
+				background-color: shade($white, 15%)
+
+		tr:first-child
+			th, td
+				border-style: none
+
+		tr:last-child
+			+border-bottom-radius($base-border-radius)
+
+			th:first-child, td:first-child
+				border-bottom-left-radius: $base-border-radius
+
+			th:last-child, td:last-child
+				border-bottom-right-radius: $base-border-radius
+
+	&.outline
+		border: $base-border
+
+	&.blue
+		+table-color($blue, $light-blue, $dark-blue)
+
+	&.red
+		+table-color($red, $light-red, $dark-red)
+
+	&.yellow
+		+table-color($yellow, $light-yellow, $dark-yellow)
+
+	&.green
+		+table-color($green, $light-green, $dark-green)
+
+	&.purple
+		+table-color($purple, $light-purple, $dark-purple)
+
+	&.orange
+		+table-color($orange, $light-orange, $dark-orange)

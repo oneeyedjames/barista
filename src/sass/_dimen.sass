@@ -1,0 +1,10 @@
+$screen-sm-width: 480
+$screen-md-width: 768
+$screen-lg-width: 1280
+
+// stand-in for bourbon/neat variable
+$grid-columns: 12
+
+=screen-width($width)
+	@media only screen and (min-width: #{$width}px)
+		@content
