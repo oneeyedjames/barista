@@ -2,42 +2,38 @@
 	$lighter: tint($color, 25%)
 	$darker: shade($color, 25%)
 
-	$button-glow: inset 0 0 6px 2px $light
-
-	+linear-gradient(0deg, $color, $lighter)
-
 	color: $white
 	border-color: $darker
-	text-shadow: text-shadow($darker)
 
-	&:hover
-		box-shadow: box-shadow($gray), $button-glow
+	+linear-gradient(0deg, $color, $lighter)
+	+text-shadow($darker)
 
 	&:active
-		text-shadow: text-shadow($darker, -$text-shadow-top)
-
 		+linear-gradient(180deg, $color, $lighter)
+		+text-shadow($darker, -$text-shadow-top)
 
 		&:hover
-			box-shadow: box-shadow($gray, 2px, 1px), $button-glow
+			box-shadow: 1px 2px 1px $gray, inset 0 0 6px 2px $light
 
-$button-margin-right: $base-spacing / 4
-$button-margin-bottom: $base-spacing / 2
+	&:hover
+		box-shadow: 2px 3px 1px $gray, inset 0 0 6px 2px $light
 
 .btn, #{$all-buttons}
 	display: inline-block
-	margin-right: $button-margin-right
-	margin-bottom: $button-margin-bottom
+	margin-right: $base-spacing / 4
+	margin-bottom: $base-spacing / 2
 	padding: $base-padding
 	border-radius: $small-border-radius
 	border: $base-border
 	cursor: pointer
-	box-shadow: box-shadow($gray)
 	text-decoration: none
 	font-size: $base-font-size
 
+	+box-shadow($gray)
+	+btn-color($gray, $light-gray)
+
 	&:active
-		box-shadow: box-shadow($gray)
+		box-shadow: 1px 2px 1px $gray
 
 	&.sm
 		padding: $small-padding
@@ -46,8 +42,6 @@ $button-margin-bottom: $base-spacing / 2
 	&.lg
 		padding: $large-padding
 		border-radius: $small-border-radius
-
-	+btn-color($gray, $light-gray)
 
 	&.blue
 		+btn-color($blue, $light-blue)

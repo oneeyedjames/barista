@@ -1,8 +1,10 @@
-@import 'bourbon/bourbon'
+@import "bourbon/bourbon"
 
-@import 'color'
-@import 'dimen'
-@import 'style'
+$em-base: 14px
+$block-base: 20px
+$grid-columns: 12
+
+@import "variables"
 
 html, body
 	margin: 0px
@@ -10,29 +12,20 @@ html, body
 	font-size: $base-font-size
 	font-family: $base-font-family
 	font-weight: $base-font-weight
+	line-height: $base-line-height
 
-.wrapper
-	margin: 0 $base-spacing
+@import "typography"
 
-	&.fluid
-		width: inherit
-		margin: 0 $base-spacing
+@import "text"
+@import "form"
+@import "list"
+@import "table"
+@import "label"
+@import "badge"
 
-	+screen-width($screen-sm-width)
-		width: em($screen-sm-width) - $base-spacing * 2
-		margin: 0 auto
-
-	+screen-width($screen-md-width)
-		width: em($screen-md-width) - $base-spacing * 2
-
-	+screen-width($screen-lg-width)
-		width: em($screen-lg-width) - $base-spacing * 2
-
-@import 'text'
-@import 'form'
-@import 'table'
-
-@import 'card'
-@import 'menu'
-@import 'grid'
-@import 'button'
+@import "card"
+@import "menu"
+@import "grid"
+@import "button"
+@import "navbar"
+@import "tooltip"

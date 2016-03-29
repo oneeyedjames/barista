@@ -1,0 +1,83 @@
+$white: #FFFFFF
+$black: #333333
+
+$gray: #999999
+$blue: #3366CC
+$red: #DC3912
+$yellow: #FF9900
+$green: #109618
+$purple: #990099
+$orange: #FF6600
+
+$light-gray: #DDDDDD
+$light-blue: #C1D0EF
+$light-red: #F4C3B7
+$light-yellow: #FEE0B2
+$light-green: #B6DFB9
+$light-purple: #E0B2E0
+$light-orange: #FFCFAE
+
+$dark-gray: #444444
+$dark-blue: darken($blue, 25%)
+$dark-red: darken($red, 20%)
+$dark-yellow: darken($yellow, 30%)
+$dark-green: darken($green, 20%)
+$dark-purple: darken($purple, 20%)
+$dark-orange: darken($orange, 30%)
+
+$screen-sm-width: 480px
+$screen-md-width: 768px
+$screen-lg-width: 1280px
+
+=screen-width($width)
+	@media only screen and (min-width: #{$width})
+		@content
+
+$base-font-size: $em-base
+
+$base-font-family: $helvetica
+$heading-font-family: $base-font-family
+
+$base-font-weight: normal
+
+$base-line-height: $block-base / $em-base
+$heading-line-height: 1.15
+
+$semi-bold: 500
+$light: 300
+
+$base-border-radius: 0.5em
+$small-border-radius: $base-border-radius / 2
+$large-border-radius: $base-border-radius * 1.5
+
+$base-border-color: $gray
+$base-border-style: solid
+$base-border-width: 1px
+
+$base-border: $base-border-width $base-border-style $base-border-color
+
+$base-spacing: 0.75em
+$block-spacing: $block-base
+
+$base-margin-bottom: $base-spacing
+
+$base-padding: ($base-spacing / 2) $base-spacing
+$small-padding: ($base-spacing / 4) ($base-spacing / 2)
+$large-padding: $base-spacing ($base-spacing * 1.5)
+
+$base-shadow-top: 3px !default
+$base-shadow-left: 2px !default
+$base-shadow-blur: 1px !default
+$base-shadow-spread: 0px !default
+
+$base-shadow: $base-shadow-left $base-shadow-top $base-shadow-blur $base-shadow-spread $gray
+
+=box-shadow($color, $top: $base-shadow-top, $left: $base-shadow-left, $blur: $base-shadow-blur, $spread: $base-shadow-spread)
+	box-shadow: $left $top $blur $spread $color
+
+$text-shadow-top: -1px !default
+$text-shadow-left: 0px !default
+$text-shadow-blur: 1px !default
+
+=text-shadow($color, $top: $text-shadow-top, $left: $text-shadow-left, $blur: $text-shadow-blur)
+	text-shadow: $left $top $blur $color

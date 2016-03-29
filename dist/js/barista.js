@@ -66,31 +66,35 @@ jQuery(function($) {
       });
     },
     modal: function(opts) {
-      var attr, body, dialog;
+      var body, dialog, dismiss, overlay;
       dialog = $(this);
       body = $('body');
-      attr = {
-        "class": 'overlay'
-      };
-      if (opts.dim) {
-        attr["class"] += ' dim';
+      dismiss = dialog.dismiss.bind(dialog);
+      dismiss();
+      overlay = $('.overlay');
+      if (!overlay.length) {
+        overlay = $('<div>').addClass('overlay').appendTo('body');
       }
-      $('.overlay').remove();
-      $('<div>', attr).appendTo('body').click(function() {
-        var overlay;
-        overlay = $(this);
-        overlay.remove();
-        dialog.removeClass('visible');
-        return body.removeClass('no-scroll');
-      });
-      body.addClass('no-scroll');
+      if (opts.dim) {
+        body.addClass('no-scroll');
+      }
       dialog.addClass('visible');
       dialog.toggleClass('dim', opts.dim);
       dialog.toggleClass('alert', opts.alert);
+      overlay.toggleClass('dim', opts.dim).addClass('visible').unbind('click').click(dismiss);
       $(window).resize(function() {
         return dialog.center();
       });
+      if (opts.timeout) {
+        setTimeout(dismiss, opts.timeout);
+      }
       return dialog.center();
+    },
+    dismiss: function(eventType) {
+      eventType || (eventType = 'dismiss');
+      $('body').removeClass('no-scroll');
+      $('.overlay').removeClass('visible');
+      return $(this).removeClass('visible').trigger(eventType);
     }
   });
   $('*[data-action="modal"]').click(function(event) {
@@ -99,6 +103,9 @@ jQuery(function($) {
     button = $(this);
     target = button.data('target');
     data = button.data();
+    if (data.timeout == null) {
+      data.timeout = 0;
+    }
     if (data.alert == null) {
       data.alert = false;
     }
@@ -106,5 +113,71 @@ jQuery(function($) {
       data.dim = false;
     }
     return $(target).modal(data);
+  });
+  $('.modal .close').click(function(event) {
+    event.preventDefault();
+    return $(this).parents('.modal').dismiss();
+  });
+  $('.modal .btn.cancel').click(function(event) {
+    event.preventDefault();
+    return $(this).parents('.modal').dismiss('cancel');
+  });
+  $('.modal .btn.ok').click(function(event) {
+    event.preventDefault();
+    return $(this).parents('.modal').dismiss('ok');
+  });
+  $.fn.extend({
+    tooltip: function(opts) {
+      var target;
+      target = $(this);
+      if (opts == null) {
+        opts = {};
+      }
+      if (opts.title == null) {
+        opts.title = target.attr('title');
+      }
+      if (opts.side == null) {
+        opts.side = target.data('side') || 'top';
+      }
+      return target.removeAttr('title').data('title', opts.title).hover(function() {
+        var hOffset, message, offset, pointer, tooltip, vOffset;
+        message = $('<div>').addClass('message').text(opts.title);
+        pointer = $('<div>').addClass('pointer');
+        tooltip = $('<div>').addClass('tooltip').addClass(opts.side).insertAfter(target).append(pointer).append(message);
+        target.data('tooltip', tooltip);
+        offset = target.offset();
+        switch (opts.side) {
+          case 'top':
+            offset.top -= tooltip.outerHeight() + 3;
+            break;
+          case 'left':
+            offset.left -= tooltip.outerWidth() + 3;
+            break;
+          case 'right':
+            offset.left += target.outerWidth() + 3;
+            break;
+          case 'bottom':
+            offset.top += target.outerHeight() + 3;
+        }
+        hOffset = (tooltip.outerWidth() - target.outerWidth()) / 2;
+        vOffset = (tooltip.outerHeight() - target.outerHeight()) / 2;
+        switch (opts.side) {
+          case 'left':
+          case 'right':
+            offset.top -= vOffset;
+            break;
+          case 'top':
+          case 'bottom':
+            offset.left -= hOffset;
+        }
+        return tooltip.offset(offset);
+      }, function() {
+        var tooltip;
+        return tooltip = $(this).data('tooltip').remove();
+      });
+    }
+  });
+  $('*[data-hover="tooltip"]').each(function() {
+    return $(this).tooltip();
   });
 });

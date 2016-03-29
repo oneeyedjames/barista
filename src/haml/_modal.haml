@@ -1,0 +1,31 @@
+%section#modal
+	%h3.section Modal
+
+	%ul
+		%li
+			%a{ 'data-action' => 'modal', 'data-target' => '#modal-success', 'data-alert' => 'true', 'data-timeout' => 1300 } Success
+		%li
+			%a{ 'data-action' => 'modal', 'data-target' => '#modal-warning', 'data-dim' => 'true' } Warning
+		%li
+			%a{ 'data-action' => 'modal', 'data-target' => '#modal-error' } Error
+
+	#modal-success.card.modal.green
+		You were successful!
+
+	#modal-error.card.modal.red
+		%header
+			%i.fa.fa-exclamation-circle
+			Error
+			%i.close.fa.fa-close
+		This is an error message
+		%footer.btns
+			%button.btn.ok Ok
+
+	#modal-warning.card.modal.yellow
+		%header
+			%i.fa.fa-exclamation-triangle
+			Warning
+		Are you sure about that?
+		%footer.btns
+			%button.btn.cancel Cancel
+			%button.btn.red.ok Do it!

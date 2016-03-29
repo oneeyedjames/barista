@@ -1,0 +1,27 @@
+!!! 5
+%html
+	%head
+		%title Barista Framework
+
+		%link{ :rel => 'stylesheet', :href => '../../lib/fontawesome/css/font-awesome.min.css' }
+		%link{ :rel => 'stylesheet', :href => '../css/barista.css' }
+
+		%script{ :src => '../../lib/jquery/jquery.min.js' }
+		%script{ :src => '../js/barista.js' }
+
+		:CSS
+			h3.section { margin-top: 0; border-bottom: 1px solid #999; }
+	%body
+		%header.navbar
+			.wrapper
+				.icon Demo
+		%article.wrapper
+			= render '_typography'
+			= render '_labels'
+			= render '_badges'
+			= render '_buttons'
+			= render '_cards'
+			= render '_lists'
+			= render '_tables'
+			= render '_modal'
+			= render '_tooltips'

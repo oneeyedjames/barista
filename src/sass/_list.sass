@@ -1,0 +1,70 @@
+=list-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	border-color: $darker
+
+	li
+		border-color: $lighter
+
+		&:hover
+			background-color: $light
+
+		&.header
+			+linear-gradient(0deg, $color, $lighter)
+			+text-shadow($darker)
+
+	&.striped
+		li:nth-child(odd)
+			background-color: $light
+			color: $dark
+
+		li:hover
+			background-color: darken($light, 15%)
+			color: $black
+
+		li.header
+			color: $white
+
+ul.list
+	padding: 0
+	margin: 0 0 $base-margin-bottom
+	border-radius: $base-border-radius
+	border: $base-border
+
+	list-style: none
+
+	+box-shadow($gray)
+	+list-color($gray, $light-gray, $dark-gray)
+
+	li
+		padding: $base-padding
+		border-top: $base-border
+
+		&:first-child
+			border-style: none
+			+border-top-radius($base-border-radius)
+
+		&:last-child
+			+border-bottom-radius($base-border-radius)
+
+		&.header
+			color: $white
+
+	&.blue
+		+list-color($blue, $light-blue, $dark-blue)
+
+	&.red
+		+list-color($red, $light-red, $dark-red)
+
+	&.yellow
+		+list-color($yellow, $light-yellow, $dark-yellow)
+
+	&.green
+		+list-color($green, $light-green, $dark-green)
+
+	&.purple
+		+list-color($purple, $light-purple, $dark-purple)
+
+	&.orange
+		+list-color($orange, $light-orange, $dark-orange)

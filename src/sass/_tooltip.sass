@@ -1,0 +1,59 @@
+.tooltip
+	position: absolute
+	display: inline-block
+
+	&.left, &.right
+		.pointer
+			top: 50%
+			margin-top: -5px
+
+	&.top, &.bottom
+		.pointer
+			left: 50%
+			margin-left: -5px
+
+	&.top
+		padding-bottom: 5px
+
+		.pointer
+			bottom: 0
+			border-top-color: $black
+			border-bottom-width: 0
+
+	&.left
+		padding-right: 5px
+
+		.pointer
+			right: 0
+			border-left-color: $black
+			border-right-width: 0
+
+	&.right
+		padding-left: 5px
+
+		.pointer
+			left: 0
+			border-right-color: $black
+			border-left-width: 0
+
+	&.bottom
+		padding-top: 5px
+
+		.pointer
+			top: 0
+			border-bottom-color: $black
+			border-top-width: 0
+
+	.message
+		border-radius: $base-border-radius
+		padding: $base-padding
+		background: $black
+		color: $white
+
+	.pointer
+		position: absolute
+		width: 0
+		height: 0
+		border-color: transparent
+		border-style: solid
+		border-width: 5px

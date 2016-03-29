@@ -13,6 +13,6 @@
   ],
   "dependencies": {
     "fontawesome": "~4.5.0",
-    "jquery": "~2.1.4"
+    "jquery-mobile": "^1.4.5"
   }
 }

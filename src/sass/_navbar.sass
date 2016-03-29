@@ -1,0 +1,46 @@
+=navbar-color($color)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	border-bottom: 1px solid $darker
+
+	+linear-gradient(0deg, $color, $lighter)
+
+.navbar
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	height: 2 * $block-spacing
+	z-index: 100
+
+	+navbar-color($gray)
+
+	.icon
+		color: $white
+		line-height: 2 * $block-spacing
+		font-size: modular-scale(3, 1em, $minor-third)
+		float: left
+
+
+
+.navbar + .wrapper
+	margin-top: 3 * $block-spacing
+
+
+.wrapper
+	margin: 0 $block-spacing
+
+	&.fluid
+		width: inherit
+		margin: 0 $block-spacing
+
+	+screen-width($screen-sm-width)
+		width: $screen-sm-width - ($block-spacing * 2)
+		margin: 0 auto
+
+	+screen-width($screen-md-width)
+		width: $screen-md-width - ($block-spacing * 2)
+
+	+screen-width($screen-lg-width)
+		width: $screen-lg-width - ($block-spacing * 2)

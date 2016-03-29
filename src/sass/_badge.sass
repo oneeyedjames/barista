@@ -1,0 +1,29 @@
+=bdg-color($color)
+	background-color: $color
+
+.bdg
+	display: inline-block
+	padding: 0 .5em
+	border-radius: (.5em * $base-line-height)
+	color: $white
+	font-weight: $semi-bold
+
+	+bdg-color($gray)
+
+	&.blue
+		+bdg-color($blue)
+
+	&.red
+		+bdg-color($red)
+
+	&.yellow
+		+bdg-color($yellow)
+
+	&.green
+		+bdg-color($green)
+
+	&.purple
+		+bdg-color($purple)
+
+	&.orange
+		+bdg-color($orange)
