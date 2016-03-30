@@ -11,6 +11,9 @@
 		.close:active
 			+text-shadow($darker, -$text-shadow-top)
 
+	header, footer
+		border-color: $lighter
+
 	footer, &.alert
 		background-color: $light
 		color: $dark
@@ -34,20 +37,17 @@
 		margin: (-$base-spacing / 2) (-$base-spacing) ($base-spacing / 2)
 		padding: $base-padding
 		color: $white
-
+		border-bottom: $base-border
 		+border-top-radius($base-border-radius)
-
-		.close
-			float: right
-			font-style: normal
-			cursor: pointer
 
 	footer
 		margin: ($base-spacing / 2) (-$base-spacing) (-$base-spacing / 2)
 		padding: ($base-spacing / 2) $base-spacing
-		border-radius: 0 0 $base-border-radius $base-border-radius
+		border-top: $base-border
+		+border-bottom-radius($base-border-radius)
 
 		&.btns
+			border-style: none
 			+display(flex)
 
 			.btn
@@ -65,6 +65,7 @@
 		z-index: 201
 		left: $block-spacing
 		right: $block-spacing
+		+box-shadow($gray, 6px, 4px, 12px, 6px)
 
 		&.visible
 			+transition-delay(0s)

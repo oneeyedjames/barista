@@ -8,15 +8,31 @@
 	+linear-gradient(0deg, $color, $lighter)
 	+text-shadow($darker)
 
-	&:active
+	&:active, &.active
 		+linear-gradient(180deg, $color, $lighter)
 		+text-shadow($darker, -$text-shadow-top)
 
-		&:hover
+		&:hover, &.hover
 			box-shadow: 1px 2px 1px $gray, inset 0 0 6px 2px $light
 
-	&:hover
+	&:hover, &.hover
 		box-shadow: 2px 3px 1px $gray, inset 0 0 6px 2px $light
+
+	&[disabled], &.disabled
+		box-shadow: none
+		text-shadow: none
+		background: $color
+		color: $light
+		cursor: no-drop
+
+		&:active, &:hover
+			box-shadow: none
+			text-shadow: none
+
+	.bdg
+		text-shadow: none
+		background-color: $white
+		color: $darker
 
 .btn, #{$all-buttons}
 	display: inline-block
@@ -27,12 +43,14 @@
 	border: $base-border
 	cursor: pointer
 	text-decoration: none
+	line-height: $base-line-height
+	font-family: $base-font-family
 	font-size: $base-font-size
 
 	+box-shadow($gray)
 	+btn-color($gray, $light-gray)
 
-	&:active
+	&:active, &.active
 		box-shadow: 1px 2px 1px $gray
 
 	&.sm
@@ -60,3 +78,20 @@
 
 	&.orange
 		+btn-color($orange, $light-orange)
+
+.btn-group
+	display: inline-block
+	+clearfix
+
+	.btn
+		float: left
+		margin-left: -1px
+		margin-right: 0
+		border-radius: 0
+
+		&:first-child
+			margin-left: 0
+			+border-left-radius($small-border-radius)
+
+		&:last-child
+			+border-right-radius($small-border-radius)

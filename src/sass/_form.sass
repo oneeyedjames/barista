@@ -37,7 +37,7 @@ label
 	&:focus
 		+box-shadow($gray)
 
-input, textarea, select, button
+input, textarea, select
 	outline: none
 
 	&:disabled
@@ -47,4 +47,59 @@ textarea
 	vertical-align: top
 
 select
-	height: $base-spacing * 2 + 1em + em(4)
+	+appearance(none)
+
+=addon-color($color, $light, $dark)
+	background-color: $light
+	border-color: $color
+	color: $dark
+
+.input-group
+	+display(flex)
+
+	.addon
+		padding: $base-spacing
+		border-radius: $base-border-radius
+		border: $base-border
+		+addon-color($gray, $light-gray, $dark-gray)
+
+		&.blue
+			+addon-color($blue, $light-blue, $dark-blue)
+
+		&.red
+			+addon-color($red, $light-red, $dark-red)
+
+		&.yellow
+			+addon-color($yellow, $light-yellow, $dark-yellow)
+
+		&.green
+			+addon-color($green, $light-green, $dark-green)
+
+		&.purple
+			+addon-color($purple, $light-purple, $dark-purple)
+
+		&.orange
+			+addon-color($orange, $light-orange, $dark-orange)
+
+	button, .btn, .addon
+		margin: 0 0 $base-margin-bottom
+		font-size: .75em
+		box-shadow: none
+
+		&:hover, &:focus, &:active, &:active:hover
+			box-shadow: none
+			outline: none
+
+	input
+		+flex(1 0)
+
+	input, button, .btn, .addon
+		margin-left: -1px
+		border-radius: 0
+
+		&:first-child
+			margin-left: 0
+			+border-left-radius($base-border-radius)
+
+		&:last-child
+			+border-right-radius($base-border-radius)

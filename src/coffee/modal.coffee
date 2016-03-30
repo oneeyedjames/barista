@@ -25,22 +25,22 @@ $.fn.extend
 			.addClass 'overlay'
 			.appendTo 'body'
 
-		body.addClass 'no-scroll' if opts.dim
-
-		dialog.addClass 'visible'
-		dialog.toggleClass 'dim', opts.dim
-		dialog.toggleClass 'alert', opts.alert
-
-		overlay.toggleClass 'dim', opts.dim
+		overlay.toggleClass 'dim', !!opts.overlay
 		.addClass 'visible'
 		.unbind 'click'
-		.click dismiss
+
+		overlay.click dismiss unless opts.overlay == 'static'
+
+		body.addClass 'no-scroll' if !!opts.overlay
+
+		dialog.addClass 'visible'
+		dialog.toggleClass 'dim', !!opts.overlay
 
 		$ window
 		.resize ->
 			do dialog.center
 
-		setTimeout dismiss, opts.timeout if opts.timeout
+		setTimeout dismiss, opts.duration if opts.duration
 
 		do dialog.center
 
@@ -65,20 +65,11 @@ $ '*[data-action="modal"]'
 	target = button.data 'target'
 
 	data = do button.data
-	data.timeout ?= 0
-	data.alert   ?= false
-	data.dim     ?= false
+	data.duration ?= 0
+	data.overlay  ?= true
 
 	$ target
 	.modal data
-
-$ '.modal .close'
-.click (event) ->
-	do event.preventDefault
-
-	$ this
-	.parents '.modal'
-	.dismiss()
 
 $ '.modal .btn.cancel'
 .click (event) ->

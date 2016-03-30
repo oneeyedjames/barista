@@ -107,7 +107,7 @@ label {
 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
   width: 100%;
-  margin: 0 0 0.75em;
+  margin: 0 0 1.5em;
   padding: 0.75em;
   border-radius: 0.5em;
   border: 1px solid #999999;
@@ -125,10 +125,10 @@ input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focu
   box-shadow: 2px 3px 1px 0px #999999;
 }
 
-input, textarea, select, button {
+input, textarea, select {
   outline: none;
 }
-input:disabled, textarea:disabled, select:disabled, button:disabled {
+input:disabled, textarea:disabled, select:disabled {
   cursor: not-allowed;
 }
 
@@ -137,12 +137,95 @@ textarea {
 }
 
 select {
-  height: 2.78571em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.input-group {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.input-group .addon {
+  padding: 0.75em;
+  border-radius: 0.5em;
+  border: 1px solid #999999;
+  background-color: #DDDDDD;
+  border-color: #999999;
+  color: #444444;
+}
+.input-group .addon.blue {
+  background-color: #C1D0EF;
+  border-color: #3366CC;
+  color: #1a3366;
+}
+.input-group .addon.red {
+  background-color: #F4C3B7;
+  border-color: #DC3912;
+  color: #7e210a;
+}
+.input-group .addon.yellow {
+  background-color: #FEE0B2;
+  border-color: #FF9900;
+  color: #663d00;
+}
+.input-group .addon.green {
+  background-color: #B6DFB9;
+  border-color: #109618;
+  color: #063a09;
+}
+.input-group .addon.purple {
+  background-color: #E0B2E0;
+  border-color: #990099;
+  color: #330033;
+}
+.input-group .addon.orange {
+  background-color: #FFCFAE;
+  border-color: #FF6600;
+  color: #662900;
+}
+.input-group button, .input-group .btn, .input-group .addon {
+  margin: 0 0 1.5em;
+  font-size: 0.75em;
+  box-shadow: none;
+}
+.input-group button:hover, .input-group button:focus, .input-group button:active, .input-group button:active:hover, .input-group .btn:hover, .input-group .btn:focus, .input-group .btn:active, .input-group .btn:active:hover, .input-group .addon:hover, .input-group .addon:focus, .input-group .addon:active, .input-group .addon:active:hover {
+  box-shadow: none;
+  outline: none;
+}
+.input-group input {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 0;
+  -moz-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+}
+.input-group input, .input-group button, .input-group .btn, .input-group .addon {
+  margin-left: -1px;
+  border-radius: 0;
+}
+.input-group input:first-child, .input-group button:first-child, .input-group .btn:first-child, .input-group .addon:first-child {
+  margin-left: 0;
+  border-bottom-left-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+.input-group input:last-child, .input-group button:last-child, .input-group .btn:last-child, .input-group .addon:last-child {
+  border-bottom-right-radius: 0.5em;
+  border-top-right-radius: 0.5em;
 }
 
 ul.list {
   padding: 0;
-  margin: 0 0 0.75em;
+  margin: 0 0 1.5em;
   border-radius: 0.5em;
   border: 1px solid #999999;
   list-style: none;
@@ -187,6 +270,9 @@ ul.list li:last-child {
 }
 ul.list li.header {
   color: #FFFFFF;
+}
+ul.list li .bdg {
+  float: right;
 }
 ul.list.blue {
   border-color: #264d99;
@@ -347,7 +433,7 @@ ul.list.orange.striped li.header {
 
 table {
   width: 100%;
-  margin-bottom: 0.75em;
+  margin-bottom: 1.5em;
   border-radius: 0.5em;
   border-collapse: separate;
   border-spacing: 0;
@@ -608,6 +694,7 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
   border-radius: 0.71429em;
   color: #FFFFFF;
   font-weight: 500;
+  font-style: normal;
   background-color: #999999;
 }
 .bdg.blue {
@@ -630,7 +717,7 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 }
 
 .card {
-  margin-bottom: 0.75em;
+  margin-bottom: 1.5em;
   padding: 0.375em 0.75em;
   border-radius: 0.5em;
   border: 1px solid #999999;
@@ -643,20 +730,19 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
   margin: -0.375em -0.75em 0.375em;
   padding: 0.375em 0.75em;
   color: #FFFFFF;
+  border-bottom: 1px solid #999999;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
-}
-.card header .close {
-  float: right;
-  font-style: normal;
-  cursor: pointer;
 }
 .card footer {
   margin: 0.375em -0.75em -0.375em;
   padding: 0.375em 0.75em;
-  border-radius: 0 0 0.5em 0.5em;
+  border-top: 1px solid #999999;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
 }
 .card footer.btns {
+  border-style: none;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -688,6 +774,7 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
   z-index: 201;
   left: 20px;
   right: 20px;
+  box-shadow: 4px 6px 12px 6px #999999;
 }
 .card.modal.visible {
   -webkit-transition-delay: 0s;
@@ -711,6 +798,9 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 .card header .close:active {
   text-shadow: 0px 1px 1px #737373;
 }
+.card header, .card footer {
+  border-color: #b3b3b3;
+}
 .card footer, .card.alert {
   background-color: #DDDDDD;
   color: #444444;
@@ -729,6 +819,9 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 }
 .card.blue header .close:active {
   text-shadow: 0px 1px 1px #264d99;
+}
+.card.blue header, .card.blue footer {
+  border-color: #668cd9;
 }
 .card.blue footer, .card.blue.alert {
   background-color: #C1D0EF;
@@ -749,6 +842,9 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 .card.red header .close:active {
   text-shadow: 0px 1px 1px #a52b0e;
 }
+.card.red header, .card.red footer {
+  border-color: #e56b4d;
+}
 .card.red footer, .card.red.alert {
   background-color: #F4C3B7;
   color: #7e210a;
@@ -767,6 +863,9 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 }
 .card.yellow header .close:active {
   text-shadow: 0px 1px 1px #bf7300;
+}
+.card.yellow header, .card.yellow footer {
+  border-color: #ffb340;
 }
 .card.yellow footer, .card.yellow.alert {
   background-color: #FEE0B2;
@@ -787,6 +886,9 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 .card.green header .close:active {
   text-shadow: 0px 1px 1px #0c7112;
 }
+.card.green header, .card.green footer {
+  border-color: #4cb052;
+}
 .card.green footer, .card.green.alert {
   background-color: #B6DFB9;
   color: #063a09;
@@ -806,6 +908,9 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 .card.purple header .close:active {
   text-shadow: 0px 1px 1px #730073;
 }
+.card.purple header, .card.purple footer {
+  border-color: #b340b3;
+}
 .card.purple footer, .card.purple.alert {
   background-color: #E0B2E0;
   color: #330033;
@@ -824,6 +929,9 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 }
 .card.orange header .close:active {
   text-shadow: 0px 1px 1px #bf4d00;
+}
+.card.orange header, .card.orange footer {
+  border-color: #ff8c40;
 }
 .card.orange footer, .card.orange.alert {
   background-color: #FFCFAE;
@@ -913,7 +1021,7 @@ ul.menu.inline li {
   display: inline-block;
 }
 ul.menu.inline.tabs {
-  margin-bottom: 0.75em;
+  margin-bottom: 1.5em;
   border-bottom: 1px solid #999999;
 }
 ul.menu li {
@@ -1153,6 +1261,8 @@ ul.menu.tabs {
   border: 1px solid #999999;
   cursor: pointer;
   text-decoration: none;
+  line-height: 1.42857;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 14px;
   box-shadow: 2px 3px 1px 0px #999999;
   color: #FFFFFF;
@@ -1162,19 +1272,35 @@ ul.menu.tabs {
   background-image: linear-gradient(0deg,#999999, #b3b3b3);
   text-shadow: 0px -1px 1px #737373;
 }
-.btn:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
+.btn:active, .btn.active, button:active, button.active, input[type="button"]:active, input[type="button"].active, input[type="reset"]:active, input[type="reset"].active, input[type="submit"]:active, input[type="submit"].active {
   background-color: #999999;
   background-image: -webkit-linear-gradient(-450deg, #999999, #b3b3b3);
   background-image: linear-gradient(180deg,#999999, #b3b3b3);
   text-shadow: 0px 1px 1px #737373;
 }
-.btn:active:hover, button:active:hover, input[type="button"]:active:hover, input[type="reset"]:active:hover, input[type="submit"]:active:hover {
+.btn:active:hover, .btn:active.hover, .btn.active:hover, .btn.active.hover, button:active:hover, button:active.hover, button.active:hover, button.active.hover, input[type="button"]:active:hover, input[type="button"]:active.hover, input[type="button"].active:hover, input[type="button"].active.hover, input[type="reset"]:active:hover, input[type="reset"]:active.hover, input[type="reset"].active:hover, input[type="reset"].active.hover, input[type="submit"]:active:hover, input[type="submit"]:active.hover, input[type="submit"].active:hover, input[type="submit"].active.hover {
   box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #DDDDDD;
 }
-.btn:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+.btn:hover, .btn.hover, button:hover, button.hover, input[type="button"]:hover, input[type="button"].hover, input[type="reset"]:hover, input[type="reset"].hover, input[type="submit"]:hover, input[type="submit"].hover {
   box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #DDDDDD;
 }
-.btn:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
+.btn[disabled], .btn.disabled, button[disabled], button.disabled, input[type="button"][disabled], input[type="button"].disabled, input[type="reset"][disabled], input[type="reset"].disabled, input[type="submit"][disabled], input[type="submit"].disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.btn[disabled]:active, .btn[disabled]:hover, .btn.disabled:active, .btn.disabled:hover, button[disabled]:active, button[disabled]:hover, button.disabled:active, button.disabled:hover, input[type="button"][disabled]:active, input[type="button"][disabled]:hover, input[type="button"].disabled:active, input[type="button"].disabled:hover, input[type="reset"][disabled]:active, input[type="reset"][disabled]:hover, input[type="reset"].disabled:active, input[type="reset"].disabled:hover, input[type="submit"][disabled]:active, input[type="submit"][disabled]:hover, input[type="submit"].disabled:active, input[type="submit"].disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn .bdg, button .bdg, input[type="button"] .bdg, input[type="reset"] .bdg, input[type="submit"] .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #737373;
+}
+.btn:active, .btn.active, button:active, button.active, input[type="button"]:active, input[type="button"].active, input[type="reset"]:active, input[type="reset"].active, input[type="submit"]:active, input[type="submit"].active {
   box-shadow: 1px 2px 1px #999999;
 }
 .btn.sm, button.sm, input[type="button"].sm, input[type="reset"].sm, input[type="submit"].sm {
@@ -1193,17 +1319,33 @@ ul.menu.tabs {
   background-image: linear-gradient(0deg,#3366CC, #668cd9);
   text-shadow: 0px -1px 1px #264d99;
 }
-.btn.blue:active, button.blue:active, input[type="button"].blue:active, input[type="reset"].blue:active, input[type="submit"].blue:active {
+.btn.blue:active, .btn.blue.active, button.blue:active, button.blue.active, input[type="button"].blue:active, input[type="button"].blue.active, input[type="reset"].blue:active, input[type="reset"].blue.active, input[type="submit"].blue:active, input[type="submit"].blue.active {
   background-color: #3366CC;
   background-image: -webkit-linear-gradient(-450deg, #3366CC, #668cd9);
   background-image: linear-gradient(180deg,#3366CC, #668cd9);
   text-shadow: 0px 1px 1px #264d99;
 }
-.btn.blue:active:hover, button.blue:active:hover, input[type="button"].blue:active:hover, input[type="reset"].blue:active:hover, input[type="submit"].blue:active:hover {
+.btn.blue:active:hover, .btn.blue:active.hover, .btn.blue.active:hover, .btn.blue.active.hover, button.blue:active:hover, button.blue:active.hover, button.blue.active:hover, button.blue.active.hover, input[type="button"].blue:active:hover, input[type="button"].blue:active.hover, input[type="button"].blue.active:hover, input[type="button"].blue.active.hover, input[type="reset"].blue:active:hover, input[type="reset"].blue:active.hover, input[type="reset"].blue.active:hover, input[type="reset"].blue.active.hover, input[type="submit"].blue:active:hover, input[type="submit"].blue:active.hover, input[type="submit"].blue.active:hover, input[type="submit"].blue.active.hover {
   box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #C1D0EF;
 }
-.btn.blue:hover, button.blue:hover, input[type="button"].blue:hover, input[type="reset"].blue:hover, input[type="submit"].blue:hover {
+.btn.blue:hover, .btn.blue.hover, button.blue:hover, button.blue.hover, input[type="button"].blue:hover, input[type="button"].blue.hover, input[type="reset"].blue:hover, input[type="reset"].blue.hover, input[type="submit"].blue:hover, input[type="submit"].blue.hover {
   box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #C1D0EF;
+}
+.btn.blue[disabled], .btn.blue.disabled, button.blue[disabled], button.blue.disabled, input[type="button"].blue[disabled], input[type="button"].blue.disabled, input[type="reset"].blue[disabled], input[type="reset"].blue.disabled, input[type="submit"].blue[disabled], input[type="submit"].blue.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #3366CC;
+  color: #C1D0EF;
+  cursor: no-drop;
+}
+.btn.blue[disabled]:active, .btn.blue[disabled]:hover, .btn.blue.disabled:active, .btn.blue.disabled:hover, button.blue[disabled]:active, button.blue[disabled]:hover, button.blue.disabled:active, button.blue.disabled:hover, input[type="button"].blue[disabled]:active, input[type="button"].blue[disabled]:hover, input[type="button"].blue.disabled:active, input[type="button"].blue.disabled:hover, input[type="reset"].blue[disabled]:active, input[type="reset"].blue[disabled]:hover, input[type="reset"].blue.disabled:active, input[type="reset"].blue.disabled:hover, input[type="submit"].blue[disabled]:active, input[type="submit"].blue[disabled]:hover, input[type="submit"].blue.disabled:active, input[type="submit"].blue.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.blue .bdg, button.blue .bdg, input[type="button"].blue .bdg, input[type="reset"].blue .bdg, input[type="submit"].blue .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #264d99;
 }
 .btn.red, button.red, input[type="button"].red, input[type="reset"].red, input[type="submit"].red {
   color: #FFFFFF;
@@ -1213,17 +1355,33 @@ ul.menu.tabs {
   background-image: linear-gradient(0deg,#DC3912, #e56b4d);
   text-shadow: 0px -1px 1px #a52b0e;
 }
-.btn.red:active, button.red:active, input[type="button"].red:active, input[type="reset"].red:active, input[type="submit"].red:active {
+.btn.red:active, .btn.red.active, button.red:active, button.red.active, input[type="button"].red:active, input[type="button"].red.active, input[type="reset"].red:active, input[type="reset"].red.active, input[type="submit"].red:active, input[type="submit"].red.active {
   background-color: #DC3912;
   background-image: -webkit-linear-gradient(-450deg, #DC3912, #e56b4d);
   background-image: linear-gradient(180deg,#DC3912, #e56b4d);
   text-shadow: 0px 1px 1px #a52b0e;
 }
-.btn.red:active:hover, button.red:active:hover, input[type="button"].red:active:hover, input[type="reset"].red:active:hover, input[type="submit"].red:active:hover {
+.btn.red:active:hover, .btn.red:active.hover, .btn.red.active:hover, .btn.red.active.hover, button.red:active:hover, button.red:active.hover, button.red.active:hover, button.red.active.hover, input[type="button"].red:active:hover, input[type="button"].red:active.hover, input[type="button"].red.active:hover, input[type="button"].red.active.hover, input[type="reset"].red:active:hover, input[type="reset"].red:active.hover, input[type="reset"].red.active:hover, input[type="reset"].red.active.hover, input[type="submit"].red:active:hover, input[type="submit"].red:active.hover, input[type="submit"].red.active:hover, input[type="submit"].red.active.hover {
   box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #F4C3B7;
 }
-.btn.red:hover, button.red:hover, input[type="button"].red:hover, input[type="reset"].red:hover, input[type="submit"].red:hover {
+.btn.red:hover, .btn.red.hover, button.red:hover, button.red.hover, input[type="button"].red:hover, input[type="button"].red.hover, input[type="reset"].red:hover, input[type="reset"].red.hover, input[type="submit"].red:hover, input[type="submit"].red.hover {
   box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #F4C3B7;
+}
+.btn.red[disabled], .btn.red.disabled, button.red[disabled], button.red.disabled, input[type="button"].red[disabled], input[type="button"].red.disabled, input[type="reset"].red[disabled], input[type="reset"].red.disabled, input[type="submit"].red[disabled], input[type="submit"].red.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #DC3912;
+  color: #F4C3B7;
+  cursor: no-drop;
+}
+.btn.red[disabled]:active, .btn.red[disabled]:hover, .btn.red.disabled:active, .btn.red.disabled:hover, button.red[disabled]:active, button.red[disabled]:hover, button.red.disabled:active, button.red.disabled:hover, input[type="button"].red[disabled]:active, input[type="button"].red[disabled]:hover, input[type="button"].red.disabled:active, input[type="button"].red.disabled:hover, input[type="reset"].red[disabled]:active, input[type="reset"].red[disabled]:hover, input[type="reset"].red.disabled:active, input[type="reset"].red.disabled:hover, input[type="submit"].red[disabled]:active, input[type="submit"].red[disabled]:hover, input[type="submit"].red.disabled:active, input[type="submit"].red.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.red .bdg, button.red .bdg, input[type="button"].red .bdg, input[type="reset"].red .bdg, input[type="submit"].red .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #a52b0e;
 }
 .btn.yellow, button.yellow, input[type="button"].yellow, input[type="reset"].yellow, input[type="submit"].yellow {
   color: #FFFFFF;
@@ -1233,17 +1391,33 @@ ul.menu.tabs {
   background-image: linear-gradient(0deg,#FF9900, #ffb340);
   text-shadow: 0px -1px 1px #bf7300;
 }
-.btn.yellow:active, button.yellow:active, input[type="button"].yellow:active, input[type="reset"].yellow:active, input[type="submit"].yellow:active {
+.btn.yellow:active, .btn.yellow.active, button.yellow:active, button.yellow.active, input[type="button"].yellow:active, input[type="button"].yellow.active, input[type="reset"].yellow:active, input[type="reset"].yellow.active, input[type="submit"].yellow:active, input[type="submit"].yellow.active {
   background-color: #FF9900;
   background-image: -webkit-linear-gradient(-450deg, #FF9900, #ffb340);
   background-image: linear-gradient(180deg,#FF9900, #ffb340);
   text-shadow: 0px 1px 1px #bf7300;
 }
-.btn.yellow:active:hover, button.yellow:active:hover, input[type="button"].yellow:active:hover, input[type="reset"].yellow:active:hover, input[type="submit"].yellow:active:hover {
+.btn.yellow:active:hover, .btn.yellow:active.hover, .btn.yellow.active:hover, .btn.yellow.active.hover, button.yellow:active:hover, button.yellow:active.hover, button.yellow.active:hover, button.yellow.active.hover, input[type="button"].yellow:active:hover, input[type="button"].yellow:active.hover, input[type="button"].yellow.active:hover, input[type="button"].yellow.active.hover, input[type="reset"].yellow:active:hover, input[type="reset"].yellow:active.hover, input[type="reset"].yellow.active:hover, input[type="reset"].yellow.active.hover, input[type="submit"].yellow:active:hover, input[type="submit"].yellow:active.hover, input[type="submit"].yellow.active:hover, input[type="submit"].yellow.active.hover {
   box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #FEE0B2;
 }
-.btn.yellow:hover, button.yellow:hover, input[type="button"].yellow:hover, input[type="reset"].yellow:hover, input[type="submit"].yellow:hover {
+.btn.yellow:hover, .btn.yellow.hover, button.yellow:hover, button.yellow.hover, input[type="button"].yellow:hover, input[type="button"].yellow.hover, input[type="reset"].yellow:hover, input[type="reset"].yellow.hover, input[type="submit"].yellow:hover, input[type="submit"].yellow.hover {
   box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #FEE0B2;
+}
+.btn.yellow[disabled], .btn.yellow.disabled, button.yellow[disabled], button.yellow.disabled, input[type="button"].yellow[disabled], input[type="button"].yellow.disabled, input[type="reset"].yellow[disabled], input[type="reset"].yellow.disabled, input[type="submit"].yellow[disabled], input[type="submit"].yellow.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #FF9900;
+  color: #FEE0B2;
+  cursor: no-drop;
+}
+.btn.yellow[disabled]:active, .btn.yellow[disabled]:hover, .btn.yellow.disabled:active, .btn.yellow.disabled:hover, button.yellow[disabled]:active, button.yellow[disabled]:hover, button.yellow.disabled:active, button.yellow.disabled:hover, input[type="button"].yellow[disabled]:active, input[type="button"].yellow[disabled]:hover, input[type="button"].yellow.disabled:active, input[type="button"].yellow.disabled:hover, input[type="reset"].yellow[disabled]:active, input[type="reset"].yellow[disabled]:hover, input[type="reset"].yellow.disabled:active, input[type="reset"].yellow.disabled:hover, input[type="submit"].yellow[disabled]:active, input[type="submit"].yellow[disabled]:hover, input[type="submit"].yellow.disabled:active, input[type="submit"].yellow.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.yellow .bdg, button.yellow .bdg, input[type="button"].yellow .bdg, input[type="reset"].yellow .bdg, input[type="submit"].yellow .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #bf7300;
 }
 .btn.green, button.green, input[type="button"].green, input[type="reset"].green, input[type="submit"].green {
   color: #FFFFFF;
@@ -1253,17 +1427,33 @@ ul.menu.tabs {
   background-image: linear-gradient(0deg,#109618, #4cb052);
   text-shadow: 0px -1px 1px #0c7112;
 }
-.btn.green:active, button.green:active, input[type="button"].green:active, input[type="reset"].green:active, input[type="submit"].green:active {
+.btn.green:active, .btn.green.active, button.green:active, button.green.active, input[type="button"].green:active, input[type="button"].green.active, input[type="reset"].green:active, input[type="reset"].green.active, input[type="submit"].green:active, input[type="submit"].green.active {
   background-color: #109618;
   background-image: -webkit-linear-gradient(-450deg, #109618, #4cb052);
   background-image: linear-gradient(180deg,#109618, #4cb052);
   text-shadow: 0px 1px 1px #0c7112;
 }
-.btn.green:active:hover, button.green:active:hover, input[type="button"].green:active:hover, input[type="reset"].green:active:hover, input[type="submit"].green:active:hover {
+.btn.green:active:hover, .btn.green:active.hover, .btn.green.active:hover, .btn.green.active.hover, button.green:active:hover, button.green:active.hover, button.green.active:hover, button.green.active.hover, input[type="button"].green:active:hover, input[type="button"].green:active.hover, input[type="button"].green.active:hover, input[type="button"].green.active.hover, input[type="reset"].green:active:hover, input[type="reset"].green:active.hover, input[type="reset"].green.active:hover, input[type="reset"].green.active.hover, input[type="submit"].green:active:hover, input[type="submit"].green:active.hover, input[type="submit"].green.active:hover, input[type="submit"].green.active.hover {
   box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #B6DFB9;
 }
-.btn.green:hover, button.green:hover, input[type="button"].green:hover, input[type="reset"].green:hover, input[type="submit"].green:hover {
+.btn.green:hover, .btn.green.hover, button.green:hover, button.green.hover, input[type="button"].green:hover, input[type="button"].green.hover, input[type="reset"].green:hover, input[type="reset"].green.hover, input[type="submit"].green:hover, input[type="submit"].green.hover {
   box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #B6DFB9;
+}
+.btn.green[disabled], .btn.green.disabled, button.green[disabled], button.green.disabled, input[type="button"].green[disabled], input[type="button"].green.disabled, input[type="reset"].green[disabled], input[type="reset"].green.disabled, input[type="submit"].green[disabled], input[type="submit"].green.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #109618;
+  color: #B6DFB9;
+  cursor: no-drop;
+}
+.btn.green[disabled]:active, .btn.green[disabled]:hover, .btn.green.disabled:active, .btn.green.disabled:hover, button.green[disabled]:active, button.green[disabled]:hover, button.green.disabled:active, button.green.disabled:hover, input[type="button"].green[disabled]:active, input[type="button"].green[disabled]:hover, input[type="button"].green.disabled:active, input[type="button"].green.disabled:hover, input[type="reset"].green[disabled]:active, input[type="reset"].green[disabled]:hover, input[type="reset"].green.disabled:active, input[type="reset"].green.disabled:hover, input[type="submit"].green[disabled]:active, input[type="submit"].green[disabled]:hover, input[type="submit"].green.disabled:active, input[type="submit"].green.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.green .bdg, button.green .bdg, input[type="button"].green .bdg, input[type="reset"].green .bdg, input[type="submit"].green .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #0c7112;
 }
 .btn.purple, button.purple, input[type="button"].purple, input[type="reset"].purple, input[type="submit"].purple {
   color: #FFFFFF;
@@ -1273,17 +1463,33 @@ ul.menu.tabs {
   background-image: linear-gradient(0deg,#990099, #b340b3);
   text-shadow: 0px -1px 1px #730073;
 }
-.btn.purple:active, button.purple:active, input[type="button"].purple:active, input[type="reset"].purple:active, input[type="submit"].purple:active {
+.btn.purple:active, .btn.purple.active, button.purple:active, button.purple.active, input[type="button"].purple:active, input[type="button"].purple.active, input[type="reset"].purple:active, input[type="reset"].purple.active, input[type="submit"].purple:active, input[type="submit"].purple.active {
   background-color: #990099;
   background-image: -webkit-linear-gradient(-450deg, #990099, #b340b3);
   background-image: linear-gradient(180deg,#990099, #b340b3);
   text-shadow: 0px 1px 1px #730073;
 }
-.btn.purple:active:hover, button.purple:active:hover, input[type="button"].purple:active:hover, input[type="reset"].purple:active:hover, input[type="submit"].purple:active:hover {
+.btn.purple:active:hover, .btn.purple:active.hover, .btn.purple.active:hover, .btn.purple.active.hover, button.purple:active:hover, button.purple:active.hover, button.purple.active:hover, button.purple.active.hover, input[type="button"].purple:active:hover, input[type="button"].purple:active.hover, input[type="button"].purple.active:hover, input[type="button"].purple.active.hover, input[type="reset"].purple:active:hover, input[type="reset"].purple:active.hover, input[type="reset"].purple.active:hover, input[type="reset"].purple.active.hover, input[type="submit"].purple:active:hover, input[type="submit"].purple:active.hover, input[type="submit"].purple.active:hover, input[type="submit"].purple.active.hover {
   box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #E0B2E0;
 }
-.btn.purple:hover, button.purple:hover, input[type="button"].purple:hover, input[type="reset"].purple:hover, input[type="submit"].purple:hover {
+.btn.purple:hover, .btn.purple.hover, button.purple:hover, button.purple.hover, input[type="button"].purple:hover, input[type="button"].purple.hover, input[type="reset"].purple:hover, input[type="reset"].purple.hover, input[type="submit"].purple:hover, input[type="submit"].purple.hover {
   box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #E0B2E0;
+}
+.btn.purple[disabled], .btn.purple.disabled, button.purple[disabled], button.purple.disabled, input[type="button"].purple[disabled], input[type="button"].purple.disabled, input[type="reset"].purple[disabled], input[type="reset"].purple.disabled, input[type="submit"].purple[disabled], input[type="submit"].purple.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #990099;
+  color: #E0B2E0;
+  cursor: no-drop;
+}
+.btn.purple[disabled]:active, .btn.purple[disabled]:hover, .btn.purple.disabled:active, .btn.purple.disabled:hover, button.purple[disabled]:active, button.purple[disabled]:hover, button.purple.disabled:active, button.purple.disabled:hover, input[type="button"].purple[disabled]:active, input[type="button"].purple[disabled]:hover, input[type="button"].purple.disabled:active, input[type="button"].purple.disabled:hover, input[type="reset"].purple[disabled]:active, input[type="reset"].purple[disabled]:hover, input[type="reset"].purple.disabled:active, input[type="reset"].purple.disabled:hover, input[type="submit"].purple[disabled]:active, input[type="submit"].purple[disabled]:hover, input[type="submit"].purple.disabled:active, input[type="submit"].purple.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.purple .bdg, button.purple .bdg, input[type="button"].purple .bdg, input[type="reset"].purple .bdg, input[type="submit"].purple .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #730073;
 }
 .btn.orange, button.orange, input[type="button"].orange, input[type="reset"].orange, input[type="submit"].orange {
   color: #FFFFFF;
@@ -1293,17 +1499,57 @@ ul.menu.tabs {
   background-image: linear-gradient(0deg,#FF6600, #ff8c40);
   text-shadow: 0px -1px 1px #bf4d00;
 }
-.btn.orange:active, button.orange:active, input[type="button"].orange:active, input[type="reset"].orange:active, input[type="submit"].orange:active {
+.btn.orange:active, .btn.orange.active, button.orange:active, button.orange.active, input[type="button"].orange:active, input[type="button"].orange.active, input[type="reset"].orange:active, input[type="reset"].orange.active, input[type="submit"].orange:active, input[type="submit"].orange.active {
   background-color: #FF6600;
   background-image: -webkit-linear-gradient(-450deg, #FF6600, #ff8c40);
   background-image: linear-gradient(180deg,#FF6600, #ff8c40);
   text-shadow: 0px 1px 1px #bf4d00;
 }
-.btn.orange:active:hover, button.orange:active:hover, input[type="button"].orange:active:hover, input[type="reset"].orange:active:hover, input[type="submit"].orange:active:hover {
+.btn.orange:active:hover, .btn.orange:active.hover, .btn.orange.active:hover, .btn.orange.active.hover, button.orange:active:hover, button.orange:active.hover, button.orange.active:hover, button.orange.active.hover, input[type="button"].orange:active:hover, input[type="button"].orange:active.hover, input[type="button"].orange.active:hover, input[type="button"].orange.active.hover, input[type="reset"].orange:active:hover, input[type="reset"].orange:active.hover, input[type="reset"].orange.active:hover, input[type="reset"].orange.active.hover, input[type="submit"].orange:active:hover, input[type="submit"].orange:active.hover, input[type="submit"].orange.active:hover, input[type="submit"].orange.active.hover {
   box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #FFCFAE;
 }
-.btn.orange:hover, button.orange:hover, input[type="button"].orange:hover, input[type="reset"].orange:hover, input[type="submit"].orange:hover {
+.btn.orange:hover, .btn.orange.hover, button.orange:hover, button.orange.hover, input[type="button"].orange:hover, input[type="button"].orange.hover, input[type="reset"].orange:hover, input[type="reset"].orange.hover, input[type="submit"].orange:hover, input[type="submit"].orange.hover {
   box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #FFCFAE;
+}
+.btn.orange[disabled], .btn.orange.disabled, button.orange[disabled], button.orange.disabled, input[type="button"].orange[disabled], input[type="button"].orange.disabled, input[type="reset"].orange[disabled], input[type="reset"].orange.disabled, input[type="submit"].orange[disabled], input[type="submit"].orange.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #FF6600;
+  color: #FFCFAE;
+  cursor: no-drop;
+}
+.btn.orange[disabled]:active, .btn.orange[disabled]:hover, .btn.orange.disabled:active, .btn.orange.disabled:hover, button.orange[disabled]:active, button.orange[disabled]:hover, button.orange.disabled:active, button.orange.disabled:hover, input[type="button"].orange[disabled]:active, input[type="button"].orange[disabled]:hover, input[type="button"].orange.disabled:active, input[type="button"].orange.disabled:hover, input[type="reset"].orange[disabled]:active, input[type="reset"].orange[disabled]:hover, input[type="reset"].orange.disabled:active, input[type="reset"].orange.disabled:hover, input[type="submit"].orange[disabled]:active, input[type="submit"].orange[disabled]:hover, input[type="submit"].orange.disabled:active, input[type="submit"].orange.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.orange .bdg, button.orange .bdg, input[type="button"].orange .bdg, input[type="reset"].orange .bdg, input[type="submit"].orange .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #bf4d00;
+}
+
+.btn-group {
+  display: inline-block;
+}
+.btn-group::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.btn-group .btn {
+  float: left;
+  margin-left: -1px;
+  margin-right: 0;
+  border-radius: 0;
+}
+.btn-group .btn:first-child {
+  margin-left: 0;
+  border-bottom-left-radius: 0.25em;
+  border-top-left-radius: 0.25em;
+}
+.btn-group .btn:last-child {
+  border-bottom-right-radius: 0.25em;
+  border-top-right-radius: 0.25em;
 }
 
 .navbar {

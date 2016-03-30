@@ -3,13 +3,13 @@
 
 	%ul
 		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-success', 'data-alert' => 'true', 'data-timeout' => 1300 } Success
+			%a{ 'data-action' => 'modal', 'data-target' => '#modal-success', 'data-overlay' => 'false', 'data-duration' => 1300 } Success
 		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-warning', 'data-dim' => 'true' } Warning
+			%a{ 'data-action' => 'modal', 'data-target' => '#modal-warning', 'data-overlay' => 'static' } Warning
 		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-error' } Error
+			%a{ 'data-action' => 'modal', 'data-target' => '#modal-error', 'data-overlay' => 'true' } Error
 
-	#modal-success.card.modal.green
+	#modal-success.card.modal.green.alert
 		You were successful!
 
 	#modal-error.card.modal.red
@@ -29,3 +29,13 @@
 		%footer.btns
 			%button.btn.cancel Cancel
 			%button.btn.red.ok Do it!
+
+	:coffee
+		$ '#modal-warning'
+		.on 'ok', ->
+			setTimeout ->
+				$ '#modal-success'
+				.modal
+					alert: true
+					timeout: 1300
+			, 700

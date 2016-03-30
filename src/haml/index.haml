@@ -9,7 +9,7 @@
 		%script{ :src => '../../lib/jquery/jquery.min.js' }
 		%script{ :src => '../js/barista.js' }
 
-		:CSS
+		:css
 			h3.section { margin-top: 0; border-bottom: 1px solid #999; }
 	%body
 		%header.navbar
@@ -17,11 +17,12 @@
 				.icon Demo
 		%article.wrapper
 			= render '_typography'
+			= render '_buttons'
 			= render '_labels'
 			= render '_badges'
-			= render '_buttons'
-			= render '_cards'
-			= render '_lists'
 			= render '_tables'
+			= render '_lists'
+			= render '_cards'
 			= render '_modal'
+			= render '_forms'
 			= render '_tooltips'

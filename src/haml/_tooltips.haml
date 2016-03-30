@@ -2,10 +2,8 @@
 	%h3.section Tooltip
 
 	%p
-		%a{ 'title' => 'A nice tooltip', 'data-hover' => 'tooltip' } Hover above
+		%a{ 'title' => 'Tooltip above', 'data-hover' => 'tooltip' } Hover above
+		%a{ 'title' => 'Tooltip below', 'data-hover' => 'tooltip', 'data-side' => 'bottom' } Hover below
 	%p
-		%a{ 'title' => 'A nice tooltip', 'data-hover' => 'tooltip', 'data-side' => 'right' } Hover right
-	%p
-		%a{ 'title' => 'A nice tooltip', 'data-hover' => 'tooltip', 'data-side' => 'bottom' } Hover below
-	%p
-		%a{ 'title' => 'A nice tooltip', 'data-hover' => 'tooltip', 'data-side' => 'left' } Hover left
+		%a{ 'title' => 'Tooltip right', 'data-hover' => 'tooltip', 'data-side' => 'right' } Hover right
+		%a{ 'title' => 'Tooltip left', 'data-hover' => 'tooltip', 'data-side' => 'left' } Hover left

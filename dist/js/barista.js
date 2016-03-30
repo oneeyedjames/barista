@@ -75,18 +75,20 @@ jQuery(function($) {
       if (!overlay.length) {
         overlay = $('<div>').addClass('overlay').appendTo('body');
       }
-      if (opts.dim) {
+      overlay.toggleClass('dim', !!opts.overlay).addClass('visible').unbind('click');
+      if (opts.overlay !== 'static') {
+        overlay.click(dismiss);
+      }
+      if (!!opts.overlay) {
         body.addClass('no-scroll');
       }
       dialog.addClass('visible');
-      dialog.toggleClass('dim', opts.dim);
-      dialog.toggleClass('alert', opts.alert);
-      overlay.toggleClass('dim', opts.dim).addClass('visible').unbind('click').click(dismiss);
+      dialog.toggleClass('dim', !!opts.overlay);
       $(window).resize(function() {
         return dialog.center();
       });
-      if (opts.timeout) {
-        setTimeout(dismiss, opts.timeout);
+      if (opts.duration) {
+        setTimeout(dismiss, opts.duration);
       }
       return dialog.center();
     },
@@ -103,20 +105,13 @@ jQuery(function($) {
     button = $(this);
     target = button.data('target');
     data = button.data();
-    if (data.timeout == null) {
-      data.timeout = 0;
+    if (data.duration == null) {
+      data.duration = 0;
     }
-    if (data.alert == null) {
-      data.alert = false;
-    }
-    if (data.dim == null) {
-      data.dim = false;
+    if (data.overlay == null) {
+      data.overlay = true;
     }
     return $(target).modal(data);
-  });
-  $('.modal .close').click(function(event) {
-    event.preventDefault();
-    return $(this).parents('.modal').dismiss();
   });
   $('.modal .btn.cancel').click(function(event) {
     event.preventDefault();
