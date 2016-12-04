@@ -1609,11 +1609,6 @@ ul.menu.tabs {
   color: #bf4d00;
 }
 
-h1 .btn, h2 .btn, h3 .btn, h4 .btn, h5 .btn, h6 .btn {
-  position: relative;
-  top: -0.44643em;
-}
-
 .btn-group {
   display: inline-block;
 }
