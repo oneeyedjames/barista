@@ -22,14 +22,15 @@
 		background-color: $white
 
 =card-width($screen, $cols, $margin: $block-spacing)
-	width: #{$screen / 12 * $cols - $margin * 2}
+	width: #{$screen / $grid-columns * $cols - $margin * 2}
 
 .card
 	margin-bottom: $base-margin-bottom
-	padding: $base-padding
+	padding: $base-padding !important
 	border-radius: $base-border-radius
 	border: $base-border
 	background: $white
+
 	+box-shadow($gray)
 
 	header
@@ -134,13 +135,12 @@
 +screen-width($screen-md-width)
 	.card.modal
 		+card-width($screen-md-width, 6)
-
-		&.wide
-			+card-width($screen-md-width, 8)
-
+		@for $num from 1 through $grid-columns
+			&.col-md-#{$num}
+				+card-width($screen-md-width, $num)
 +screen-width($screen-lg-width)
 	.card.modal
 		+card-width($screen-lg-width, 4)
-
-		&.wide
-			+card-width($screen-lg-width, 8)
+		@for $num from 1 through $grid-columns
+			&.col-lg-#{$num}
+				+card-width($screen-lg-width, $num)
