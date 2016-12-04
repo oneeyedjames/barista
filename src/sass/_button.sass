@@ -79,6 +79,11 @@
 	&.orange
 		+btn-color($orange, $light-orange)
 
+h1, h2, h3, h4, h5, h6
+	.btn
+		position: relative
+		top: -($base-padding-vertical + em($base-border-width, $base-font-size))
+
 .btn-group
 	display: inline-block
 	+clearfix

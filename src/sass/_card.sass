@@ -40,6 +40,10 @@
 		border-bottom: $base-border
 		+border-top-radius($base-border-radius)
 
+		a
+			color: $white
+			text-decoration: none
+
 	footer
 		margin: ($base-spacing / 2) (-$base-spacing) (-$base-spacing / 2)
 		padding: ($base-spacing / 2) $base-spacing
@@ -136,7 +140,7 @@
 
 +screen-width($screen-lg-width)
 	.card.modal
-		+card-width($screen-md-width, 4)
+		+card-width($screen-lg-width, 4)
 
 		&.wide
-			+card-width($screen-md-width, 8)
+			+card-width($screen-lg-width, 8)

@@ -122,6 +122,24 @@ jQuery(function($) {
     return $(this).parents('.modal').dismiss('ok');
   });
   $.fn.extend({
+    toggleMenu: function(button) {
+      var active;
+      active = $(this).hasClass('active');
+      $('.navbar ul.nav ul').removeClass('active');
+      $(this).toggleClass('active', !active);
+      return button.children('.caret').toggleClass('fa-caret-down', active).toggleClass('fa-caret-up', !active);
+    }
+  });
+  $('.navbar *[data-action="menu"]').each(function() {
+    return $(this).children('.caret').addClass('fa fa-caret-down');
+  });
+  $('.navbar *[data-action="menu"]').click(function(event) {
+    var button;
+    event.preventDefault();
+    button = $(this);
+    return button.next('ul').toggleMenu(button);
+  });
+  $.fn.extend({
     tooltip: function(opts) {
       var target;
       target = $(this);

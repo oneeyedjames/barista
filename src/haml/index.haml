@@ -14,7 +14,25 @@
 	%body
 		%header.navbar
 			.wrapper
-				.icon Demo
+				.icon
+					%a Home
+				%ul.nav
+					%li
+						%a{ 'data-action' => 'menu' }
+							First Item
+							%i.caret
+						%ul
+							%li
+								%a First Sub-Item
+							%li
+								%a Second Sub-Item
+							%li
+								%a Third Sub-Item
+					%li
+						%a Second Item
+				%ul.nav.right
+					%li
+						%a Special Item
 		%article.wrapper
 			= render '_typography'
 			= render '_buttons'

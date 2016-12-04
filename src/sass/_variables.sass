@@ -4,7 +4,7 @@ $black: #333333
 $gray: #999999
 $blue: #3366CC
 $red: #DC3912
-$yellow: #FF9900
+$yellow: #FFB800
 $green: #109618
 $purple: #990099
 $orange: #FF6600
@@ -47,7 +47,7 @@ $semi-bold: 500
 $light: 300
 
 $base-border-radius: 0.5em
-$small-border-radius: $base-border-radius / 2
+$small-border-radius: $base-border-radius * .75
 $large-border-radius: $base-border-radius * 1.5
 
 $base-border-color: $gray
@@ -61,7 +61,10 @@ $block-spacing: $block-base
 
 $base-margin-bottom: $base-spacing * 2
 
-$base-padding: ($base-spacing / 2) $base-spacing
+$base-padding-vertical: $base-spacing / 2
+$base-padding-horizontal: $base-spacing
+
+$base-padding: $base-padding-vertical $base-padding-horizontal
 $small-padding: ($base-spacing / 4) ($base-spacing / 2)
 $large-padding: $base-spacing ($base-spacing * 1.5)
 
