@@ -1335,8 +1335,6 @@ ul.menu.tabs {
 }
 .btn, button, input[type="button"], input[type="reset"], input[type="submit"] {
   display: inline-block;
-  margin-right: 0.1875em;
-  margin-bottom: 0.375em;
   padding: 0.375em 0.75em;
   border-radius: 0.375em;
   border: 1px solid #999999;
@@ -1345,7 +1343,6 @@ ul.menu.tabs {
   line-height: 1.42857;
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 14px;
-  box-shadow: 2px 3px 1px 0px #999999;
   color: #FFFFFF;
   border-color: #737373;
   background-color: #999999;
@@ -1360,10 +1357,10 @@ ul.menu.tabs {
   text-shadow: 0px 1px 1px #737373;
 }
 .btn:active:hover, .btn:active.hover, .btn.active:hover, .btn.active.hover, button:active:hover, button:active.hover, button.active:hover, button.active.hover, input[type="button"]:active:hover, input[type="button"]:active.hover, input[type="button"].active:hover, input[type="button"].active.hover, input[type="reset"]:active:hover, input[type="reset"]:active.hover, input[type="reset"].active:hover, input[type="reset"].active.hover, input[type="submit"]:active:hover, input[type="submit"]:active.hover, input[type="submit"].active:hover, input[type="submit"].active.hover {
-  box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #DDDDDD;
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
 }
 .btn:hover, .btn.hover, button:hover, button.hover, input[type="button"]:hover, input[type="button"].hover, input[type="reset"]:hover, input[type="reset"].hover, input[type="submit"]:hover, input[type="submit"].hover {
-  box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #DDDDDD;
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
 }
 .btn[disabled], .btn.disabled, button[disabled], button.disabled, input[type="button"][disabled], input[type="button"].disabled, input[type="reset"][disabled], input[type="reset"].disabled, input[type="submit"][disabled], input[type="submit"].disabled {
   box-shadow: none;
@@ -1381,8 +1378,8 @@ ul.menu.tabs {
   background-color: #FFFFFF;
   color: #737373;
 }
-.btn:active, .btn.active, button:active, button.active, input[type="button"]:active, input[type="button"].active, input[type="reset"]:active, input[type="reset"].active, input[type="submit"]:active, input[type="submit"].active {
-  box-shadow: 1px 2px 1px #999999;
+.btn:visited, button:visited, input[type="button"]:visited, input[type="reset"]:visited, input[type="submit"]:visited {
+  color: #FFFFFF;
 }
 .btn.sm, button.sm, input[type="button"].sm, input[type="reset"].sm, input[type="submit"].sm {
   padding: 0.1875em 0.375em;
@@ -1407,10 +1404,10 @@ ul.menu.tabs {
   text-shadow: 0px 1px 1px #264d99;
 }
 .btn.blue:active:hover, .btn.blue:active.hover, .btn.blue.active:hover, .btn.blue.active.hover, button.blue:active:hover, button.blue:active.hover, button.blue.active:hover, button.blue.active.hover, input[type="button"].blue:active:hover, input[type="button"].blue:active.hover, input[type="button"].blue.active:hover, input[type="button"].blue.active.hover, input[type="reset"].blue:active:hover, input[type="reset"].blue:active.hover, input[type="reset"].blue.active:hover, input[type="reset"].blue.active.hover, input[type="submit"].blue:active:hover, input[type="submit"].blue:active.hover, input[type="submit"].blue.active:hover, input[type="submit"].blue.active.hover {
-  box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #C1D0EF;
+  box-shadow: inset 0 0 6px 2px #C1D0EF;
 }
 .btn.blue:hover, .btn.blue.hover, button.blue:hover, button.blue.hover, input[type="button"].blue:hover, input[type="button"].blue.hover, input[type="reset"].blue:hover, input[type="reset"].blue.hover, input[type="submit"].blue:hover, input[type="submit"].blue.hover {
-  box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #C1D0EF;
+  box-shadow: inset 0 0 6px 2px #C1D0EF;
 }
 .btn.blue[disabled], .btn.blue.disabled, button.blue[disabled], button.blue.disabled, input[type="button"].blue[disabled], input[type="button"].blue.disabled, input[type="reset"].blue[disabled], input[type="reset"].blue.disabled, input[type="submit"].blue[disabled], input[type="submit"].blue.disabled {
   box-shadow: none;
@@ -1443,10 +1440,10 @@ ul.menu.tabs {
   text-shadow: 0px 1px 1px #a52b0e;
 }
 .btn.red:active:hover, .btn.red:active.hover, .btn.red.active:hover, .btn.red.active.hover, button.red:active:hover, button.red:active.hover, button.red.active:hover, button.red.active.hover, input[type="button"].red:active:hover, input[type="button"].red:active.hover, input[type="button"].red.active:hover, input[type="button"].red.active.hover, input[type="reset"].red:active:hover, input[type="reset"].red:active.hover, input[type="reset"].red.active:hover, input[type="reset"].red.active.hover, input[type="submit"].red:active:hover, input[type="submit"].red:active.hover, input[type="submit"].red.active:hover, input[type="submit"].red.active.hover {
-  box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #F4C3B7;
+  box-shadow: inset 0 0 6px 2px #F4C3B7;
 }
 .btn.red:hover, .btn.red.hover, button.red:hover, button.red.hover, input[type="button"].red:hover, input[type="button"].red.hover, input[type="reset"].red:hover, input[type="reset"].red.hover, input[type="submit"].red:hover, input[type="submit"].red.hover {
-  box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #F4C3B7;
+  box-shadow: inset 0 0 6px 2px #F4C3B7;
 }
 .btn.red[disabled], .btn.red.disabled, button.red[disabled], button.red.disabled, input[type="button"].red[disabled], input[type="button"].red.disabled, input[type="reset"].red[disabled], input[type="reset"].red.disabled, input[type="submit"].red[disabled], input[type="submit"].red.disabled {
   box-shadow: none;
@@ -1479,10 +1476,10 @@ ul.menu.tabs {
   text-shadow: 0px 1px 1px #bf8a00;
 }
 .btn.yellow:active:hover, .btn.yellow:active.hover, .btn.yellow.active:hover, .btn.yellow.active.hover, button.yellow:active:hover, button.yellow:active.hover, button.yellow.active:hover, button.yellow.active.hover, input[type="button"].yellow:active:hover, input[type="button"].yellow:active.hover, input[type="button"].yellow.active:hover, input[type="button"].yellow.active.hover, input[type="reset"].yellow:active:hover, input[type="reset"].yellow:active.hover, input[type="reset"].yellow.active:hover, input[type="reset"].yellow.active.hover, input[type="submit"].yellow:active:hover, input[type="submit"].yellow:active.hover, input[type="submit"].yellow.active:hover, input[type="submit"].yellow.active.hover {
-  box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #FEE0B2;
+  box-shadow: inset 0 0 6px 2px #FEE0B2;
 }
 .btn.yellow:hover, .btn.yellow.hover, button.yellow:hover, button.yellow.hover, input[type="button"].yellow:hover, input[type="button"].yellow.hover, input[type="reset"].yellow:hover, input[type="reset"].yellow.hover, input[type="submit"].yellow:hover, input[type="submit"].yellow.hover {
-  box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #FEE0B2;
+  box-shadow: inset 0 0 6px 2px #FEE0B2;
 }
 .btn.yellow[disabled], .btn.yellow.disabled, button.yellow[disabled], button.yellow.disabled, input[type="button"].yellow[disabled], input[type="button"].yellow.disabled, input[type="reset"].yellow[disabled], input[type="reset"].yellow.disabled, input[type="submit"].yellow[disabled], input[type="submit"].yellow.disabled {
   box-shadow: none;
@@ -1515,10 +1512,10 @@ ul.menu.tabs {
   text-shadow: 0px 1px 1px #0c7112;
 }
 .btn.green:active:hover, .btn.green:active.hover, .btn.green.active:hover, .btn.green.active.hover, button.green:active:hover, button.green:active.hover, button.green.active:hover, button.green.active.hover, input[type="button"].green:active:hover, input[type="button"].green:active.hover, input[type="button"].green.active:hover, input[type="button"].green.active.hover, input[type="reset"].green:active:hover, input[type="reset"].green:active.hover, input[type="reset"].green.active:hover, input[type="reset"].green.active.hover, input[type="submit"].green:active:hover, input[type="submit"].green:active.hover, input[type="submit"].green.active:hover, input[type="submit"].green.active.hover {
-  box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #B6DFB9;
+  box-shadow: inset 0 0 6px 2px #B6DFB9;
 }
 .btn.green:hover, .btn.green.hover, button.green:hover, button.green.hover, input[type="button"].green:hover, input[type="button"].green.hover, input[type="reset"].green:hover, input[type="reset"].green.hover, input[type="submit"].green:hover, input[type="submit"].green.hover {
-  box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #B6DFB9;
+  box-shadow: inset 0 0 6px 2px #B6DFB9;
 }
 .btn.green[disabled], .btn.green.disabled, button.green[disabled], button.green.disabled, input[type="button"].green[disabled], input[type="button"].green.disabled, input[type="reset"].green[disabled], input[type="reset"].green.disabled, input[type="submit"].green[disabled], input[type="submit"].green.disabled {
   box-shadow: none;
@@ -1551,10 +1548,10 @@ ul.menu.tabs {
   text-shadow: 0px 1px 1px #730073;
 }
 .btn.purple:active:hover, .btn.purple:active.hover, .btn.purple.active:hover, .btn.purple.active.hover, button.purple:active:hover, button.purple:active.hover, button.purple.active:hover, button.purple.active.hover, input[type="button"].purple:active:hover, input[type="button"].purple:active.hover, input[type="button"].purple.active:hover, input[type="button"].purple.active.hover, input[type="reset"].purple:active:hover, input[type="reset"].purple:active.hover, input[type="reset"].purple.active:hover, input[type="reset"].purple.active.hover, input[type="submit"].purple:active:hover, input[type="submit"].purple:active.hover, input[type="submit"].purple.active:hover, input[type="submit"].purple.active.hover {
-  box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #E0B2E0;
+  box-shadow: inset 0 0 6px 2px #E0B2E0;
 }
 .btn.purple:hover, .btn.purple.hover, button.purple:hover, button.purple.hover, input[type="button"].purple:hover, input[type="button"].purple.hover, input[type="reset"].purple:hover, input[type="reset"].purple.hover, input[type="submit"].purple:hover, input[type="submit"].purple.hover {
-  box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #E0B2E0;
+  box-shadow: inset 0 0 6px 2px #E0B2E0;
 }
 .btn.purple[disabled], .btn.purple.disabled, button.purple[disabled], button.purple.disabled, input[type="button"].purple[disabled], input[type="button"].purple.disabled, input[type="reset"].purple[disabled], input[type="reset"].purple.disabled, input[type="submit"].purple[disabled], input[type="submit"].purple.disabled {
   box-shadow: none;
@@ -1587,10 +1584,10 @@ ul.menu.tabs {
   text-shadow: 0px 1px 1px #bf4d00;
 }
 .btn.orange:active:hover, .btn.orange:active.hover, .btn.orange.active:hover, .btn.orange.active.hover, button.orange:active:hover, button.orange:active.hover, button.orange.active:hover, button.orange.active.hover, input[type="button"].orange:active:hover, input[type="button"].orange:active.hover, input[type="button"].orange.active:hover, input[type="button"].orange.active.hover, input[type="reset"].orange:active:hover, input[type="reset"].orange:active.hover, input[type="reset"].orange.active:hover, input[type="reset"].orange.active.hover, input[type="submit"].orange:active:hover, input[type="submit"].orange:active.hover, input[type="submit"].orange.active:hover, input[type="submit"].orange.active.hover {
-  box-shadow: 1px 2px 1px #999999, inset 0 0 6px 2px #FFCFAE;
+  box-shadow: inset 0 0 6px 2px #FFCFAE;
 }
 .btn.orange:hover, .btn.orange.hover, button.orange:hover, button.orange.hover, input[type="button"].orange:hover, input[type="button"].orange.hover, input[type="reset"].orange:hover, input[type="reset"].orange.hover, input[type="submit"].orange:hover, input[type="submit"].orange.hover {
-  box-shadow: 2px 3px 1px #999999, inset 0 0 6px 2px #FFCFAE;
+  box-shadow: inset 0 0 6px 2px #FFCFAE;
 }
 .btn.orange[disabled], .btn.orange.disabled, button.orange[disabled], button.orange.disabled, input[type="button"].orange[disabled], input[type="button"].orange.disabled, input[type="reset"].orange[disabled], input[type="reset"].orange.disabled, input[type="submit"].orange[disabled], input[type="submit"].orange.disabled {
   box-shadow: none;
@@ -1682,6 +1679,9 @@ ul.menu.tabs {
   float: left;
   padding: 0 10px;
   line-height: 40px;
+}
+.navbar ul.nav li:hover ul {
+  display: block;
 }
 .navbar ul.nav li ul {
   display: none;
@@ -1888,4 +1888,40 @@ ul.menu.tabs {
   border-color: transparent;
   border-style: solid;
   border-width: 5px;
+}
+
+.breadcrumb {
+  margin: 0 0 1.5em;
+  padding: 0.375em 0.75em;
+  border-radius: 0.5em;
+  list-style: none;
+  background-color: #DDDDDD;
+}
+.breadcrumb::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.breadcrumb li {
+  float: left;
+}
+.breadcrumb li::before {
+  content: "/";
+  padding: 0 10px;
+}
+.breadcrumb li:first-child::before {
+  content: "";
+  padding: 0;
+}
+.breadcrumb a {
+  text-decoration: none;
+}
+.breadcrumb li::before {
+  color: #999999;
+}
+.breadcrumb.blue {
+  background-color: #C1D0EF;
+}
+.breadcrumb.blue li::before {
+  color: #3366CC;
 }

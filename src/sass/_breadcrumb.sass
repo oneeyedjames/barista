@@ -1,0 +1,32 @@
+=breadcrumb-color($color, $light, $dark)
+	background-color: $light
+
+	li::before
+		color: $color
+
+.breadcrumb
+	margin: 0 0 $base-margin-bottom
+	padding: $base-padding
+	border-radius: $base-border-radius
+	list-style: none
+
+	+clearfix
+
+	li
+		float: left
+
+		&::before
+			content: "/"
+			padding: 0 10px
+
+		&:first-child::before
+			content: ""
+			padding: 0
+
+	a
+		text-decoration: none
+
+	+breadcrumb-color($gray, $light-gray, $dark-gray)
+
+	&.blue
+		+breadcrumb-color($blue, $light-blue, $dark-blue)

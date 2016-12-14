@@ -13,10 +13,12 @@
 		+text-shadow($darker, -$text-shadow-top)
 
 		&:hover, &.hover
-			box-shadow: 1px 2px 1px $gray, inset 0 0 6px 2px $light
+			box-shadow: inset 0 0 6px 2px $light
+			//box-shadow: 1px 2px 1px $gray, inset 0 0 6px 2px $light
 
 	&:hover, &.hover
-		box-shadow: 2px 3px 1px $gray, inset 0 0 6px 2px $light
+		box-shadow: inset 0 0 6px 2px $light
+		//box-shadow: 2px 3px 1px $gray, inset 0 0 6px 2px $light
 
 	&[disabled], &.disabled
 		box-shadow: none
@@ -36,8 +38,8 @@
 
 .btn, #{$all-buttons}
 	display: inline-block
-	margin-right: $base-spacing / 4
-	margin-bottom: $base-spacing / 2
+	//margin-right: $base-spacing / 4
+	//margin-bottom: $base-spacing / 2
 	padding: $base-padding
 	border-radius: $small-border-radius
 	border: $base-border
@@ -47,11 +49,14 @@
 	font-family: $base-font-family
 	font-size: $base-font-size
 
-	+box-shadow($gray)
+	//+box-shadow($gray)
 	+btn-color($gray, $light-gray)
 
-	&:active, &.active
-		box-shadow: 1px 2px 1px $gray
+	&:visited
+		color: $white
+
+	//&:active, &.active
+	//	box-shadow: 1px 2px 1px $gray
 
 	&.sm
 		padding: $small-padding

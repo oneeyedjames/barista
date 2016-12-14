@@ -1,4 +1,11 @@
 jQuery(function($) {
+  $('.btn').click(function(event) {
+    var button;
+    button = $(this);
+    if (button.hasClass('disabled' || button.attr('disabled'))) {
+      return event.preventDefault();
+    }
+  });
   $.fn.extend({
     collapse: function() {
       var box, height;
