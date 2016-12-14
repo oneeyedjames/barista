@@ -1605,6 +1605,11 @@ ul.menu.tabs {
   background-color: #FFFFFF;
   color: #bf4d00;
 }
+.btn.text, button.text, input[type="button"].text, input[type="reset"].text, input[type="submit"].text {
+  color: inherit;
+  background-color: inherit;
+  border-color: transparent;
+}
 
 .btn-group {
   display: inline-block;
@@ -1916,12 +1921,105 @@ ul.menu.tabs {
 .breadcrumb a {
   text-decoration: none;
 }
-.breadcrumb li::before {
+.breadcrumb a {
   color: #999999;
+}
+.breadcrumb a:visited {
+  color: #737373;
+}
+.breadcrumb li {
+  color: #444444;
+}
+.breadcrumb li::before {
+  color: #b3b3b3;
 }
 .breadcrumb.blue {
   background-color: #C1D0EF;
 }
-.breadcrumb.blue li::before {
+.breadcrumb.blue a {
   color: #3366CC;
+}
+.breadcrumb.blue a:visited {
+  color: #264d99;
+}
+.breadcrumb.blue li {
+  color: #1a3366;
+}
+.breadcrumb.blue li::before {
+  color: #668cd9;
+}
+.breadcrumb.red {
+  background-color: #F4C3B7;
+}
+.breadcrumb.red a {
+  color: #DC3912;
+}
+.breadcrumb.red a:visited {
+  color: #a52b0e;
+}
+.breadcrumb.red li {
+  color: #7e210a;
+}
+.breadcrumb.red li::before {
+  color: #e56b4d;
+}
+.breadcrumb.yellow {
+  background-color: #FEE0B2;
+}
+.breadcrumb.yellow a {
+  color: #FFB800;
+}
+.breadcrumb.yellow a:visited {
+  color: #bf8a00;
+}
+.breadcrumb.yellow li {
+  color: #664a00;
+}
+.breadcrumb.yellow li::before {
+  color: #ffca40;
+}
+.breadcrumb.green {
+  background-color: #B6DFB9;
+}
+.breadcrumb.green a {
+  color: #109618;
+}
+.breadcrumb.green a:visited {
+  color: #0c7112;
+}
+.breadcrumb.green li {
+  color: #063a09;
+}
+.breadcrumb.green li::before {
+  color: #4cb052;
+}
+.breadcrumb.orange {
+  background-color: #FFCFAE;
+}
+.breadcrumb.orange a {
+  color: #FF6600;
+}
+.breadcrumb.orange a:visited {
+  color: #bf4d00;
+}
+.breadcrumb.orange li {
+  color: #662900;
+}
+.breadcrumb.orange li::before {
+  color: #ff8c40;
+}
+.breadcrumb.purple {
+  background-color: #E0B2E0;
+}
+.breadcrumb.purple a {
+  color: #990099;
+}
+.breadcrumb.purple a:visited {
+  color: #730073;
+}
+.breadcrumb.purple li {
+  color: #330033;
+}
+.breadcrumb.purple li::before {
+  color: #b340b3;
 }

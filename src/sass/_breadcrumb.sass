@@ -1,8 +1,20 @@
 =breadcrumb-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
 	background-color: $light
 
-	li::before
+	a
 		color: $color
+
+		&:visited
+			color: $darker
+
+	li
+		color: $dark
+
+	li::before
+		color: $lighter
 
 .breadcrumb
 	margin: 0 0 $base-margin-bottom
@@ -30,3 +42,18 @@
 
 	&.blue
 		+breadcrumb-color($blue, $light-blue, $dark-blue)
+
+	&.red
+		+breadcrumb-color($red, $light-red, $dark-red)
+
+	&.yellow
+		+breadcrumb-color($yellow, $light-yellow, $dark-yellow)
+
+	&.green
+		+breadcrumb-color($green, $light-green, $dark-green)
+
+	&.orange
+		+breadcrumb-color($orange, $light-orange, $dark-orange)
+
+	&.purple
+		+breadcrumb-color($purple, $light-purple, $dark-purple)
