@@ -514,6 +514,9 @@ table tbody tr:last-child th:first-child, table tbody tr:last-child td:first-chi
 table tbody tr:last-child th:last-child, table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 0.5em;
 }
+table input[type="color"], table input[type="date"], table input[type="datetime"], table input[type="datetime-local"], table input[type="email"], table input[type="month"], table input[type="number"], table input[type="password"], table input[type="search"], table input[type="tel"], table input[type="text"], table input[type="time"], table input[type="url"], table input[type="week"], table input:not([type]), table textarea, table select {
+  margin: 0;
+}
 table.blue {
   border-color: #264d99;
 }
