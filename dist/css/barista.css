@@ -7,6 +7,11 @@ html, body {
   line-height: 1.42857;
 }
 
+.collapsed {
+  height: 0;
+  overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0.75em 0 0.25em;
   padding: 0 0 0.15em;
@@ -732,7 +737,7 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 
 .card {
   margin-bottom: 1.5em;
-  padding: 0.375em 0.75em !important;
+  padding: 0.375em 0.75em;
   border-radius: 0.5em;
   border: 1px solid #999999;
   background: #FFFFFF;
@@ -751,6 +756,10 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 .card header a {
   color: #FFFFFF;
   text-decoration: none;
+}
+.card header .caret {
+  cursor: pointer;
+  float: right;
 }
 .card footer {
   margin: 0.375em -0.75em -0.375em;
@@ -782,6 +791,25 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 .card footer.btns .btn:last-child {
   margin-right: 0;
 }
+.card header {
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.card header .close:active {
+  text-shadow: 0px 1px 1px #737373;
+}
+.card header, .card footer {
+  border-color: #b3b3b3;
+}
+.card footer, .card.alert {
+  background-color: #DDDDDD;
+  color: #444444;
+}
+.card footer.btns {
+  background-color: #FFFFFF;
+}
 .card.modal {
   -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s ease;
   -moz-transition: visibility 0s linear 0.3s, opacity 0.3s ease;
@@ -807,24 +835,12 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 .card.alert header, .card.alert footer {
   display: none;
 }
-.card header {
-  background-color: #999999;
-  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
-  background-image: linear-gradient(0deg,#999999, #b3b3b3);
-  text-shadow: 0px -1px 1px #737373;
+.card.collapsed {
+  overflow-y: hidden;
+  padding: 0;
 }
-.card header .close:active {
-  text-shadow: 0px 1px 1px #737373;
-}
-.card header, .card footer {
-  border-color: #b3b3b3;
-}
-.card footer, .card.alert {
-  background-color: #DDDDDD;
-  color: #444444;
-}
-.card footer.btns {
-  background-color: #FFFFFF;
+.card.collapsed header {
+  margin: 0;
 }
 .card.blue {
   border-color: #264d99;

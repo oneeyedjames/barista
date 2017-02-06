@@ -26,7 +26,7 @@
 
 .card
 	margin-bottom: $base-margin-bottom
-	padding: $base-padding !important
+	padding: $base-padding // why use !important here?
 	border-radius: $base-border-radius
 	border: $base-border
 	background: $white
@@ -45,6 +45,10 @@
 			color: $white
 			text-decoration: none
 
+		.caret
+			cursor: pointer
+			float: right
+
 	footer
 		margin: ($base-spacing / 2) (-$base-spacing) (-$base-spacing / 2)
 		padding: ($base-spacing / 2) $base-spacing
@@ -61,6 +65,8 @@
 
 				&:last-child
 					margin-right: 0
+
+	+card-color($gray, $light-gray, $dark-gray)
 
 	&.modal
 		+transition(visibility 0s linear 0.3s, opacity 0.3s ease)
@@ -84,7 +90,12 @@
 		header, footer
 			display: none
 
-	+card-color($gray, $light-gray, $dark-gray)
+	&.collapsed
+		overflow-y: hidden
+		padding: 0
+
+		header
+			margin: 0
 
 	&.blue
 		+card-color($blue, $light-blue, $dark-blue)
@@ -138,6 +149,7 @@
 		@for $num from 1 through $grid-columns
 			&.col-md-#{$num}
 				+card-width($screen-md-width, $num)
+
 +screen-width($screen-lg-width)
 	.card.modal
 		+card-width($screen-lg-width, 4)

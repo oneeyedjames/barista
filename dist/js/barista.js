@@ -7,20 +7,54 @@ jQuery(function($) {
     }
   });
   $.fn.extend({
-    collapse: function() {
+    collapse: function(min) {
       var box, height;
       box = $(this);
       if (box.hasClass('collapsed')) {
-        return box.css('overflow', 'hidden');
+        box.css('overflow', 'hidden');
+        box.css('padding', '');
       } else {
         height = box.innerHeight();
         box.css('max-height', height + "px");
-        return box.toggleClass('collapsed');
+        box.css('padding', '0');
       }
+      return box.toggleClass('collapsed');
     }
   });
-  $('.collapsible').click(function() {
-    return $(this).collapse();
+  $('*[data-action="collapse"]').click(function(event) {
+    var button, caret, collapsed, target;
+    event.preventDefault();
+    button = $(this);
+    target = $(button.data('target'));
+    target.toggleClass('collapsed');
+    caret = button.find('.caret');
+    if (caret.length > 0) {
+      collapsed = target.hasClass('collapsed');
+      return caret.toggleClass('fa-caret-down', collapsed).toggleClass('fa-caret-up', !collapsed);
+    }
+  });
+  $('.card.collapsible header').each(function() {
+    var card, caret, header;
+    header = $(this);
+    card = header.parent();
+    caret = header.find('.caret');
+    if (caret.length === 0) {
+      caret = $('<i>').addClass('caret');
+      header.append(caret);
+    }
+    return caret.addClass('fa fa-caret-up').click(function(event) {
+      var active, height;
+      event.preventDefault();
+      if (card.hasClass('collapsed')) {
+        card.css('height', '');
+      } else {
+        height = header.innerHeight();
+        card.css('height', height + "px");
+      }
+      card.toggleClass('collapsed');
+      active = card.hasClass('collapsed');
+      return header.children('.caret').toggleClass('fa-caret-down', active).toggleClass('fa-caret-up', !active);
+    });
   });
   $.fn.extend({
     refreshTabs: function() {
@@ -97,7 +131,15 @@ jQuery(function($) {
       if (opts.duration) {
         setTimeout(dismiss, opts.duration);
       }
-      return dialog.center();
+      dialog.center();
+      dialog.find('.btn.ok').one('click', function(event) {
+        event.preventDefault();
+        return dialog.dismiss('ok');
+      });
+      return dialog.find('.btn.cancel').one('click', function(event) {
+        event.preventDefault();
+        return dialog.dismiss('cancel');
+      });
     },
     dismiss: function(eventType) {
       eventType || (eventType = 'dismiss');
@@ -107,7 +149,7 @@ jQuery(function($) {
     }
   });
   $('*[data-action="modal"]').click(function(event) {
-    var button, data, target;
+    var button, data, source, target;
     event.preventDefault();
     button = $(this);
     target = button.data('target');
@@ -118,15 +160,13 @@ jQuery(function($) {
     if (data.overlay == null) {
       data.overlay = true;
     }
-    return $(target).modal(data);
-  });
-  $('.modal .btn.cancel').click(function(event) {
-    event.preventDefault();
-    return $(this).parents('.modal').dismiss('cancel');
-  });
-  $('.modal .btn.ok').click(function(event) {
-    event.preventDefault();
-    return $(this).parents('.modal').dismiss('ok');
+    if (source = button.attr('href')) {
+      return $.get(source, function(result) {
+        return $(target).html(result).modal(data);
+      });
+    } else {
+      return $(target).modal(data);
+    }
   });
   $.fn.extend({
     toggleMenu: function(button) {

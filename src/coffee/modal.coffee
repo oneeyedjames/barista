@@ -3,8 +3,8 @@ $.fn.extend
 		viewport = $ window
 		element = $ this
 
-		vOffset = ( viewport.height() - element.outerHeight() ) / 2
-		hOffset = ( viewport.width() - element.outerWidth() ) / 2
+		vOffset = (viewport.height() - element.outerHeight()) / 2
+		hOffset = (viewport.width() - element.outerWidth()) / 2
 
 		element.css
 			'top'  : "#{vOffset}px"
@@ -44,6 +44,16 @@ $.fn.extend
 
 		do dialog.center
 
+		dialog.find '.btn.ok'
+		.one 'click', (event) ->
+			do event.preventDefault
+			dialog.dismiss 'ok'
+
+		dialog.find '.btn.cancel'
+		.one 'click', (event) ->
+			do event.preventDefault
+			dialog.dismiss 'cancel'
+
 	dismiss : (eventType) ->
 		eventType ||= 'dismiss'
 
@@ -68,21 +78,11 @@ $ '*[data-action="modal"]'
 	data.duration ?= 0
 	data.overlay  ?= true
 
-	$ target
-	.modal data
-
-$ '.modal .btn.cancel'
-.click (event) ->
-	do event.preventDefault
-
-	$ this
-	.parents '.modal'
-	.dismiss 'cancel'
-
-$ '.modal .btn.ok'
-.click (event) ->
-	do event.preventDefault
-
-	$ this
-	.parents '.modal'
-	.dismiss 'ok'
+	if source = button.attr 'href'
+		$.get source, (result) ->
+			$ target
+			.html result
+			.modal data
+	else
+		$ target
+		.modal data
