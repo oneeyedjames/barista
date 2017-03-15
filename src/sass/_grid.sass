@@ -21,17 +21,41 @@ $sizes: xs sm md lg
 	.col-xs-#{$num}
 		width: percentage($num / $grid-columns)
 
+	.col-xs-push-#{$num}
+		left: percentage($num / $grid-columns)
+
+	.col-xs-pull-#{$num}
+		left: percentage($num / $grid-columns) * -1
+
 +screen-width($screen-sm-width)
 	@for $num from 1 through $grid-columns
 		.col-sm-#{$num}
 			width: percentage($num / $grid-columns)
+
+		.col-sm-push-#{$num}
+			left: percentage($num / $grid-columns)
+
+		.col-sm-pull-#{$num}
+			left: percentage($num / $grid-columns) * -1
 
 +screen-width($screen-md-width)
 	@for $num from 1 through $grid-columns
 		.col-md-#{$num}
 			width: percentage($num / $grid-columns)
 
+		.col-md-push-#{$num}
+			left: percentage($num / $grid-columns)
+
+		.col-md-pull-#{$num}
+			left: percentage($num / $grid-columns) * -1
+
 +screen-width($screen-lg-width)
 	@for $num from 1 through $grid-columns
 		.col-lg-#{$num}
 			width: percentage($num / $grid-columns)
+
+		.col-lg-push-#{$num}
+			left: percentage($num / $grid-columns)
+
+		.col-lg-pull-#{$num}
+			left: percentage($num / $grid-columns) * -1
