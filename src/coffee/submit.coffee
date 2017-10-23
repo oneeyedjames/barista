@@ -3,10 +3,9 @@ $ '*[data-action="submit"]'
 	do event.preventDefault
 
 	button = $ this
-	target = button.data 'target'
+	target = $ button.data 'target'
 
-	message = $ target
-	.data 'message'
+	message = target.data 'message'
 
 	if message and not confirm message
 		return false
@@ -14,9 +13,11 @@ $ '*[data-action="submit"]'
 	data = do button.data
 
 	for key, value of data
-		$ target
-		.find '#' + key.substr 6
-		.val value if key.startsWith 'input-'
+		if key.startsWith 'input'
+			field = do key.substr 5
+			.toLowerCase
 
-	$ target
-	.submit
+			target.find '[name=' + field + ']'
+			.val value
+
+	do target.submit
