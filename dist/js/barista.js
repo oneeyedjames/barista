@@ -186,6 +186,25 @@ jQuery(function($) {
     button = $(this);
     return button.next('ul').toggleMenu(button);
   });
+  $('*[data-action="submit"]').click(function(event) {
+    var button, data, field, key, message, target, value;
+    event.preventDefault();
+    button = $(this);
+    target = $(button.data('target'));
+    message = target.data('message');
+    if (message && !confirm(message)) {
+      return false;
+    }
+    data = button.data();
+    for (key in data) {
+      value = data[key];
+      if (key.startsWith('input')) {
+        field = key.substr(5).toLowerCase();
+        target.find('[name=' + field + ']').val(value);
+      }
+    }
+    return target.submit();
+  });
   $.fn.extend({
     tooltip: function(opts) {
       var target;
