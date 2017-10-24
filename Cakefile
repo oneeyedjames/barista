@@ -14,14 +14,6 @@ haml_src  = './src/haml'
 haml_dest = './dist/html'
 haml_root = 'index'
 
-yui = true
-
-try
-	which = proc.execSync 'which yui'
-catch err
-	console.error 'YUI compressor is not installed. Scripts and styles will not be minified.'
-	yui = false
-
 task 'build', 'Build all source files', ->
 	record 'build', ->
 		invoke 'build:js'
@@ -35,19 +27,16 @@ task 'build:js', 'Build CoffeeScript files into JS', ->
 		minFile = "#{coffee_dest}/#{coffee_root}.min.js"
 
 		try
-			inCode = fs.readdirSync coffee_src
+			source = fs.readdirSync coffee_src
 			.map (file) -> fs.readFileSync "#{coffee_src}/#{file}", 'utf8'
 			.join '\n'
 			.split '\n'
 			.join '\n\t'
 
-			inCode  = "jQuery ($) ->\n\t#{inCode}\n\treturn"
-			outCode = proc.execSync 'coffee -sbp', input: inCode
-			fs.writeFileSync outFile, outCode
+			source  = "jQuery ($) ->\n\t#{source}\n\treturn"
 
-			if yui
-				minCode = proc.execSync "yui --type js", input: outCode
-				fs.writeFileSync minFile, minCode
+			proc.execSync "coffee -sbp > #{outFile}", input: source
+			proc.execSync "minify #{outFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
@@ -64,12 +53,8 @@ task 'build:css', 'Build Sass files into CSS', ->
 		minFile = "#{sass_dest}/#{sass_root}.min.css"
 
 		try
-			outCode = proc.execSync "sass -t expanded --trace #{inFile}"
-			fs.writeFileSync outFile, outCode
-
-			if yui
-				minCode = proc.execSync "yui --type css", input: outCode
-				fs.writeFileSync minFile, minCode
+			proc.execSync "sass -t expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -t compressed  --trace #{inFile} > #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 

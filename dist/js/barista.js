@@ -187,22 +187,23 @@ jQuery(function($) {
     return button.next('ul').toggleMenu(button);
   });
   $('*[data-action="submit"]').click(function(event) {
-    var button, data, key, message, target, value;
+    var button, data, field, key, message, target, value;
     event.preventDefault();
     button = $(this);
-    target = button.data('target');
-    message = $(target).data('message');
+    target = $(button.data('target'));
+    message = target.data('message');
     if (message && !confirm(message)) {
       return false;
     }
     data = button.data();
     for (key in data) {
       value = data[key];
-      if (key.startsWith('input-')) {
-        $(target).find('#' + key.substr(6)).val(value);
+      if (key.startsWith('input')) {
+        field = key.substr(5).toLowerCase();
+        target.find('[name=' + field + ']').val(value);
       }
     }
-    return $(target).submit;
+    return target.submit();
   });
   $.fn.extend({
     tooltip: function(opts) {
