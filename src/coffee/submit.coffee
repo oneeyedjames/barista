@@ -5,11 +5,6 @@ $ '*[data-action="submit"]'
 	button = $ this
 	target = $ button.data 'target'
 
-	message = target.data 'message'
-
-	if message and not confirm message
-		return false
-
 	data = do button.data
 
 	for key, value of data

@@ -56,6 +56,13 @@ jQuery(function($) {
       return header.children('.caret').toggleClass('fa-caret-down', active).toggleClass('fa-caret-up', !active);
     });
   });
+  $('form[data-confirm]').submit(function(event) {
+    var message;
+    message = $(this).data('confirm');
+    if (!confirm(message)) {
+      return event.preventDefault();
+    }
+  });
   $.fn.extend({
     refreshTabs: function() {
       return $(this).children('li').each(function() {
@@ -187,14 +194,10 @@ jQuery(function($) {
     return button.next('ul').toggleMenu(button);
   });
   $('*[data-action="submit"]').click(function(event) {
-    var button, data, field, key, message, target, value;
+    var button, data, field, key, target, value;
     event.preventDefault();
     button = $(this);
     target = $(button.data('target'));
-    message = target.data('message');
-    if (message && !confirm(message)) {
-      return false;
-    }
     data = button.data();
     for (key in data) {
       value = data[key];
