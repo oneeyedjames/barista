@@ -56,14 +56,6 @@ small, .small {
   line-height: inherit;
 }
 
-a {
-  color: #3366CC;
-  text-decoration: underline;
-}
-a:visited {
-  color: #1a3366;
-}
-
 p {
   margin-top: 0;
   margin-bottom: 1.4285714286;
@@ -105,6 +97,62 @@ blockquote {
 }
 .txt.orange {
   background-color: #FFCFAE;
+  color: #662900;
+}
+
+a {
+  text-decoration: underline;
+  color: #3366CC;
+}
+a:visited {
+  color: #1a3366;
+}
+a.red {
+  color: #DC3912;
+}
+a.red:visited {
+  color: #7e210a;
+}
+a.green {
+  color: #109618;
+}
+a.green:visited {
+  color: #063a09;
+}
+a.blue {
+  color: #3366CC;
+}
+a.blue:visited {
+  color: #1a3366;
+}
+a.cyan {
+  color: #48ACDB;
+}
+a.cyan:visited {
+  color: #175673;
+}
+a.magenta {
+  color: #CD51AD;
+}
+a.magenta:visited {
+  color: #7b2364;
+}
+a.yellow {
+  color: #FFB800;
+}
+a.yellow:visited {
+  color: #664a00;
+}
+a.purple {
+  color: #990099;
+}
+a.purple:visited {
+  color: #330033;
+}
+a.orange {
+  color: #FF6600;
+}
+a.orange:visited {
   color: #662900;
 }
 
