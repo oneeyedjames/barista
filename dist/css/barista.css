@@ -688,17 +688,23 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
   font-weight: 500;
   background-color: #999999;
 }
-.lbl.blue {
-  background-color: #3366CC;
-}
 .lbl.red {
   background-color: #DC3912;
 }
-.lbl.yellow {
-  background-color: #FFB800;
-}
 .lbl.green {
   background-color: #109618;
+}
+.lbl.blue {
+  background-color: #3366CC;
+}
+.lbl.cyan {
+  background-color: #48ACDB;
+}
+.lbl.magenta {
+  background-color: #CD51AD;
+}
+.lbl.yellow {
+  background-color: #FFB800;
 }
 .lbl.purple {
   background-color: #990099;
@@ -1792,42 +1798,6 @@ ul.menu.tabs {
   padding: 0.75em 1.125em;
   border-radius: 0.375em;
 }
-.btn.blue, button.blue, input[type="button"].blue, input[type="reset"].blue, input[type="submit"].blue {
-  color: #FFFFFF;
-  border-color: #264d99;
-  background-color: #3366CC;
-  background-image: -webkit-linear-gradient(-270deg, #3366CC, #668cd9);
-  background-image: linear-gradient(0deg,#3366CC, #668cd9);
-  text-shadow: 0px -1px 1px #264d99;
-}
-.btn.blue:active, .btn.blue.active, button.blue:active, button.blue.active, input[type="button"].blue:active, input[type="button"].blue.active, input[type="reset"].blue:active, input[type="reset"].blue.active, input[type="submit"].blue:active, input[type="submit"].blue.active {
-  background-color: #3366CC;
-  background-image: -webkit-linear-gradient(-450deg, #3366CC, #668cd9);
-  background-image: linear-gradient(180deg,#3366CC, #668cd9);
-  text-shadow: 0px 1px 1px #264d99;
-}
-.btn.blue:active:hover, .btn.blue:active.hover, .btn.blue.active:hover, .btn.blue.active.hover, button.blue:active:hover, button.blue:active.hover, button.blue.active:hover, button.blue.active.hover, input[type="button"].blue:active:hover, input[type="button"].blue:active.hover, input[type="button"].blue.active:hover, input[type="button"].blue.active.hover, input[type="reset"].blue:active:hover, input[type="reset"].blue:active.hover, input[type="reset"].blue.active:hover, input[type="reset"].blue.active.hover, input[type="submit"].blue:active:hover, input[type="submit"].blue:active.hover, input[type="submit"].blue.active:hover, input[type="submit"].blue.active.hover {
-  box-shadow: inset 0 0 6px 2px #C1D0EF;
-}
-.btn.blue:hover, .btn.blue.hover, button.blue:hover, button.blue.hover, input[type="button"].blue:hover, input[type="button"].blue.hover, input[type="reset"].blue:hover, input[type="reset"].blue.hover, input[type="submit"].blue:hover, input[type="submit"].blue.hover {
-  box-shadow: inset 0 0 6px 2px #C1D0EF;
-}
-.btn.blue[disabled], .btn.blue.disabled, button.blue[disabled], button.blue.disabled, input[type="button"].blue[disabled], input[type="button"].blue.disabled, input[type="reset"].blue[disabled], input[type="reset"].blue.disabled, input[type="submit"].blue[disabled], input[type="submit"].blue.disabled {
-  box-shadow: none;
-  text-shadow: none;
-  background: #3366CC;
-  color: #C1D0EF;
-  cursor: no-drop;
-}
-.btn.blue[disabled]:active, .btn.blue[disabled]:hover, .btn.blue.disabled:active, .btn.blue.disabled:hover, button.blue[disabled]:active, button.blue[disabled]:hover, button.blue.disabled:active, button.blue.disabled:hover, input[type="button"].blue[disabled]:active, input[type="button"].blue[disabled]:hover, input[type="button"].blue.disabled:active, input[type="button"].blue.disabled:hover, input[type="reset"].blue[disabled]:active, input[type="reset"].blue[disabled]:hover, input[type="reset"].blue.disabled:active, input[type="reset"].blue.disabled:hover, input[type="submit"].blue[disabled]:active, input[type="submit"].blue[disabled]:hover, input[type="submit"].blue.disabled:active, input[type="submit"].blue.disabled:hover {
-  box-shadow: none;
-  text-shadow: none;
-}
-.btn.blue .bdg, button.blue .bdg, input[type="button"].blue .bdg, input[type="reset"].blue .bdg, input[type="submit"].blue .bdg {
-  text-shadow: none;
-  background-color: #FFFFFF;
-  color: #264d99;
-}
 .btn.red, button.red, input[type="button"].red, input[type="reset"].red, input[type="submit"].red {
   color: #FFFFFF;
   border-color: #a52b0e;
@@ -1864,42 +1834,6 @@ ul.menu.tabs {
   background-color: #FFFFFF;
   color: #a52b0e;
 }
-.btn.yellow, button.yellow, input[type="button"].yellow, input[type="reset"].yellow, input[type="submit"].yellow {
-  color: #FFFFFF;
-  border-color: #bf8a00;
-  background-color: #FFB800;
-  background-image: -webkit-linear-gradient(-270deg, #FFB800, #ffca40);
-  background-image: linear-gradient(0deg,#FFB800, #ffca40);
-  text-shadow: 0px -1px 1px #bf8a00;
-}
-.btn.yellow:active, .btn.yellow.active, button.yellow:active, button.yellow.active, input[type="button"].yellow:active, input[type="button"].yellow.active, input[type="reset"].yellow:active, input[type="reset"].yellow.active, input[type="submit"].yellow:active, input[type="submit"].yellow.active {
-  background-color: #FFB800;
-  background-image: -webkit-linear-gradient(-450deg, #FFB800, #ffca40);
-  background-image: linear-gradient(180deg,#FFB800, #ffca40);
-  text-shadow: 0px 1px 1px #bf8a00;
-}
-.btn.yellow:active:hover, .btn.yellow:active.hover, .btn.yellow.active:hover, .btn.yellow.active.hover, button.yellow:active:hover, button.yellow:active.hover, button.yellow.active:hover, button.yellow.active.hover, input[type="button"].yellow:active:hover, input[type="button"].yellow:active.hover, input[type="button"].yellow.active:hover, input[type="button"].yellow.active.hover, input[type="reset"].yellow:active:hover, input[type="reset"].yellow:active.hover, input[type="reset"].yellow.active:hover, input[type="reset"].yellow.active.hover, input[type="submit"].yellow:active:hover, input[type="submit"].yellow:active.hover, input[type="submit"].yellow.active:hover, input[type="submit"].yellow.active.hover {
-  box-shadow: inset 0 0 6px 2px #FEE0B2;
-}
-.btn.yellow:hover, .btn.yellow.hover, button.yellow:hover, button.yellow.hover, input[type="button"].yellow:hover, input[type="button"].yellow.hover, input[type="reset"].yellow:hover, input[type="reset"].yellow.hover, input[type="submit"].yellow:hover, input[type="submit"].yellow.hover {
-  box-shadow: inset 0 0 6px 2px #FEE0B2;
-}
-.btn.yellow[disabled], .btn.yellow.disabled, button.yellow[disabled], button.yellow.disabled, input[type="button"].yellow[disabled], input[type="button"].yellow.disabled, input[type="reset"].yellow[disabled], input[type="reset"].yellow.disabled, input[type="submit"].yellow[disabled], input[type="submit"].yellow.disabled {
-  box-shadow: none;
-  text-shadow: none;
-  background: #FFB800;
-  color: #FEE0B2;
-  cursor: no-drop;
-}
-.btn.yellow[disabled]:active, .btn.yellow[disabled]:hover, .btn.yellow.disabled:active, .btn.yellow.disabled:hover, button.yellow[disabled]:active, button.yellow[disabled]:hover, button.yellow.disabled:active, button.yellow.disabled:hover, input[type="button"].yellow[disabled]:active, input[type="button"].yellow[disabled]:hover, input[type="button"].yellow.disabled:active, input[type="button"].yellow.disabled:hover, input[type="reset"].yellow[disabled]:active, input[type="reset"].yellow[disabled]:hover, input[type="reset"].yellow.disabled:active, input[type="reset"].yellow.disabled:hover, input[type="submit"].yellow[disabled]:active, input[type="submit"].yellow[disabled]:hover, input[type="submit"].yellow.disabled:active, input[type="submit"].yellow.disabled:hover {
-  box-shadow: none;
-  text-shadow: none;
-}
-.btn.yellow .bdg, button.yellow .bdg, input[type="button"].yellow .bdg, input[type="reset"].yellow .bdg, input[type="submit"].yellow .bdg {
-  text-shadow: none;
-  background-color: #FFFFFF;
-  color: #bf8a00;
-}
 .btn.green, button.green, input[type="button"].green, input[type="reset"].green, input[type="submit"].green {
   color: #FFFFFF;
   border-color: #0c7112;
@@ -1935,6 +1869,150 @@ ul.menu.tabs {
   text-shadow: none;
   background-color: #FFFFFF;
   color: #0c7112;
+}
+.btn.blue, button.blue, input[type="button"].blue, input[type="reset"].blue, input[type="submit"].blue {
+  color: #FFFFFF;
+  border-color: #264d99;
+  background-color: #3366CC;
+  background-image: -webkit-linear-gradient(-270deg, #3366CC, #668cd9);
+  background-image: linear-gradient(0deg,#3366CC, #668cd9);
+  text-shadow: 0px -1px 1px #264d99;
+}
+.btn.blue:active, .btn.blue.active, button.blue:active, button.blue.active, input[type="button"].blue:active, input[type="button"].blue.active, input[type="reset"].blue:active, input[type="reset"].blue.active, input[type="submit"].blue:active, input[type="submit"].blue.active {
+  background-color: #3366CC;
+  background-image: -webkit-linear-gradient(-450deg, #3366CC, #668cd9);
+  background-image: linear-gradient(180deg,#3366CC, #668cd9);
+  text-shadow: 0px 1px 1px #264d99;
+}
+.btn.blue:active:hover, .btn.blue:active.hover, .btn.blue.active:hover, .btn.blue.active.hover, button.blue:active:hover, button.blue:active.hover, button.blue.active:hover, button.blue.active.hover, input[type="button"].blue:active:hover, input[type="button"].blue:active.hover, input[type="button"].blue.active:hover, input[type="button"].blue.active.hover, input[type="reset"].blue:active:hover, input[type="reset"].blue:active.hover, input[type="reset"].blue.active:hover, input[type="reset"].blue.active.hover, input[type="submit"].blue:active:hover, input[type="submit"].blue:active.hover, input[type="submit"].blue.active:hover, input[type="submit"].blue.active.hover {
+  box-shadow: inset 0 0 6px 2px #C1D0EF;
+}
+.btn.blue:hover, .btn.blue.hover, button.blue:hover, button.blue.hover, input[type="button"].blue:hover, input[type="button"].blue.hover, input[type="reset"].blue:hover, input[type="reset"].blue.hover, input[type="submit"].blue:hover, input[type="submit"].blue.hover {
+  box-shadow: inset 0 0 6px 2px #C1D0EF;
+}
+.btn.blue[disabled], .btn.blue.disabled, button.blue[disabled], button.blue.disabled, input[type="button"].blue[disabled], input[type="button"].blue.disabled, input[type="reset"].blue[disabled], input[type="reset"].blue.disabled, input[type="submit"].blue[disabled], input[type="submit"].blue.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #3366CC;
+  color: #C1D0EF;
+  cursor: no-drop;
+}
+.btn.blue[disabled]:active, .btn.blue[disabled]:hover, .btn.blue.disabled:active, .btn.blue.disabled:hover, button.blue[disabled]:active, button.blue[disabled]:hover, button.blue.disabled:active, button.blue.disabled:hover, input[type="button"].blue[disabled]:active, input[type="button"].blue[disabled]:hover, input[type="button"].blue.disabled:active, input[type="button"].blue.disabled:hover, input[type="reset"].blue[disabled]:active, input[type="reset"].blue[disabled]:hover, input[type="reset"].blue.disabled:active, input[type="reset"].blue.disabled:hover, input[type="submit"].blue[disabled]:active, input[type="submit"].blue[disabled]:hover, input[type="submit"].blue.disabled:active, input[type="submit"].blue.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.blue .bdg, button.blue .bdg, input[type="button"].blue .bdg, input[type="reset"].blue .bdg, input[type="submit"].blue .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #264d99;
+}
+.btn.cyan, button.cyan, input[type="button"].cyan, input[type="reset"].cyan, input[type="submit"].cyan {
+  color: #FFFFFF;
+  border-color: #3681a4;
+  background-color: #48ACDB;
+  background-image: -webkit-linear-gradient(-270deg, #48ACDB, #76c1e4);
+  background-image: linear-gradient(0deg,#48ACDB, #76c1e4);
+  text-shadow: 0px -1px 1px #3681a4;
+}
+.btn.cyan:active, .btn.cyan.active, button.cyan:active, button.cyan.active, input[type="button"].cyan:active, input[type="button"].cyan.active, input[type="reset"].cyan:active, input[type="reset"].cyan.active, input[type="submit"].cyan:active, input[type="submit"].cyan.active {
+  background-color: #48ACDB;
+  background-image: -webkit-linear-gradient(-450deg, #48ACDB, #76c1e4);
+  background-image: linear-gradient(180deg,#48ACDB, #76c1e4);
+  text-shadow: 0px 1px 1px #3681a4;
+}
+.btn.cyan:active:hover, .btn.cyan:active.hover, .btn.cyan.active:hover, .btn.cyan.active.hover, button.cyan:active:hover, button.cyan:active.hover, button.cyan.active:hover, button.cyan.active.hover, input[type="button"].cyan:active:hover, input[type="button"].cyan:active.hover, input[type="button"].cyan.active:hover, input[type="button"].cyan.active.hover, input[type="reset"].cyan:active:hover, input[type="reset"].cyan:active.hover, input[type="reset"].cyan.active:hover, input[type="reset"].cyan.active.hover, input[type="submit"].cyan:active:hover, input[type="submit"].cyan:active.hover, input[type="submit"].cyan.active:hover, input[type="submit"].cyan.active.hover {
+  box-shadow: inset 0 0 6px 2px #50C0F4;
+}
+.btn.cyan:hover, .btn.cyan.hover, button.cyan:hover, button.cyan.hover, input[type="button"].cyan:hover, input[type="button"].cyan.hover, input[type="reset"].cyan:hover, input[type="reset"].cyan.hover, input[type="submit"].cyan:hover, input[type="submit"].cyan.hover {
+  box-shadow: inset 0 0 6px 2px #50C0F4;
+}
+.btn.cyan[disabled], .btn.cyan.disabled, button.cyan[disabled], button.cyan.disabled, input[type="button"].cyan[disabled], input[type="button"].cyan.disabled, input[type="reset"].cyan[disabled], input[type="reset"].cyan.disabled, input[type="submit"].cyan[disabled], input[type="submit"].cyan.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #48ACDB;
+  color: #50C0F4;
+  cursor: no-drop;
+}
+.btn.cyan[disabled]:active, .btn.cyan[disabled]:hover, .btn.cyan.disabled:active, .btn.cyan.disabled:hover, button.cyan[disabled]:active, button.cyan[disabled]:hover, button.cyan.disabled:active, button.cyan.disabled:hover, input[type="button"].cyan[disabled]:active, input[type="button"].cyan[disabled]:hover, input[type="button"].cyan.disabled:active, input[type="button"].cyan.disabled:hover, input[type="reset"].cyan[disabled]:active, input[type="reset"].cyan[disabled]:hover, input[type="reset"].cyan.disabled:active, input[type="reset"].cyan.disabled:hover, input[type="submit"].cyan[disabled]:active, input[type="submit"].cyan[disabled]:hover, input[type="submit"].cyan.disabled:active, input[type="submit"].cyan.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.cyan .bdg, button.cyan .bdg, input[type="button"].cyan .bdg, input[type="reset"].cyan .bdg, input[type="submit"].cyan .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #3681a4;
+}
+.btn.magenta, button.magenta, input[type="button"].magenta, input[type="reset"].magenta, input[type="submit"].magenta {
+  color: #FFFFFF;
+  border-color: #9a3d82;
+  background-color: #CD51AD;
+  background-image: -webkit-linear-gradient(-270deg, #CD51AD, #da7dc2);
+  background-image: linear-gradient(0deg,#CD51AD, #da7dc2);
+  text-shadow: 0px -1px 1px #9a3d82;
+}
+.btn.magenta:active, .btn.magenta.active, button.magenta:active, button.magenta.active, input[type="button"].magenta:active, input[type="button"].magenta.active, input[type="reset"].magenta:active, input[type="reset"].magenta.active, input[type="submit"].magenta:active, input[type="submit"].magenta.active {
+  background-color: #CD51AD;
+  background-image: -webkit-linear-gradient(-450deg, #CD51AD, #da7dc2);
+  background-image: linear-gradient(180deg,#CD51AD, #da7dc2);
+  text-shadow: 0px 1px 1px #9a3d82;
+}
+.btn.magenta:active:hover, .btn.magenta:active.hover, .btn.magenta.active:hover, .btn.magenta.active.hover, button.magenta:active:hover, button.magenta:active.hover, button.magenta.active:hover, button.magenta.active.hover, input[type="button"].magenta:active:hover, input[type="button"].magenta:active.hover, input[type="button"].magenta.active:hover, input[type="button"].magenta.active.hover, input[type="reset"].magenta:active:hover, input[type="reset"].magenta:active.hover, input[type="reset"].magenta.active:hover, input[type="reset"].magenta.active.hover, input[type="submit"].magenta:active:hover, input[type="submit"].magenta:active.hover, input[type="submit"].magenta.active:hover, input[type="submit"].magenta.active.hover {
+  box-shadow: inset 0 0 6px 2px #ED5EC7;
+}
+.btn.magenta:hover, .btn.magenta.hover, button.magenta:hover, button.magenta.hover, input[type="button"].magenta:hover, input[type="button"].magenta.hover, input[type="reset"].magenta:hover, input[type="reset"].magenta.hover, input[type="submit"].magenta:hover, input[type="submit"].magenta.hover {
+  box-shadow: inset 0 0 6px 2px #ED5EC7;
+}
+.btn.magenta[disabled], .btn.magenta.disabled, button.magenta[disabled], button.magenta.disabled, input[type="button"].magenta[disabled], input[type="button"].magenta.disabled, input[type="reset"].magenta[disabled], input[type="reset"].magenta.disabled, input[type="submit"].magenta[disabled], input[type="submit"].magenta.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #CD51AD;
+  color: #ED5EC7;
+  cursor: no-drop;
+}
+.btn.magenta[disabled]:active, .btn.magenta[disabled]:hover, .btn.magenta.disabled:active, .btn.magenta.disabled:hover, button.magenta[disabled]:active, button.magenta[disabled]:hover, button.magenta.disabled:active, button.magenta.disabled:hover, input[type="button"].magenta[disabled]:active, input[type="button"].magenta[disabled]:hover, input[type="button"].magenta.disabled:active, input[type="button"].magenta.disabled:hover, input[type="reset"].magenta[disabled]:active, input[type="reset"].magenta[disabled]:hover, input[type="reset"].magenta.disabled:active, input[type="reset"].magenta.disabled:hover, input[type="submit"].magenta[disabled]:active, input[type="submit"].magenta[disabled]:hover, input[type="submit"].magenta.disabled:active, input[type="submit"].magenta.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.magenta .bdg, button.magenta .bdg, input[type="button"].magenta .bdg, input[type="reset"].magenta .bdg, input[type="submit"].magenta .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #9a3d82;
+}
+.btn.yellow, button.yellow, input[type="button"].yellow, input[type="reset"].yellow, input[type="submit"].yellow {
+  color: #FFFFFF;
+  border-color: #bf8a00;
+  background-color: #FFB800;
+  background-image: -webkit-linear-gradient(-270deg, #FFB800, #ffca40);
+  background-image: linear-gradient(0deg,#FFB800, #ffca40);
+  text-shadow: 0px -1px 1px #bf8a00;
+}
+.btn.yellow:active, .btn.yellow.active, button.yellow:active, button.yellow.active, input[type="button"].yellow:active, input[type="button"].yellow.active, input[type="reset"].yellow:active, input[type="reset"].yellow.active, input[type="submit"].yellow:active, input[type="submit"].yellow.active {
+  background-color: #FFB800;
+  background-image: -webkit-linear-gradient(-450deg, #FFB800, #ffca40);
+  background-image: linear-gradient(180deg,#FFB800, #ffca40);
+  text-shadow: 0px 1px 1px #bf8a00;
+}
+.btn.yellow:active:hover, .btn.yellow:active.hover, .btn.yellow.active:hover, .btn.yellow.active.hover, button.yellow:active:hover, button.yellow:active.hover, button.yellow.active:hover, button.yellow.active.hover, input[type="button"].yellow:active:hover, input[type="button"].yellow:active.hover, input[type="button"].yellow.active:hover, input[type="button"].yellow.active.hover, input[type="reset"].yellow:active:hover, input[type="reset"].yellow:active.hover, input[type="reset"].yellow.active:hover, input[type="reset"].yellow.active.hover, input[type="submit"].yellow:active:hover, input[type="submit"].yellow:active.hover, input[type="submit"].yellow.active:hover, input[type="submit"].yellow.active.hover {
+  box-shadow: inset 0 0 6px 2px #FEE0B2;
+}
+.btn.yellow:hover, .btn.yellow.hover, button.yellow:hover, button.yellow.hover, input[type="button"].yellow:hover, input[type="button"].yellow.hover, input[type="reset"].yellow:hover, input[type="reset"].yellow.hover, input[type="submit"].yellow:hover, input[type="submit"].yellow.hover {
+  box-shadow: inset 0 0 6px 2px #FEE0B2;
+}
+.btn.yellow[disabled], .btn.yellow.disabled, button.yellow[disabled], button.yellow.disabled, input[type="button"].yellow[disabled], input[type="button"].yellow.disabled, input[type="reset"].yellow[disabled], input[type="reset"].yellow.disabled, input[type="submit"].yellow[disabled], input[type="submit"].yellow.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #FFB800;
+  color: #FEE0B2;
+  cursor: no-drop;
+}
+.btn.yellow[disabled]:active, .btn.yellow[disabled]:hover, .btn.yellow.disabled:active, .btn.yellow.disabled:hover, button.yellow[disabled]:active, button.yellow[disabled]:hover, button.yellow.disabled:active, button.yellow.disabled:hover, input[type="button"].yellow[disabled]:active, input[type="button"].yellow[disabled]:hover, input[type="button"].yellow.disabled:active, input[type="button"].yellow.disabled:hover, input[type="reset"].yellow[disabled]:active, input[type="reset"].yellow[disabled]:hover, input[type="reset"].yellow.disabled:active, input[type="reset"].yellow.disabled:hover, input[type="submit"].yellow[disabled]:active, input[type="submit"].yellow[disabled]:hover, input[type="submit"].yellow.disabled:active, input[type="submit"].yellow.disabled:hover {
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn.yellow .bdg, button.yellow .bdg, input[type="button"].yellow .bdg, input[type="reset"].yellow .bdg, input[type="submit"].yellow .bdg {
+  text-shadow: none;
+  background-color: #FFFFFF;
+  color: #bf8a00;
 }
 .btn.purple, button.purple, input[type="button"].purple, input[type="reset"].purple, input[type="submit"].purple {
   color: #FFFFFF;
