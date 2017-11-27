@@ -2586,21 +2586,6 @@ ul.menu.tabs {
 .breadcrumb li::before {
   color: #b3b3b3;
 }
-.breadcrumb.blue {
-  background-color: #C1D0EF;
-}
-.breadcrumb.blue a {
-  color: #3366CC;
-}
-.breadcrumb.blue a:visited {
-  color: #264d99;
-}
-.breadcrumb.blue li {
-  color: #1a3366;
-}
-.breadcrumb.blue li::before {
-  color: #668cd9;
-}
 .breadcrumb.red {
   background-color: #F4C3B7;
 }
@@ -2616,21 +2601,6 @@ ul.menu.tabs {
 .breadcrumb.red li::before {
   color: #e56b4d;
 }
-.breadcrumb.yellow {
-  background-color: #FEE0B2;
-}
-.breadcrumb.yellow a {
-  color: #FFB800;
-}
-.breadcrumb.yellow a:visited {
-  color: #bf8a00;
-}
-.breadcrumb.yellow li {
-  color: #664a00;
-}
-.breadcrumb.yellow li::before {
-  color: #ffca40;
-}
 .breadcrumb.green {
   background-color: #B6DFB9;
 }
@@ -2645,6 +2615,66 @@ ul.menu.tabs {
 }
 .breadcrumb.green li::before {
   color: #4cb052;
+}
+.breadcrumb.blue {
+  background-color: #C1D0EF;
+}
+.breadcrumb.blue a {
+  color: #3366CC;
+}
+.breadcrumb.blue a:visited {
+  color: #264d99;
+}
+.breadcrumb.blue li {
+  color: #1a3366;
+}
+.breadcrumb.blue li::before {
+  color: #668cd9;
+}
+.breadcrumb.cyan {
+  background-color: #8dd5f4;
+}
+.breadcrumb.cyan a {
+  color: #48ACDB;
+}
+.breadcrumb.cyan a:visited {
+  color: #3681a4;
+}
+.breadcrumb.cyan li {
+  color: #175673;
+}
+.breadcrumb.cyan li::before {
+  color: #76c1e4;
+}
+.breadcrumb.magenta {
+  background-color: #f492da;
+}
+.breadcrumb.magenta a {
+  color: #CD51AD;
+}
+.breadcrumb.magenta a:visited {
+  color: #9a3d82;
+}
+.breadcrumb.magenta li {
+  color: #7b2364;
+}
+.breadcrumb.magenta li::before {
+  color: #da7dc2;
+}
+.breadcrumb.yellow {
+  background-color: #FEE0B2;
+}
+.breadcrumb.yellow a {
+  color: #FFB800;
+}
+.breadcrumb.yellow a:visited {
+  color: #bf8a00;
+}
+.breadcrumb.yellow li {
+  color: #664a00;
+}
+.breadcrumb.yellow li::before {
+  color: #ffca40;
 }
 .breadcrumb.orange {
   background-color: #FFCFAE;
