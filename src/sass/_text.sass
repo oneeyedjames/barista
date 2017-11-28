@@ -1,5 +1,11 @@
 @import 'variables'
 
+=a-color($color, $dark)
+	color: $color
+
+	&:visited
+		color: $dark
+
 =txt-color($light, $dark)
 	background-color: $light
 	color: $dark
@@ -28,3 +34,31 @@
 
 	&.orange
 		+txt-color($light-orange, $dark-orange)
+
+a
+	text-decoration: underline
+	+a-color($blue, $dark-blue)
+
+	&.red
+		+a-color($red, $dark-red)
+
+	&.green
+		+a-color($green, $dark-green)
+
+	&.blue
+		+a-color($blue, $dark-blue)
+
+	&.cyan
+		+a-color($cyan, $dark-cyan)
+
+	&.magenta
+		+a-color($magenta, $dark-magenta)
+
+	&.yellow
+		+a-color($yellow, $dark-yellow)
+
+	&.purple
+		+a-color($purple, $dark-purple)
+
+	&.orange
+		+a-color($orange, $dark-orange)

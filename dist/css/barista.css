@@ -56,14 +56,6 @@ small, .small {
   line-height: inherit;
 }
 
-a {
-  color: #3366CC;
-  text-decoration: underline;
-}
-a:visited {
-  color: #1a3366;
-}
-
 p {
   margin-top: 0;
   margin-bottom: 1.4285714286;
@@ -88,11 +80,11 @@ blockquote {
   color: #1a3366;
 }
 .txt.cyan {
-  background-color: #8dd5f4;
+  background-color: #BBE6F7;
   color: #175673;
 }
 .txt.magenta {
-  background-color: #f492da;
+  background-color: #F7B4E4;
   color: #7b2364;
 }
 .txt.yellow {
@@ -105,6 +97,62 @@ blockquote {
 }
 .txt.orange {
   background-color: #FFCFAE;
+  color: #662900;
+}
+
+a {
+  text-decoration: underline;
+  color: #3366CC;
+}
+a:visited {
+  color: #1a3366;
+}
+a.red {
+  color: #DC3912;
+}
+a.red:visited {
+  color: #7e210a;
+}
+a.green {
+  color: #109618;
+}
+a.green:visited {
+  color: #063a09;
+}
+a.blue {
+  color: #3366CC;
+}
+a.blue:visited {
+  color: #1a3366;
+}
+a.cyan {
+  color: #48ACDB;
+}
+a.cyan:visited {
+  color: #175673;
+}
+a.magenta {
+  color: #CD51AD;
+}
+a.magenta:visited {
+  color: #7b2364;
+}
+a.yellow {
+  color: #FFB800;
+}
+a.yellow:visited {
+  color: #664a00;
+}
+a.purple {
+  color: #990099;
+}
+a.purple:visited {
+  color: #330033;
+}
+a.orange {
+  color: #FF6600;
+}
+a.orange:visited {
   color: #662900;
 }
 
@@ -201,12 +249,12 @@ select {
   color: #1a3366;
 }
 .input-group .addon.cyan {
-  background-color: #8dd5f4;
+  background-color: #BBE6F7;
   border-color: #48ACDB;
   color: #175673;
 }
 .input-group .addon.magenta {
-  background-color: #f492da;
+  background-color: #F7B4E4;
   border-color: #CD51AD;
   color: #7b2364;
 }
@@ -393,7 +441,7 @@ ul.list.cyan li {
   border-color: #76c1e4;
 }
 ul.list.cyan li:hover {
-  background-color: #8dd5f4;
+  background-color: #BBE6F7;
 }
 ul.list.cyan li.header {
   background-color: #48ACDB;
@@ -402,11 +450,11 @@ ul.list.cyan li.header {
   text-shadow: 0px -1px 1px #3681a4;
 }
 ul.list.cyan.striped li:nth-child(odd) {
-  background-color: #8dd5f4;
+  background-color: #BBE6F7;
   color: #175673;
 }
 ul.list.cyan.striped li:hover {
-  background-color: #47bbed;
+  background-color: #77cdef;
   color: #333333;
 }
 ul.list.cyan.striped li.header {
@@ -419,7 +467,7 @@ ul.list.magenta li {
   border-color: #da7dc2;
 }
 ul.list.magenta li:hover {
-  background-color: #f492da;
+  background-color: #F7B4E4;
 }
 ul.list.magenta li.header {
   background-color: #CD51AD;
@@ -428,11 +476,11 @@ ul.list.magenta li.header {
   text-shadow: 0px -1px 1px #9a3d82;
 }
 ul.list.magenta.striped li:nth-child(odd) {
-  background-color: #f492da;
+  background-color: #F7B4E4;
   color: #7b2364;
 }
 ul.list.magenta.striped li:hover {
-  background-color: #ed4dc2;
+  background-color: #f06fcb;
   color: #333333;
 }
 ul.list.magenta.striped li.header {
@@ -686,14 +734,14 @@ table.cyan tbody th, table.cyan tbody td {
   border-color: #76c1e4;
 }
 table.cyan tbody tr:hover th, table.cyan tbody tr:hover td {
-  background-color: #8dd5f4;
+  background-color: #BBE6F7;
 }
 table.cyan.striped tbody tr:nth-child(even) th, table.cyan.striped tbody tr:nth-child(even) td {
-  background-color: #8dd5f4;
+  background-color: #BBE6F7;
   color: #175673;
 }
 table.cyan.striped tbody tr:hover th, table.cyan.striped tbody tr:hover td {
-  background-color: #47bbed;
+  background-color: #77cdef;
   color: #333333;
 }
 table.magenta {
@@ -712,14 +760,14 @@ table.magenta tbody th, table.magenta tbody td {
   border-color: #da7dc2;
 }
 table.magenta tbody tr:hover th, table.magenta tbody tr:hover td {
-  background-color: #f492da;
+  background-color: #F7B4E4;
 }
 table.magenta.striped tbody tr:nth-child(even) th, table.magenta.striped tbody tr:nth-child(even) td {
-  background-color: #f492da;
+  background-color: #F7B4E4;
   color: #7b2364;
 }
 table.magenta.striped tbody tr:hover th, table.magenta.striped tbody tr:hover td {
-  background-color: #ed4dc2;
+  background-color: #f06fcb;
   color: #333333;
 }
 table.yellow {
@@ -1058,7 +1106,7 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
   border-color: #76c1e4;
 }
 .card.cyan footer, .card.cyan.alert {
-  background-color: #8dd5f4;
+  background-color: #BBE6F7;
   color: #175673;
 }
 .card.cyan footer.btns {
@@ -1080,7 +1128,7 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
   border-color: #da7dc2;
 }
 .card.magenta footer, .card.magenta.alert {
-  background-color: #f492da;
+  background-color: #F7B4E4;
   color: #7b2364;
 }
 .card.magenta footer.btns {
@@ -2093,16 +2141,16 @@ ul.menu.tabs {
   text-shadow: 0px 1px 1px #3681a4;
 }
 .btn.cyan:active:hover, .btn.cyan:active.hover, .btn.cyan.active:hover, .btn.cyan.active.hover, button.cyan:active:hover, button.cyan:active.hover, button.cyan.active:hover, button.cyan.active.hover, input[type="button"].cyan:active:hover, input[type="button"].cyan:active.hover, input[type="button"].cyan.active:hover, input[type="button"].cyan.active.hover, input[type="reset"].cyan:active:hover, input[type="reset"].cyan:active.hover, input[type="reset"].cyan.active:hover, input[type="reset"].cyan.active.hover, input[type="submit"].cyan:active:hover, input[type="submit"].cyan:active.hover, input[type="submit"].cyan.active:hover, input[type="submit"].cyan.active.hover {
-  box-shadow: inset 0 0 6px 2px #8dd5f4;
+  box-shadow: inset 0 0 6px 2px #BBE6F7;
 }
 .btn.cyan:hover, .btn.cyan.hover, button.cyan:hover, button.cyan.hover, input[type="button"].cyan:hover, input[type="button"].cyan.hover, input[type="reset"].cyan:hover, input[type="reset"].cyan.hover, input[type="submit"].cyan:hover, input[type="submit"].cyan.hover {
-  box-shadow: inset 0 0 6px 2px #8dd5f4;
+  box-shadow: inset 0 0 6px 2px #BBE6F7;
 }
 .btn.cyan[disabled], .btn.cyan.disabled, button.cyan[disabled], button.cyan.disabled, input[type="button"].cyan[disabled], input[type="button"].cyan.disabled, input[type="reset"].cyan[disabled], input[type="reset"].cyan.disabled, input[type="submit"].cyan[disabled], input[type="submit"].cyan.disabled {
   box-shadow: none;
   text-shadow: none;
   background: #48ACDB;
-  color: #8dd5f4;
+  color: #BBE6F7;
   cursor: no-drop;
 }
 .btn.cyan[disabled]:active, .btn.cyan[disabled]:hover, .btn.cyan.disabled:active, .btn.cyan.disabled:hover, button.cyan[disabled]:active, button.cyan[disabled]:hover, button.cyan.disabled:active, button.cyan.disabled:hover, input[type="button"].cyan[disabled]:active, input[type="button"].cyan[disabled]:hover, input[type="button"].cyan.disabled:active, input[type="button"].cyan.disabled:hover, input[type="reset"].cyan[disabled]:active, input[type="reset"].cyan[disabled]:hover, input[type="reset"].cyan.disabled:active, input[type="reset"].cyan.disabled:hover, input[type="submit"].cyan[disabled]:active, input[type="submit"].cyan[disabled]:hover, input[type="submit"].cyan.disabled:active, input[type="submit"].cyan.disabled:hover {
@@ -2129,16 +2177,16 @@ ul.menu.tabs {
   text-shadow: 0px 1px 1px #9a3d82;
 }
 .btn.magenta:active:hover, .btn.magenta:active.hover, .btn.magenta.active:hover, .btn.magenta.active.hover, button.magenta:active:hover, button.magenta:active.hover, button.magenta.active:hover, button.magenta.active.hover, input[type="button"].magenta:active:hover, input[type="button"].magenta:active.hover, input[type="button"].magenta.active:hover, input[type="button"].magenta.active.hover, input[type="reset"].magenta:active:hover, input[type="reset"].magenta:active.hover, input[type="reset"].magenta.active:hover, input[type="reset"].magenta.active.hover, input[type="submit"].magenta:active:hover, input[type="submit"].magenta:active.hover, input[type="submit"].magenta.active:hover, input[type="submit"].magenta.active.hover {
-  box-shadow: inset 0 0 6px 2px #f492da;
+  box-shadow: inset 0 0 6px 2px #F7B4E4;
 }
 .btn.magenta:hover, .btn.magenta.hover, button.magenta:hover, button.magenta.hover, input[type="button"].magenta:hover, input[type="button"].magenta.hover, input[type="reset"].magenta:hover, input[type="reset"].magenta.hover, input[type="submit"].magenta:hover, input[type="submit"].magenta.hover {
-  box-shadow: inset 0 0 6px 2px #f492da;
+  box-shadow: inset 0 0 6px 2px #F7B4E4;
 }
 .btn.magenta[disabled], .btn.magenta.disabled, button.magenta[disabled], button.magenta.disabled, input[type="button"].magenta[disabled], input[type="button"].magenta.disabled, input[type="reset"].magenta[disabled], input[type="reset"].magenta.disabled, input[type="submit"].magenta[disabled], input[type="submit"].magenta.disabled {
   box-shadow: none;
   text-shadow: none;
   background: #CD51AD;
-  color: #f492da;
+  color: #F7B4E4;
   cursor: no-drop;
 }
 .btn.magenta[disabled]:active, .btn.magenta[disabled]:hover, .btn.magenta.disabled:active, .btn.magenta.disabled:hover, button.magenta[disabled]:active, button.magenta[disabled]:hover, button.magenta.disabled:active, button.magenta.disabled:hover, input[type="button"].magenta[disabled]:active, input[type="button"].magenta[disabled]:hover, input[type="button"].magenta.disabled:active, input[type="button"].magenta.disabled:hover, input[type="reset"].magenta[disabled]:active, input[type="reset"].magenta[disabled]:hover, input[type="reset"].magenta.disabled:active, input[type="reset"].magenta.disabled:hover, input[type="submit"].magenta[disabled]:active, input[type="submit"].magenta[disabled]:hover, input[type="submit"].magenta.disabled:active, input[type="submit"].magenta.disabled:hover {
@@ -2632,7 +2680,7 @@ ul.menu.tabs {
   color: #668cd9;
 }
 .breadcrumb.cyan {
-  background-color: #8dd5f4;
+  background-color: #BBE6F7;
 }
 .breadcrumb.cyan a {
   color: #48ACDB;
@@ -2647,7 +2695,7 @@ ul.menu.tabs {
   color: #76c1e4;
 }
 .breadcrumb.magenta {
-  background-color: #f492da;
+  background-color: #F7B4E4;
 }
 .breadcrumb.magenta a {
   color: #CD51AD;
