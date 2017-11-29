@@ -895,11 +895,11 @@ table.orange.striped tbody tr:hover th, table.orange.striped tbody tr:hover td {
 .bdg.red {
   background-color: #DC3912;
 }
-.bdg.blue {
-  background-color: #3366CC;
-}
 .bdg.green {
   background-color: #109618;
+}
+.bdg.blue {
+  background-color: #3366CC;
 }
 .bdg.cyan {
   background-color: #48ACDB;
@@ -2406,23 +2406,6 @@ ul.menu.tabs {
   height: 1px;
   margin: 0 10px;
 }
-.navbar.blue {
-  border-bottom: 1px solid #264d99;
-  background-color: #3366CC;
-  background-image: -webkit-linear-gradient(-270deg, #3366CC, #668cd9);
-  background-image: linear-gradient(0deg,#3366CC, #668cd9);
-}
-.navbar.blue ul.nav ul {
-  border-left: 1px solid #264d99;
-  border-right: 1px solid #264d99;
-  border-bottom: 1px solid #264d99;
-  background-color: #668cd9;
-  background-image: -webkit-linear-gradient(-270deg, #668cd9, #3366CC);
-  background-image: linear-gradient(0deg,#668cd9, #3366CC);
-}
-.navbar.blue ul.nav ul li.sep {
-  background-color: #264d99;
-}
 .navbar.red {
   border-bottom: 1px solid #a52b0e;
   background-color: #DC3912;
@@ -2440,23 +2423,6 @@ ul.menu.tabs {
 .navbar.red ul.nav ul li.sep {
   background-color: #a52b0e;
 }
-.navbar.yellow {
-  border-bottom: 1px solid #bf8a00;
-  background-color: #FFB800;
-  background-image: -webkit-linear-gradient(-270deg, #FFB800, #ffca40);
-  background-image: linear-gradient(0deg,#FFB800, #ffca40);
-}
-.navbar.yellow ul.nav ul {
-  border-left: 1px solid #bf8a00;
-  border-right: 1px solid #bf8a00;
-  border-bottom: 1px solid #bf8a00;
-  background-color: #ffca40;
-  background-image: -webkit-linear-gradient(-270deg, #ffca40, #FFB800);
-  background-image: linear-gradient(0deg,#ffca40, #FFB800);
-}
-.navbar.yellow ul.nav ul li.sep {
-  background-color: #bf8a00;
-}
 .navbar.green {
   border-bottom: 1px solid #0c7112;
   background-color: #109618;
@@ -2473,6 +2439,74 @@ ul.menu.tabs {
 }
 .navbar.green ul.nav ul li.sep {
   background-color: #0c7112;
+}
+.navbar.blue {
+  border-bottom: 1px solid #264d99;
+  background-color: #3366CC;
+  background-image: -webkit-linear-gradient(-270deg, #3366CC, #668cd9);
+  background-image: linear-gradient(0deg,#3366CC, #668cd9);
+}
+.navbar.blue ul.nav ul {
+  border-left: 1px solid #264d99;
+  border-right: 1px solid #264d99;
+  border-bottom: 1px solid #264d99;
+  background-color: #668cd9;
+  background-image: -webkit-linear-gradient(-270deg, #668cd9, #3366CC);
+  background-image: linear-gradient(0deg,#668cd9, #3366CC);
+}
+.navbar.blue ul.nav ul li.sep {
+  background-color: #264d99;
+}
+.navbar.cyan {
+  border-bottom: 1px solid #3681a4;
+  background-color: #48ACDB;
+  background-image: -webkit-linear-gradient(-270deg, #48ACDB, #76c1e4);
+  background-image: linear-gradient(0deg,#48ACDB, #76c1e4);
+}
+.navbar.cyan ul.nav ul {
+  border-left: 1px solid #3681a4;
+  border-right: 1px solid #3681a4;
+  border-bottom: 1px solid #3681a4;
+  background-color: #76c1e4;
+  background-image: -webkit-linear-gradient(-270deg, #76c1e4, #48ACDB);
+  background-image: linear-gradient(0deg,#76c1e4, #48ACDB);
+}
+.navbar.cyan ul.nav ul li.sep {
+  background-color: #3681a4;
+}
+.navbar.magenta {
+  border-bottom: 1px solid #9a3d82;
+  background-color: #CD51AD;
+  background-image: -webkit-linear-gradient(-270deg, #CD51AD, #da7dc2);
+  background-image: linear-gradient(0deg,#CD51AD, #da7dc2);
+}
+.navbar.magenta ul.nav ul {
+  border-left: 1px solid #9a3d82;
+  border-right: 1px solid #9a3d82;
+  border-bottom: 1px solid #9a3d82;
+  background-color: #da7dc2;
+  background-image: -webkit-linear-gradient(-270deg, #da7dc2, #CD51AD);
+  background-image: linear-gradient(0deg,#da7dc2, #CD51AD);
+}
+.navbar.magenta ul.nav ul li.sep {
+  background-color: #9a3d82;
+}
+.navbar.yellow {
+  border-bottom: 1px solid #bf8a00;
+  background-color: #FFB800;
+  background-image: -webkit-linear-gradient(-270deg, #FFB800, #ffca40);
+  background-image: linear-gradient(0deg,#FFB800, #ffca40);
+}
+.navbar.yellow ul.nav ul {
+  border-left: 1px solid #bf8a00;
+  border-right: 1px solid #bf8a00;
+  border-bottom: 1px solid #bf8a00;
+  background-color: #ffca40;
+  background-image: -webkit-linear-gradient(-270deg, #ffca40, #FFB800);
+  background-image: linear-gradient(0deg,#ffca40, #FFB800);
+}
+.navbar.yellow ul.nav ul li.sep {
+  background-color: #bf8a00;
 }
 .navbar.purple {
   border-bottom: 1px solid #730073;
