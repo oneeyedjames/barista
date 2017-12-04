@@ -79,9 +79,14 @@ $ '*[data-action="modal"]'
 	data.overlay  ?= true
 
 	if source = button.attr 'href'
+		parent = button.data 'parent'
+		parent = target unless parent
+
 		$.get source, (result) ->
-			$ target
+			$ parent
 			.html result
+
+			$ target
 			.modal data
 	else
 		$ target

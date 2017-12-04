@@ -156,7 +156,7 @@ jQuery(function($) {
     }
   });
   $('*[data-action="modal"]').click(function(event) {
-    var button, data, source, target;
+    var button, data, parent, source, target;
     event.preventDefault();
     button = $(this);
     target = button.data('target');
@@ -168,8 +168,13 @@ jQuery(function($) {
       data.overlay = true;
     }
     if (source = button.attr('href')) {
+      parent = button.data('parent');
+      if (!parent) {
+        parent = target;
+      }
       return $.get(source, function(result) {
-        return $(target).html(result).modal(data);
+        $(parent).html(result);
+        return $(target).modal(data);
       });
     } else {
       return $(target).modal(data);
