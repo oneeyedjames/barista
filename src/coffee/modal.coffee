@@ -44,12 +44,12 @@ $.fn.extend
 
 		do dialog.center
 
-		dialog.find '.btn.ok'
+		dialog.find 'a.ok, .btn.ok'
 		.one 'click', (event) ->
 			do event.preventDefault
 			dialog.dismiss 'ok'
 
-		dialog.find '.btn.cancel'
+		dialog.find 'a.cancel, .btn.cancel'
 		.one 'click', (event) ->
 			do event.preventDefault
 			dialog.dismiss 'cancel'
