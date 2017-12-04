@@ -139,11 +139,11 @@ jQuery(function($) {
         setTimeout(dismiss, opts.duration);
       }
       dialog.center();
-      dialog.find('.btn.ok').one('click', function(event) {
+      dialog.find('a.ok, .btn.ok').one('click', function(event) {
         event.preventDefault();
         return dialog.dismiss('ok');
       });
-      return dialog.find('.btn.cancel').one('click', function(event) {
+      return dialog.find('a.cancel, .btn.cancel').one('click', function(event) {
         event.preventDefault();
         return dialog.dismiss('cancel');
       });
