@@ -155,8 +155,8 @@ jQuery(function($) {
       return $(this).removeClass('visible').trigger(eventType);
     }
   });
-  $('*[data-action="modal"]').click(function(event) {
-    var button, data, parent, source, target;
+  $('*[data-action="modal"]').on('click post:click', function(event) {
+    var button, data, target;
     event.preventDefault();
     button = $(this);
     target = button.data('target');
@@ -167,16 +167,7 @@ jQuery(function($) {
     if (data.overlay == null) {
       data.overlay = true;
     }
-    if (source = button.attr('href')) {
-      parent = button.data('parent');
-      if (!parent) {
-        parent = target;
-      }
-      return $.get(source, function(result) {
-        $(parent).html(result);
-        return $(target).modal(data);
-      });
-    } else {
+    if (!(event.type === 'click' && button.attr('href'))) {
       return $(target).modal(data);
     }
   });
@@ -212,6 +203,19 @@ jQuery(function($) {
       }
     }
     return target.submit();
+  });
+  $('a[target]').click(function(event) {
+    var button, source, target;
+    button = $(this);
+    source = button.attr('href');
+    target = button.attr('target');
+    if (source && (target !== '_blank' && target !== '_parent' && target !== '_self' && target !== '_top')) {
+      event.preventDefault();
+      return $.get(source, function(result) {
+        $(target).html(result);
+        return button.trigger('post:click');
+      });
+    }
   });
   $.fn.extend({
     tooltip: function(opts) {

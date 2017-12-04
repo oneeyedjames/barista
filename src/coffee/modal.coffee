@@ -68,7 +68,7 @@ $.fn.extend
 		.trigger eventType
 
 $ '*[data-action="modal"]'
-.click (event) ->
+.on 'click post:click', (event) ->
 	do event.preventDefault
 
 	button = $ this
@@ -78,16 +78,6 @@ $ '*[data-action="modal"]'
 	data.duration ?= 0
 	data.overlay  ?= true
 
-	if source = button.attr 'href'
-		parent = button.data 'parent'
-		parent = target unless parent
-
-		$.get source, (result) ->
-			$ parent
-			.html result
-
-			$ target
-			.modal data
-	else
+	unless event.type == 'click' && button.attr 'href'
 		$ target
 		.modal data
