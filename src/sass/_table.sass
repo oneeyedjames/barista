@@ -85,22 +85,22 @@ table
 	#{$all-text-inputs}, select
 		margin: 0
 
-	&.red
+	&.red, &.danger, &.error
 		+table-color($red, $light-red, $dark-red)
 
-	&.green
+	&.green, &.success
 		+table-color($green, $light-green, $dark-green)
 
-	&.blue
+	&.blue, &primary
 		+table-color($blue, $light-blue, $dark-blue)
 
-	&.cyan
+	&.cyan, &.info
 		+table-color($cyan, $light-cyan, $dark-cyan)
 
 	&.magenta
 		+table-color($magenta, $light-magenta, $dark-magenta)
 
-	&.yellow
+	&.yellow, &.warning
 		+table-color($yellow, $light-yellow, $dark-yellow)
 
 	&.purple
