@@ -139,11 +139,11 @@ jQuery(function($) {
         setTimeout(dismiss, opts.duration);
       }
       dialog.center();
-      dialog.find('.btn.ok').one('click', function(event) {
+      dialog.find('a.ok, .btn.ok').one('click', function(event) {
         event.preventDefault();
         return dialog.dismiss('ok');
       });
-      return dialog.find('.btn.cancel').one('click', function(event) {
+      return dialog.find('a.cancel, .btn.cancel').one('click', function(event) {
         event.preventDefault();
         return dialog.dismiss('cancel');
       });
@@ -155,8 +155,8 @@ jQuery(function($) {
       return $(this).removeClass('visible').trigger(eventType);
     }
   });
-  $('*[data-action="modal"]').click(function(event) {
-    var button, data, source, target;
+  $('*[data-action="modal"]').on('click post:click', function(event) {
+    var button, data, target;
     event.preventDefault();
     button = $(this);
     target = button.data('target');
@@ -167,11 +167,7 @@ jQuery(function($) {
     if (data.overlay == null) {
       data.overlay = true;
     }
-    if (source = button.attr('href')) {
-      return $.get(source, function(result) {
-        return $(target).html(result).modal(data);
-      });
-    } else {
+    if (!(event.type === 'click' && button.attr('href'))) {
       return $(target).modal(data);
     }
   });
@@ -207,6 +203,19 @@ jQuery(function($) {
       }
     }
     return target.submit();
+  });
+  $('a[target]').click(function(event) {
+    var button, source, target;
+    button = $(this);
+    source = button.attr('href');
+    target = button.attr('target');
+    if (source && (target !== '_blank' && target !== '_parent' && target !== '_self' && target !== '_top')) {
+      event.preventDefault();
+      return $.get(source, function(result) {
+        $(target).html(result);
+        return button.trigger('post:click');
+      });
+    }
   });
   $.fn.extend({
     tooltip: function(opts) {

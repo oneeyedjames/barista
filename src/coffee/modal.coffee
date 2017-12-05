@@ -44,12 +44,12 @@ $.fn.extend
 
 		do dialog.center
 
-		dialog.find '.btn.ok'
+		dialog.find 'a.ok, .btn.ok'
 		.one 'click', (event) ->
 			do event.preventDefault
 			dialog.dismiss 'ok'
 
-		dialog.find '.btn.cancel'
+		dialog.find 'a.cancel, .btn.cancel'
 		.one 'click', (event) ->
 			do event.preventDefault
 			dialog.dismiss 'cancel'
@@ -68,7 +68,7 @@ $.fn.extend
 		.trigger eventType
 
 $ '*[data-action="modal"]'
-.click (event) ->
+.on 'click post:click', (event) ->
 	do event.preventDefault
 
 	button = $ this
@@ -78,11 +78,6 @@ $ '*[data-action="modal"]'
 	data.duration ?= 0
 	data.overlay  ?= true
 
-	if source = button.attr 'href'
-		$.get source, (result) ->
-			$ target
-			.html result
-			.modal data
-	else
+	unless event.type == 'click' && button.attr 'href'
 		$ target
 		.modal data
