@@ -11,22 +11,22 @@
 	color: $dark
 
 .txt
-	&.red
+	&.red, &.danger, &.error
 		+txt-color($light-red, $dark-red)
 
-	&.green
+	&.green, &.success
 		+txt-color($light-green, $dark-green)
 
-	&.blue
+	&.blue, &.primary
 		+txt-color($light-blue, $dark-blue)
 
-	&.cyan
+	&.cyan, &.info
 		+txt-color($light-cyan, $dark-cyan)
 
 	&.magenta
 		+txt-color($light-magenta, $dark-magenta)
 
-	&.yellow
+	&.yellow, &.warning
 		+txt-color($light-yellow, $dark-yellow)
 
 	&.purple
@@ -39,22 +39,22 @@ a
 	text-decoration: underline
 	+a-color($blue, $dark-blue)
 
-	&.red
+	&.red, &.danger, &.error
 		+a-color($red, $dark-red)
 
-	&.green
+	&.green, &.success
 		+a-color($green, $dark-green)
 
-	&.blue
+	&.blue, &.primary
 		+a-color($blue, $dark-blue)
 
-	&.cyan
+	&.cyan, &.info
 		+a-color($cyan, $dark-cyan)
 
 	&.magenta
 		+a-color($magenta, $dark-magenta)
 
-	&.yellow
+	&.yellow, &.warning
 		+a-color($yellow, $dark-yellow)
 
 	&.purple
