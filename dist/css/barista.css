@@ -692,29 +692,29 @@ table.green.striped tbody tr:hover th, table.green.striped tbody tr:hover td, ta
   background-color: #81c886;
   color: #333333;
 }
-table.blue, tableprimary {
+table.blue, table.primary {
   border-color: #264d99;
 }
-table.blue thead, tableprimary thead {
+table.blue thead, table.primary thead {
   background-color: #3366CC;
   background-image: -webkit-linear-gradient(-270deg, #3366CC, #668cd9);
   background-image: linear-gradient(0deg,#3366CC, #668cd9);
 }
-table.blue thead th, table.blue thead td, tableprimary thead th, tableprimary thead td {
+table.blue thead th, table.blue thead td, table.primary thead th, table.primary thead td {
   color: #FFFFFF;
   text-shadow: 0px -1px 1px #264d99;
 }
-table.blue tbody th, table.blue tbody td, tableprimary tbody th, tableprimary tbody td {
+table.blue tbody th, table.blue tbody td, table.primary tbody th, table.primary tbody td {
   border-color: #668cd9;
 }
-table.blue tbody tr:hover th, table.blue tbody tr:hover td, tableprimary tbody tr:hover th, tableprimary tbody tr:hover td {
+table.blue tbody tr:hover th, table.blue tbody tr:hover td, table.primary tbody tr:hover th, table.primary tbody tr:hover td {
   background-color: #C1D0EF;
 }
-table.blue.striped tbody tr:nth-child(even) th, table.blue.striped tbody tr:nth-child(even) td, tableprimary.striped tbody tr:nth-child(even) th, tableprimary.striped tbody tr:nth-child(even) td {
+table.blue.striped tbody tr:nth-child(even) th, table.blue.striped tbody tr:nth-child(even) td, table.primary.striped tbody tr:nth-child(even) th, table.primary.striped tbody tr:nth-child(even) td {
   background-color: #C1D0EF;
   color: #1a3366;
 }
-table.blue.striped tbody tr:hover th, table.blue.striped tbody tr:hover td, tableprimary.striped tbody tr:hover th, tableprimary.striped tbody tr:hover td {
+table.blue.striped tbody tr:hover th, table.blue.striped tbody tr:hover td, table.primary.striped tbody tr:hover th, table.primary.striped tbody tr:hover td {
   background-color: #84a2df;
   color: #333333;
 }
