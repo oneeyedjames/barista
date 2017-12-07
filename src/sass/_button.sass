@@ -34,6 +34,17 @@
 			box-shadow: none
 			text-shadow: none
 
+	&.text
+		color: $color
+		+text-shadow($light)
+
+		&:active, &.active
+			+text-shadow($light, -$text-shadow-top)
+
+		&:active, &:hover
+			background: none
+			box-shadow: none
+
 	.bdg
 		text-shadow: none
 		background-color: $white
@@ -94,9 +105,9 @@
 		+btn-color($orange, $light-orange)
 
 	&.text
-		color: inherit
-		background-color: inherit
 		border-color: transparent
+		background: none
+		box-shadow: none
 
 .btn-group
 	display: inline-block
