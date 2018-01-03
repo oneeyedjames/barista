@@ -58,6 +58,21 @@ task 'build:css', 'Build Sass files into CSS', ->
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
+		pluginDir = "#{sass_src}/plugins"
+		plugins = fs.readdirSync pluginDir
+		.map (file) -> file.replace /\.sass$/, ""
+
+		for plugin in plugins
+			inFile  = "#{sass_src}/plugins/#{plugin}.sass"
+			outFile = "#{sass_dest}/#{sass_root}-#{plugin}.css"
+			minFile = "#{sass_dest}/#{sass_root}-#{plugin}.min.css"
+
+			try
+				proc.execSync "sass -t expanded --trace #{inFile} > #{outFile}"
+				proc.execSync "sass -t compressed  --trace #{inFile} > #{minFile}"
+			catch err
+				console.error "[#{new Date}] : Error executing '#{err.cmd}'"
+
 task 'build:html', 'Build HAML files ino HTML', ->
 	invoke 'clean:html'
 	record 'build:html', ->

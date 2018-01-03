@@ -1,0 +1,16 @@
+$base-shadow-top: 3px !default
+$base-shadow-left: 2px !default
+$base-shadow-blur: 1px !default
+$base-shadow-spread: 0px !default
+
+$base-shadow: $base-shadow-left $base-shadow-top $base-shadow-blur $base-shadow-spread $gray
+
+=box-shadow($color, $top: $base-shadow-top, $left: $base-shadow-left, $blur: $base-shadow-blur, $spread: $base-shadow-spread)
+	box-shadow: $left $top $blur $spread $color
+
+$text-shadow-top: -1px !default
+$text-shadow-left: 0px !default
+$text-shadow-blur: 1px !default
+
+=text-shadow($color, $top: $text-shadow-top, $left: $text-shadow-left, $blur: $text-shadow-blur)
+	text-shadow: $left $top $blur $color
