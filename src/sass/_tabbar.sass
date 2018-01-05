@@ -40,13 +40,25 @@
 		border-color: $darker
 
 .tabbar
+	margin-right: $base-padding-horizontal
 	margin-bottom: $base-margin-bottom
 
 	+tab-color($gray, $light-gray)
 
+	&::after
+		content: "."
+		visibility: hidden
+		display: block
+		height: 0
+		clear: left
+
+	& > *
+		margin-right: -$base-padding-horizontal
+
 	.tab
-		display: inline-block
+		float: left
 		padding: $base-padding
+		margin-right: -1px
 		border-width: $base-border-width
 		border-style: $base-border-style
 		border-bottom-width: 0
@@ -59,10 +71,14 @@
 		font-size: $base-font-size
 
 	.panel
+		clear: left
 		display: none
 		padding: $base-padding
 		border-width: $base-border-width
 		border-style: $base-border-style
+		border-top-right-radius: $small-border-radius
+		border-bottom-left-radius: $small-border-radius
+		border-bottom-right-radius: $small-border-radius
 
 		&.active
 			display: block

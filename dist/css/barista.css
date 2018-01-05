@@ -2698,6 +2698,7 @@ ul.menu.tabs {
 }
 
 .tabbar {
+  margin-right: 0.75em;
   margin-bottom: 1.5em;
 }
 .tabbar .tab {
@@ -2736,9 +2737,20 @@ ul.menu.tabs {
 .tabbar .panel {
   border-color: #737373;
 }
+.tabbar::after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: left;
+}
+.tabbar > * {
+  margin-right: -0.75em;
+}
 .tabbar .tab {
-  display: inline-block;
+  float: left;
   padding: 0.375em 0.75em;
+  margin-right: -1px;
   border-width: 1px;
   border-style: solid;
   border-bottom-width: 0;
@@ -2751,10 +2763,14 @@ ul.menu.tabs {
   font-size: 14px;
 }
 .tabbar .panel {
+  clear: left;
   display: none;
   padding: 0.375em 0.75em;
   border-width: 1px;
   border-style: solid;
+  border-top-right-radius: 0.375em;
+  border-bottom-left-radius: 0.375em;
+  border-bottom-right-radius: 0.375em;
 }
 .tabbar .panel.active {
   display: block;
