@@ -2697,6 +2697,357 @@ ul.menu.tabs {
   }
 }
 
+.tabbar {
+  margin-bottom: 1.5em;
+}
+.tabbar .tab {
+  border-color: #737373;
+  color: #FFFFFF;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.tabbar .tab:active, .tabbar .tab.active {
+  border-color: #737373;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px 1px 1px #737373;
+}
+.tabbar .tab:active:hover, .tabbar .tab:active.hover, .tabbar .tab.active:hover, .tabbar .tab.active.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar .tab:hover, .tabbar .tab.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar .tab[disabled], .tabbar .tab.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.tabbar .tab[disabled]:active, .tabbar .tab[disabled].active, .tabbar .tab[disabled]:hover, .tabbar .tab[disabled].hover, .tabbar .tab.disabled:active, .tabbar .tab.disabled.active, .tabbar .tab.disabled:hover, .tabbar .tab.disabled.hover {
+  border-color: #737373;
+  box-shadow: none;
+  text-shadow: none;
+}
+.tabbar .panel {
+  border-color: #737373;
+}
+.tabbar .tab {
+  display: inline-block;
+  padding: 0.375em 0.75em;
+  border-width: 1px;
+  border-style: solid;
+  border-bottom-width: 0;
+  border-top-left-radius: 0.375em;
+  border-top-right-radius: 0.375em;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.4285714286;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 14px;
+}
+.tabbar .panel {
+  display: none;
+  padding: 0.375em 0.75em;
+  border-width: 1px;
+  border-style: solid;
+}
+.tabbar .panel.active {
+  display: block;
+}
+.tabbar.red .tab {
+  border-color: #737373;
+  color: #FFFFFF;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.tabbar.red .tab:active, .tabbar.red .tab.active {
+  border-color: #a52b0e;
+  background-color: #DC3912;
+  background-image: -webkit-linear-gradient(-270deg, #DC3912, #e56b4d);
+  background-image: linear-gradient(0deg,#DC3912, #e56b4d);
+  text-shadow: 0px 1px 1px #a52b0e;
+}
+.tabbar.red .tab:active:hover, .tabbar.red .tab:active.hover, .tabbar.red .tab.active:hover, .tabbar.red .tab.active.hover {
+  box-shadow: inset 0 0 6px 2px #F4C3B7;
+}
+.tabbar.red .tab:hover, .tabbar.red .tab.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar.red .tab[disabled], .tabbar.red .tab.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.tabbar.red .tab[disabled]:active, .tabbar.red .tab[disabled].active, .tabbar.red .tab[disabled]:hover, .tabbar.red .tab[disabled].hover, .tabbar.red .tab.disabled:active, .tabbar.red .tab.disabled.active, .tabbar.red .tab.disabled:hover, .tabbar.red .tab.disabled.hover {
+  border-color: #737373;
+  box-shadow: none;
+  text-shadow: none;
+}
+.tabbar.red .panel {
+  border-color: #a52b0e;
+}
+.tabbar.green .tab {
+  border-color: #737373;
+  color: #FFFFFF;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.tabbar.green .tab:active, .tabbar.green .tab.active {
+  border-color: #0c7112;
+  background-color: #109618;
+  background-image: -webkit-linear-gradient(-270deg, #109618, #4cb052);
+  background-image: linear-gradient(0deg,#109618, #4cb052);
+  text-shadow: 0px 1px 1px #0c7112;
+}
+.tabbar.green .tab:active:hover, .tabbar.green .tab:active.hover, .tabbar.green .tab.active:hover, .tabbar.green .tab.active.hover {
+  box-shadow: inset 0 0 6px 2px #B6DFB9;
+}
+.tabbar.green .tab:hover, .tabbar.green .tab.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar.green .tab[disabled], .tabbar.green .tab.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.tabbar.green .tab[disabled]:active, .tabbar.green .tab[disabled].active, .tabbar.green .tab[disabled]:hover, .tabbar.green .tab[disabled].hover, .tabbar.green .tab.disabled:active, .tabbar.green .tab.disabled.active, .tabbar.green .tab.disabled:hover, .tabbar.green .tab.disabled.hover {
+  border-color: #737373;
+  box-shadow: none;
+  text-shadow: none;
+}
+.tabbar.green .panel {
+  border-color: #0c7112;
+}
+.tabbar.blue .tab {
+  border-color: #737373;
+  color: #FFFFFF;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.tabbar.blue .tab:active, .tabbar.blue .tab.active {
+  border-color: #264d99;
+  background-color: #3366CC;
+  background-image: -webkit-linear-gradient(-270deg, #3366CC, #668cd9);
+  background-image: linear-gradient(0deg,#3366CC, #668cd9);
+  text-shadow: 0px 1px 1px #264d99;
+}
+.tabbar.blue .tab:active:hover, .tabbar.blue .tab:active.hover, .tabbar.blue .tab.active:hover, .tabbar.blue .tab.active.hover {
+  box-shadow: inset 0 0 6px 2px #C1D0EF;
+}
+.tabbar.blue .tab:hover, .tabbar.blue .tab.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar.blue .tab[disabled], .tabbar.blue .tab.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.tabbar.blue .tab[disabled]:active, .tabbar.blue .tab[disabled].active, .tabbar.blue .tab[disabled]:hover, .tabbar.blue .tab[disabled].hover, .tabbar.blue .tab.disabled:active, .tabbar.blue .tab.disabled.active, .tabbar.blue .tab.disabled:hover, .tabbar.blue .tab.disabled.hover {
+  border-color: #737373;
+  box-shadow: none;
+  text-shadow: none;
+}
+.tabbar.blue .panel {
+  border-color: #264d99;
+}
+.tabbar.cyan .tab {
+  border-color: #737373;
+  color: #FFFFFF;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.tabbar.cyan .tab:active, .tabbar.cyan .tab.active {
+  border-color: #3681a4;
+  background-color: #48ACDB;
+  background-image: -webkit-linear-gradient(-270deg, #48ACDB, #76c1e4);
+  background-image: linear-gradient(0deg,#48ACDB, #76c1e4);
+  text-shadow: 0px 1px 1px #3681a4;
+}
+.tabbar.cyan .tab:active:hover, .tabbar.cyan .tab:active.hover, .tabbar.cyan .tab.active:hover, .tabbar.cyan .tab.active.hover {
+  box-shadow: inset 0 0 6px 2px #BBE6F7;
+}
+.tabbar.cyan .tab:hover, .tabbar.cyan .tab.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar.cyan .tab[disabled], .tabbar.cyan .tab.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.tabbar.cyan .tab[disabled]:active, .tabbar.cyan .tab[disabled].active, .tabbar.cyan .tab[disabled]:hover, .tabbar.cyan .tab[disabled].hover, .tabbar.cyan .tab.disabled:active, .tabbar.cyan .tab.disabled.active, .tabbar.cyan .tab.disabled:hover, .tabbar.cyan .tab.disabled.hover {
+  border-color: #737373;
+  box-shadow: none;
+  text-shadow: none;
+}
+.tabbar.cyan .panel {
+  border-color: #3681a4;
+}
+.tabbar.magenta .tab {
+  border-color: #737373;
+  color: #FFFFFF;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.tabbar.magenta .tab:active, .tabbar.magenta .tab.active {
+  border-color: #9a3d82;
+  background-color: #CD51AD;
+  background-image: -webkit-linear-gradient(-270deg, #CD51AD, #da7dc2);
+  background-image: linear-gradient(0deg,#CD51AD, #da7dc2);
+  text-shadow: 0px 1px 1px #9a3d82;
+}
+.tabbar.magenta .tab:active:hover, .tabbar.magenta .tab:active.hover, .tabbar.magenta .tab.active:hover, .tabbar.magenta .tab.active.hover {
+  box-shadow: inset 0 0 6px 2px #F7B4E4;
+}
+.tabbar.magenta .tab:hover, .tabbar.magenta .tab.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar.magenta .tab[disabled], .tabbar.magenta .tab.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.tabbar.magenta .tab[disabled]:active, .tabbar.magenta .tab[disabled].active, .tabbar.magenta .tab[disabled]:hover, .tabbar.magenta .tab[disabled].hover, .tabbar.magenta .tab.disabled:active, .tabbar.magenta .tab.disabled.active, .tabbar.magenta .tab.disabled:hover, .tabbar.magenta .tab.disabled.hover {
+  border-color: #737373;
+  box-shadow: none;
+  text-shadow: none;
+}
+.tabbar.magenta .panel {
+  border-color: #9a3d82;
+}
+.tabbar.yellow .tab {
+  border-color: #737373;
+  color: #FFFFFF;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.tabbar.yellow .tab:active, .tabbar.yellow .tab.active {
+  border-color: #bf8a00;
+  background-color: #FFB800;
+  background-image: -webkit-linear-gradient(-270deg, #FFB800, #ffca40);
+  background-image: linear-gradient(0deg,#FFB800, #ffca40);
+  text-shadow: 0px 1px 1px #bf8a00;
+}
+.tabbar.yellow .tab:active:hover, .tabbar.yellow .tab:active.hover, .tabbar.yellow .tab.active:hover, .tabbar.yellow .tab.active.hover {
+  box-shadow: inset 0 0 6px 2px #FEE0B2;
+}
+.tabbar.yellow .tab:hover, .tabbar.yellow .tab.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar.yellow .tab[disabled], .tabbar.yellow .tab.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.tabbar.yellow .tab[disabled]:active, .tabbar.yellow .tab[disabled].active, .tabbar.yellow .tab[disabled]:hover, .tabbar.yellow .tab[disabled].hover, .tabbar.yellow .tab.disabled:active, .tabbar.yellow .tab.disabled.active, .tabbar.yellow .tab.disabled:hover, .tabbar.yellow .tab.disabled.hover {
+  border-color: #737373;
+  box-shadow: none;
+  text-shadow: none;
+}
+.tabbar.yellow .panel {
+  border-color: #bf8a00;
+}
+.tabbar.purple .tab {
+  border-color: #737373;
+  color: #FFFFFF;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.tabbar.purple .tab:active, .tabbar.purple .tab.active {
+  border-color: #730073;
+  background-color: #990099;
+  background-image: -webkit-linear-gradient(-270deg, #990099, #b340b3);
+  background-image: linear-gradient(0deg,#990099, #b340b3);
+  text-shadow: 0px 1px 1px #730073;
+}
+.tabbar.purple .tab:active:hover, .tabbar.purple .tab:active.hover, .tabbar.purple .tab.active:hover, .tabbar.purple .tab.active.hover {
+  box-shadow: inset 0 0 6px 2px #E0B2E0;
+}
+.tabbar.purple .tab:hover, .tabbar.purple .tab.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar.purple .tab[disabled], .tabbar.purple .tab.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.tabbar.purple .tab[disabled]:active, .tabbar.purple .tab[disabled].active, .tabbar.purple .tab[disabled]:hover, .tabbar.purple .tab[disabled].hover, .tabbar.purple .tab.disabled:active, .tabbar.purple .tab.disabled.active, .tabbar.purple .tab.disabled:hover, .tabbar.purple .tab.disabled.hover {
+  border-color: #737373;
+  box-shadow: none;
+  text-shadow: none;
+}
+.tabbar.purple .panel {
+  border-color: #730073;
+}
+.tabbar.orange .tab {
+  border-color: #737373;
+  color: #FFFFFF;
+  background-color: #999999;
+  background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
+  background-image: linear-gradient(0deg,#999999, #b3b3b3);
+  text-shadow: 0px -1px 1px #737373;
+}
+.tabbar.orange .tab:active, .tabbar.orange .tab.active {
+  border-color: #bf4d00;
+  background-color: #FF6600;
+  background-image: -webkit-linear-gradient(-270deg, #FF6600, #ff8c40);
+  background-image: linear-gradient(0deg,#FF6600, #ff8c40);
+  text-shadow: 0px 1px 1px #bf4d00;
+}
+.tabbar.orange .tab:active:hover, .tabbar.orange .tab:active.hover, .tabbar.orange .tab.active:hover, .tabbar.orange .tab.active.hover {
+  box-shadow: inset 0 0 6px 2px #FFCFAE;
+}
+.tabbar.orange .tab:hover, .tabbar.orange .tab.hover {
+  box-shadow: inset 0 0 6px 2px #DDDDDD;
+}
+.tabbar.orange .tab[disabled], .tabbar.orange .tab.disabled {
+  box-shadow: none;
+  text-shadow: none;
+  background: #999999;
+  color: #DDDDDD;
+  cursor: no-drop;
+}
+.tabbar.orange .tab[disabled]:active, .tabbar.orange .tab[disabled].active, .tabbar.orange .tab[disabled]:hover, .tabbar.orange .tab[disabled].hover, .tabbar.orange .tab.disabled:active, .tabbar.orange .tab.disabled.active, .tabbar.orange .tab.disabled:hover, .tabbar.orange .tab.disabled.hover {
+  border-color: #737373;
+  box-shadow: none;
+  text-shadow: none;
+}
+.tabbar.orange .panel {
+  border-color: #bf4d00;
+}
+
 .tooltip {
   position: absolute;
   display: inline-block;

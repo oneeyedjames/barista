@@ -6,7 +6,7 @@
 		%link{ :rel => 'stylesheet', :href => '../../lib/fontawesome/css/font-awesome.min.css' }
 		%link{ :rel => 'stylesheet', :href => '../css/barista.css' }
 
-		%script{ :src => '../../lib/jquery/jquery.min.js' }
+		%script{ :src => '../../lib/jquery/dist/jquery.min.js' }
 		%script{ :src => '../js/barista.js' }
 
 		:css
@@ -34,6 +34,7 @@
 					%li
 						%a Special Item
 		%article.wrapper
+			= render '_tabbar'
 			= render '_typography'
 			= render '_text'
 			= render '_buttons'
