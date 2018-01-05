@@ -6,6 +6,23 @@ jQuery(function($) {
       return event.preventDefault();
     }
   });
+  $('.btn.toggle').click(function(event) {
+    var button;
+    button = $(this);
+    return button.toggleClass('active');
+  });
+  $('.btn-group.single').each(function(index, group) {
+    var buttons;
+    group = $(group);
+    buttons = group.find('.btn');
+    return buttons.click(function(event) {
+      var button, isActive;
+      button = $(this);
+      isActive = button.hasClass('active');
+      buttons.removeClass('active');
+      return button.toggleClass('active', !isActive);
+    });
+  });
   $.fn.extend({
     collapse: function(min) {
       var box, height;
