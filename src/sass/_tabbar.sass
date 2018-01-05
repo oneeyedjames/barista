@@ -1,0 +1,108 @@
+=tab-color($color, $light)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	$lighter-gray: tint($gray, 25%)
+	$darker-gray: shade($gray, 25%)
+
+	.tab
+		border-color: $darker-gray
+		color: $white
+
+		+linear-gradient(0deg, $gray, $lighter-gray)
+		+text-shadow($darker-gray)
+
+		&:active, &.active
+			border-color: $darker
+
+			+linear-gradient(0deg, $color, $lighter)
+			+text-shadow($darker, -$text-shadow-top)
+
+			&:hover, &.hover
+				box-shadow: inset 0 0 6px 2px $light
+
+		&:hover, &.hover
+			box-shadow: inset 0 0 6px 2px $light-gray
+
+		&[disabled], &.disabled
+			box-shadow: none
+			text-shadow: none
+			background: $gray
+			color: $light-gray
+			cursor: no-drop
+
+			&:active, &.active, &:hover, &.hover
+				border-color: $darker-gray
+				box-shadow: none
+				text-shadow: none
+
+	.panel
+		border-color: $darker
+
+.tabbar
+	margin-right: $base-padding-horizontal
+	margin-bottom: $base-margin-bottom
+
+	+tab-color($gray, $light-gray)
+
+	&::after
+		content: "."
+		visibility: hidden
+		display: block
+		height: 0
+		clear: left
+
+	& > *
+		margin-right: -$base-padding-horizontal
+
+	.tab
+		float: left
+		padding: $base-padding
+		margin-right: -1px
+		border-width: $base-border-width
+		border-style: $base-border-style
+		border-bottom-width: 0
+		border-top-left-radius: $small-border-radius
+		border-top-right-radius: $small-border-radius
+		cursor: pointer
+		text-decoration: none
+		line-height: $base-line-height
+		font-family: $base-font-family
+		font-size: $base-font-size
+
+	.panel
+		clear: left
+		display: none
+		padding: $base-padding
+		border-width: $base-border-width
+		border-style: $base-border-style
+		border-top-right-radius: $small-border-radius
+		border-bottom-left-radius: $small-border-radius
+		border-bottom-right-radius: $small-border-radius
+
+		&.active
+			display: block
+
+	&.red
+		+tab-color($red, $light-red)
+
+	&.green
+		+tab-color($green, $light-green)
+
+	&.blue
+		+tab-color($blue, $light-blue)
+
+	&.cyan
+		+tab-color($cyan, $light-cyan)
+
+	&.magenta
+		+tab-color($magenta, $light-magenta)
+
+	&.yellow
+		+tab-color($yellow, $light-yellow)
+
+	&.purple
+		+tab-color($purple, $light-purple)
+
+	&.orange
+		+tab-color($orange, $light-orange)
