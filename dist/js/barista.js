@@ -74,11 +74,33 @@ jQuery(function($) {
     });
   });
   $('form[data-confirm]').submit(function(event) {
-    var message;
-    message = $(this).data('confirm');
-    if (!confirm(message)) {
-      return event.preventDefault();
+    var data, dialog, footer, form, header;
+    form = $(this);
+    if ('true' !== form.data('confirmed')) {
+      event.preventDefault();
     }
+    data = form.data();
+    data.duration = 0;
+    if (data.overlay == null) {
+      data.overlay = true;
+    }
+    if (data.header == null) {
+      data.header = 'Warning';
+    }
+    if (data.cancel == null) {
+      data.cancel = 'Cancel';
+    }
+    if (data.ok == null) {
+      data.ok = 'Ok';
+    }
+    header = $('<header>').text(' ' + data.header).prepend($('<i class="fa fa-warning">')).append($('<a class="caret cancel">').append($('<i class="fa fa-close">')));
+    footer = $('<footer class="btns">').append($('<button class="btn cancel">').text(data.cancel)).append($('<button class="btn danger ok">').text(data.ok));
+    dialog = $('<div class="card warning modal">').text(data.confirm).prepend(header).append(footer).one('ok', function(event) {
+      form.data('confirmed', 'true');
+      return form.submit();
+    });
+    $('body').append(dialog);
+    return dialog.modal(data);
   });
   $.fn.extend({
     refreshTabs: function() {
