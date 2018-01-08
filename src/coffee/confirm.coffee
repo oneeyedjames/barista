@@ -5,25 +5,29 @@ $ 'form[data-confirm]'
 	do event.preventDefault unless 'true' == form.data 'confirmed'
 
 	data = do form.data
-	data.duration ?= 0
+	data.duration = 0
 	data.overlay  ?= true
+	data.header   ?= 'Warning'
+	data.cancel   ?= 'Cancel'
+	data.ok       ?= 'Ok'
 
-	dialog = $ '<div class="card warning modal">'
-	.text data.confirm
-
-	header = $ '<header> Warning</header>'
+	header = $ '<header>'
+	.text ' ' + data.header
 	.prepend $ '<i class="fa fa-warning">'
 	.append ($ '<a class="caret cancel">'
 	.append $ '<i class="fa fa-close">')
 
 	footer = $ '<footer class="btns">'
-	.append $ '<button class="btn cancel">Cancel</button>'
-	.append $ '<button class="btn danger ok">Ok</button>'
+	.append ($ '<button class="btn cancel">'
+	.text data.cancel)
+	.append ($ '<button class="btn danger ok">'
+	.text data.ok)
 
-	dialog.prepend header
-	dialog.append footer
-
-	dialog.one 'ok', (event) ->
+	dialog = $ '<div class="card warning modal">'
+	.text data.confirm
+	.prepend header
+	.append footer
+	.one 'ok', (event) ->
 		form.data 'confirmed', 'true'
 		do form.submit
 
