@@ -228,6 +228,14 @@ jQuery(function($) {
     button = $(this);
     return button.next('ul').toggleMenu(button);
   });
+  $('[data-action=toggle]').click(function(event) {
+    var button, target;
+    event.preventDefault();
+    button = $(this);
+    target = $(button.data('target'));
+    target.toggle();
+    return target.find('ul.nav ul').toggleClass('active');
+  });
   $('*[data-action="submit"]').click(function(event) {
     var button, data, field, key, target, value;
     event.preventDefault();

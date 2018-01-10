@@ -16,11 +16,11 @@
 <div class='icon'>
 <a>Home</a>
 </div>
+<div class='menu' id='main-menu'>
 <ul class='nav'>
 <li>
 <a data-action='menu'>
-First Item
-<i class='caret'></i>
+<span class='navlbl'>First Item</span>
 </a>
 <ul>
 <li>
@@ -35,14 +35,27 @@ First Item
 </ul>
 </li>
 <li>
-<a>Second Item</a>
+<a>
+<span class='navlbl'>Second Item</span>
+</a>
 </li>
 </ul>
 <ul class='nav right'>
 <li>
-<a>Special Item</a>
+<a>
+<span class='navlbl'>Special Item</span>
+</a>
+<ul>
+<li>
+<a>Sub-Item</a>
 </li>
 </ul>
+</li>
+</ul>
+</div>
+<a class='icon more' data-action='toggle' data-target='#main-menu'>
+<i class='fa fa-bars'></i>
+</a>
 </div>
 </header>
 <article class='wrapper'>
