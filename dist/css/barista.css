@@ -2498,6 +2498,10 @@ ul.menu.tabs {
   float: left;
   padding-right: 20px;
 }
+.navbar .more {
+  display: none;
+  padding-right: 0;
+}
 .navbar ul.nav {
   margin: 0 -10px;
   padding: 0;
@@ -2698,6 +2702,45 @@ ul.menu.tabs {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .navbar .navlbl {
+    display: none;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .navbar .menu {
+    display: none;
+    position: absolute;
+    top: 41px;
+    left: 0;
+    right: 0;
+    background-color: #999999;
+    background-image: -webkit-linear-gradient(-450deg, #999999, #b3b3b3);
+    background-image: linear-gradient(180deg,#999999, #b3b3b3);
+  }
+  .navbar .menu ul.nav {
+    float: none;
+    display: block;
+    padding: 0 0.5em;
+  }
+  .navbar .menu ul.nav.right, .navbar .menu ul.nav li {
+    float: none;
+  }
+  .navbar .menu ul.nav ul {
+    float: none;
+    padding-left: 1.5em;
+    position: inherit;
+    background: none;
+    border: none;
+  }
+  .navbar .more {
+    float: right;
+    display: block;
+  }
+  .navbar .navlbl {
+    display: inline;
+  }
+}
 .tabbar {
   margin-right: 0.75em;
   margin-bottom: 1.5em;

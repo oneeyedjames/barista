@@ -16,23 +16,30 @@
 			.wrapper
 				.icon
 					%a Home
-				%ul.nav
-					%li
-						%a{ 'data-action' => 'menu' }
-							First Item
-							%i.caret
-						%ul
-							%li
-								%a First Sub-Item
-							%li
-								%a Second Sub-Item
-							%li
-								%a Third Sub-Item
-					%li
-						%a Second Item
-				%ul.nav.right
-					%li
-						%a Special Item
+				#main-menu.menu
+					%ul.nav
+						%li
+							%a{ 'data-action' => 'menu' }
+								%span.navlbl First Item
+							%ul
+								%li
+									%a First Sub-Item
+								%li
+									%a Second Sub-Item
+								%li
+									%a Third Sub-Item
+						%li
+							%a
+								%span.navlbl Second Item
+					%ul.nav.right
+						%li
+							%a
+								%span.navlbl Special Item
+							%ul
+								%li
+									%a Sub-Item
+				%a.icon.more{ 'data-target' => '#main-menu', 'data-action' => 'toggle' }
+					%i.fa.fa-bars
 		%article.wrapper
 			= render '_typography'
 			= render '_text'

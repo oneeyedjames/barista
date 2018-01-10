@@ -40,6 +40,10 @@
 		float: left
 		padding-right: $block-spacing
 
+	.more
+		display: none
+		padding-right: 0
+
 	ul.nav
 		margin: 0 (-$block-spacing / 2)
 		padding: 0
@@ -120,3 +124,42 @@
 
 	+screen-width($screen-lg-width)
 		width: $screen-lg-width - ($block-spacing * 2)
+
++screen-max-width($screen-md-width - 1px)
+	.navbar
+		.navlbl
+			display: none
+
++screen-max-width($screen-sm-width - 1px)
+	.navbar
+		.menu
+			display: none
+			position: absolute
+			top: 2 * $block-spacing + 1px
+			left: 0
+			right: 0
+
+			+linear-gradient(180deg, $gray, tint($gray, 25%))
+
+
+			ul.nav
+				float: none
+				display: block
+				padding: 0 .5em
+
+				&.right, li
+					float: none
+
+				ul
+					float: none
+					padding-left: 1.5em
+					position: inherit
+					background: none
+					border: none
+
+		.more
+			float: right
+			display: block
+
+		.navlbl
+			display: inline
