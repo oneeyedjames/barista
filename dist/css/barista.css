@@ -67,6 +67,26 @@ blockquote {
   border-left: 10px solid #999999;
 }
 
+@media only screen and (max-width: 479px) {
+  .hide-xs {
+    display: none;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .hide-sm {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .hide-md {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hide-lg {
+    display: none;
+  }
+}
 .txt.red, .txt.danger, .txt.error {
   background-color: #F4C3B7;
   color: #7e210a;
