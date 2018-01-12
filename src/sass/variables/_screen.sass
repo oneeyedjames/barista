@@ -2,14 +2,14 @@ $screen-sm-width: 480px
 $screen-md-width: 768px
 $screen-lg-width: 1280px
 
-=screen-width($width)
-	@media only screen and (min-width: #{$width})
-		@content
-
 =screen-min-width($width)
 	@media only screen and (min-width: #{$width})
 		@content
 
 =screen-max-width($width)
 	@media only screen and (max-width: #{$width})
+		@content
+
+=screen-width($min, $max)
+	@media only screen and (min-width: #{$min}) and (max-width: #{$max})
 		@content

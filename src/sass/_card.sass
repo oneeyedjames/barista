@@ -6,10 +6,6 @@
 
 	header
 		+linear-gradient(0deg, $color, $lighter)
-		+text-shadow($darker)
-
-		.close:active
-			+text-shadow($darker, -$text-shadow-top)
 
 	header, footer
 		border-color: $lighter
@@ -27,11 +23,10 @@
 .card
 	margin-bottom: $base-margin-bottom
 	padding: $base-padding // why use !important here?
-	border-radius: $base-border-radius
 	border: $base-border
+	border-width: 0 0 $base-border-width
+	border-radius: $base-border-radius
 	background: $white
-
-	+box-shadow($gray)
 
 	header
 		background: inherit
@@ -76,15 +71,11 @@
 		z-index: 201
 		left: $block-spacing
 		right: $block-spacing
-		+box-shadow($gray, 6px, 4px, 12px, 6px)
 
 		&.visible
 			+transition-delay(0s)
 			visibility: visible
 			opacity: 1
-
-		&.dim
-			box-shadow: none
 
 	&.alert
 		header, footer
@@ -144,19 +135,19 @@
 	height: 100%
 	overflow: hidden
 
-+screen-width($screen-sm-width)
++screen-min-width($screen-sm-width)
 	.card.modal
 		+card-width($screen-sm-width, 12)
 		box-sizing: border-box
 
-+screen-width($screen-md-width)
++screen-min-width($screen-md-width)
 	.card.modal
 		+card-width($screen-md-width, 6)
 		@for $num from 1 through $grid-columns
 			&.col-md-#{$num}
 				+card-width($screen-md-width, $num)
 
-+screen-width($screen-lg-width)
++screen-min-width($screen-lg-width)
 	.card.modal
 		+card-width($screen-lg-width, 4)
 		@for $num from 1 through $grid-columns

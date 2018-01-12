@@ -27,7 +27,7 @@ $sizes: xs sm md lg
 	.col-xs-pull-#{$num}
 		left: percentage($num / $grid-columns) * -1
 
-+screen-width($screen-sm-width)
++screen-min-width($screen-sm-width)
 	@for $num from 1 through $grid-columns
 		.col-sm-#{$num}
 			width: percentage($num / $grid-columns)
@@ -38,7 +38,7 @@ $sizes: xs sm md lg
 		.col-sm-pull-#{$num}
 			left: percentage($num / $grid-columns) * -1
 
-+screen-width($screen-md-width)
++screen-min-width($screen-md-width)
 	@for $num from 1 through $grid-columns
 		.col-md-#{$num}
 			width: percentage($num / $grid-columns)
@@ -49,7 +49,7 @@ $sizes: xs sm md lg
 		.col-md-pull-#{$num}
 			left: percentage($num / $grid-columns) * -1
 
-+screen-width($screen-lg-width)
++screen-min-width($screen-lg-width)
 	@for $num from 1 through $grid-columns
 		.col-lg-#{$num}
 			width: percentage($num / $grid-columns)

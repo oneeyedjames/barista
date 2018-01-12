@@ -9,15 +9,10 @@
 
 		th, td
 			color: $white
-			+text-shadow($darker)
 
 	tbody
 		th, td
 			border-color: $lighter
-
-		tr:hover
-			th, td
-				background-color: $light
 
 	&.striped
 		tbody
@@ -26,11 +21,6 @@
 					background-color: $light
 					color: $dark
 
-			tr:hover
-				th, td
-					background-color: darken($light, 15%)
-					color: $black
-
 table
 	width: 100%
 	margin-bottom: $base-margin-bottom
@@ -38,8 +28,8 @@ table
 	border-collapse: separate
 	border-spacing: 0
 	border: $base-border
+	border-width: 0 0 $base-border-width
 
-	+box-shadow($gray)
 	+table-color($gray, $light-gray, $dark-gray)
 
 	thead

@@ -58,6 +58,16 @@ task 'build:css', 'Build Sass files into CSS', ->
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
+		inFile  = "#{sass_src}/effects/effects.sass"
+		outFile = "#{sass_dest}/#{sass_root}-effects.css"
+		minFile = "#{sass_dest}/#{sass_root}-effects.min.css"
+
+		try
+			proc.execSync "sass -t expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -t compressed  --trace #{inFile} > #{minFile}"
+		catch err
+			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
+
 		pluginDir = "#{sass_src}/plugins"
 		plugins = fs.readdirSync pluginDir
 		.map (file) -> file.replace /\.sass$/, ""
@@ -136,7 +146,7 @@ watch = (dir, task) ->
 
 	console.log "[#{new Date}] : Watching #{dir} for changes ..."
 
-	fs.watch dir, ->
+	fs.watch dir, recursive: true, ->
 		console.log "[#{new Date}] : Changes detected in #{dir}"
 		invoke task
 	.on 'error', (err) ->

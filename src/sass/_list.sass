@@ -7,21 +7,13 @@
 	li
 		border-color: $lighter
 
-		&:hover
-			background-color: $light
-
 		&.header
 			+linear-gradient(0deg, $color, $lighter)
-			+text-shadow($darker)
 
 	&.striped
 		li:nth-child(odd)
 			background-color: $light
 			color: $dark
-
-		li:hover
-			background-color: darken($light, 15%)
-			color: $black
 
 		li.header
 			color: $white
@@ -29,12 +21,12 @@
 ul.list
 	padding: 0
 	margin: 0 0 $base-margin-bottom
-	border-radius: $base-border-radius
 	border: $base-border
+	border-radius: $base-border-radius
+	border-width: 0 0 $base-border-width
 
 	list-style: none
 
-	+box-shadow($gray)
 	+list-color($gray, $light-gray, $dark-gray)
 
 	li
