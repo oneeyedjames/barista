@@ -1,0 +1,13 @@
+#{$all-text-inputs}, select
+	&:hover
+		+box-shadow($gray, 0, 0, 2px, 1px)
+
+	&:focus
+		+box-shadow($gray)
+
+.input-group
+	button, .btn, .addon
+		box-shadow: none
+
+		&:hover, &:focus, &:active, &:active:hover
+			box-shadow: none

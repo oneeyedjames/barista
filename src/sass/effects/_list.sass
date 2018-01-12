@@ -1,0 +1,23 @@
+=list-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	li
+		&:hover
+			background-color: $light
+
+		&.header
+			+text-shadow($darker)
+
+	&.striped
+		li:hover
+			background-color: darken($light, 15%)
+			color: $black
+
+		li.header
+			color: $white
+
+ul.list
+	border: $base-border
+
+	+box-shadow($gray)

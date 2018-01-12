@@ -32,8 +32,6 @@
 		text-decoration: none
 		cursor: pointer
 
-		+text-shadow(shade($gray, 25%))
-
 	.icon
 		line-height: 2 * $block-spacing
 		font-size: modular-scale(3, 1em, $minor-third)
@@ -102,10 +100,8 @@
 	&.orange
 		+navbar-color($orange)
 
-
 .navbar + .wrapper
 	margin-top: 3 * $block-spacing
-
 
 .wrapper
 	margin: 0 $block-spacing
@@ -115,14 +111,14 @@
 		margin-left: $block-spacing
 		margin-right: $block-spacing
 
-	+screen-width($screen-sm-width)
+	+screen-min-width($screen-sm-width)
 		width: $screen-sm-width - ($block-spacing * 2)
 		margin: 0 auto
 
-	+screen-width($screen-md-width)
+	+screen-min-width($screen-md-width)
 		width: $screen-md-width - ($block-spacing * 2)
 
-	+screen-width($screen-lg-width)
+	+screen-min-width($screen-lg-width)
 		width: $screen-lg-width - ($block-spacing * 2)
 
 +screen-max-width($screen-md-width - 1px)
@@ -140,7 +136,6 @@
 			right: 0
 
 			+linear-gradient(180deg, $gray, tint($gray, 25%))
-
 
 			ul.nav
 				float: none
