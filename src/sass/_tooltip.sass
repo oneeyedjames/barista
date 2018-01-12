@@ -1,6 +1,24 @@
+=tooltip-color($color)
+	.message
+		background: $color
+
+	&.top .pointer
+		border-top-color: $color
+
+	&.left .pointer
+		border-left-color: $color
+
+	&.right .pointer
+		border-right-color: $color
+
+	&.bottom .pointer
+		border-bottom-color: $color
+
 .tooltip
 	position: absolute
 	display: inline-block
+
+	+tooltip-color($black)
 
 	&.left, &.right
 		.pointer
@@ -17,7 +35,6 @@
 
 		.pointer
 			bottom: 0
-			border-top-color: $black
 			border-bottom-width: 0
 
 	&.left
@@ -25,7 +42,6 @@
 
 		.pointer
 			right: 0
-			border-left-color: $black
 			border-right-width: 0
 
 	&.right
@@ -33,7 +49,6 @@
 
 		.pointer
 			left: 0
-			border-right-color: $black
 			border-left-width: 0
 
 	&.bottom
@@ -41,13 +56,35 @@
 
 		.pointer
 			top: 0
-			border-bottom-color: $black
 			border-top-width: 0
+
+	&.red, &.error, &.danger
+		+tooltip-color($red)
+
+	&.green, &.success
+		+tooltip-color($green)
+
+	&.blue, &.primary
+		+tooltip-color($blue)
+
+	&.cyan, &.info
+		+tooltip-color($cyan)
+
+	&.magenta
+		+tooltip-color($magenta)
+
+	&.yellow, &.warning
+		+tooltip-color($yellow)
+
+	&.purple
+		+tooltip-color($purple)
+
+	&.orange
+		+tooltip-color($orange)
 
 	.message
 		border-radius: $base-border-radius
 		padding: $base-padding
-		background: $black
 		color: $white
 
 	.pointer
