@@ -306,6 +306,9 @@ jQuery(function($) {
       if (opts.title == null) {
         opts.title = target.attr('title');
       }
+      if (opts.color == null) {
+        opts.color = target.data('color');
+      }
       if (opts.side == null) {
         opts.side = target.data('side') || 'top';
       }
@@ -313,7 +316,7 @@ jQuery(function($) {
         var hOffset, message, offset, pointer, tooltip, vOffset;
         message = $('<div>').addClass('message').text(opts.title);
         pointer = $('<div>').addClass('pointer');
-        tooltip = $('<div>').addClass('tooltip').addClass(opts.side).insertAfter(target).append(pointer).append(message);
+        tooltip = $('<div>').addClass('tooltip').addClass(opts.color).addClass(opts.side).insertAfter(target).append(pointer).append(message);
         target.data('tooltip', tooltip);
         offset = target.offset();
         switch (opts.side) {
