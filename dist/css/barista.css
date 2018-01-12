@@ -3112,6 +3112,21 @@ ul.menu.tabs {
   position: absolute;
   display: inline-block;
 }
+.tooltip .message {
+  background: #333333;
+}
+.tooltip.top .pointer {
+  border-top-color: #333333;
+}
+.tooltip.left .pointer {
+  border-left-color: #333333;
+}
+.tooltip.right .pointer {
+  border-right-color: #333333;
+}
+.tooltip.bottom .pointer {
+  border-bottom-color: #333333;
+}
 .tooltip.left .pointer, .tooltip.right .pointer {
   top: 50%;
   margin-top: -5px;
@@ -3125,7 +3140,6 @@ ul.menu.tabs {
 }
 .tooltip.top .pointer {
   bottom: 0;
-  border-top-color: #333333;
   border-bottom-width: 0;
 }
 .tooltip.left {
@@ -3133,7 +3147,6 @@ ul.menu.tabs {
 }
 .tooltip.left .pointer {
   right: 0;
-  border-left-color: #333333;
   border-right-width: 0;
 }
 .tooltip.right {
@@ -3141,7 +3154,6 @@ ul.menu.tabs {
 }
 .tooltip.right .pointer {
   left: 0;
-  border-right-color: #333333;
   border-left-width: 0;
 }
 .tooltip.bottom {
@@ -3149,13 +3161,131 @@ ul.menu.tabs {
 }
 .tooltip.bottom .pointer {
   top: 0;
-  border-bottom-color: #333333;
   border-top-width: 0;
+}
+.tooltip.red .message, .tooltip.error .message, .tooltip.danger .message {
+  background: #DC3912;
+}
+.tooltip.red.top .pointer, .tooltip.error.top .pointer, .tooltip.danger.top .pointer {
+  border-top-color: #DC3912;
+}
+.tooltip.red.left .pointer, .tooltip.error.left .pointer, .tooltip.danger.left .pointer {
+  border-left-color: #DC3912;
+}
+.tooltip.red.right .pointer, .tooltip.error.right .pointer, .tooltip.danger.right .pointer {
+  border-right-color: #DC3912;
+}
+.tooltip.red.bottom .pointer, .tooltip.error.bottom .pointer, .tooltip.danger.bottom .pointer {
+  border-bottom-color: #DC3912;
+}
+.tooltip.green .message, .tooltip.success .message {
+  background: #109618;
+}
+.tooltip.green.top .pointer, .tooltip.success.top .pointer {
+  border-top-color: #109618;
+}
+.tooltip.green.left .pointer, .tooltip.success.left .pointer {
+  border-left-color: #109618;
+}
+.tooltip.green.right .pointer, .tooltip.success.right .pointer {
+  border-right-color: #109618;
+}
+.tooltip.green.bottom .pointer, .tooltip.success.bottom .pointer {
+  border-bottom-color: #109618;
+}
+.tooltip.blue .message, .tooltip.primary .message {
+  background: #3366CC;
+}
+.tooltip.blue.top .pointer, .tooltip.primary.top .pointer {
+  border-top-color: #3366CC;
+}
+.tooltip.blue.left .pointer, .tooltip.primary.left .pointer {
+  border-left-color: #3366CC;
+}
+.tooltip.blue.right .pointer, .tooltip.primary.right .pointer {
+  border-right-color: #3366CC;
+}
+.tooltip.blue.bottom .pointer, .tooltip.primary.bottom .pointer {
+  border-bottom-color: #3366CC;
+}
+.tooltip.cyan .message, .tooltip.info .message {
+  background: #48ACDB;
+}
+.tooltip.cyan.top .pointer, .tooltip.info.top .pointer {
+  border-top-color: #48ACDB;
+}
+.tooltip.cyan.left .pointer, .tooltip.info.left .pointer {
+  border-left-color: #48ACDB;
+}
+.tooltip.cyan.right .pointer, .tooltip.info.right .pointer {
+  border-right-color: #48ACDB;
+}
+.tooltip.cyan.bottom .pointer, .tooltip.info.bottom .pointer {
+  border-bottom-color: #48ACDB;
+}
+.tooltip.magenta .message {
+  background: #CD51AD;
+}
+.tooltip.magenta.top .pointer {
+  border-top-color: #CD51AD;
+}
+.tooltip.magenta.left .pointer {
+  border-left-color: #CD51AD;
+}
+.tooltip.magenta.right .pointer {
+  border-right-color: #CD51AD;
+}
+.tooltip.magenta.bottom .pointer {
+  border-bottom-color: #CD51AD;
+}
+.tooltip.yellow .message, .tooltip.warning .message {
+  background: #FFB800;
+}
+.tooltip.yellow.top .pointer, .tooltip.warning.top .pointer {
+  border-top-color: #FFB800;
+}
+.tooltip.yellow.left .pointer, .tooltip.warning.left .pointer {
+  border-left-color: #FFB800;
+}
+.tooltip.yellow.right .pointer, .tooltip.warning.right .pointer {
+  border-right-color: #FFB800;
+}
+.tooltip.yellow.bottom .pointer, .tooltip.warning.bottom .pointer {
+  border-bottom-color: #FFB800;
+}
+.tooltip.purple .message {
+  background: #990099;
+}
+.tooltip.purple.top .pointer {
+  border-top-color: #990099;
+}
+.tooltip.purple.left .pointer {
+  border-left-color: #990099;
+}
+.tooltip.purple.right .pointer {
+  border-right-color: #990099;
+}
+.tooltip.purple.bottom .pointer {
+  border-bottom-color: #990099;
+}
+.tooltip.orange .message {
+  background: #FF6600;
+}
+.tooltip.orange.top .pointer {
+  border-top-color: #FF6600;
+}
+.tooltip.orange.left .pointer {
+  border-left-color: #FF6600;
+}
+.tooltip.orange.right .pointer {
+  border-right-color: #FF6600;
+}
+.tooltip.orange.bottom .pointer {
+  border-bottom-color: #FF6600;
 }
 .tooltip .message {
   border-radius: 0.5em;
   padding: 0.375em 0.75em;
-  background: #333333;
   color: #FFFFFF;
 }
 .tooltip .pointer {

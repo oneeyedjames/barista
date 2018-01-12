@@ -4,6 +4,7 @@ $.fn.extend
 
 		opts ?= {}
 		opts.title ?= target.attr 'title'
+		opts.color ?= target.data 'color'
 		opts.side  ?= target.data('side') || 'top'
 
 		target.removeAttr 'title'
@@ -18,6 +19,7 @@ $.fn.extend
 
 			tooltip = $ '<div>'
 			.addClass 'tooltip'
+			.addClass opts.color
 			.addClass opts.side
 			.insertAfter target
 			.append pointer
