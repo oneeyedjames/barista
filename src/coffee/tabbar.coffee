@@ -2,7 +2,7 @@ $.fn.extend
 	selectTab : (index) ->
 		tabbar = $ this
 
-		return if not tabbar.hasClass 'tabbar'
+		return this unless tabbar.hasClass 'tabbar'
 
 		tabs   = tabbar.find '.tab'
 		panels = tabbar.find '.panel'
@@ -16,10 +16,11 @@ $.fn.extend
 		$ panels[index]
 		.addClass 'active'
 
+		this
+
 $ '.tabbar'
 .each (index, tabbar) ->
 	tabbar = $ tabbar
-
 	tabbar.find '.tab'
 	.click (event) ->
 		do event.preventDefault

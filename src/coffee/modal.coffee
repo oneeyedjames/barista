@@ -1,18 +1,12 @@
 $.fn.extend
-	center : ->
-		viewport = $ window
-		element = $ this
-
-		vOffset = (viewport.height() - element.outerHeight()) / 2
-		hOffset = (viewport.width() - element.outerWidth()) / 2
-
-		element.css
-			'top'  : "#{vOffset}px"
-			'left' : "#{hOffset}px"
-
 	modal : (opts) ->
+		opts = $.extend
+			duration : 0
+			overlay  : true
+		, opts
+
 		dialog = $ this
-		body = $ 'body'
+		body   = $ 'body'
 
 		dismiss = dialog.dismiss.bind dialog
 
@@ -20,7 +14,7 @@ $.fn.extend
 
 		overlay = $ '.overlay'
 
-		if ! overlay.length
+		unless overlay.length
 			overlay = $ '<div>'
 			.addClass 'overlay'
 			.appendTo 'body'
@@ -31,7 +25,7 @@ $.fn.extend
 
 		overlay.click dismiss unless opts.overlay == 'static'
 
-		body.addClass 'no-scroll' if !!opts.overlay
+		body.toggleClass 'no-scroll', !!opts.overlay
 
 		dialog.addClass 'visible'
 		dialog.toggleClass 'dim', !!opts.overlay
@@ -54,6 +48,8 @@ $.fn.extend
 			do event.preventDefault
 			dialog.dismiss 'cancel'
 
+		this
+
 	dismiss : (eventType) ->
 		eventType ||= 'dismiss'
 
@@ -67,17 +63,16 @@ $.fn.extend
 		.removeClass 'visible'
 		.trigger eventType
 
+		this
+
 $ '*[data-action="modal"]'
 .on 'click post:click', (event) ->
 	do event.preventDefault
 
 	button = $ this
-	target = button.data 'target'
+	target = $ button.data 'target'
 
 	data = do button.data
-	data.duration ?= 0
-	data.overlay  ?= true
 
 	unless event.type == 'click' && button.attr 'href'
-		$ target
-		.modal data
+		target.modal data
