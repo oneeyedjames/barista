@@ -23,8 +23,8 @@ $ '.navbar *[data-action="menu"]'
 .click (event) ->
 	do event.preventDefault
 
-	button = $ this
-	button.next 'ul'
+	$ this
+	.next 'ul'
 	.toggleMenu button
 
 $ '[data-action=toggle]'

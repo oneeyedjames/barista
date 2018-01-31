@@ -1,16 +1,17 @@
-$.fn.extend
-	collapse : (min) ->
-		box = $ this
+$.fn.collapse = (min) ->
+	box = $ this
 
-		if box.hasClass 'collapsed'
-			box.css 'overflow', 'hidden'
-			box.css 'padding', ''
-		else
-			height = do box.innerHeight
-			box.css 'max-height', "#{height}px"
-			box.css 'padding', '0'
+	if box.hasClass 'collapsed'
+		box.css 'overflow', 'hidden'
+		box.css 'padding', ''
+	else
+		height = do box.innerHeight
+		box.css 'max-height', "#{height}px"
+		box.css 'padding', '0'
 
-		box.toggleClass 'collapsed'
+	box.toggleClass 'collapsed'
+
+	this
 
 $ '*[data-action="collapse"]'
 .click (event) ->
@@ -19,7 +20,7 @@ $ '*[data-action="collapse"]'
 	button = $ this
 	target = $ button.data 'target'
 
-	target.toggleClass 'collapsed'
+	do target.collapse
 
 	caret = button.find '.caret'
 

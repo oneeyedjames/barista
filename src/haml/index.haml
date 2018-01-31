@@ -1,46 +1,8 @@
 !!! 5
 %html
-	%head
-		%title Barista Framework
-
-		%link{ :rel => 'stylesheet', :href => '../../lib/fontawesome/css/font-awesome.min.css' }
-		%link{ :rel => 'stylesheet', :href => '../css/barista.css' }
-		-# %link{ :rel => 'stylesheet', :href => '../css/barista-effects.css' }
-
-		%script{ :src => '../../lib/jquery/dist/jquery.min.js' }
-		%script{ :src => '../js/barista.js' }
-
-		:css
-			h3.section { margin-top: 0; border-bottom: 1px solid #999; }
+	= render '_head'
 	%body
-		%header.navbar
-			.wrapper
-				.icon
-					%a Home
-				#main-menu.menu
-					%ul.nav
-						%li
-							%a{ 'data-action' => 'menu' }
-								%span.navlbl First Item
-							%ul
-								%li
-									%a First Sub-Item
-								%li
-									%a Second Sub-Item
-								%li
-									%a Third Sub-Item
-						%li
-							%a
-								%span.navlbl Second Item
-					%ul.nav.right
-						%li
-							%a
-								%span.navlbl Special Item
-							%ul
-								%li
-									%a Sub-Item
-				%a.icon.more{ 'data-target' => '#main-menu', 'data-action' => 'toggle' }
-					%i.fa.fa-bars
+		= render '_navbar'
 		%article.wrapper
 			= render '_typography'
 			-# = render '_text'

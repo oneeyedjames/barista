@@ -1,83 +1,74 @@
-$.fn.extend
-	center : ->
-		viewport = $ window
-		element = $ this
+$.fn.center = ->
+	viewport = $ window
+	element = $ this
 
-		vOffset = (viewport.height() - element.outerHeight()) / 2
-		hOffset = (viewport.width() - element.outerWidth()) / 2
+	vOffset = (viewport.height() - element.outerHeight()) / 2
+	hOffset = (viewport.width() - element.outerWidth()) / 2
 
-		element.css
-			'top'  : "#{vOffset}px"
-			'left' : "#{hOffset}px"
+	element.css
+		top  : "#{vOffset}px"
+		left : "#{hOffset}px"
 
-	modal : (opts) ->
-		dialog = $ this
-		body = $ 'body'
+$.fn.modal = (settings) ->
+	settings = $.extend $.fn.modal.defaults, settings
 
-		dismiss = dialog.dismiss.bind dialog
+	dialog = $ this
+	body = $ 'body'
+	overlay = $ '.overlay'
 
-		do dismiss
+	if ! overlay.length
+		overlay = $ '<div>'
+		.addClass 'overlay'
+		.appendTo 'body'
 
-		overlay = $ '.overlay'
-
-		if ! overlay.length
-			overlay = $ '<div>'
-			.addClass 'overlay'
-			.appendTo 'body'
-
-		overlay.toggleClass 'dim', !!opts.overlay
-		.addClass 'visible'
-		.unbind 'click'
-
-		overlay.click dismiss unless opts.overlay == 'static'
-
-		body.addClass 'no-scroll' if !!opts.overlay
-
-		dialog.addClass 'visible'
-		dialog.toggleClass 'dim', !!opts.overlay
-
-		$ window
-		.resize ->
-			do dialog.center
-
-		setTimeout dismiss, opts.duration if opts.duration
-
-		do dialog.center
-
-		dialog.find 'a.ok, .btn.ok'
-		.one 'click', (event) ->
-			do event.preventDefault
-			dialog.dismiss 'ok'
-
-		dialog.find 'a.cancel, .btn.cancel'
-		.one 'click', (event) ->
-			do event.preventDefault
-			dialog.dismiss 'cancel'
-
-	dismiss : (eventType) ->
+	# dismiss = dialog.dismiss.bind dialog
+	dismiss = (eventType) ->
 		eventType ||= 'dismiss'
-
-		$ 'body'
-		.removeClass 'no-scroll'
-
-		$ '.overlay'
-		.removeClass 'visible'
-
-		$ this
-		.removeClass 'visible'
+		body.removeClass 'no-scroll'
+		overlay.removeClass 'visible'
+		dialog.removeClass 'visible'
 		.trigger eventType
 
+	do dismiss
+
+	overlay.toggleClass 'dim', !!settings.overlay
+	.addClass 'visible'
+	.unbind 'click'
+	.click dismiss unless settings.overlay == 'static'
+
+	body.addClass 'no-scroll' if !!settings.overlay
+
+	dialog.addClass 'visible'
+	.toggleClass 'dim', !!settings.overlay
+
+	$ window
+	.resize ->
+		do dialog.center
+
+	setTimeout dismiss, opts.duration if opts.duration
+
+	do dialog.center
+
+	dialog.find 'a.ok, .btn.ok'
+	.one 'click', (event) ->
+		do event.preventDefault
+		dialog.dismiss 'ok'
+
+	dialog.find 'a.cancel, .btn.cancel'
+	.one 'click', (event) ->
+		do event.preventDefault
+		dialog.dismiss 'cancel'
+
+$.fn.modal.defaults =
+	overlay  : true
+	duration : 0
+
 $ '*[data-action="modal"]'
-.on 'click post:click', (event) ->
+.on 'click', (event) ->
 	do event.preventDefault
 
 	button = $ this
-	target = button.data 'target'
-
-	data = do button.data
-	data.duration ?= 0
-	data.overlay  ?= true
 
 	unless event.type == 'click' && button.attr 'href'
-		$ target
-		.modal data
+		$ button.data 'target'
+		.modal do button.data

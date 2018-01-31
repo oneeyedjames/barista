@@ -4,12 +4,13 @@ $ 'form[data-confirm]'
 
 	do event.preventDefault unless 'true' == form.data 'confirmed'
 
-	data = do form.data
-	data.duration = 0
-	data.overlay  ?= true
-	data.header   ?= 'Warning'
-	data.cancel   ?= 'Cancel'
-	data.ok       ?= 'Ok'
+	data = $.extend
+		duration : 0
+		overlay  : true
+		header   : 'Warning'
+		cancel   : 'Cancel'
+		ok       : 'Ok'
+	, do form.data
 
 	header = $ '<header>'
 	.text ' ' + data.header
