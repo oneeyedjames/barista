@@ -1,9 +1,7 @@
-$.fn.extend
-	selectTab : (index) ->
-		tabbar = $ this
+$.fn.tabbar = ->
+	tabbar = this
 
-		return this unless tabbar.hasClass 'tabbar'
-
+	select = (index) ->
 		tabs   = tabbar.find '.tab'
 		panels = tabbar.find '.panel'
 
@@ -16,24 +14,23 @@ $.fn.extend
 		$ panels[index]
 		.addClass 'active'
 
-		this
-
-$ '.tabbar'
-.each (index, tabbar) ->
-	tabbar = $ tabbar
 	tabbar.find '.tab'
 	.click (event) ->
 		do event.preventDefault
 
 		tab = $ this
 
-		return if tab.hasClass 'disabled' or tab.attr 'disabled'
-
-		tabIndex = do tab.index
-		tabbar.selectTab tabIndex
+		select do tab.index unless tab.hasClass 'disabled' or tab.attr 'disabled'
 
 	activeTab = tabbar.find '.tab.active'
 
 	index = if activeTab.length then do activeTab.index else 0
 
-	tabbar.selectTab index
+	select index
+
+	this
+
+$ '.tabbar'
+.each ->
+	$ this
+	.tabbar()

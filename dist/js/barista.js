@@ -9,9 +9,9 @@ jQuery(function($) {
       return button.toggleClass('active');
     }
   });
-  $('.btn-group.single').each(function(index, group) {
-    var buttons;
-    group = $(group);
+  $('.btn-group.single').each(function() {
+    var buttons, group;
+    group = $(this);
     buttons = group.find('.btn');
     return buttons.click(function(event) {
       var button, isActive;
@@ -21,27 +21,26 @@ jQuery(function($) {
       return button.toggleClass('active', !isActive);
     });
   });
-  $.fn.extend({
-    collapse: function(min) {
-      var box, height;
-      box = $(this);
-      if (box.hasClass('collapsed')) {
-        box.css('overflow', 'hidden');
-        box.css('padding', '');
-      } else {
-        height = box.innerHeight();
-        box.css('max-height', height + "px");
-        box.css('padding', '0');
-      }
-      return box.toggleClass('collapsed');
+  $.fn.collapse = function(min) {
+    var box, height;
+    box = $(this);
+    if (box.hasClass('collapsed')) {
+      box.css('overflow', 'hidden');
+      box.css('padding', '');
+    } else {
+      height = box.innerHeight();
+      box.css('max-height', height + "px");
+      box.css('padding', '0');
     }
-  });
+    box.toggleClass('collapsed');
+    return this;
+  };
   $('*[data-action="collapse"]').click(function(event) {
     var button, caret, collapsed, target;
     event.preventDefault();
     button = $(this);
     target = $(button.data('target'));
-    target.toggleClass('collapsed');
+    target.collapse();
     caret = button.find('.caret');
     if (caret.length > 0) {
       collapsed = target.hasClass('collapsed');
@@ -131,61 +130,66 @@ jQuery(function($) {
       return menu.refreshTabs();
     }
   });
-  $.fn.extend({
-    modal: function(opts) {
-      var body, dialog, dismiss, overlay;
-      opts = $.extend({
-        duration: 0,
-        overlay: true
-      }, opts);
-      dialog = $(this);
-      body = $('body');
-      dismiss = dialog.dismiss.bind(dialog);
-      dismiss();
-      overlay = $('.overlay');
-      if (!overlay.length) {
-        overlay = $('<div>').addClass('overlay').appendTo('body');
-      }
-      overlay.toggleClass('dim', !!opts.overlay).addClass('visible').unbind('click');
-      if (opts.overlay !== 'static') {
-        overlay.click(dismiss);
-      }
-      body.toggleClass('no-scroll', !!opts.overlay);
-      dialog.addClass('visible');
-      dialog.toggleClass('dim', !!opts.overlay);
-      $(window).resize(function() {
-        return dialog.center();
-      });
-      if (opts.duration) {
-        setTimeout(dismiss, opts.duration);
-      }
-      dialog.center();
-      dialog.find('a.ok, .btn.ok').one('click', function(event) {
-        event.preventDefault();
-        return dialog.dismiss('ok');
-      });
-      dialog.find('a.cancel, .btn.cancel').one('click', function(event) {
-        event.preventDefault();
-        return dialog.dismiss('cancel');
-      });
-      return this;
-    },
-    dismiss: function(eventType) {
-      eventType || (eventType = 'dismiss');
-      $('body').removeClass('no-scroll');
-      $('.overlay').removeClass('visible');
-      $(this).removeClass('visible').trigger(eventType);
-      return this;
+  $.fn.center = function() {
+    var element, hOffset, vOffset, viewport;
+    viewport = $(window);
+    element = $(this);
+    vOffset = (viewport.height() - element.outerHeight()) / 2;
+    hOffset = (viewport.width() - element.outerWidth()) / 2;
+    return element.css({
+      top: vOffset + "px",
+      left: hOffset + "px"
+    });
+  };
+  $.fn.modal = function(settings) {
+    var body, dialog, dismiss, overlay;
+    settings = $.extend($.fn.modal.defaults, settings);
+    dialog = $(this);
+    body = $('body');
+    overlay = $('.overlay');
+    if (!overlay.length) {
+      overlay = $('<div>').addClass('overlay').appendTo('body');
     }
-  });
-  $('*[data-action="modal"]').on('click post:click', function(event) {
-    var button, data, target;
+    dismiss = function(eventType) {
+      eventType || (eventType = 'dismiss');
+      body.removeClass('no-scroll');
+      overlay.removeClass('visible');
+      return dialog.removeClass('visible').trigger(eventType);
+    };
+    dismiss();
+    if (settings.overlay !== 'static') {
+      overlay.toggleClass('dim', !!settings.overlay).addClass('visible').unbind('click').click(dismiss);
+    }
+    if (!!settings.overlay) {
+      body.addClass('no-scroll');
+    }
+    dialog.addClass('visible').toggleClass('dim', !!settings.overlay);
+    $(window).resize(function() {
+      return dialog.center();
+    });
+    if (opts.duration) {
+      setTimeout(dismiss, opts.duration);
+    }
+    dialog.center();
+    dialog.find('a.ok, .btn.ok').one('click', function(event) {
+      event.preventDefault();
+      return dialog.dismiss('ok');
+    });
+    return dialog.find('a.cancel, .btn.cancel').one('click', function(event) {
+      event.preventDefault();
+      return dialog.dismiss('cancel');
+    });
+  };
+  $.fn.modal.defaults = {
+    overlay: true,
+    duration: 0
+  };
+  $('*[data-action="modal"]').on('click', function(event) {
+    var button;
     event.preventDefault();
     button = $(this);
-    target = $(button.data('target'));
-    data = button.data();
     if (!(event.type === 'click' && button.attr('href'))) {
-      return target.modal(data);
+      return $(button.data('target')).modal(button.data());
     }
   });
   $.fn.extend({
@@ -201,10 +205,8 @@ jQuery(function($) {
     return $(this).children('.caret').addClass('fa fa-caret-down');
   });
   $('.navbar *[data-action="menu"]').click(function(event) {
-    var button;
     event.preventDefault();
-    button = $(this);
-    return button.next('ul').toggleMenu(button);
+    return $(this).next('ul').toggleMenu(button);
   });
   $('[data-action=toggle]').click(function(event) {
     var button, target;
@@ -229,38 +231,33 @@ jQuery(function($) {
     }
     return target.submit();
   });
-  $.fn.extend({
-    selectTab: function(index) {
-      var panels, tabbar, tabs;
-      tabbar = $(this);
-      if (!tabbar.hasClass('tabbar')) {
-        return this;
-      }
+  $.fn.tabbar = function() {
+    var activeTab, index, select, tabbar;
+    tabbar = this;
+    select = function(index) {
+      var panels, tabs;
       tabs = tabbar.find('.tab');
       panels = tabbar.find('.panel');
       tabs.removeClass('active');
       panels.removeClass('active');
       $(tabs[index]).addClass('active');
-      $(panels[index]).addClass('active');
-      return this;
-    }
-  });
-  $('.tabbar').each(function(index, tabbar) {
-    var activeTab;
-    tabbar = $(tabbar);
+      return $(panels[index]).addClass('active');
+    };
     tabbar.find('.tab').click(function(event) {
-      var tab, tabIndex;
+      var tab;
       event.preventDefault();
       tab = $(this);
-      if (tab.hasClass('disabled' || tab.attr('disabled'))) {
-        return;
+      if (!tab.hasClass('disabled' || tab.attr('disabled'))) {
+        return select(tab.index());
       }
-      tabIndex = tab.index();
-      return tabbar.selectTab(tabIndex);
     });
     activeTab = tabbar.find('.tab.active');
     index = activeTab.length ? activeTab.index() : 0;
-    return tabbar.selectTab(index);
+    select(index);
+    return this;
+  };
+  $('.tabbar').each(function() {
+    return $(this).tabbar();
   });
   $('a[target]').click(function(event) {
     var button, source, target;
@@ -271,57 +268,64 @@ jQuery(function($) {
       event.preventDefault();
       return $.get(source, function(result) {
         $(target).html(result);
-        return button.trigger('post:click');
+        button.attr('href', '');
+        button.trigger('click');
+        return button.attr('href', source);
       });
     }
   });
-  $.fn.extend({
-    tooltip: function(opts) {
-      var target;
-      target = $(this);
-      opts = $.extend({
-        title: target.attr('title'),
-        side: 'top'
-      }, opts);
-      target.removeAttr('title').data('title', opts.title).hover(function() {
-        var hOffset, message, offset, pointer, tooltip, vOffset;
-        message = $('<div>').addClass('message').text(opts.title);
-        pointer = $('<div>').addClass('pointer');
-        tooltip = $('<div>').addClass('tooltip').addClass(opts.color).addClass(opts.side).insertAfter(target).append(pointer).append(message);
-        target.data('tooltip', tooltip);
-        offset = target.offset();
-        switch (opts.side) {
-          case 'top':
-            offset.top -= tooltip.outerHeight() + 3;
-            break;
-          case 'left':
-            offset.left -= tooltip.outerWidth() + 3;
-            break;
-          case 'right':
-            offset.left += target.outerWidth() + 3;
-            break;
-          case 'bottom':
-            offset.top += target.outerHeight() + 3;
-        }
-        hOffset = (tooltip.outerWidth() - target.outerWidth()) / 2;
-        vOffset = (tooltip.outerHeight() - target.outerHeight()) / 2;
-        switch (opts.side) {
-          case 'left':
-          case 'right':
-            offset.top -= vOffset;
-            break;
-          case 'top':
-          case 'bottom':
-            offset.left -= hOffset;
-        }
-        return tooltip.offset(offset);
-      }, function() {
-        var tooltip;
-        return tooltip = $(this).data('tooltip').remove();
-      });
-      return this;
+  $.fn.tooltip = function(settings) {
+    var target;
+    target = $(this);
+    if (settings == null) {
+      settings = {};
     }
-  });
+    if (settings.title == null) {
+      settings.title = target.attr('title');
+    }
+    if (settings.color == null) {
+      settings.color = target.data('color');
+    }
+    if (settings.side == null) {
+      settings.side = target.data('side') || 'top';
+    }
+    target.removeAttr('title').data('title', settings.title).hover(function() {
+      var hOffset, message, offset, pointer, tooltip, vOffset;
+      message = $('<div>').addClass('message').text(settings.title);
+      pointer = $('<div>').addClass('pointer');
+      tooltip = $('<div>').addClass('tooltip').addClass(settings.color).addClass(settings.side).insertAfter(target).append(pointer).append(message);
+      target.data('tooltip', tooltip);
+      offset = target.offset();
+      switch (settings.side) {
+        case 'top':
+          offset.top -= tooltip.outerHeight() + 3;
+          break;
+        case 'left':
+          offset.left -= tooltip.outerWidth() + 3;
+          break;
+        case 'right':
+          offset.left += target.outerWidth() + 3;
+          break;
+        case 'bottom':
+          offset.top += target.outerHeight() + 3;
+      }
+      hOffset = (tooltip.outerWidth() - target.outerWidth()) / 2;
+      vOffset = (tooltip.outerHeight() - target.outerHeight()) / 2;
+      switch (settings.side) {
+        case 'left':
+        case 'right':
+          offset.top -= vOffset;
+          break;
+        case 'top':
+        case 'bottom':
+          offset.left -= hOffset;
+      }
+      return tooltip.offset(offset);
+    }, function() {
+      return $(this).data('tooltip').remove();
+    });
+    return this;
+  };
   $('*[data-hover="tooltip"]').each(function() {
     var data, target;
     target = $(this);
