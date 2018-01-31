@@ -2,10 +2,10 @@ $.fn.extend
 	tooltip : (opts) ->
 		target = $ this
 
-		opts ?= {}
-		opts.title ?= target.attr 'title'
-		opts.color ?= target.data 'color'
-		opts.side  ?= target.data('side') || 'top'
+		opts = $.extend
+			title : target.attr 'title'
+			side  : 'top'
+		, opts
 
 		target.removeAttr 'title'
 		.data 'title', opts.title
@@ -48,7 +48,12 @@ $.fn.extend
 			.data 'tooltip'
 			.remove()
 
+		this
+
 $ '*[data-hover="tooltip"]'
 .each ->
-	$ this
-	.tooltip()
+	target = $ this
+
+	data = do target.data
+
+	target.tooltip data

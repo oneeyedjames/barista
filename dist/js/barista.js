@@ -5,11 +5,9 @@ jQuery(function($) {
     if (button.hasClass('disabled' || button.attr('disabled'))) {
       return event.preventDefault();
     }
-  });
-  $('.btn.toggle').click(function(event) {
-    var button;
-    button = $(this);
-    return button.toggleClass('active');
+    if (button.hasClass('toggle')) {
+      return button.toggleClass('active');
+    }
   });
   $('.btn-group.single').each(function(index, group) {
     var buttons;
@@ -79,20 +77,13 @@ jQuery(function($) {
     if ('true' !== form.data('confirmed')) {
       event.preventDefault();
     }
-    data = form.data();
-    data.duration = 0;
-    if (data.overlay == null) {
-      data.overlay = true;
-    }
-    if (data.header == null) {
-      data.header = 'Warning';
-    }
-    if (data.cancel == null) {
-      data.cancel = 'Cancel';
-    }
-    if (data.ok == null) {
-      data.ok = 'Ok';
-    }
+    data = $.extend({
+      duration: 0,
+      overlay: true,
+      header: 'Warning',
+      cancel: 'Cancel',
+      ok: 'Ok'
+    }, form.data());
     header = $('<header>').text(' ' + data.header).prepend($('<i class="fa fa-warning">')).append($('<a class="caret cancel">').append($('<i class="fa fa-close">')));
     footer = $('<footer class="btns">').append($('<button class="btn cancel">').text(data.cancel)).append($('<button class="btn danger ok">').text(data.ok));
     dialog = $('<div class="card warning modal">').text(data.confirm).prepend(header).append(footer).one('ok', function(event) {
@@ -113,7 +104,7 @@ jQuery(function($) {
       });
     }
   });
-  $('.menu').each(function() {
+  $('ul.menu').each(function() {
     var active, hashed, menu;
     menu = $(this);
     active = menu.children('li.active');
@@ -141,19 +132,12 @@ jQuery(function($) {
     }
   });
   $.fn.extend({
-    center: function() {
-      var element, hOffset, vOffset, viewport;
-      viewport = $(window);
-      element = $(this);
-      vOffset = (viewport.height() - element.outerHeight()) / 2;
-      hOffset = (viewport.width() - element.outerWidth()) / 2;
-      return element.css({
-        'top': vOffset + "px",
-        'left': hOffset + "px"
-      });
-    },
     modal: function(opts) {
       var body, dialog, dismiss, overlay;
+      opts = $.extend({
+        duration: 0,
+        overlay: true
+      }, opts);
       dialog = $(this);
       body = $('body');
       dismiss = dialog.dismiss.bind(dialog);
@@ -166,9 +150,7 @@ jQuery(function($) {
       if (opts.overlay !== 'static') {
         overlay.click(dismiss);
       }
-      if (!!opts.overlay) {
-        body.addClass('no-scroll');
-      }
+      body.toggleClass('no-scroll', !!opts.overlay);
       dialog.addClass('visible');
       dialog.toggleClass('dim', !!opts.overlay);
       $(window).resize(function() {
@@ -182,32 +164,28 @@ jQuery(function($) {
         event.preventDefault();
         return dialog.dismiss('ok');
       });
-      return dialog.find('a.cancel, .btn.cancel').one('click', function(event) {
+      dialog.find('a.cancel, .btn.cancel').one('click', function(event) {
         event.preventDefault();
         return dialog.dismiss('cancel');
       });
+      return this;
     },
     dismiss: function(eventType) {
       eventType || (eventType = 'dismiss');
       $('body').removeClass('no-scroll');
       $('.overlay').removeClass('visible');
-      return $(this).removeClass('visible').trigger(eventType);
+      $(this).removeClass('visible').trigger(eventType);
+      return this;
     }
   });
   $('*[data-action="modal"]').on('click post:click', function(event) {
     var button, data, target;
     event.preventDefault();
     button = $(this);
-    target = button.data('target');
+    target = $(button.data('target'));
     data = button.data();
-    if (data.duration == null) {
-      data.duration = 0;
-    }
-    if (data.overlay == null) {
-      data.overlay = true;
-    }
     if (!(event.type === 'click' && button.attr('href'))) {
-      return $(target).modal(data);
+      return target.modal(data);
     }
   });
   $.fn.extend({
@@ -256,14 +234,15 @@ jQuery(function($) {
       var panels, tabbar, tabs;
       tabbar = $(this);
       if (!tabbar.hasClass('tabbar')) {
-        return;
+        return this;
       }
       tabs = tabbar.find('.tab');
       panels = tabbar.find('.panel');
       tabs.removeClass('active');
       panels.removeClass('active');
       $(tabs[index]).addClass('active');
-      return $(panels[index]).addClass('active');
+      $(panels[index]).addClass('active');
+      return this;
     }
   });
   $('.tabbar').each(function(index, tabbar) {
@@ -300,19 +279,11 @@ jQuery(function($) {
     tooltip: function(opts) {
       var target;
       target = $(this);
-      if (opts == null) {
-        opts = {};
-      }
-      if (opts.title == null) {
-        opts.title = target.attr('title');
-      }
-      if (opts.color == null) {
-        opts.color = target.data('color');
-      }
-      if (opts.side == null) {
-        opts.side = target.data('side') || 'top';
-      }
-      return target.removeAttr('title').data('title', opts.title).hover(function() {
+      opts = $.extend({
+        title: target.attr('title'),
+        side: 'top'
+      }, opts);
+      target.removeAttr('title').data('title', opts.title).hover(function() {
         var hOffset, message, offset, pointer, tooltip, vOffset;
         message = $('<div>').addClass('message').text(opts.title);
         pointer = $('<div>').addClass('pointer');
@@ -348,9 +319,24 @@ jQuery(function($) {
         var tooltip;
         return tooltip = $(this).data('tooltip').remove();
       });
+      return this;
     }
   });
   $('*[data-hover="tooltip"]').each(function() {
-    return $(this).tooltip();
+    var data, target;
+    target = $(this);
+    data = target.data();
+    return target.tooltip(data);
   });
+  $.fn.center = function() {
+    var element, hOffset, vOffset, viewport;
+    viewport = $(window);
+    element = $(this);
+    vOffset = (viewport.height() - element.outerHeight()) / 2;
+    hOffset = (viewport.width() - element.outerWidth()) / 2;
+    return element.css({
+      'top': vOffset + "px",
+      'left': hOffset + "px"
+    });
+  };
 });

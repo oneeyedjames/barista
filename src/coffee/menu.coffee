@@ -9,7 +9,7 @@ $.fn.extend
 				$ this.hash
 				.toggle tab.hasClass 'active'
 
-$ '.menu'
+$ 'ul.menu'
 .each ->
 	menu = $ this
 
