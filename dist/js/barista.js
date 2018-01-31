@@ -5,11 +5,7 @@ jQuery(function($) {
     if (button.hasClass('disabled' || button.attr('disabled'))) {
       return event.preventDefault();
     }
-  });
-  $('.btn.toggle').click(function(event) {
-    var button;
-    button = $(this);
-    if (!button.hasClass('disabled' || button.attr('disabled'))) {
+    if (button.hasClass('toggle')) {
       return button.toggleClass('active');
     }
   });
@@ -107,7 +103,7 @@ jQuery(function($) {
       });
     }
   });
-  $('.menu').each(function() {
+  $('ul.menu').each(function() {
     var active, hashed, menu;
     menu = $(this);
     active = menu.children('li.active');
@@ -331,6 +327,20 @@ jQuery(function($) {
     return this;
   };
   $('*[data-hover="tooltip"]').each(function() {
-    return $(this).tooltip();
+    var data, target;
+    target = $(this);
+    data = target.data();
+    return target.tooltip(data);
   });
+  $.fn.center = function() {
+    var element, hOffset, vOffset, viewport;
+    viewport = $(window);
+    element = $(this);
+    vOffset = (viewport.height() - element.outerHeight()) / 2;
+    hOffset = (viewport.width() - element.outerWidth()) / 2;
+    return element.css({
+      'top': vOffset + "px",
+      'left': hOffset + "px"
+    });
+  };
 });

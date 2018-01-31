@@ -51,5 +51,8 @@ $.fn.tooltip = (settings) ->
 
 $ '*[data-hover="tooltip"]'
 .each ->
-	$ this
-	.tooltip()
+	target = $ this
+
+	data = do target.data
+
+	target.tooltip data

@@ -1,12 +1,10 @@
 $ '.btn'
 .click (event) ->
 	button = $ this
-	do event.preventDefault if button.hasClass 'disabled' or button.attr 'disabled'
 
-$ '.btn.toggle'
-.click (event) ->
-	button = $ this
-	button.toggleClass 'active' unless button.hasClass 'disabled' or button.attr 'disabled'
+	return do event.preventDefault if button.hasClass 'disabled' or button.attr 'disabled'
+
+	button.toggleClass 'active' if button.hasClass 'toggle'
 
 $ '.btn-group.single'
 .each ->
