@@ -7,7 +7,7 @@
 <script src='../../lib/jquery/dist/jquery.min.js'></script>
 <script src='../js/barista.js'></script>
 <style>
-  h3.section { margin-top: 0; border-bottom: 1px solid #999; }
+  h3.section { border-bottom: 1px solid #999; }
 </style>
 </head>
 
@@ -61,53 +61,19 @@
 </header>
 
 <article class='wrapper'>
-<section id='typography'>
-<h3 class='section'>Typography</h3>
-<h1>
-Heading 1
-<small>small text</small>
-</h1>
-<h2>
-Heading 2
-<small>small text</small>
-</h2>
-<h3>
-Heading 3
-<small>small text</small>
-</h3>
-<h4>
-Heading 4
-<small>small text</small>
-</h4>
-<h5>
-Heading 5
-<small>small text</small>
-</h5>
-<h6>
-Heading 6
-<small>small text</small>
-</h6>
-<p class='lead'>Lead Text</p>
-<p>Normal Text</p>
-<p>
-<a href='#'>Hyperlink</a>
-<a class='red' href='#'>Red</a>
-<a class='green' href='#'>Green</a>
-<a class='blue' href='#'>Blue</a>
-<a class='cyan' href='#'>Cyan</a>
-<a class='magenta' href='#'>Magenta</a>
-<a class='yellow' href='#'>Yellow</a>
-<a class='purple' href='#'>Purple</a>
-<a class='orange' href='#'>Orange</a>
-</p>
+<section id='normalize'>
+<h3 class='section'>Normalize</h3>
+<p>Normal Paragraph Text</p>
 <h4>Lists</h4>
 <ol>
 <li>Numbered</li>
-<li>List Items</li>
+<li>List</li>
+<li>Items</li>
 </ol>
 <ul>
 <li>Bulleted</li>
-<li>List Items</li>
+<li>List</li>
+<li>Items</li>
 </ul>
 <ul>
 <li>Nested</li>
@@ -123,6 +89,56 @@ Heading 6
 <dt>List Items</dt>
 <dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
 </dl>
+<h4>Tables</h4>
+<table>
+<thead>
+<tr>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id='typography'>
+<h3 class='section'>Typography</h3>
+<h4>Headings</h4>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<p class='lead'>Lead Text</p>
+<p>
+<a href='#'>Hyperlink</a>
+<a class='red' href='#'>Red</a>
+<a class='green' href='#'>Green</a>
+<a class='blue' href='#'>Blue</a>
+<a class='cyan' href='#'>Cyan</a>
+<a class='magenta' href='#'>Magenta</a>
+<a class='yellow' href='#'>Yellow</a>
+<a class='purple' href='#'>Purple</a>
+<a class='orange' href='#'>Orange</a>
+</p>
 </section>
 
 <section id='buttons'>
@@ -246,7 +262,7 @@ Some text
 <h3 class='section'>Tables</h3>
 <div class='row'>
 <div class='col-xs-12'>
-<table class='striped'>
+<table class='table striped'>
 <thead>
 <tr>
 <th>Column</th>
@@ -270,7 +286,7 @@ Some text
 </table>
 </div>
 <div class='col-xs-6 col-md-4 col-lg-3'>
-<table class='striped red'>
+<table class='table striped red'>
 <thead>
 <tr>
 <th>Column</th>
@@ -294,7 +310,7 @@ Some text
 </table>
 </div>
 <div class='col-xs-6 col-md-4 col-lg-3'>
-<table class='striped green'>
+<table class='table striped green'>
 <thead>
 <tr>
 <th>Column</th>
@@ -318,7 +334,7 @@ Some text
 </table>
 </div>
 <div class='col-xs-6 col-md-4 col-lg-3'>
-<table class='striped blue'>
+<table class='table striped blue'>
 <thead>
 <tr>
 <th>Column</th>
@@ -342,7 +358,7 @@ Some text
 </table>
 </div>
 <div class='col-xs-6 col-md-4 col-lg-3'>
-<table class='striped cyan'>
+<table class='table striped cyan'>
 <thead>
 <tr>
 <th>Column</th>
@@ -366,7 +382,7 @@ Some text
 </table>
 </div>
 <div class='col-xs-6 col-md-4 col-lg-3'>
-<table class='striped magenta'>
+<table class='table striped magenta'>
 <thead>
 <tr>
 <th>Column</th>
@@ -390,7 +406,7 @@ Some text
 </table>
 </div>
 <div class='col-xs-6 col-md-4 col-lg-3'>
-<table class='striped yellow'>
+<table class='table striped yellow'>
 <thead>
 <tr>
 <th>Column</th>
@@ -414,7 +430,7 @@ Some text
 </table>
 </div>
 <div class='col-xs-6 col-md-4 col-lg-3'>
-<table class='striped purple'>
+<table class='table striped purple'>
 <thead>
 <tr>
 <th>Column</th>
@@ -438,7 +454,7 @@ Some text
 </table>
 </div>
 <div class='col-xs-6 col-md-4 col-lg-3'>
-<table class='striped orange'>
+<table class='table striped orange'>
 <thead>
 <tr>
 <th>Column</th>

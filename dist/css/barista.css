@@ -31,6 +31,23 @@ table {
   border-collapse: separate;
   border-spacing: 0;
 }
+table thead th, table thead td {
+  padding: 0.375em 0.75em;
+  border-bottom: 1px solid #999999;
+}
+table thead th {
+  font-weight: 500;
+}
+table tbody th, table tbody td {
+  padding: 0.375em 0.75em;
+  border-top: 1px solid #DDDDDD;
+}
+table tbody th {
+  font-weight: normal;
+}
+table tbody tr:first-child th, table tbody tr:first-child td {
+  border: none;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0.75em 0 0.25em;
@@ -529,7 +546,7 @@ ul.list.orange.striped li.header {
   color: #FFFFFF;
 }
 
-table {
+table.table {
   width: 100%;
   margin-bottom: 1.5em;
   border-radius: 0.5em;
@@ -537,204 +554,204 @@ table {
   border-width: 0 0 1px;
   border-color: #737373;
 }
-table thead {
+table.table thead {
   background-color: #999999;
   background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
   background-image: linear-gradient(0deg,#999999, #b3b3b3);
 }
-table thead th, table thead td {
+table.table thead th, table.table thead td {
   color: #FFFFFF;
 }
-table tbody th, table tbody td {
+table.table tbody th, table.table tbody td {
   border-color: #b3b3b3;
 }
-table.striped tbody tr:nth-child(even) th, table.striped tbody tr:nth-child(even) td {
+table.table.striped tbody tr:nth-child(even) th, table.table.striped tbody tr:nth-child(even) td {
   background-color: #DDDDDD;
   color: #444444;
 }
-table thead th {
+table.table thead th {
   font-weight: normal;
 }
-table thead th, table thead td {
+table.table thead th, table.table thead td {
   padding: 0.375em 0.75em;
   text-align: left;
 }
-table thead tr:first-child {
+table.table thead tr:first-child {
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
 }
-table thead tr:first-child th:first-child, table thead tr:first-child td:first-child {
+table.table thead tr:first-child th:first-child, table.table thead tr:first-child td:first-child {
   border-top-left-radius: 0.5em;
 }
-table thead tr:first-child th:last-child, table thead tr:first-child td:last-child {
+table.table thead tr:first-child th:last-child, table.table thead tr:first-child td:last-child {
   border-top-right-radius: 0.5em;
 }
-table tbody th {
+table.table tbody th {
   font-weight: 500;
 }
-table tbody th, table tbody td {
+table.table tbody th, table.table tbody td {
   border-top: 1px solid #999999;
   padding: 0.375em 0.75em;
   text-align: left;
   background-color: #FFFFFF;
 }
-table tbody tr:first-child th, table tbody tr:first-child td {
+table.table tbody tr:first-child th, table.table tbody tr:first-child td {
   border-style: none;
 }
-table tbody tr:last-child {
+table.table tbody tr:last-child {
   border-bottom-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
 }
-table tbody tr:last-child th:first-child, table tbody tr:last-child td:first-child {
+table.table tbody tr:last-child th:first-child, table.table tbody tr:last-child td:first-child {
   border-bottom-left-radius: 0.5em;
 }
-table tbody tr:last-child th:last-child, table tbody tr:last-child td:last-child {
+table.table tbody tr:last-child th:last-child, table.table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 0.5em;
 }
-table input[type="color"], table input[type="date"], table input[type="datetime"], table input[type="datetime-local"], table input[type="email"], table input[type="month"], table input[type="number"], table input[type="password"], table input[type="search"], table input[type="tel"], table input[type="text"], table input[type="time"], table input[type="url"], table input[type="week"], table input:not([type]), table textarea, table select {
+table.table input[type="color"], table.table input[type="date"], table.table input[type="datetime"], table.table input[type="datetime-local"], table.table input[type="email"], table.table input[type="month"], table.table input[type="number"], table.table input[type="password"], table.table input[type="search"], table.table input[type="tel"], table.table input[type="text"], table.table input[type="time"], table.table input[type="url"], table.table input[type="week"], table.table input:not([type]), table.table textarea, table.table select {
   margin: 0;
 }
-table.red, table.danger, table.error {
+table.table.red, table.table.danger, table.table.error {
   border-color: #a52b0e;
 }
-table.red thead, table.danger thead, table.error thead {
+table.table.red thead, table.table.danger thead, table.table.error thead {
   background-color: #DC3912;
   background-image: -webkit-linear-gradient(-270deg, #DC3912, #e56b4d);
   background-image: linear-gradient(0deg,#DC3912, #e56b4d);
 }
-table.red thead th, table.red thead td, table.danger thead th, table.danger thead td, table.error thead th, table.error thead td {
+table.table.red thead th, table.table.red thead td, table.table.danger thead th, table.table.danger thead td, table.table.error thead th, table.table.error thead td {
   color: #FFFFFF;
 }
-table.red tbody th, table.red tbody td, table.danger tbody th, table.danger tbody td, table.error tbody th, table.error tbody td {
+table.table.red tbody th, table.table.red tbody td, table.table.danger tbody th, table.table.danger tbody td, table.table.error tbody th, table.table.error tbody td {
   border-color: #e56b4d;
 }
-table.red.striped tbody tr:nth-child(even) th, table.red.striped tbody tr:nth-child(even) td, table.danger.striped tbody tr:nth-child(even) th, table.danger.striped tbody tr:nth-child(even) td, table.error.striped tbody tr:nth-child(even) th, table.error.striped tbody tr:nth-child(even) td {
+table.table.red.striped tbody tr:nth-child(even) th, table.table.red.striped tbody tr:nth-child(even) td, table.table.danger.striped tbody tr:nth-child(even) th, table.table.danger.striped tbody tr:nth-child(even) td, table.table.error.striped tbody tr:nth-child(even) th, table.table.error.striped tbody tr:nth-child(even) td {
   background-color: #F4C3B7;
   color: #7e210a;
 }
-table.green, table.success {
+table.table.green, table.table.success {
   border-color: #0c7112;
 }
-table.green thead, table.success thead {
+table.table.green thead, table.table.success thead {
   background-color: #109618;
   background-image: -webkit-linear-gradient(-270deg, #109618, #4cb052);
   background-image: linear-gradient(0deg,#109618, #4cb052);
 }
-table.green thead th, table.green thead td, table.success thead th, table.success thead td {
+table.table.green thead th, table.table.green thead td, table.table.success thead th, table.table.success thead td {
   color: #FFFFFF;
 }
-table.green tbody th, table.green tbody td, table.success tbody th, table.success tbody td {
+table.table.green tbody th, table.table.green tbody td, table.table.success tbody th, table.table.success tbody td {
   border-color: #4cb052;
 }
-table.green.striped tbody tr:nth-child(even) th, table.green.striped tbody tr:nth-child(even) td, table.success.striped tbody tr:nth-child(even) th, table.success.striped tbody tr:nth-child(even) td {
+table.table.green.striped tbody tr:nth-child(even) th, table.table.green.striped tbody tr:nth-child(even) td, table.table.success.striped tbody tr:nth-child(even) th, table.table.success.striped tbody tr:nth-child(even) td {
   background-color: #B6DFB9;
   color: #063a09;
 }
-table.blue, table.primary {
+table.table.blue, table.table.primary {
   border-color: #264d99;
 }
-table.blue thead, table.primary thead {
+table.table.blue thead, table.table.primary thead {
   background-color: #3366CC;
   background-image: -webkit-linear-gradient(-270deg, #3366CC, #668cd9);
   background-image: linear-gradient(0deg,#3366CC, #668cd9);
 }
-table.blue thead th, table.blue thead td, table.primary thead th, table.primary thead td {
+table.table.blue thead th, table.table.blue thead td, table.table.primary thead th, table.table.primary thead td {
   color: #FFFFFF;
 }
-table.blue tbody th, table.blue tbody td, table.primary tbody th, table.primary tbody td {
+table.table.blue tbody th, table.table.blue tbody td, table.table.primary tbody th, table.table.primary tbody td {
   border-color: #668cd9;
 }
-table.blue.striped tbody tr:nth-child(even) th, table.blue.striped tbody tr:nth-child(even) td, table.primary.striped tbody tr:nth-child(even) th, table.primary.striped tbody tr:nth-child(even) td {
+table.table.blue.striped tbody tr:nth-child(even) th, table.table.blue.striped tbody tr:nth-child(even) td, table.table.primary.striped tbody tr:nth-child(even) th, table.table.primary.striped tbody tr:nth-child(even) td {
   background-color: #C1D0EF;
   color: #1a3366;
 }
-table.cyan, table.info {
+table.table.cyan, table.table.info {
   border-color: #3681a4;
 }
-table.cyan thead, table.info thead {
+table.table.cyan thead, table.table.info thead {
   background-color: #48ACDB;
   background-image: -webkit-linear-gradient(-270deg, #48ACDB, #76c1e4);
   background-image: linear-gradient(0deg,#48ACDB, #76c1e4);
 }
-table.cyan thead th, table.cyan thead td, table.info thead th, table.info thead td {
+table.table.cyan thead th, table.table.cyan thead td, table.table.info thead th, table.table.info thead td {
   color: #FFFFFF;
 }
-table.cyan tbody th, table.cyan tbody td, table.info tbody th, table.info tbody td {
+table.table.cyan tbody th, table.table.cyan tbody td, table.table.info tbody th, table.table.info tbody td {
   border-color: #76c1e4;
 }
-table.cyan.striped tbody tr:nth-child(even) th, table.cyan.striped tbody tr:nth-child(even) td, table.info.striped tbody tr:nth-child(even) th, table.info.striped tbody tr:nth-child(even) td {
+table.table.cyan.striped tbody tr:nth-child(even) th, table.table.cyan.striped tbody tr:nth-child(even) td, table.table.info.striped tbody tr:nth-child(even) th, table.table.info.striped tbody tr:nth-child(even) td {
   background-color: #BBE6F7;
   color: #175673;
 }
-table.magenta {
+table.table.magenta {
   border-color: #9a3d82;
 }
-table.magenta thead {
+table.table.magenta thead {
   background-color: #CD51AD;
   background-image: -webkit-linear-gradient(-270deg, #CD51AD, #da7dc2);
   background-image: linear-gradient(0deg,#CD51AD, #da7dc2);
 }
-table.magenta thead th, table.magenta thead td {
+table.table.magenta thead th, table.table.magenta thead td {
   color: #FFFFFF;
 }
-table.magenta tbody th, table.magenta tbody td {
+table.table.magenta tbody th, table.table.magenta tbody td {
   border-color: #da7dc2;
 }
-table.magenta.striped tbody tr:nth-child(even) th, table.magenta.striped tbody tr:nth-child(even) td {
+table.table.magenta.striped tbody tr:nth-child(even) th, table.table.magenta.striped tbody tr:nth-child(even) td {
   background-color: #F7B4E4;
   color: #7b2364;
 }
-table.yellow, table.warning {
+table.table.yellow, table.table.warning {
   border-color: #bf8a00;
 }
-table.yellow thead, table.warning thead {
+table.table.yellow thead, table.table.warning thead {
   background-color: #FFB800;
   background-image: -webkit-linear-gradient(-270deg, #FFB800, #ffca40);
   background-image: linear-gradient(0deg,#FFB800, #ffca40);
 }
-table.yellow thead th, table.yellow thead td, table.warning thead th, table.warning thead td {
+table.table.yellow thead th, table.table.yellow thead td, table.table.warning thead th, table.table.warning thead td {
   color: #FFFFFF;
 }
-table.yellow tbody th, table.yellow tbody td, table.warning tbody th, table.warning tbody td {
+table.table.yellow tbody th, table.table.yellow tbody td, table.table.warning tbody th, table.table.warning tbody td {
   border-color: #ffca40;
 }
-table.yellow.striped tbody tr:nth-child(even) th, table.yellow.striped tbody tr:nth-child(even) td, table.warning.striped tbody tr:nth-child(even) th, table.warning.striped tbody tr:nth-child(even) td {
+table.table.yellow.striped tbody tr:nth-child(even) th, table.table.yellow.striped tbody tr:nth-child(even) td, table.table.warning.striped tbody tr:nth-child(even) th, table.table.warning.striped tbody tr:nth-child(even) td {
   background-color: #FEE0B2;
   color: #664a00;
 }
-table.purple {
+table.table.purple {
   border-color: #730073;
 }
-table.purple thead {
+table.table.purple thead {
   background-color: #990099;
   background-image: -webkit-linear-gradient(-270deg, #990099, #b340b3);
   background-image: linear-gradient(0deg,#990099, #b340b3);
 }
-table.purple thead th, table.purple thead td {
+table.table.purple thead th, table.table.purple thead td {
   color: #FFFFFF;
 }
-table.purple tbody th, table.purple tbody td {
+table.table.purple tbody th, table.table.purple tbody td {
   border-color: #b340b3;
 }
-table.purple.striped tbody tr:nth-child(even) th, table.purple.striped tbody tr:nth-child(even) td {
+table.table.purple.striped tbody tr:nth-child(even) th, table.table.purple.striped tbody tr:nth-child(even) td {
   background-color: #E0B2E0;
   color: #330033;
 }
-table.orange {
+table.table.orange {
   border-color: #bf4d00;
 }
-table.orange thead {
+table.table.orange thead {
   background-color: #FF6600;
   background-image: -webkit-linear-gradient(-270deg, #FF6600, #ff8c40);
   background-image: linear-gradient(0deg,#FF6600, #ff8c40);
 }
-table.orange thead th, table.orange thead td {
+table.table.orange thead th, table.table.orange thead td {
   color: #FFFFFF;
 }
-table.orange tbody th, table.orange tbody td {
+table.table.orange tbody th, table.table.orange tbody td {
   border-color: #ff8c40;
 }
-table.orange.striped tbody tr:nth-child(even) th, table.orange.striped tbody tr:nth-child(even) td {
+table.table.orange.striped tbody tr:nth-child(even) th, table.table.orange.striped tbody tr:nth-child(even) td {
   background-color: #FFCFAE;
   color: #662900;
 }
