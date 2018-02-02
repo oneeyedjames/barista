@@ -10,8 +10,8 @@ $.fn.center = ->
 		left : "#{hOffset}px"
 
 $.fn.modal = (settings) ->
-	settings = $.extend $.fn.modal.defaults, settings
-
+	settings = $.extend {}, $.fn.modal.defaults, settings
+	
 	dialog = $ this
 	body = $ 'body'
 	overlay = $ '.overlay'
@@ -21,7 +21,6 @@ $.fn.modal = (settings) ->
 		.addClass 'overlay'
 		.appendTo 'body'
 
-	# dismiss = dialog.dismiss.bind dialog
 	dismiss = (eventType) ->
 		eventType ||= 'dismiss'
 		body.removeClass 'no-scroll'
@@ -45,19 +44,19 @@ $.fn.modal = (settings) ->
 	.resize ->
 		do dialog.center
 
-	setTimeout dismiss, opts.duration if opts.duration
+	setTimeout dismiss, settings.duration if settings.duration
 
 	do dialog.center
 
 	dialog.find 'a.ok, .btn.ok'
 	.one 'click', (event) ->
 		do event.preventDefault
-		dialog.dismiss 'ok'
+		dismiss 'ok'
 
 	dialog.find 'a.cancel, .btn.cancel'
 	.one 'click', (event) ->
 		do event.preventDefault
-		dialog.dismiss 'cancel'
+		dismiss 'cancel'
 
 $.fn.modal.defaults =
 	overlay  : true

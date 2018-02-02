@@ -76,7 +76,7 @@ jQuery(function($) {
     if ('true' !== form.data('confirmed')) {
       event.preventDefault();
     }
-    data = $.extend({
+    data = $.extend({}, {
       duration: 0,
       overlay: true,
       header: 'Warning',
@@ -143,7 +143,7 @@ jQuery(function($) {
   };
   $.fn.modal = function(settings) {
     var body, dialog, dismiss, overlay;
-    settings = $.extend($.fn.modal.defaults, settings);
+    settings = $.extend({}, $.fn.modal.defaults, settings);
     dialog = $(this);
     body = $('body');
     overlay = $('.overlay');
@@ -167,17 +167,17 @@ jQuery(function($) {
     $(window).resize(function() {
       return dialog.center();
     });
-    if (opts.duration) {
-      setTimeout(dismiss, opts.duration);
+    if (settings.duration) {
+      setTimeout(dismiss, settings.duration);
     }
     dialog.center();
     dialog.find('a.ok, .btn.ok').one('click', function(event) {
       event.preventDefault();
-      return dialog.dismiss('ok');
+      return dismiss('ok');
     });
     return dialog.find('a.cancel, .btn.cancel').one('click', function(event) {
       event.preventDefault();
-      return dialog.dismiss('cancel');
+      return dismiss('cancel');
     });
   };
   $.fn.modal.defaults = {
