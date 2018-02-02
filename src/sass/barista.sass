@@ -11,20 +11,10 @@ $output-bourbon-deprecation-warnings: false !default
 @import "variables/spacing"
 @import "variables/shadow"
 
-html, body
-	margin: 0px
-	padding: 0px
-	font-size: $base-font-size
-	font-family: $base-font-family
-	font-weight: $base-font-weight
-	line-height: $base-line-height
-
-.collapsed
-	height: 0
-	overflow: hidden
-
+@import "normalize"
 @import "typography"
 @import "visibility"
+@import "collapse"
 
 @import "text"
 @import "form"
