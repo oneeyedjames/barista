@@ -1,0 +1,63 @@
+!!! 5
+%html
+	= render '_head'
+	%body
+		= render '_navbar'
+		%article.wrapper.fluid
+			%div.row
+				%div.col-md-4.col-lg-3
+					= render '_sidenav'
+				%div.col-md-8.col-lg-9
+					%section#normalize
+						%h1.section Normalize
+
+						%h2#lists Lists
+						%p Top margins have been removed from lists
+						%div.demo
+							%ol
+								%li Numbered
+								%li List
+								%li Items
+
+							%ul
+								%li Bulleted
+								%li List
+								%li Items
+
+							%dl
+								%dt Definition
+								%dd Lorem ipsum dolor sit amet contectetur adipiscing elit
+								%dt List Items
+								%dd Lorem ipsum dolor sit amet contectetur adipiscing elit
+
+						%h3 Nested Lists
+						%p Bottom margins have been removed from nested lists
+						%div.demo
+							%ul
+								%li Nested
+								%ul
+									%li List
+									%li Items
+								%li And more...
+
+						%h2 Tables
+						%div.demo
+							%table
+								%thead
+									%tr
+										%th Column 1
+										%th Column 2
+										%th Column 3
+								%tbody
+									%tr
+										%td Cell 1
+										%td Cell 2
+										%td Cell 3
+									%tr
+										%td Cell 1
+										%td Cell 2
+										%td Cell 3
+									%tr
+										%td Cell 1
+										%td Cell 2
+										%td Cell 3
