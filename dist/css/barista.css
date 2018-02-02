@@ -7,9 +7,29 @@ html, body {
   line-height: 1.4285714286;
 }
 
-.collapsed {
-  height: 0;
-  overflow: hidden;
+p, pre {
+  margin-top: 0;
+  margin-bottom: 1.4285714286;
+}
+
+ul, ol, dl {
+  margin-top: 0;
+}
+ul ul, ul ol, ul dl, ol ul, ol ol, ol dl, dl ul, dl ol, dl dl {
+  margin-bottom: 0;
+}
+
+ul, ol {
+  padding-left: 2em;
+}
+
+dl > dd {
+  margin-left: 2em;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,15 +76,14 @@ small, .small {
   line-height: inherit;
 }
 
-p {
-  margin-top: 0;
-  margin-bottom: 1.4285714286;
-}
-
 blockquote {
   margin: 40px 0;
   padding: 0 0 0 30px;
   border-left: 10px solid #999999;
+}
+
+dl > dt {
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 479px) {
@@ -87,6 +106,11 @@ blockquote {
     display: none;
   }
 }
+.collapsed {
+  height: 0;
+  overflow: hidden;
+}
+
 .txt.red, .txt.danger, .txt.error {
   background-color: #F4C3B7;
   color: #7e210a;
@@ -509,8 +533,6 @@ table {
   width: 100%;
   margin-bottom: 1.5em;
   border-radius: 0.5em;
-  border-collapse: separate;
-  border-spacing: 0;
   border: 1px solid #999999;
   border-width: 0 0 1px;
   border-color: #737373;
