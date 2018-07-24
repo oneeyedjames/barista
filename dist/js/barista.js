@@ -173,11 +173,11 @@ jQuery(function($) {
     dialog.center();
     dialog.find('a.ok, .btn.ok').one('click', function(event) {
       event.preventDefault();
-      return dialog.dismiss('ok');
+      return dismiss('ok');
     });
     return dialog.find('a.cancel, .btn.cancel').one('click', function(event) {
       event.preventDefault();
-      return dialog.dismiss('cancel');
+      return dismiss('cancel');
     });
   };
   $.fn.modal.defaults = {

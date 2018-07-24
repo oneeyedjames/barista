@@ -52,12 +52,12 @@ $.fn.modal = (settings) ->
 	dialog.find 'a.ok, .btn.ok'
 	.one 'click', (event) ->
 		do event.preventDefault
-		dialog.dismiss 'ok'
+		dismiss 'ok'
 
 	dialog.find 'a.cancel, .btn.cancel'
 	.one 'click', (event) ->
 		do event.preventDefault
-		dialog.dismiss 'cancel'
+		dismiss 'cancel'
 
 $.fn.modal.defaults =
 	overlay  : true
