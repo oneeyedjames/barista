@@ -45,7 +45,7 @@ $.fn.modal = (settings) ->
 	.resize ->
 		do dialog.center
 
-	setTimeout dismiss, opts.duration if opts.duration
+	setTimeout dismiss, settings.duration if settings.duration
 
 	do dialog.center
 

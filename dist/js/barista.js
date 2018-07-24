@@ -167,8 +167,8 @@ jQuery(function($) {
     $(window).resize(function() {
       return dialog.center();
     });
-    if (opts.duration) {
-      setTimeout(dismiss, opts.duration);
+    if (settings.duration) {
+      setTimeout(dismiss, settings.duration);
     }
     dialog.center();
     dialog.find('a.ok, .btn.ok').one('click', function(event) {
