@@ -10,8 +10,8 @@ $.fn.center = ->
 		left : "#{hOffset}px"
 
 $.fn.modal = (settings) ->
-	settings = $.extend $.fn.modal.defaults, settings
-
+	settings = $.extend {}, $.fn.modal.defaults, settings
+	
 	dialog = $ this
 	body = $ 'body'
 	overlay = $ '.overlay'
@@ -21,7 +21,6 @@ $.fn.modal = (settings) ->
 		.addClass 'overlay'
 		.appendTo 'body'
 
-	# dismiss = dialog.dismiss.bind dialog
 	dismiss = (eventType) ->
 		eventType ||= 'dismiss'
 		body.removeClass 'no-scroll'

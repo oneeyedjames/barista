@@ -8,6 +8,7 @@
 <script src='../js/barista.js'></script>
 <style>
   h3.section { border-bottom: 1px solid #999; }
+  .demo { border: 2px solid #CCC; padding: 1.5em; }
 </style>
 </head>
 
@@ -60,64 +61,72 @@
 </div>
 </header>
 
-<article class='wrapper'>
-<section id='normalize'>
-<h3 class='section'>Normalize</h3>
-<p>Normal Paragraph Text</p>
-<h4>Lists</h4>
-<ol>
-<li>Numbered</li>
-<li>List</li>
-<li>Items</li>
-</ol>
+<article class='wrapper fluid'>
+<div class='row'>
+<div class='col-md-4 col-lg-3'>
+<nav style='position: fixed'>
 <ul>
-<li>Bulleted</li>
-<li>List</li>
-<li>Items</li>
-</ul>
+<li>
+<a href='normalize.html'>Normalize</a>
+</li>
 <ul>
-<li>Nested</li>
+<li>
+<a href='normalize.html#lists'>Lists</a>
+</li>
+<li>
+<a href='normalize.html#tables'>Tables</a>
+</li>
+</ul>
+<li>
+<a href='index.html#typography'>Typography</a>
+</li>
+<li>
+<a href='index.html#forms'>Forms</a>
+</li>
+</ul>
+<strong>Elements</strong>
 <ul>
-<li>List</li>
-<li>Items</li>
+<li>
+<a href='index.html#buttons'>Buttons</a>
+</li>
+<li>
+<a href='index.html#labels'>Labels</a>
+</li>
+<li>
+<a href='index.html#badges'>Badges</a>
+</li>
+<li>
+<a href='index.html#tooltip'>Tooltips</a>
+</li>
 </ul>
-<li>And more...</li>
+<strong>Containers</strong>
+<ul>
+<li>
+<a href='index.html#tables'>Tables</a>
+</li>
+<li>
+<a href='index.html#lists'>Lists</a>
+</li>
+<li>
+<a href='index.html#cards'>Cards</a>
+</li>
+<ul>
+<li>
+<a href='index.html#modals'>Modals</a>
+</li>
 </ul>
-<dl>
-<dt>Definition</dt>
-<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
-<dt>List Items</dt>
-<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
-</dl>
-<h4>Tables</h4>
-<table>
-<thead>
-<tr>
-<th>Column 1</th>
-<th>Column 2</th>
-<th>Column 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Cell 1</td>
-<td>Cell 2</td>
-<td>Cell 3</td>
-</tr>
-<tr>
-<td>Cell 1</td>
-<td>Cell 2</td>
-<td>Cell 3</td>
-</tr>
-<tr>
-<td>Cell 1</td>
-<td>Cell 2</td>
-<td>Cell 3</td>
-</tr>
-</tbody>
-</table>
-</section>
+<li>
+<a href='index.html#tabs'>Tabs</a>
+</li>
+<li>
+<a href='index.html#modal'>Modal</a>
+</li>
+</ul>
+</nav>
+<span style='font-size: 0; line-height: 0'>&nbsp;</span>
 
+</div>
+<div class='col-md-8 col-lg-9'>
 <section id='typography'>
 <h3 class='section'>Typography</h3>
 <h4>Headings</h4>
@@ -657,10 +666,60 @@ Content
 <div class='card alert orange'>Orange</div>
 </div>
 </div>
+<h4 id='modals'>Modals</h4>
+<ul>
+<li>
+<a data-action='modal' data-duration='1300' data-overlay='false' data-target='#modal-success'>Success</a>
+</li>
+<li>
+<a data-action='modal' data-overlay='static' data-target='#modal-warning'>Warning</a>
+</li>
+<li>
+<a data-action='modal' data-overlay='true' data-target='#modal-error'>Error</a>
+</li>
+</ul>
+<div class='card modal green alert' id='modal-success'>
+You were successful!
+</div>
+<div class='card modal red' id='modal-error'>
+<header>
+<i class='fa fa-exclamation-circle'></i>
+Error
+<i class='close fa fa-close'></i>
+</header>
+This is an error message
+<footer class='btns'>
+<button class='btn ok'>Ok</button>
+</footer>
+</div>
+<div class='card modal yellow' id='modal-warning'>
+<header>
+<i class='fa fa-exclamation-triangle'></i>
+Warning
+</header>
+Are you sure about that?
+<footer class='btns'>
+<button class='btn cancel'>Cancel</button>
+<button class='btn red ok'>Do it!</button>
+</footer>
+</div>
+<script>
+  (function() {
+    $('#modal-warning').on('ok', function() {
+      return setTimeout(function() {
+        return $('#modal-success').modal({
+          alert: true,
+          timeout: 1300
+        });
+      }, 700);
+    });
+  
+  }).call(this);
+</script>
 </section>
 
-<section id='tables'>
-<h3 class='section'>Tables</h3>
+<section id='tabs'>
+<h3 class='section'>Tabs</h3>
 <div class='row'>
 <div class='col-xs-12'>
 <div class='tabbar'>
@@ -912,6 +971,8 @@ Option 3
 </p>
 </section>
 
+</div>
+</div>
 </article>
 </body>
 </html>

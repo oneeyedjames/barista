@@ -4,7 +4,7 @@ $ 'form[data-confirm]'
 
 	do event.preventDefault unless 'true' == form.data 'confirmed'
 
-	data = $.extend
+	data = $.extend {},
 		duration : 0
 		overlay  : true
 		header   : 'Warning'

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Barista Framework</title>
+<link href='../../lib/fontawesome/css/font-awesome.min.css' rel='stylesheet'>
+<link href='../css/barista.css' rel='stylesheet'>
+<script src='../../lib/jquery/dist/jquery.min.js'></script>
+<script src='../js/barista.js'></script>
+<style>
+  h3.section { border-bottom: 1px solid #999; }
+  .demo { border: 2px solid #CCC; padding: 1.5em; }
+</style>
+</head>
+
+<body>
+<header class='navbar'>
+<div class='wrapper'>
+<div class='icon'>
+<a>Home</a>
+</div>
+<div class='menu' id='main-menu'>
+<ul class='nav'>
+<li>
+<a data-action='menu'>
+<span class='navlbl'>First Item</span>
+</a>
+<ul>
+<li>
+<a>First Sub-Item</a>
+</li>
+<li>
+<a>Second Sub-Item</a>
+</li>
+<li>
+<a>Third Sub-Item</a>
+</li>
+</ul>
+</li>
+<li>
+<a>
+<span class='navlbl'>Second Item</span>
+</a>
+</li>
+</ul>
+<ul class='nav right'>
+<li>
+<a>
+<span class='navlbl'>Special Item</span>
+</a>
+<ul>
+<li>
+<a>Sub-Item</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<a class='icon more' data-action='toggle' data-target='#main-menu'>
+<i class='fa fa-bars'></i>
+</a>
+</div>
+</header>
+
+<article class='wrapper fluid'>
+<div class='row'>
+<div class='col-md-4 col-lg-3'>
+<nav style='position: fixed'>
+<ul>
+<li>
+<a href='normalize.html'>Normalize</a>
+</li>
+<ul>
+<li>
+<a href='normalize.html#lists'>Lists</a>
+</li>
+<li>
+<a href='normalize.html#tables'>Tables</a>
+</li>
+</ul>
+<li>
+<a href='index.html#typography'>Typography</a>
+</li>
+<li>
+<a href='index.html#forms'>Forms</a>
+</li>
+</ul>
+<strong>Elements</strong>
+<ul>
+<li>
+<a href='index.html#buttons'>Buttons</a>
+</li>
+<li>
+<a href='index.html#labels'>Labels</a>
+</li>
+<li>
+<a href='index.html#badges'>Badges</a>
+</li>
+<li>
+<a href='index.html#tooltip'>Tooltips</a>
+</li>
+</ul>
+<strong>Containers</strong>
+<ul>
+<li>
+<a href='index.html#tables'>Tables</a>
+</li>
+<li>
+<a href='index.html#lists'>Lists</a>
+</li>
+<li>
+<a href='index.html#cards'>Cards</a>
+</li>
+<ul>
+<li>
+<a href='index.html#modals'>Modals</a>
+</li>
+</ul>
+<li>
+<a href='index.html#tabs'>Tabs</a>
+</li>
+<li>
+<a href='index.html#modal'>Modal</a>
+</li>
+</ul>
+</nav>
+<span style='font-size: 0; line-height: 0'>&nbsp;</span>
+
+</div>
+<div class='col-md-8 col-lg-9'>
+<section id='normalize'>
+<h1 class='section'>Normalize</h1>
+<h2 id='lists'>Lists</h2>
+<p>Top margins have been removed from lists</p>
+<div class='demo'>
+<ol>
+<li>Numbered</li>
+<li>List</li>
+<li>Items</li>
+</ol>
+<ul>
+<li>Bulleted</li>
+<li>List</li>
+<li>Items</li>
+</ul>
+<dl>
+<dt>Definition</dt>
+<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
+<dt>List Items</dt>
+<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
+</dl>
+</div>
+<h3>Nested Lists</h3>
+<p>Bottom margins have been removed from nested lists</p>
+<div class='demo'>
+<ul>
+<li>Nested</li>
+<ul>
+<li>List</li>
+<li>Items</li>
+</ul>
+<li>And more...</li>
+</ul>
+</div>
+<h2>Tables</h2>
+<div class='demo'>
+<table>
+<thead>
+<tr>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+</article>
+</body>
+</html>
