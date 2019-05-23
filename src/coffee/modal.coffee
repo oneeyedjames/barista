@@ -45,19 +45,19 @@ $.fn.modal = (settings) ->
 	.resize ->
 		do dialog.center
 
-	setTimeout dismiss, opts.duration if opts.duration
+	setTimeout dismiss, settings.duration if settings.duration
 
 	do dialog.center
 
 	dialog.find 'a.ok, .btn.ok'
 	.one 'click', (event) ->
 		do event.preventDefault
-		dialog.dismiss 'ok'
+		dismiss 'ok'
 
 	dialog.find 'a.cancel, .btn.cancel'
 	.one 'click', (event) ->
 		do event.preventDefault
-		dialog.dismiss 'cancel'
+		dismiss 'cancel'
 
 $.fn.modal.defaults =
 	overlay  : true
