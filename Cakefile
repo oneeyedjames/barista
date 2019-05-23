@@ -43,11 +43,6 @@ task 'build:js', 'Build CoffeeScript files into JS', ->
 task 'build:css', 'Build Sass files into CSS', ->
 	invoke 'clean:css'
 	record 'build:css', ->
-		try
-			proc.execSync "bourbon install --path=#{sass_src}"
-		catch err
-			throw err
-
 		inFile  = "#{sass_src}/#{sass_root}.sass"
 		outFile = "#{sass_dest}/#{sass_root}.css"
 		minFile = "#{sass_dest}/#{sass_root}.min.css"

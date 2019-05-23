@@ -1,0 +1,27 @@
+{
+  "name": "barista",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dependencies": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oneeyedjames/barista.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oneeyedjames/barista/issues"
+  },
+  "homepage": "https://github.com/oneeyedjames/barista#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "bourbon": "^4.2.7",
+    "coffee": "^5.2.1",
+    "haml": "^0.4.3",
+    "sass": "^1.20.1",
+    "font-awesome": "^4.5.0",
+    "jquery": "^3.1.1"
+  }
+}
