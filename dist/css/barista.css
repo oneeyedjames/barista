@@ -828,7 +828,7 @@ table.table.orange.striped tbody tr:nth-child(even) th, table.table.orange.strip
   margin-bottom: 1.5em;
   padding: 0.375em 0.75em;
   border: 1px solid #999999;
-  border-width: 0 0 1px;
+  border-width: 0 1px 1px;
   border-radius: 0.5em;
   background: #FFFFFF;
   border-color: #737373;
