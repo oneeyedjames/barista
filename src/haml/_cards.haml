@@ -1,4 +1,4 @@
-%section#cards
+%section#cards.nav
 	%h3.section Cards
 
 	.row
@@ -67,44 +67,3 @@
 			.card.alert.purple Purple
 		.col-xs-6.col-md-4.col-lg-3
 			.card.alert.orange Orange
-
-	%h4#modals Modals
-
-	%ul
-		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-success', 'data-overlay' => 'false', 'data-duration' => 1300 } Success
-		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-warning', 'data-overlay' => 'static' } Warning
-		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-error', 'data-overlay' => 'true' } Error
-
-	#modal-success.card.modal.green.alert
-		You were successful!
-
-	#modal-error.card.modal.red
-		%header
-			%i.fa.fa-exclamation-circle
-			Error
-			%i.close.fa.fa-close
-		This is an error message
-		%footer.btns
-			%button.btn.ok Ok
-
-	#modal-warning.card.modal.yellow
-		%header
-			%i.fa.fa-exclamation-triangle
-			Warning
-		Are you sure about that?
-		%footer.btns
-			%button.btn.cancel Cancel
-			%button.btn.red.ok Do it!
-
-	:coffee
-		$ '#modal-warning'
-		.on 'ok', ->
-			setTimeout ->
-				$ '#modal-success'
-				.modal
-					alert: true
-					timeout: 1300
-			, 700

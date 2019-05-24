@@ -7,9 +7,39 @@
 <script src='../../node_modules/jquery/dist/jquery.min.js'></script>
 <script src='../js/barista.js'></script>
 <style>
-  h3.section { border-bottom: 1px solid #999; }
+  .section { border-bottom: 1px solid #999; }
   .demo { border: 2px solid #CCC; padding: 1.5em; }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function(e) {
+  	let toggle = function(url) {
+  		let sections = document.getElementsByTagName('section');
+  
+  		for (let section of sections) {
+  			if (section.classList.contains('nav')) {
+  				section.style.display = 'none';
+  			}
+  		}
+  
+  		let match = url.match(/(index|normalize)\.html#([A-Z]*)/i);
+  		if (match)
+  			document.getElementById(match[2]).style.display = 'block';
+  		else
+  			sections[0].style.display = 'block';
+  	}
+  
+  	toggle(e.target.URL);
+  
+  	let links = document.getElementsByTagName('a');
+  	for (let link of links) {
+  		if (link.classList.contains('nav')) {
+  			link.addEventListener('click', function() {
+  				toggle(link.href);
+  			});
+  		}
+  	}
+  });
+</script>
 </head>
 
 <body>
@@ -65,61 +95,54 @@
 <div class='row'>
 <div class='col-md-4 col-lg-3'>
 <nav style='position: fixed'>
+<strong>Normalize</strong>
 <ul>
 <li>
-<a href='normalize.html'>Normalize</a>
-</li>
-<ul>
-<li>
-<a href='normalize.html#lists'>Lists</a>
+<a class='nav' href='index.html#typography'>Typography</a>
 </li>
 <li>
-<a href='normalize.html#tables'>Tables</a>
-</li>
-</ul>
-<li>
-<a href='index.html#typography'>Typography</a>
+<a class='nav' href='index.html#normlists'>Lists</a>
 </li>
 <li>
-<a href='index.html#forms'>Forms</a>
+<a class='nav' href='index.html#normtables'>Tables</a>
+</li>
+<li>
+<a class='nav' href='index.html#forms'>Forms</a>
 </li>
 </ul>
 <strong>Elements</strong>
 <ul>
 <li>
-<a href='index.html#buttons'>Buttons</a>
+<a class='nav' href='index.html#buttons'>Buttons</a>
 </li>
 <li>
-<a href='index.html#labels'>Labels</a>
+<a class='nav' href='index.html#labels'>Labels</a>
 </li>
 <li>
-<a href='index.html#badges'>Badges</a>
+<a class='nav' href='index.html#badges'>Badges</a>
 </li>
 <li>
-<a href='index.html#tooltip'>Tooltips</a>
+<a class='nav' href='index.html#tooltip'>Tooltips</a>
 </li>
 </ul>
 <strong>Containers</strong>
 <ul>
 <li>
-<a href='index.html#tables'>Tables</a>
+<a class='nav' href='index.html#tables'>Tables</a>
 </li>
 <li>
-<a href='index.html#lists'>Lists</a>
+<a class='nav' href='index.html#lists'>Lists</a>
 </li>
 <li>
-<a href='index.html#cards'>Cards</a>
+<a class='nav' href='index.html#cards'>Cards</a>
 </li>
 <ul>
 <li>
-<a href='index.html#modals'>Modals</a>
+<a class='nav' href='index.html#modal'>Modals</a>
 </li>
 </ul>
 <li>
-<a href='index.html#tabs'>Tabs</a>
-</li>
-<li>
-<a href='index.html#modal'>Modal</a>
+<a class='nav' href='index.html#tabs'>Tabs</a>
 </li>
 </ul>
 </nav>
@@ -127,16 +150,36 @@
 
 </div>
 <div class='col-md-8 col-lg-9'>
-<section id='typography'>
+<section class='nav' id='typography'>
 <h3 class='section'>Typography</h3>
-<h4>Headings</h4>
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
 <p class='lead'>Lead Text</p>
+<p>Main Body Text</p>
+<h4 class='section'>Headings</h4>
+<h1>
+Heading 1
+<small>Small text</small>
+</h1>
+<h2>
+Heading 2
+<small>Small text</small>
+</h2>
+<h3>
+Heading 3
+<small>Small text</small>
+</h3>
+<h4>
+Heading 4
+<small>Small text</small>
+</h4>
+<h5>
+Heading 5
+<small>Small text</small>
+</h5>
+<h6>
+Heading 6
+<small>Small text</small>
+</h6>
+<h4 class='section'>Hyperlinks</h4>
 <p>
 <a href='#'>Hyperlink</a>
 <a class='red' href='#'>Red</a>
@@ -150,7 +193,74 @@
 </p>
 </section>
 
-<section id='buttons'>
+<section class='nav' id='normlists'>
+<h3 class='section'>Lists</h3>
+<p>Top margins have been removed from lists</p>
+<div class='demo'>
+<ol>
+<li>Numbered</li>
+<li>List</li>
+<li>Items</li>
+</ol>
+<ul>
+<li>Bulleted</li>
+<li>List</li>
+<li>Items</li>
+</ul>
+<dl>
+<dt>Definition</dt>
+<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
+<dt>List Items</dt>
+<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
+</dl>
+</div>
+<h4>Nested Lists</h4>
+<p>Bottom margins have been removed from nested lists</p>
+<div class='demo'>
+<ul>
+<li>Nested</li>
+<ul>
+<li>List</li>
+<li>Items</li>
+</ul>
+<li>And more...</li>
+</ul>
+</div>
+</section>
+<section class='nav' id='normtables'>
+<h3 class='section'>Tables</h3>
+<p>Tables have been given horizontal lines by default</p>
+<div class='demo'>
+<table>
+<thead>
+<tr>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class='nav' id='buttons'>
 <h3 class='section'>Buttons</h3>
 <p>
 <a class='btn'>Default</a>
@@ -235,7 +345,7 @@ Orange
 </p>
 </section>
 
-<section id='labels'>
+<section class='nav' id='labels'>
 <h3 class='section'>Labels</h3>
 <p>
 Some text
@@ -251,7 +361,7 @@ Some text
 </p>
 </section>
 
-<section id='badges'>
+<section class='nav' id='badges'>
 <h3 class='section'>Badges</h3>
 <p>
 Some text
@@ -267,7 +377,7 @@ Some text
 </p>
 </section>
 
-<section id='tables'>
+<section class='nav' id='tables'>
 <h3 class='section'>Tables</h3>
 <div class='row'>
 <div class='col-xs-12'>
@@ -489,7 +599,7 @@ Some text
 </div>
 </section>
 
-<section id='lists'>
+<section class='nav' id='lists'>
 <h3 class='section'>Lists</h3>
 <div class='row'>
 <div class='col-xs-12'>
@@ -570,7 +680,7 @@ Item
 </div>
 </section>
 
-<section id='cards'>
+<section class='nav' id='cards'>
 <h3 class='section'>Cards</h3>
 <div class='row'>
 <div class='col-xs-12'>
@@ -666,59 +776,9 @@ Content
 <div class='card alert orange'>Orange</div>
 </div>
 </div>
-<h4 id='modals'>Modals</h4>
-<ul>
-<li>
-<a data-action='modal' data-duration='1300' data-overlay='false' data-target='#modal-success'>Success</a>
-</li>
-<li>
-<a data-action='modal' data-overlay='static' data-target='#modal-warning'>Warning</a>
-</li>
-<li>
-<a data-action='modal' data-overlay='true' data-target='#modal-error'>Error</a>
-</li>
-</ul>
-<div class='card modal green alert' id='modal-success'>
-You were successful!
-</div>
-<div class='card modal red' id='modal-error'>
-<header>
-<i class='fa fa-exclamation-circle'></i>
-Error
-<i class='close fa fa-close'></i>
-</header>
-This is an error message
-<footer class='btns'>
-<button class='btn ok'>Ok</button>
-</footer>
-</div>
-<div class='card modal yellow' id='modal-warning'>
-<header>
-<i class='fa fa-exclamation-triangle'></i>
-Warning
-</header>
-Are you sure about that?
-<footer class='btns'>
-<button class='btn cancel'>Cancel</button>
-<button class='btn red ok'>Do it!</button>
-</footer>
-</div>
-<script>
-  (function() {
-    $('#modal-warning').on('ok', function() {
-      return setTimeout(function() {
-        return $('#modal-success').modal({
-          alert: true,
-          timeout: 1300
-        });
-      }, 700);
-    });
-  
-  }).call(this);
-</script>
 </section>
 
-<section id='tabs'>
+<section class='nav' id='tabs'>
 <h3 class='section'>Tabs</h3>
 <div class='row'>
 <div class='col-xs-12'>
@@ -835,7 +895,7 @@ Are you sure about that?
 </div>
 </section>
 
-<section id='modal'>
+<section class='nav' id='modal'>
 <h3 class='section'>Modal</h3>
 <ul>
 <li>
@@ -888,7 +948,7 @@ Are you sure about that?
 </script>
 </section>
 
-<section id='forms'>
+<section class='nav' id='forms'>
 <h3 class='section'>Forms</h3>
 <form>
 <div class='row'>
@@ -951,7 +1011,7 @@ Option 3
 </form>
 </section>
 
-<section id='tooltip'>
+<section class='nav' id='tooltip'>
 <h3 class='section'>Tooltip</h3>
 <p>
 <a data-hover='tooltip' title='Tooltip above'>Hover above</a>

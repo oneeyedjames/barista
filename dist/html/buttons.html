@@ -7,9 +7,39 @@
 <script src='../../node_modules/jquery/dist/jquery.min.js'></script>
 <script src='../js/barista.js'></script>
 <style>
-  h3.section { border-bottom: 1px solid #999; }
+  .section { border-bottom: 1px solid #999; }
   .demo { border: 2px solid #CCC; padding: 1.5em; }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function(e) {
+  	let toggle = function(url) {
+  		let sections = document.getElementsByTagName('section');
+  
+  		for (let section of sections) {
+  			if (section.classList.contains('nav')) {
+  				section.style.display = 'none';
+  			}
+  		}
+  
+  		let match = url.match(/(index|normalize)\.html#([A-Z]*)/i);
+  		if (match)
+  			document.getElementById(match[2]).style.display = 'block';
+  		else
+  			sections[0].style.display = 'block';
+  	}
+  
+  	toggle(e.target.URL);
+  
+  	let links = document.getElementsByTagName('a');
+  	for (let link of links) {
+  		if (link.classList.contains('nav')) {
+  			link.addEventListener('click', function() {
+  				toggle(link.href);
+  			});
+  		}
+  	}
+  });
+</script>
 </head>
 
 <body>
