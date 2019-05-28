@@ -10,6 +10,7 @@
   .section { border-bottom: 1px solid #CCC; }
   .demo { border: 2px solid #CCC; padding: 1.5em; }
   .highlight { background-color: #FEB; padding: 0 .25em; }
+  pre { white-space: pre-wrap; }
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function(e) {
@@ -683,100 +684,114 @@ Item
 
 <section class='nav' id='cards'>
 <h3 class='section'>Cards</h3>
-<div class='row'>
-<div class='col-xs-12'>
-<div class='card collapsible'>
+<p>Cards are generic containers with a header and footer.</p>
+<div class='card'>
 <header>Card</header>
 <p>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</p>
 <footer>Footer</footer>
 </div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card red'>
-<header>Red</header>
-Content
-<footer>Footer</footer>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card green'>
-<header>Green</header>
-Content
-<footer>Footer</footer>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card blue'>
-<header>Blue</header>
-Content
-<footer>Footer</footer>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card cyan'>
-<header>Cyan</header>
-Content
-<footer>Footer</footer>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card magenta'>
-<header>Magenta</header>
-Content
-<footer>Footer</footer>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card yellow'>
-<header>Yellow</header>
-Content
-<footer>Footer</footer>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card purple'>
-<header>Purple</header>
-Content
-<footer>Footer</footer>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card orange'>
-<header>Orange</header>
-Content
-<footer>Footer</footer>
-</div>
-</div>
-</div>
+<pre class='demo'><code>&lt;div class="card"&gt;
+	&lt;header&gt;Card&lt;/header&gt;
+	&lt;p&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/p&gt;
+	&lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+<p>Cards can also be assigned a color scheme.</p>
 <div class='row'>
-<div class='col-xs-12'>
-<div class='card alert'>Alert</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card alert red'>Red</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card alert green'>Green</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card alert blue'>Blue</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card alert cyan'>Cyan</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card alert magenta'>Magenta</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card alert yellow'>Yellow</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card alert purple'>Purple</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='card alert orange'>Orange</div>
+<div class='col-md-6 col-lg-4'>
+<div class='card primary'>
+<header>Primary</header>
+Content
+<footer>Footer</footer>
 </div>
 </div>
+<div class='col-md-6 col-lg-4'>
+<div class='card success'>
+<header>Success</header>
+Content
+<footer>Footer</footer>
+</div>
+</div>
+<div class='col-md-6 col-lg-4'>
+<div class='card error'>
+<header>Error</header>
+Content
+<footer>Footer</footer>
+</div>
+</div>
+<div class='col-md-6 col-lg-4'>
+<div class='card info'>
+<header>Information</header>
+Content
+<footer>Footer</footer>
+</div>
+</div>
+<div class='col-md-6 col-lg-4'>
+<div class='card warning'>
+<header>Warning</header>
+Content
+<footer>Footer</footer>
+</div>
+</div>
+</div>
+<pre class='demo'><code>&lt;div class="card primary"&gt;
+	&lt;header&gt;Primary&lt;/header&gt;
+	Content
+	&lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;div class="card success"&gt;
+	&lt;header&gt;Success&lt;/header&gt;
+	Content
+	&lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;div class="card error"&gt;
+	&lt;header&gt;Error&lt;/header&gt;
+	Content
+	&lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;div class="card warning"&gt;
+	&lt;header&gt;Warning&lt;/header&gt;
+	Content
+	&lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;div class="card info"&gt;
+	&lt;header&gt;Information&lt;/header&gt;
+	Content
+	&lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+
+</code></pre>
+<h4>Alerts</h4>
+<p>Alerts are a simplified variant of cards for content that does not need a header or footer.</p>
+<div class='card alert'>This is a default alert.</div>
+<pre class='demo'><code>&lt;div class="card alert"&gt;This is a default alert.&lt/div&gt;</code></pre>
+<p>Alerts can also be assigned a color scheme.</p>
+<div class='row'>
+<div class='col-md-6 col-lg-4'>
+<div class='card alert primary'>Primary message</div>
+</div>
+<div class='col-md-6 col-lg-4'>
+<div class='card alert success'>Success message</div>
+</div>
+<div class='col-md-6 col-lg-4'>
+<div class='card alert error'>Error message</div>
+</div>
+<div class='col-md-6 col-lg-4'>
+<div class='card alert info'>Information message</div>
+</div>
+<div class='col-md-6 col-lg-4'>
+<div class='card alert warning'>Warning message</div>
+</div>
+</div>
+<pre class='demo'><code>&lt;div class="card alert primary"&gt;Primary message&lt/div&gt;
+&lt;div class="card alert success"&gt;Success message&lt/div&gt;
+&lt;div class="card alert error"&gt;Error message&lt/div&gt;
+&lt;div class="card alert warning"&gt;Warning message&lt/div&gt;
+&lt;div class="card alert info"&gt;Information message&lt/div&gt;
+</code></pre>
 </section>
 
 <section class='nav' id='tabs'>
