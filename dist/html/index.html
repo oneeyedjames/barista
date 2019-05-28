@@ -9,6 +9,7 @@
 <style>
   .section { border-bottom: 1px solid #CCC; }
   .demo { border: 2px solid #CCC; padding: 1.5em; }
+  .highlight { background-color: #FEB; padding: 0 .25em; }
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function(e) {
@@ -231,7 +232,7 @@ Heading 6
 <h3 class='section'>Tables</h3>
 <p>Tables have been given horizontal lines by default</p>
 <div class='demo'>
-<table>
+<table style='width: 100%'>
 <thead>
 <tr>
 <th>Column 1</th>
@@ -896,50 +897,109 @@ Content
 </section>
 
 <section class='nav' id='modal'>
-<h3 class='section'>Modal</h3>
-<ul>
-<li>
-<a data-action='modal' data-duration='1300' data-overlay='false' data-target='#modal-success'>Success</a>
-</li>
-<li>
-<a data-action='modal' data-overlay='static' data-target='#modal-warning'>Warning</a>
-</li>
-<li>
-<a data-action='modal' data-overlay='true' data-target='#modal-error'>Error</a>
-</li>
-</ul>
-<div class='card modal green alert' id='modal-success'>
-You were successful!
+<h3 class='section'>Modal Cards</h3>
+<p>
+Cards can be displayed as modal views by adding the
+<code class='highlight'>modal</code>
+class to the card and using a link or button to target the card.
+</p>
+<p>
+<button data-action='modal' data-target='#modal-default'>Default</button>
+</p>
+<pre class='demo'><code>&lt;div class="card modal" id="modal-default"&gt;
+	&lt;header&gt;Default Modal Card&lt;/header&gt;
+	&lt;p&gt;This is the default style for modal cards.&lt;/p&gt;
+	&lt;a class="ok"&gt;Dismiss&lt;a&gt;
+	&lt;footer&gt;Default card footer&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;button data-action="modal" data-target="#modal-default"&gt;Default&lt;/button&gt;</code></pre>
+<h4>Overlay</h4>
+<p>
+By default, the dimmed overlay will appear behind the modal card. This can be disabled using the
+<code class='highlight'>data-overlay="false"</code>
+attribute on the targetting link or button.
+</p>
+<p>
+<button data-action='modal' data-overlay='false' data-target='#modal-default'>No Overlay</button>
+</p>
+<pre class='demo'><code>&lt;button data-action="modal" data-target="#modal-default" data-overlay="false"&gt;No Overlay&lt;/button&gt;</code></pre>
+<p>
+By default, clicking outside the card will dismiss the modal. This can be disabled using the
+<code class='highlight'>data-overlay="static"</code>
+attribute on the targetting link or button.
+</p>
+<p>
+<button data-action='modal' data-overlay='static' data-target='#modal-default'>Static Overlay</button>
+</p>
+<pre class='demo'><code>&lt;button data-action="modal" data-target="#modal-default" data-overlay="static"&gt;Static Overlay&lt;/button&gt;</code></pre>
+<h4>Duration</h4>
+<p>
+By default, the modal card will remain visible until it is dismissed. A modal can be automatically dismissed
+after a specified delay using the
+<code class='highlight'>data-duration</code>
+attribute on the targetting link or button. The duration is specified in milliseconds.
+</p>
+<p>
+<button data-action='modal' data-duration='1300' data-target='#modal-default'>Auto-dismiss</button>
+</p>
+<pre class='demo'><code>&lt;button data-action="modal" data-target="#modal-default" data-duration="1300"&gt;Auto-dismiss&lt;/button&gt;</code></pre>
+<h4>Action Buttons</h4>
+<p>
+Modal cards can trigger actions using buttons in the card footer. Adding the
+<code class='highlight'>btns</code>
+class to the card footer will evenly distribute any buttons it contains.
+Buttons with a class of
+<code class='highlight'>ok</code>
+or
+<code class='highlight'>cancel</code>
+will trigger an event of the same names on the card.
+</p>
+<p>
+<button class='warning' data-action='modal' data-overlay='static' data-target='#modal-warning'>Dialog</button>
+</p>
+<pre class='demo'><code>&lt;div class="card modal warning" id="modal-warning"&gt;
+	&lt;header&gt;Warning Modal Card&lt;/header&gt;
+	&lt;p&gt;Are you sure you want to do this thing?&lt;/p&gt;
+	&lt;footer class="btns"&gt;
+		&lt;button class="cancel"&gt;Cancel&lt;/button&gt;
+		&lt;button class="ok"&gt;Do it!&lt;/button&gt;
+	&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;button data-action="modal" data-target="#modal-warning"&gt;Dialog&lt;/button&gt;
+
+&lt;script type="text/javascript"&gt;
+	$('#modal-warning').on('ok', function() {
+		setTimeout(function() {
+			$('#modal-success').modal({ overlay: false, duration: 1300 });
+		}, 700);
+	});
+&lt;/script&gt;</code></pre>
+<div class='card modal' id='modal-default'>
+<header>Default Modal Card</header>
+<p>This is the default style for modal cards.</p>
+<a class='ok'>Dismiss</a>
+<footer>Default card footer</footer>
 </div>
-<div class='card modal red' id='modal-error'>
-<header>
-<i class='fa fa-exclamation-circle'></i>
-Error
-<i class='close fa fa-close'></i>
-</header>
-This is an error message
-<footer class='btns'>
-<button class='btn ok'>Ok</button>
-</footer>
-</div>
-<div class='card modal yellow' id='modal-warning'>
-<header>
-<i class='fa fa-exclamation-triangle'></i>
-Warning
-</header>
-Are you sure about that?
+<div class='card modal warning' id='modal-warning'>
+<header>Warning Modal Card</header>
+Are you sure you want to do this thing?
 <footer class='btns'>
 <button class='btn cancel'>Cancel</button>
 <button class='btn red ok'>Do it!</button>
 </footer>
+</div>
+<div class='card modal success alert' id='modal-success'>
+You were successful!
 </div>
 <script>
   (function() {
     $('#modal-warning').on('ok', function() {
       return setTimeout(function() {
         return $('#modal-success').modal({
-          alert: true,
-          timeout: 1300
+          overlay: false,
+          duration: 1300
         });
       }, 700);
     });

@@ -1,34 +1,96 @@
 %section#modal.nav
-	%h3.section Modal
+	%h3.section Modal Cards
+	%p
+		Cards can be displayed as modal views by adding the
+		%code.highlight modal
+		class to the card and using a link or button to target the card.
+	%p
+		%button{ 'data-action' => 'modal', 'data-target' => '#modal-default' } Default
+	%pre.demo
+		%code
+			= "&lt;div class=\"card modal\" id=\"modal-default\"&gt;\n"
+			= "\t&lt;header&gt;Default Modal Card&lt;/header&gt;\n"
+			= "\t&lt;p&gt;This is the default style for modal cards.&lt;/p&gt;\n"
+			= "\t&lt;a class=\"ok\"&gt;Dismiss&lt;a&gt;\n"
+			= "\t&lt;footer&gt;Default card footer&lt;/footer&gt;\n"
+			= "&lt;/div&gt;\n\n"
+			= "&lt;button data-action=\"modal\" data-target=\"#modal-default\"&gt;Default&lt;/button&gt;"
 
-	%ul
-		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-success', 'data-overlay' => 'false', 'data-duration' => 1300 } Success
-		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-warning', 'data-overlay' => 'static' } Warning
-		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-error', 'data-overlay' => 'true' } Error
+	%h4 Overlay
+	%p
+		By default, the dimmed overlay will appear behind the modal card. This can be disabled using the
+		%code.highlight data-overlay="false"
+		attribute on the targetting link or button.
+	%p
+		%button{ 'data-action' => 'modal', 'data-target' => '#modal-default', 'data-overlay' => 'false' } No Overlay
+	%pre.demo
+		%code &lt;button data-action="modal" data-target="#modal-default" data-overlay="false"&gt;No Overlay&lt;/button&gt;
+	%p
+		By default, clicking outside the card will dismiss the modal. This can be disabled using the
+		%code.highlight data-overlay="static"
+		attribute on the targetting link or button.
+	%p
+		%button{ 'data-action' => 'modal', 'data-target' => '#modal-default', 'data-overlay' => 'static' } Static Overlay
+	%pre.demo
+		%code &lt;button data-action="modal" data-target="#modal-default" data-overlay="static"&gt;Static Overlay&lt;/button&gt;
 
-	#modal-success.card.modal.green.alert
-		You were successful!
+	%h4 Duration
+	%p
+		By default, the modal card will remain visible until it is dismissed. A modal can be automatically dismissed
+		after a specified delay using the
+		%code.highlight data-duration
+		attribute on the targetting link or button. The duration is specified in milliseconds.
+	%p
+		%button{ 'data-action' => 'modal', 'data-target' => '#modal-default', 'data-duration' => 1300 } Auto-dismiss
+	%pre.demo
+		%code &lt;button data-action="modal" data-target="#modal-default" data-duration="1300"&gt;Auto-dismiss&lt;/button&gt;
 
-	#modal-error.card.modal.red
-		%header
-			%i.fa.fa-exclamation-circle
-			Error
-			%i.close.fa.fa-close
-		This is an error message
-		%footer.btns
-			%button.btn.ok Ok
+	%h4 Action Buttons
+	%p
+		Modal cards can trigger actions using buttons in the card footer. Adding the
+		%code.highlight btns
+		class to the card footer will evenly distribute any buttons it contains.
+		Buttons with a class of
+		%code.highlight ok
+		or
+		%code.highlight cancel
+		will trigger an event of the same names on the card.
+	%p
+		%button.warning{ 'data-action' => 'modal', 'data-target' => '#modal-warning', 'data-overlay' => 'static' } Dialog
+	%pre.demo
+		%code
+			= "&lt;div class=\"card modal warning\" id=\"modal-warning\"&gt;\n"
+			= "\t&lt;header&gt;Warning Modal Card&lt;/header&gt;\n"
+			= "\t&lt;p&gt;Are you sure you want to do this thing?&lt;/p&gt;\n"
+			= "\t&lt;footer class=\"btns\"&gt;\n"
+			= "\t\t&lt;button class=\"cancel\"&gt;Cancel&lt;/button&gt;\n"
+			= "\t\t&lt;button class=\"ok\"&gt;Do it!&lt;/button&gt;\n"
+			= "\t&lt;/footer&gt;\n"
+			= "&lt;/div&gt;\n\n"
+			= "&lt;button data-action=\"modal\" data-target=\"#modal-warning\"&gt;Dialog&lt;/button&gt;\n\n"
+			= "&lt;script type=\"text/javascript\"&gt;\n"
+			= "\t$('#modal-warning').on('ok', function() {\n"
+			= "\t\tsetTimeout(function() {\n"
+			= "\t\t\t$('#modal-success').modal({ overlay: false, duration: 1300 });\n"
+			= "\t\t}, 700);\n"
+			= "\t});\n"
+			= "&lt;/script&gt;"
 
-	#modal-warning.card.modal.yellow
-		%header
-			%i.fa.fa-exclamation-triangle
-			Warning
-		Are you sure about that?
+	#modal-default.card.modal
+		%header Default Modal Card
+		%p This is the default style for modal cards.
+		%a.ok Dismiss
+		%footer Default card footer
+
+	#modal-warning.card.modal.warning
+		%header Warning Modal Card
+		Are you sure you want to do this thing?
 		%footer.btns
 			%button.btn.cancel Cancel
 			%button.btn.red.ok Do it!
+
+	#modal-success.card.modal.success.alert
+		You were successful!
 
 	:coffee
 		$ '#modal-warning'
@@ -36,6 +98,6 @@
 			setTimeout ->
 				$ '#modal-success'
 				.modal
-					alert: true
-					timeout: 1300
+					overlay: false
+					duration: 1300
 			, 700
