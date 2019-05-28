@@ -111,6 +111,9 @@
 <li>
 <a class='nav' href='index.html#forms'>Forms</a>
 </li>
+<li>
+<a class='nav' href='index.html#colors'>Colors</a>
+</li>
 </ul>
 <strong>Elements</strong>
 <ul>
@@ -260,6 +263,103 @@ Heading 6
 </tbody>
 </table>
 </div>
+</section>
+
+<section class='nav' id='colors'>
+<h3 class='section'>Colors</h3>
+<p>Many elements in the Barista Framework can be assigned a color scheme. The preferred method of specifying a color scheme is by purpose.</p>
+<p class='txt primary'>
+<code>primary</code>
+<br>
+A blue color scheme for identifying important actions and elements
+</p>
+<p class='txt success'>
+<code>success</code>
+<br>
+A green color scheme for reporting successful actions and events
+</p>
+<p class='txt error'>
+<code>error</code>
+<br>
+A red color scheme for reporting fatal errors or warning of destructive actions.
+<em>This color scheme can also be referenced as</em>
+<code>danger</code>
+</p>
+<p class='txt warning'>
+<code>warning</code>
+<br>
+A yellow color scheme for reporting non-fatal errors or unexpected results
+</p>
+<p class='txt info'>
+<code>info</code>
+<br>
+A cyan color scheme for reporting relevant information
+</p>
+<pre class='demo'><code>&lt;p class="txt primary"&gt;
+	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	A blue color scheme for identifying important actions and elements
+&lt;/p&gt;
+
+&lt;p class="txt success"&gt;
+	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	A green color scheme for reporting successful actions and events
+&lt;/p&gt;
+
+&lt;p class="txt error"&gt;
+	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	A red color scheme for reporting fatal errors or warning of destructive actions.
+	&lt;em&gt;This color scheme can also be referenced as&lt;/em&gt; &lt;code&gt;danger&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;p class="txt warning"&gt;
+	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	A yellow color scheme for reporting non-fatal errors or unexpected results
+&lt;/p&gt;
+
+&lt;p class="txt info"&gt;
+	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	A cyan color scheme for reporting relevant information
+&lt;/p&gt;</code></pre>
+<p>Color schemes can also be referenced by color names. For brevity, these colors will not be demonstrated elsewhere in these documents but any element which can be assigned a color scheme by purpose can also be assigned a color scheme by name.</p>
+<div class='row'>
+<div class='col-sm-6 col-md-4 col-lg-3'>
+<p class='txt code red'>red</p>
+</div>
+<div class='col-sm-6 col-md-4 col-lg-3'>
+<p class='txt code green'>green</p>
+</div>
+<div class='col-sm-6 col-md-4 col-lg-3'>
+<p class='txt code blue'>blue</p>
+</div>
+<div class='col-sm-6 col-md-4 col-lg-3'>
+<p class='txt code cyan'>cyan</p>
+</div>
+<div class='col-sm-6 col-md-4 col-lg-3'>
+<p class='txt code magenta'>magenta</p>
+</div>
+<div class='col-sm-6 col-md-4 col-lg-3'>
+<p class='txt code yellow'>yellow</p>
+</div>
+<div class='col-sm-6 col-md-4 col-lg-3'>
+<p class='txt code purple'>purple</p>
+</div>
+<div class='col-sm-6 col-md-4 col-lg-3'>
+<p class='txt code orange'>orange</p>
+</div>
+</div>
+<pre class='demo'><code>&lt;p class="txt red"&gt;red&lt;/p&gt;
+&lt;p class="txt green"&gt;green&lt;/p&gt;
+&lt;p class="txt blue"&gt;blue&lt;/p&gt;
+&lt;p class="txt cyan"&gt;cyan&lt;/p&gt;
+&lt;p class="txt magenta"&gt;magenta&lt;/p&gt;
+&lt;p class="txt yellow"&gt;yellow&lt;/p&gt;
+&lt;p class="txt purple"&gt;purple&lt;/p&gt;
+&lt;p class="txt orange"&gt;orange&lt;/p&gt;</code></pre>
+<style>
+  p.txt { padding: .25em .5em; }
+  p.txt code { font-weight: bold; }
+  p.txt.code { font-weight: bold; font-family: monospace; }
+</style>
 </section>
 
 <section class='nav' id='buttons'>
