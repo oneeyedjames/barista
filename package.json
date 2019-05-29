@@ -23,7 +23,7 @@
     "bourbon": "^4.2.7",
     "coffeescript": "^1.12.7",
     "haml": "^0.4.3",
-    "minifier": "^0.8.1",
-    "sass": "^1.20.1"
+    "sass": "^1.20.1",
+    "uglify-js": "^3.5.15"
   }
 }
