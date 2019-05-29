@@ -36,25 +36,23 @@ task 'build:js', 'Build CoffeeScript files into JS', ->
 			source  = "jQuery ($) ->\n\t#{source}\n\treturn"
 
 			proc.execSync "coffee -sbp > #{outFile}", input: source
-			proc.execSync "minify #{outFile}"
+			proc.execSync "uglifyjs #{outFile} -cmo #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
 task 'build:css', 'Build Sass files into CSS', ->
 	invoke 'clean:css'
 	record 'build:css', ->
-		try
-			proc.execSync "bourbon install --path=#{sass_src}"
-		catch err
-			throw err
+		sassVer = proc.execSync "sass --version"
+		flag = if sassVer.includes "Ruby Sass" then "t" else "s"
 
 		inFile  = "#{sass_src}/#{sass_root}.sass"
 		outFile = "#{sass_dest}/#{sass_root}.css"
 		minFile = "#{sass_dest}/#{sass_root}.min.css"
 
 		try
-			proc.execSync "sass -t expanded --trace #{inFile} > #{outFile}"
-			proc.execSync "sass -t compressed  --trace #{inFile} > #{minFile}"
+			proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
@@ -63,8 +61,8 @@ task 'build:css', 'Build Sass files into CSS', ->
 		minFile = "#{sass_dest}/#{sass_root}-effects.min.css"
 
 		try
-			proc.execSync "sass -t expanded --trace #{inFile} > #{outFile}"
-			proc.execSync "sass -t compressed  --trace #{inFile} > #{minFile}"
+			proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
@@ -78,8 +76,8 @@ task 'build:css', 'Build Sass files into CSS', ->
 			minFile = "#{sass_dest}/#{sass_root}-#{plugin}.min.css"
 
 			try
-				proc.execSync "sass -t expanded --trace #{inFile} > #{outFile}"
-				proc.execSync "sass -t compressed  --trace #{inFile} > #{minFile}"
+				proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
+				proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
 			catch err
 				console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
