@@ -36,7 +36,7 @@ task 'build:js', 'Build CoffeeScript files into JS', ->
 			source  = "jQuery ($) ->\n\t#{source}\n\treturn"
 
 			proc.execSync "coffee -sbp > #{outFile}", input: source
-			proc.execSync "minify #{outFile}"
+			proc.execSync "uglifyjs #{outFile} -cmo #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
