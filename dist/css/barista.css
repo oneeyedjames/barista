@@ -290,7 +290,7 @@ label {
 .checkbox label, .radio label {
   font-weight: normal;
 }
-.checkbox input[type="checkbox"], .checkbox input[type="radio"], .radio input[type="checkbox"], .radio input[type="radio"] {
+.checkbox input[type=checkbox], .checkbox input[type=radio], .radio input[type=checkbox], .radio input[type=radio] {
   margin: 0 3px 0 0;
   padding: 0;
 }
@@ -299,7 +299,7 @@ label {
   margin: 0 12 0 0;
 }
 
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
+input[type=color], input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], input:not([type]), textarea, select {
   width: 100%;
   margin: 0 0 1.5em;
   padding: 0.75em;
@@ -308,7 +308,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   box-sizing: border-box;
   font-size: 0.75em;
 }
-form.inline input[type="color"], form.inline input[type="date"], form.inline input[type="datetime"], form.inline input[type="datetime-local"], form.inline input[type="email"], form.inline input[type="month"], form.inline input[type="number"], form.inline input[type="password"], form.inline input[type="search"], form.inline input[type="tel"], form.inline input[type="text"], form.inline input[type="time"], form.inline input[type="url"], form.inline input[type="week"], form.inline input:not([type]), form.inline textarea, form.inline select {
+form.inline input[type=color], form.inline input[type=date], form.inline input[type=datetime], form.inline input[type=datetime-local], form.inline input[type=email], form.inline input[type=month], form.inline input[type=number], form.inline input[type=password], form.inline input[type=search], form.inline input[type=tel], form.inline input[type=text], form.inline input[type=time], form.inline input[type=url], form.inline input[type=week], form.inline input:not([type]), form.inline textarea, form.inline select {
   width: auto;
   margin-right: 3px;
 }
@@ -669,7 +669,7 @@ table.table tbody tr:last-child th:first-child, table.table tbody tr:last-child 
 table.table tbody tr:last-child th:last-child, table.table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 0.5em;
 }
-table.table input[type="color"], table.table input[type="date"], table.table input[type="datetime"], table.table input[type="datetime-local"], table.table input[type="email"], table.table input[type="month"], table.table input[type="number"], table.table input[type="password"], table.table input[type="search"], table.table input[type="tel"], table.table input[type="text"], table.table input[type="time"], table.table input[type="url"], table.table input[type="week"], table.table input:not([type]), table.table textarea, table.table select {
+table.table input[type=color], table.table input[type=date], table.table input[type=datetime], table.table input[type=datetime-local], table.table input[type=email], table.table input[type=month], table.table input[type=number], table.table input[type=password], table.table input[type=search], table.table input[type=tel], table.table input[type=text], table.table input[type=time], table.table input[type=url], table.table input[type=week], table.table input:not([type]), table.table textarea, table.table select {
   margin: 0;
 }
 table.table.red, table.table.danger, table.table.error {
@@ -1890,7 +1890,7 @@ ul.menu.tabs {
     left: -100%;
   }
 }
-.btn, button, input[type="button"], input[type="reset"], input[type="submit"] {
+.btn, button, input[type=button], input[type=reset], input[type=submit] {
   display: inline-block;
   padding: 0.375em 0.75em;
   border: 1px solid #999999;
@@ -1907,281 +1907,281 @@ ul.menu.tabs {
   background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
   background-image: linear-gradient(0deg,#999999, #b3b3b3);
 }
-.btn:active, .btn.active, button:active, button.active, input[type="button"]:active, input[type="button"].active, input[type="reset"]:active, input[type="reset"].active, input[type="submit"]:active, input[type="submit"].active {
+.btn:active, .btn.active, button:active, button.active, input[type=button]:active, input[type=button].active, input[type=reset]:active, input[type=reset].active, input[type=submit]:active, input[type=submit].active {
   background-color: #999999;
   background-image: -webkit-linear-gradient(-450deg, #999999, #b3b3b3);
   background-image: linear-gradient(180deg,#999999, #b3b3b3);
 }
-.btn:visited, .btn.visited, button:visited, button.visited, input[type="button"]:visited, input[type="button"].visited, input[type="reset"]:visited, input[type="reset"].visited, input[type="submit"]:visited, input[type="submit"].visited {
+.btn:visited, .btn.visited, button:visited, button.visited, input[type=button]:visited, input[type=button].visited, input[type=reset]:visited, input[type=reset].visited, input[type=submit]:visited, input[type=submit].visited {
   color: #FFFFFF;
 }
-.btn[disabled], .btn.disabled, button[disabled], button.disabled, input[type="button"][disabled], input[type="button"].disabled, input[type="reset"][disabled], input[type="reset"].disabled, input[type="submit"][disabled], input[type="submit"].disabled {
+.btn[disabled], .btn.disabled, button[disabled], button.disabled, input[type=button][disabled], input[type=button].disabled, input[type=reset][disabled], input[type=reset].disabled, input[type=submit][disabled], input[type=submit].disabled {
   background: #999999;
   color: #DDDDDD;
   cursor: no-drop;
 }
-.btn.text, button.text, input[type="button"].text, input[type="reset"].text, input[type="submit"].text {
+.btn.text, button.text, input[type=button].text, input[type=reset].text, input[type=submit].text {
   color: #999999;
 }
-.btn.text:active, .btn.text:hover, button.text:active, button.text:hover, input[type="button"].text:active, input[type="button"].text:hover, input[type="reset"].text:active, input[type="reset"].text:hover, input[type="submit"].text:active, input[type="submit"].text:hover {
+.btn.text:active, .btn.text:hover, button.text:active, button.text:hover, input[type=button].text:active, input[type=button].text:hover, input[type=reset].text:active, input[type=reset].text:hover, input[type=submit].text:active, input[type=submit].text:hover {
   background: none;
 }
-.btn .bdg, button .bdg, input[type="button"] .bdg, input[type="reset"] .bdg, input[type="submit"] .bdg {
+.btn .bdg, button .bdg, input[type=button] .bdg, input[type=reset] .bdg, input[type=submit] .bdg {
   background-color: #FFFFFF;
   color: #737373;
 }
-.btn:visited, button:visited, input[type="button"]:visited, input[type="reset"]:visited, input[type="submit"]:visited {
+.btn:visited, button:visited, input[type=button]:visited, input[type=reset]:visited, input[type=submit]:visited {
   color: #FFFFFF;
 }
-.btn.sm, button.sm, input[type="button"].sm, input[type="reset"].sm, input[type="submit"].sm {
+.btn.sm, button.sm, input[type=button].sm, input[type=reset].sm, input[type=submit].sm {
   padding: 0.1875em 0.375em;
   border-radius: 0.375em;
 }
-.btn.lg, button.lg, input[type="button"].lg, input[type="reset"].lg, input[type="submit"].lg {
+.btn.lg, button.lg, input[type=button].lg, input[type=reset].lg, input[type=submit].lg {
   padding: 0.75em 1.125em;
   border-radius: 0.375em;
 }
-.btn.red, .btn.danger, .btn.error, button.red, button.danger, button.error, input[type="button"].red, input[type="button"].danger, input[type="button"].error, input[type="reset"].red, input[type="reset"].danger, input[type="reset"].error, input[type="submit"].red, input[type="submit"].danger, input[type="submit"].error {
+.btn.red, .btn.danger, .btn.error, button.red, button.danger, button.error, input[type=button].red, input[type=button].danger, input[type=button].error, input[type=reset].red, input[type=reset].danger, input[type=reset].error, input[type=submit].red, input[type=submit].danger, input[type=submit].error {
   color: #FFFFFF;
   border-color: #a52b0e;
   background-color: #DC3912;
   background-image: -webkit-linear-gradient(-270deg, #DC3912, #e56b4d);
   background-image: linear-gradient(0deg,#DC3912, #e56b4d);
 }
-.btn.red:active, .btn.red.active, .btn.danger:active, .btn.danger.active, .btn.error:active, .btn.error.active, button.red:active, button.red.active, button.danger:active, button.danger.active, button.error:active, button.error.active, input[type="button"].red:active, input[type="button"].red.active, input[type="button"].danger:active, input[type="button"].danger.active, input[type="button"].error:active, input[type="button"].error.active, input[type="reset"].red:active, input[type="reset"].red.active, input[type="reset"].danger:active, input[type="reset"].danger.active, input[type="reset"].error:active, input[type="reset"].error.active, input[type="submit"].red:active, input[type="submit"].red.active, input[type="submit"].danger:active, input[type="submit"].danger.active, input[type="submit"].error:active, input[type="submit"].error.active {
+.btn.red:active, .btn.red.active, .btn.danger:active, .btn.danger.active, .btn.error:active, .btn.error.active, button.red:active, button.red.active, button.danger:active, button.danger.active, button.error:active, button.error.active, input[type=button].red:active, input[type=button].red.active, input[type=button].danger:active, input[type=button].danger.active, input[type=button].error:active, input[type=button].error.active, input[type=reset].red:active, input[type=reset].red.active, input[type=reset].danger:active, input[type=reset].danger.active, input[type=reset].error:active, input[type=reset].error.active, input[type=submit].red:active, input[type=submit].red.active, input[type=submit].danger:active, input[type=submit].danger.active, input[type=submit].error:active, input[type=submit].error.active {
   background-color: #DC3912;
   background-image: -webkit-linear-gradient(-450deg, #DC3912, #e56b4d);
   background-image: linear-gradient(180deg,#DC3912, #e56b4d);
 }
-.btn.red:visited, .btn.red.visited, .btn.danger:visited, .btn.danger.visited, .btn.error:visited, .btn.error.visited, button.red:visited, button.red.visited, button.danger:visited, button.danger.visited, button.error:visited, button.error.visited, input[type="button"].red:visited, input[type="button"].red.visited, input[type="button"].danger:visited, input[type="button"].danger.visited, input[type="button"].error:visited, input[type="button"].error.visited, input[type="reset"].red:visited, input[type="reset"].red.visited, input[type="reset"].danger:visited, input[type="reset"].danger.visited, input[type="reset"].error:visited, input[type="reset"].error.visited, input[type="submit"].red:visited, input[type="submit"].red.visited, input[type="submit"].danger:visited, input[type="submit"].danger.visited, input[type="submit"].error:visited, input[type="submit"].error.visited {
+.btn.red:visited, .btn.red.visited, .btn.danger:visited, .btn.danger.visited, .btn.error:visited, .btn.error.visited, button.red:visited, button.red.visited, button.danger:visited, button.danger.visited, button.error:visited, button.error.visited, input[type=button].red:visited, input[type=button].red.visited, input[type=button].danger:visited, input[type=button].danger.visited, input[type=button].error:visited, input[type=button].error.visited, input[type=reset].red:visited, input[type=reset].red.visited, input[type=reset].danger:visited, input[type=reset].danger.visited, input[type=reset].error:visited, input[type=reset].error.visited, input[type=submit].red:visited, input[type=submit].red.visited, input[type=submit].danger:visited, input[type=submit].danger.visited, input[type=submit].error:visited, input[type=submit].error.visited {
   color: #FFFFFF;
 }
-.btn.red[disabled], .btn.red.disabled, .btn.danger[disabled], .btn.danger.disabled, .btn.error[disabled], .btn.error.disabled, button.red[disabled], button.red.disabled, button.danger[disabled], button.danger.disabled, button.error[disabled], button.error.disabled, input[type="button"].red[disabled], input[type="button"].red.disabled, input[type="button"].danger[disabled], input[type="button"].danger.disabled, input[type="button"].error[disabled], input[type="button"].error.disabled, input[type="reset"].red[disabled], input[type="reset"].red.disabled, input[type="reset"].danger[disabled], input[type="reset"].danger.disabled, input[type="reset"].error[disabled], input[type="reset"].error.disabled, input[type="submit"].red[disabled], input[type="submit"].red.disabled, input[type="submit"].danger[disabled], input[type="submit"].danger.disabled, input[type="submit"].error[disabled], input[type="submit"].error.disabled {
+.btn.red[disabled], .btn.red.disabled, .btn.danger[disabled], .btn.danger.disabled, .btn.error[disabled], .btn.error.disabled, button.red[disabled], button.red.disabled, button.danger[disabled], button.danger.disabled, button.error[disabled], button.error.disabled, input[type=button].red[disabled], input[type=button].red.disabled, input[type=button].danger[disabled], input[type=button].danger.disabled, input[type=button].error[disabled], input[type=button].error.disabled, input[type=reset].red[disabled], input[type=reset].red.disabled, input[type=reset].danger[disabled], input[type=reset].danger.disabled, input[type=reset].error[disabled], input[type=reset].error.disabled, input[type=submit].red[disabled], input[type=submit].red.disabled, input[type=submit].danger[disabled], input[type=submit].danger.disabled, input[type=submit].error[disabled], input[type=submit].error.disabled {
   background: #DC3912;
   color: #F4C3B7;
   cursor: no-drop;
 }
-.btn.red.text, .btn.danger.text, .btn.error.text, button.red.text, button.danger.text, button.error.text, input[type="button"].red.text, input[type="button"].danger.text, input[type="button"].error.text, input[type="reset"].red.text, input[type="reset"].danger.text, input[type="reset"].error.text, input[type="submit"].red.text, input[type="submit"].danger.text, input[type="submit"].error.text {
+.btn.red.text, .btn.danger.text, .btn.error.text, button.red.text, button.danger.text, button.error.text, input[type=button].red.text, input[type=button].danger.text, input[type=button].error.text, input[type=reset].red.text, input[type=reset].danger.text, input[type=reset].error.text, input[type=submit].red.text, input[type=submit].danger.text, input[type=submit].error.text {
   color: #DC3912;
 }
-.btn.red.text:active, .btn.red.text:hover, .btn.danger.text:active, .btn.danger.text:hover, .btn.error.text:active, .btn.error.text:hover, button.red.text:active, button.red.text:hover, button.danger.text:active, button.danger.text:hover, button.error.text:active, button.error.text:hover, input[type="button"].red.text:active, input[type="button"].red.text:hover, input[type="button"].danger.text:active, input[type="button"].danger.text:hover, input[type="button"].error.text:active, input[type="button"].error.text:hover, input[type="reset"].red.text:active, input[type="reset"].red.text:hover, input[type="reset"].danger.text:active, input[type="reset"].danger.text:hover, input[type="reset"].error.text:active, input[type="reset"].error.text:hover, input[type="submit"].red.text:active, input[type="submit"].red.text:hover, input[type="submit"].danger.text:active, input[type="submit"].danger.text:hover, input[type="submit"].error.text:active, input[type="submit"].error.text:hover {
+.btn.red.text:active, .btn.red.text:hover, .btn.danger.text:active, .btn.danger.text:hover, .btn.error.text:active, .btn.error.text:hover, button.red.text:active, button.red.text:hover, button.danger.text:active, button.danger.text:hover, button.error.text:active, button.error.text:hover, input[type=button].red.text:active, input[type=button].red.text:hover, input[type=button].danger.text:active, input[type=button].danger.text:hover, input[type=button].error.text:active, input[type=button].error.text:hover, input[type=reset].red.text:active, input[type=reset].red.text:hover, input[type=reset].danger.text:active, input[type=reset].danger.text:hover, input[type=reset].error.text:active, input[type=reset].error.text:hover, input[type=submit].red.text:active, input[type=submit].red.text:hover, input[type=submit].danger.text:active, input[type=submit].danger.text:hover, input[type=submit].error.text:active, input[type=submit].error.text:hover {
   background: none;
 }
-.btn.red .bdg, .btn.danger .bdg, .btn.error .bdg, button.red .bdg, button.danger .bdg, button.error .bdg, input[type="button"].red .bdg, input[type="button"].danger .bdg, input[type="button"].error .bdg, input[type="reset"].red .bdg, input[type="reset"].danger .bdg, input[type="reset"].error .bdg, input[type="submit"].red .bdg, input[type="submit"].danger .bdg, input[type="submit"].error .bdg {
+.btn.red .bdg, .btn.danger .bdg, .btn.error .bdg, button.red .bdg, button.danger .bdg, button.error .bdg, input[type=button].red .bdg, input[type=button].danger .bdg, input[type=button].error .bdg, input[type=reset].red .bdg, input[type=reset].danger .bdg, input[type=reset].error .bdg, input[type=submit].red .bdg, input[type=submit].danger .bdg, input[type=submit].error .bdg {
   background-color: #FFFFFF;
   color: #a52b0e;
 }
-.btn.green, .btn.success, button.green, button.success, input[type="button"].green, input[type="button"].success, input[type="reset"].green, input[type="reset"].success, input[type="submit"].green, input[type="submit"].success {
+.btn.green, .btn.success, button.green, button.success, input[type=button].green, input[type=button].success, input[type=reset].green, input[type=reset].success, input[type=submit].green, input[type=submit].success {
   color: #FFFFFF;
   border-color: #0c7112;
   background-color: #109618;
   background-image: -webkit-linear-gradient(-270deg, #109618, #4cb052);
   background-image: linear-gradient(0deg,#109618, #4cb052);
 }
-.btn.green:active, .btn.green.active, .btn.success:active, .btn.success.active, button.green:active, button.green.active, button.success:active, button.success.active, input[type="button"].green:active, input[type="button"].green.active, input[type="button"].success:active, input[type="button"].success.active, input[type="reset"].green:active, input[type="reset"].green.active, input[type="reset"].success:active, input[type="reset"].success.active, input[type="submit"].green:active, input[type="submit"].green.active, input[type="submit"].success:active, input[type="submit"].success.active {
+.btn.green:active, .btn.green.active, .btn.success:active, .btn.success.active, button.green:active, button.green.active, button.success:active, button.success.active, input[type=button].green:active, input[type=button].green.active, input[type=button].success:active, input[type=button].success.active, input[type=reset].green:active, input[type=reset].green.active, input[type=reset].success:active, input[type=reset].success.active, input[type=submit].green:active, input[type=submit].green.active, input[type=submit].success:active, input[type=submit].success.active {
   background-color: #109618;
   background-image: -webkit-linear-gradient(-450deg, #109618, #4cb052);
   background-image: linear-gradient(180deg,#109618, #4cb052);
 }
-.btn.green:visited, .btn.green.visited, .btn.success:visited, .btn.success.visited, button.green:visited, button.green.visited, button.success:visited, button.success.visited, input[type="button"].green:visited, input[type="button"].green.visited, input[type="button"].success:visited, input[type="button"].success.visited, input[type="reset"].green:visited, input[type="reset"].green.visited, input[type="reset"].success:visited, input[type="reset"].success.visited, input[type="submit"].green:visited, input[type="submit"].green.visited, input[type="submit"].success:visited, input[type="submit"].success.visited {
+.btn.green:visited, .btn.green.visited, .btn.success:visited, .btn.success.visited, button.green:visited, button.green.visited, button.success:visited, button.success.visited, input[type=button].green:visited, input[type=button].green.visited, input[type=button].success:visited, input[type=button].success.visited, input[type=reset].green:visited, input[type=reset].green.visited, input[type=reset].success:visited, input[type=reset].success.visited, input[type=submit].green:visited, input[type=submit].green.visited, input[type=submit].success:visited, input[type=submit].success.visited {
   color: #FFFFFF;
 }
-.btn.green[disabled], .btn.green.disabled, .btn.success[disabled], .btn.success.disabled, button.green[disabled], button.green.disabled, button.success[disabled], button.success.disabled, input[type="button"].green[disabled], input[type="button"].green.disabled, input[type="button"].success[disabled], input[type="button"].success.disabled, input[type="reset"].green[disabled], input[type="reset"].green.disabled, input[type="reset"].success[disabled], input[type="reset"].success.disabled, input[type="submit"].green[disabled], input[type="submit"].green.disabled, input[type="submit"].success[disabled], input[type="submit"].success.disabled {
+.btn.green[disabled], .btn.green.disabled, .btn.success[disabled], .btn.success.disabled, button.green[disabled], button.green.disabled, button.success[disabled], button.success.disabled, input[type=button].green[disabled], input[type=button].green.disabled, input[type=button].success[disabled], input[type=button].success.disabled, input[type=reset].green[disabled], input[type=reset].green.disabled, input[type=reset].success[disabled], input[type=reset].success.disabled, input[type=submit].green[disabled], input[type=submit].green.disabled, input[type=submit].success[disabled], input[type=submit].success.disabled {
   background: #109618;
   color: #B6DFB9;
   cursor: no-drop;
 }
-.btn.green.text, .btn.success.text, button.green.text, button.success.text, input[type="button"].green.text, input[type="button"].success.text, input[type="reset"].green.text, input[type="reset"].success.text, input[type="submit"].green.text, input[type="submit"].success.text {
+.btn.green.text, .btn.success.text, button.green.text, button.success.text, input[type=button].green.text, input[type=button].success.text, input[type=reset].green.text, input[type=reset].success.text, input[type=submit].green.text, input[type=submit].success.text {
   color: #109618;
 }
-.btn.green.text:active, .btn.green.text:hover, .btn.success.text:active, .btn.success.text:hover, button.green.text:active, button.green.text:hover, button.success.text:active, button.success.text:hover, input[type="button"].green.text:active, input[type="button"].green.text:hover, input[type="button"].success.text:active, input[type="button"].success.text:hover, input[type="reset"].green.text:active, input[type="reset"].green.text:hover, input[type="reset"].success.text:active, input[type="reset"].success.text:hover, input[type="submit"].green.text:active, input[type="submit"].green.text:hover, input[type="submit"].success.text:active, input[type="submit"].success.text:hover {
+.btn.green.text:active, .btn.green.text:hover, .btn.success.text:active, .btn.success.text:hover, button.green.text:active, button.green.text:hover, button.success.text:active, button.success.text:hover, input[type=button].green.text:active, input[type=button].green.text:hover, input[type=button].success.text:active, input[type=button].success.text:hover, input[type=reset].green.text:active, input[type=reset].green.text:hover, input[type=reset].success.text:active, input[type=reset].success.text:hover, input[type=submit].green.text:active, input[type=submit].green.text:hover, input[type=submit].success.text:active, input[type=submit].success.text:hover {
   background: none;
 }
-.btn.green .bdg, .btn.success .bdg, button.green .bdg, button.success .bdg, input[type="button"].green .bdg, input[type="button"].success .bdg, input[type="reset"].green .bdg, input[type="reset"].success .bdg, input[type="submit"].green .bdg, input[type="submit"].success .bdg {
+.btn.green .bdg, .btn.success .bdg, button.green .bdg, button.success .bdg, input[type=button].green .bdg, input[type=button].success .bdg, input[type=reset].green .bdg, input[type=reset].success .bdg, input[type=submit].green .bdg, input[type=submit].success .bdg {
   background-color: #FFFFFF;
   color: #0c7112;
 }
-.btn.blue, .btn.primary, button.blue, button.primary, input[type="button"].blue, input[type="button"].primary, input[type="reset"].blue, input[type="reset"].primary, input[type="submit"].blue, input[type="submit"].primary {
+.btn.blue, .btn.primary, button.blue, button.primary, input[type=button].blue, input[type=button].primary, input[type=reset].blue, input[type=reset].primary, input[type=submit].blue, input[type=submit].primary {
   color: #FFFFFF;
   border-color: #264d99;
   background-color: #3366CC;
   background-image: -webkit-linear-gradient(-270deg, #3366CC, #668cd9);
   background-image: linear-gradient(0deg,#3366CC, #668cd9);
 }
-.btn.blue:active, .btn.blue.active, .btn.primary:active, .btn.primary.active, button.blue:active, button.blue.active, button.primary:active, button.primary.active, input[type="button"].blue:active, input[type="button"].blue.active, input[type="button"].primary:active, input[type="button"].primary.active, input[type="reset"].blue:active, input[type="reset"].blue.active, input[type="reset"].primary:active, input[type="reset"].primary.active, input[type="submit"].blue:active, input[type="submit"].blue.active, input[type="submit"].primary:active, input[type="submit"].primary.active {
+.btn.blue:active, .btn.blue.active, .btn.primary:active, .btn.primary.active, button.blue:active, button.blue.active, button.primary:active, button.primary.active, input[type=button].blue:active, input[type=button].blue.active, input[type=button].primary:active, input[type=button].primary.active, input[type=reset].blue:active, input[type=reset].blue.active, input[type=reset].primary:active, input[type=reset].primary.active, input[type=submit].blue:active, input[type=submit].blue.active, input[type=submit].primary:active, input[type=submit].primary.active {
   background-color: #3366CC;
   background-image: -webkit-linear-gradient(-450deg, #3366CC, #668cd9);
   background-image: linear-gradient(180deg,#3366CC, #668cd9);
 }
-.btn.blue:visited, .btn.blue.visited, .btn.primary:visited, .btn.primary.visited, button.blue:visited, button.blue.visited, button.primary:visited, button.primary.visited, input[type="button"].blue:visited, input[type="button"].blue.visited, input[type="button"].primary:visited, input[type="button"].primary.visited, input[type="reset"].blue:visited, input[type="reset"].blue.visited, input[type="reset"].primary:visited, input[type="reset"].primary.visited, input[type="submit"].blue:visited, input[type="submit"].blue.visited, input[type="submit"].primary:visited, input[type="submit"].primary.visited {
+.btn.blue:visited, .btn.blue.visited, .btn.primary:visited, .btn.primary.visited, button.blue:visited, button.blue.visited, button.primary:visited, button.primary.visited, input[type=button].blue:visited, input[type=button].blue.visited, input[type=button].primary:visited, input[type=button].primary.visited, input[type=reset].blue:visited, input[type=reset].blue.visited, input[type=reset].primary:visited, input[type=reset].primary.visited, input[type=submit].blue:visited, input[type=submit].blue.visited, input[type=submit].primary:visited, input[type=submit].primary.visited {
   color: #FFFFFF;
 }
-.btn.blue[disabled], .btn.blue.disabled, .btn.primary[disabled], .btn.primary.disabled, button.blue[disabled], button.blue.disabled, button.primary[disabled], button.primary.disabled, input[type="button"].blue[disabled], input[type="button"].blue.disabled, input[type="button"].primary[disabled], input[type="button"].primary.disabled, input[type="reset"].blue[disabled], input[type="reset"].blue.disabled, input[type="reset"].primary[disabled], input[type="reset"].primary.disabled, input[type="submit"].blue[disabled], input[type="submit"].blue.disabled, input[type="submit"].primary[disabled], input[type="submit"].primary.disabled {
+.btn.blue[disabled], .btn.blue.disabled, .btn.primary[disabled], .btn.primary.disabled, button.blue[disabled], button.blue.disabled, button.primary[disabled], button.primary.disabled, input[type=button].blue[disabled], input[type=button].blue.disabled, input[type=button].primary[disabled], input[type=button].primary.disabled, input[type=reset].blue[disabled], input[type=reset].blue.disabled, input[type=reset].primary[disabled], input[type=reset].primary.disabled, input[type=submit].blue[disabled], input[type=submit].blue.disabled, input[type=submit].primary[disabled], input[type=submit].primary.disabled {
   background: #3366CC;
   color: #C1D0EF;
   cursor: no-drop;
 }
-.btn.blue.text, .btn.primary.text, button.blue.text, button.primary.text, input[type="button"].blue.text, input[type="button"].primary.text, input[type="reset"].blue.text, input[type="reset"].primary.text, input[type="submit"].blue.text, input[type="submit"].primary.text {
+.btn.blue.text, .btn.primary.text, button.blue.text, button.primary.text, input[type=button].blue.text, input[type=button].primary.text, input[type=reset].blue.text, input[type=reset].primary.text, input[type=submit].blue.text, input[type=submit].primary.text {
   color: #3366CC;
 }
-.btn.blue.text:active, .btn.blue.text:hover, .btn.primary.text:active, .btn.primary.text:hover, button.blue.text:active, button.blue.text:hover, button.primary.text:active, button.primary.text:hover, input[type="button"].blue.text:active, input[type="button"].blue.text:hover, input[type="button"].primary.text:active, input[type="button"].primary.text:hover, input[type="reset"].blue.text:active, input[type="reset"].blue.text:hover, input[type="reset"].primary.text:active, input[type="reset"].primary.text:hover, input[type="submit"].blue.text:active, input[type="submit"].blue.text:hover, input[type="submit"].primary.text:active, input[type="submit"].primary.text:hover {
+.btn.blue.text:active, .btn.blue.text:hover, .btn.primary.text:active, .btn.primary.text:hover, button.blue.text:active, button.blue.text:hover, button.primary.text:active, button.primary.text:hover, input[type=button].blue.text:active, input[type=button].blue.text:hover, input[type=button].primary.text:active, input[type=button].primary.text:hover, input[type=reset].blue.text:active, input[type=reset].blue.text:hover, input[type=reset].primary.text:active, input[type=reset].primary.text:hover, input[type=submit].blue.text:active, input[type=submit].blue.text:hover, input[type=submit].primary.text:active, input[type=submit].primary.text:hover {
   background: none;
 }
-.btn.blue .bdg, .btn.primary .bdg, button.blue .bdg, button.primary .bdg, input[type="button"].blue .bdg, input[type="button"].primary .bdg, input[type="reset"].blue .bdg, input[type="reset"].primary .bdg, input[type="submit"].blue .bdg, input[type="submit"].primary .bdg {
+.btn.blue .bdg, .btn.primary .bdg, button.blue .bdg, button.primary .bdg, input[type=button].blue .bdg, input[type=button].primary .bdg, input[type=reset].blue .bdg, input[type=reset].primary .bdg, input[type=submit].blue .bdg, input[type=submit].primary .bdg {
   background-color: #FFFFFF;
   color: #264d99;
 }
-.btn.cyan, .btn.info, button.cyan, button.info, input[type="button"].cyan, input[type="button"].info, input[type="reset"].cyan, input[type="reset"].info, input[type="submit"].cyan, input[type="submit"].info {
+.btn.cyan, .btn.info, button.cyan, button.info, input[type=button].cyan, input[type=button].info, input[type=reset].cyan, input[type=reset].info, input[type=submit].cyan, input[type=submit].info {
   color: #FFFFFF;
   border-color: #3681a4;
   background-color: #48ACDB;
   background-image: -webkit-linear-gradient(-270deg, #48ACDB, #76c1e4);
   background-image: linear-gradient(0deg,#48ACDB, #76c1e4);
 }
-.btn.cyan:active, .btn.cyan.active, .btn.info:active, .btn.info.active, button.cyan:active, button.cyan.active, button.info:active, button.info.active, input[type="button"].cyan:active, input[type="button"].cyan.active, input[type="button"].info:active, input[type="button"].info.active, input[type="reset"].cyan:active, input[type="reset"].cyan.active, input[type="reset"].info:active, input[type="reset"].info.active, input[type="submit"].cyan:active, input[type="submit"].cyan.active, input[type="submit"].info:active, input[type="submit"].info.active {
+.btn.cyan:active, .btn.cyan.active, .btn.info:active, .btn.info.active, button.cyan:active, button.cyan.active, button.info:active, button.info.active, input[type=button].cyan:active, input[type=button].cyan.active, input[type=button].info:active, input[type=button].info.active, input[type=reset].cyan:active, input[type=reset].cyan.active, input[type=reset].info:active, input[type=reset].info.active, input[type=submit].cyan:active, input[type=submit].cyan.active, input[type=submit].info:active, input[type=submit].info.active {
   background-color: #48ACDB;
   background-image: -webkit-linear-gradient(-450deg, #48ACDB, #76c1e4);
   background-image: linear-gradient(180deg,#48ACDB, #76c1e4);
 }
-.btn.cyan:visited, .btn.cyan.visited, .btn.info:visited, .btn.info.visited, button.cyan:visited, button.cyan.visited, button.info:visited, button.info.visited, input[type="button"].cyan:visited, input[type="button"].cyan.visited, input[type="button"].info:visited, input[type="button"].info.visited, input[type="reset"].cyan:visited, input[type="reset"].cyan.visited, input[type="reset"].info:visited, input[type="reset"].info.visited, input[type="submit"].cyan:visited, input[type="submit"].cyan.visited, input[type="submit"].info:visited, input[type="submit"].info.visited {
+.btn.cyan:visited, .btn.cyan.visited, .btn.info:visited, .btn.info.visited, button.cyan:visited, button.cyan.visited, button.info:visited, button.info.visited, input[type=button].cyan:visited, input[type=button].cyan.visited, input[type=button].info:visited, input[type=button].info.visited, input[type=reset].cyan:visited, input[type=reset].cyan.visited, input[type=reset].info:visited, input[type=reset].info.visited, input[type=submit].cyan:visited, input[type=submit].cyan.visited, input[type=submit].info:visited, input[type=submit].info.visited {
   color: #FFFFFF;
 }
-.btn.cyan[disabled], .btn.cyan.disabled, .btn.info[disabled], .btn.info.disabled, button.cyan[disabled], button.cyan.disabled, button.info[disabled], button.info.disabled, input[type="button"].cyan[disabled], input[type="button"].cyan.disabled, input[type="button"].info[disabled], input[type="button"].info.disabled, input[type="reset"].cyan[disabled], input[type="reset"].cyan.disabled, input[type="reset"].info[disabled], input[type="reset"].info.disabled, input[type="submit"].cyan[disabled], input[type="submit"].cyan.disabled, input[type="submit"].info[disabled], input[type="submit"].info.disabled {
+.btn.cyan[disabled], .btn.cyan.disabled, .btn.info[disabled], .btn.info.disabled, button.cyan[disabled], button.cyan.disabled, button.info[disabled], button.info.disabled, input[type=button].cyan[disabled], input[type=button].cyan.disabled, input[type=button].info[disabled], input[type=button].info.disabled, input[type=reset].cyan[disabled], input[type=reset].cyan.disabled, input[type=reset].info[disabled], input[type=reset].info.disabled, input[type=submit].cyan[disabled], input[type=submit].cyan.disabled, input[type=submit].info[disabled], input[type=submit].info.disabled {
   background: #48ACDB;
   color: #BBE6F7;
   cursor: no-drop;
 }
-.btn.cyan.text, .btn.info.text, button.cyan.text, button.info.text, input[type="button"].cyan.text, input[type="button"].info.text, input[type="reset"].cyan.text, input[type="reset"].info.text, input[type="submit"].cyan.text, input[type="submit"].info.text {
+.btn.cyan.text, .btn.info.text, button.cyan.text, button.info.text, input[type=button].cyan.text, input[type=button].info.text, input[type=reset].cyan.text, input[type=reset].info.text, input[type=submit].cyan.text, input[type=submit].info.text {
   color: #48ACDB;
 }
-.btn.cyan.text:active, .btn.cyan.text:hover, .btn.info.text:active, .btn.info.text:hover, button.cyan.text:active, button.cyan.text:hover, button.info.text:active, button.info.text:hover, input[type="button"].cyan.text:active, input[type="button"].cyan.text:hover, input[type="button"].info.text:active, input[type="button"].info.text:hover, input[type="reset"].cyan.text:active, input[type="reset"].cyan.text:hover, input[type="reset"].info.text:active, input[type="reset"].info.text:hover, input[type="submit"].cyan.text:active, input[type="submit"].cyan.text:hover, input[type="submit"].info.text:active, input[type="submit"].info.text:hover {
+.btn.cyan.text:active, .btn.cyan.text:hover, .btn.info.text:active, .btn.info.text:hover, button.cyan.text:active, button.cyan.text:hover, button.info.text:active, button.info.text:hover, input[type=button].cyan.text:active, input[type=button].cyan.text:hover, input[type=button].info.text:active, input[type=button].info.text:hover, input[type=reset].cyan.text:active, input[type=reset].cyan.text:hover, input[type=reset].info.text:active, input[type=reset].info.text:hover, input[type=submit].cyan.text:active, input[type=submit].cyan.text:hover, input[type=submit].info.text:active, input[type=submit].info.text:hover {
   background: none;
 }
-.btn.cyan .bdg, .btn.info .bdg, button.cyan .bdg, button.info .bdg, input[type="button"].cyan .bdg, input[type="button"].info .bdg, input[type="reset"].cyan .bdg, input[type="reset"].info .bdg, input[type="submit"].cyan .bdg, input[type="submit"].info .bdg {
+.btn.cyan .bdg, .btn.info .bdg, button.cyan .bdg, button.info .bdg, input[type=button].cyan .bdg, input[type=button].info .bdg, input[type=reset].cyan .bdg, input[type=reset].info .bdg, input[type=submit].cyan .bdg, input[type=submit].info .bdg {
   background-color: #FFFFFF;
   color: #3681a4;
 }
-.btn.magenta, button.magenta, input[type="button"].magenta, input[type="reset"].magenta, input[type="submit"].magenta {
+.btn.magenta, button.magenta, input[type=button].magenta, input[type=reset].magenta, input[type=submit].magenta {
   color: #FFFFFF;
   border-color: #9a3d82;
   background-color: #CD51AD;
   background-image: -webkit-linear-gradient(-270deg, #CD51AD, #da7dc2);
   background-image: linear-gradient(0deg,#CD51AD, #da7dc2);
 }
-.btn.magenta:active, .btn.magenta.active, button.magenta:active, button.magenta.active, input[type="button"].magenta:active, input[type="button"].magenta.active, input[type="reset"].magenta:active, input[type="reset"].magenta.active, input[type="submit"].magenta:active, input[type="submit"].magenta.active {
+.btn.magenta:active, .btn.magenta.active, button.magenta:active, button.magenta.active, input[type=button].magenta:active, input[type=button].magenta.active, input[type=reset].magenta:active, input[type=reset].magenta.active, input[type=submit].magenta:active, input[type=submit].magenta.active {
   background-color: #CD51AD;
   background-image: -webkit-linear-gradient(-450deg, #CD51AD, #da7dc2);
   background-image: linear-gradient(180deg,#CD51AD, #da7dc2);
 }
-.btn.magenta:visited, .btn.magenta.visited, button.magenta:visited, button.magenta.visited, input[type="button"].magenta:visited, input[type="button"].magenta.visited, input[type="reset"].magenta:visited, input[type="reset"].magenta.visited, input[type="submit"].magenta:visited, input[type="submit"].magenta.visited {
+.btn.magenta:visited, .btn.magenta.visited, button.magenta:visited, button.magenta.visited, input[type=button].magenta:visited, input[type=button].magenta.visited, input[type=reset].magenta:visited, input[type=reset].magenta.visited, input[type=submit].magenta:visited, input[type=submit].magenta.visited {
   color: #FFFFFF;
 }
-.btn.magenta[disabled], .btn.magenta.disabled, button.magenta[disabled], button.magenta.disabled, input[type="button"].magenta[disabled], input[type="button"].magenta.disabled, input[type="reset"].magenta[disabled], input[type="reset"].magenta.disabled, input[type="submit"].magenta[disabled], input[type="submit"].magenta.disabled {
+.btn.magenta[disabled], .btn.magenta.disabled, button.magenta[disabled], button.magenta.disabled, input[type=button].magenta[disabled], input[type=button].magenta.disabled, input[type=reset].magenta[disabled], input[type=reset].magenta.disabled, input[type=submit].magenta[disabled], input[type=submit].magenta.disabled {
   background: #CD51AD;
   color: #F7B4E4;
   cursor: no-drop;
 }
-.btn.magenta.text, button.magenta.text, input[type="button"].magenta.text, input[type="reset"].magenta.text, input[type="submit"].magenta.text {
+.btn.magenta.text, button.magenta.text, input[type=button].magenta.text, input[type=reset].magenta.text, input[type=submit].magenta.text {
   color: #CD51AD;
 }
-.btn.magenta.text:active, .btn.magenta.text:hover, button.magenta.text:active, button.magenta.text:hover, input[type="button"].magenta.text:active, input[type="button"].magenta.text:hover, input[type="reset"].magenta.text:active, input[type="reset"].magenta.text:hover, input[type="submit"].magenta.text:active, input[type="submit"].magenta.text:hover {
+.btn.magenta.text:active, .btn.magenta.text:hover, button.magenta.text:active, button.magenta.text:hover, input[type=button].magenta.text:active, input[type=button].magenta.text:hover, input[type=reset].magenta.text:active, input[type=reset].magenta.text:hover, input[type=submit].magenta.text:active, input[type=submit].magenta.text:hover {
   background: none;
 }
-.btn.magenta .bdg, button.magenta .bdg, input[type="button"].magenta .bdg, input[type="reset"].magenta .bdg, input[type="submit"].magenta .bdg {
+.btn.magenta .bdg, button.magenta .bdg, input[type=button].magenta .bdg, input[type=reset].magenta .bdg, input[type=submit].magenta .bdg {
   background-color: #FFFFFF;
   color: #9a3d82;
 }
-.btn.yellow, .btn.warning, button.yellow, button.warning, input[type="button"].yellow, input[type="button"].warning, input[type="reset"].yellow, input[type="reset"].warning, input[type="submit"].yellow, input[type="submit"].warning {
+.btn.yellow, .btn.warning, button.yellow, button.warning, input[type=button].yellow, input[type=button].warning, input[type=reset].yellow, input[type=reset].warning, input[type=submit].yellow, input[type=submit].warning {
   color: #FFFFFF;
   border-color: #bf8a00;
   background-color: #FFB800;
   background-image: -webkit-linear-gradient(-270deg, #FFB800, #ffca40);
   background-image: linear-gradient(0deg,#FFB800, #ffca40);
 }
-.btn.yellow:active, .btn.yellow.active, .btn.warning:active, .btn.warning.active, button.yellow:active, button.yellow.active, button.warning:active, button.warning.active, input[type="button"].yellow:active, input[type="button"].yellow.active, input[type="button"].warning:active, input[type="button"].warning.active, input[type="reset"].yellow:active, input[type="reset"].yellow.active, input[type="reset"].warning:active, input[type="reset"].warning.active, input[type="submit"].yellow:active, input[type="submit"].yellow.active, input[type="submit"].warning:active, input[type="submit"].warning.active {
+.btn.yellow:active, .btn.yellow.active, .btn.warning:active, .btn.warning.active, button.yellow:active, button.yellow.active, button.warning:active, button.warning.active, input[type=button].yellow:active, input[type=button].yellow.active, input[type=button].warning:active, input[type=button].warning.active, input[type=reset].yellow:active, input[type=reset].yellow.active, input[type=reset].warning:active, input[type=reset].warning.active, input[type=submit].yellow:active, input[type=submit].yellow.active, input[type=submit].warning:active, input[type=submit].warning.active {
   background-color: #FFB800;
   background-image: -webkit-linear-gradient(-450deg, #FFB800, #ffca40);
   background-image: linear-gradient(180deg,#FFB800, #ffca40);
 }
-.btn.yellow:visited, .btn.yellow.visited, .btn.warning:visited, .btn.warning.visited, button.yellow:visited, button.yellow.visited, button.warning:visited, button.warning.visited, input[type="button"].yellow:visited, input[type="button"].yellow.visited, input[type="button"].warning:visited, input[type="button"].warning.visited, input[type="reset"].yellow:visited, input[type="reset"].yellow.visited, input[type="reset"].warning:visited, input[type="reset"].warning.visited, input[type="submit"].yellow:visited, input[type="submit"].yellow.visited, input[type="submit"].warning:visited, input[type="submit"].warning.visited {
+.btn.yellow:visited, .btn.yellow.visited, .btn.warning:visited, .btn.warning.visited, button.yellow:visited, button.yellow.visited, button.warning:visited, button.warning.visited, input[type=button].yellow:visited, input[type=button].yellow.visited, input[type=button].warning:visited, input[type=button].warning.visited, input[type=reset].yellow:visited, input[type=reset].yellow.visited, input[type=reset].warning:visited, input[type=reset].warning.visited, input[type=submit].yellow:visited, input[type=submit].yellow.visited, input[type=submit].warning:visited, input[type=submit].warning.visited {
   color: #FFFFFF;
 }
-.btn.yellow[disabled], .btn.yellow.disabled, .btn.warning[disabled], .btn.warning.disabled, button.yellow[disabled], button.yellow.disabled, button.warning[disabled], button.warning.disabled, input[type="button"].yellow[disabled], input[type="button"].yellow.disabled, input[type="button"].warning[disabled], input[type="button"].warning.disabled, input[type="reset"].yellow[disabled], input[type="reset"].yellow.disabled, input[type="reset"].warning[disabled], input[type="reset"].warning.disabled, input[type="submit"].yellow[disabled], input[type="submit"].yellow.disabled, input[type="submit"].warning[disabled], input[type="submit"].warning.disabled {
+.btn.yellow[disabled], .btn.yellow.disabled, .btn.warning[disabled], .btn.warning.disabled, button.yellow[disabled], button.yellow.disabled, button.warning[disabled], button.warning.disabled, input[type=button].yellow[disabled], input[type=button].yellow.disabled, input[type=button].warning[disabled], input[type=button].warning.disabled, input[type=reset].yellow[disabled], input[type=reset].yellow.disabled, input[type=reset].warning[disabled], input[type=reset].warning.disabled, input[type=submit].yellow[disabled], input[type=submit].yellow.disabled, input[type=submit].warning[disabled], input[type=submit].warning.disabled {
   background: #FFB800;
   color: #FEE0B2;
   cursor: no-drop;
 }
-.btn.yellow.text, .btn.warning.text, button.yellow.text, button.warning.text, input[type="button"].yellow.text, input[type="button"].warning.text, input[type="reset"].yellow.text, input[type="reset"].warning.text, input[type="submit"].yellow.text, input[type="submit"].warning.text {
+.btn.yellow.text, .btn.warning.text, button.yellow.text, button.warning.text, input[type=button].yellow.text, input[type=button].warning.text, input[type=reset].yellow.text, input[type=reset].warning.text, input[type=submit].yellow.text, input[type=submit].warning.text {
   color: #FFB800;
 }
-.btn.yellow.text:active, .btn.yellow.text:hover, .btn.warning.text:active, .btn.warning.text:hover, button.yellow.text:active, button.yellow.text:hover, button.warning.text:active, button.warning.text:hover, input[type="button"].yellow.text:active, input[type="button"].yellow.text:hover, input[type="button"].warning.text:active, input[type="button"].warning.text:hover, input[type="reset"].yellow.text:active, input[type="reset"].yellow.text:hover, input[type="reset"].warning.text:active, input[type="reset"].warning.text:hover, input[type="submit"].yellow.text:active, input[type="submit"].yellow.text:hover, input[type="submit"].warning.text:active, input[type="submit"].warning.text:hover {
+.btn.yellow.text:active, .btn.yellow.text:hover, .btn.warning.text:active, .btn.warning.text:hover, button.yellow.text:active, button.yellow.text:hover, button.warning.text:active, button.warning.text:hover, input[type=button].yellow.text:active, input[type=button].yellow.text:hover, input[type=button].warning.text:active, input[type=button].warning.text:hover, input[type=reset].yellow.text:active, input[type=reset].yellow.text:hover, input[type=reset].warning.text:active, input[type=reset].warning.text:hover, input[type=submit].yellow.text:active, input[type=submit].yellow.text:hover, input[type=submit].warning.text:active, input[type=submit].warning.text:hover {
   background: none;
 }
-.btn.yellow .bdg, .btn.warning .bdg, button.yellow .bdg, button.warning .bdg, input[type="button"].yellow .bdg, input[type="button"].warning .bdg, input[type="reset"].yellow .bdg, input[type="reset"].warning .bdg, input[type="submit"].yellow .bdg, input[type="submit"].warning .bdg {
+.btn.yellow .bdg, .btn.warning .bdg, button.yellow .bdg, button.warning .bdg, input[type=button].yellow .bdg, input[type=button].warning .bdg, input[type=reset].yellow .bdg, input[type=reset].warning .bdg, input[type=submit].yellow .bdg, input[type=submit].warning .bdg {
   background-color: #FFFFFF;
   color: #bf8a00;
 }
-.btn.purple, button.purple, input[type="button"].purple, input[type="reset"].purple, input[type="submit"].purple {
+.btn.purple, button.purple, input[type=button].purple, input[type=reset].purple, input[type=submit].purple {
   color: #FFFFFF;
   border-color: #730073;
   background-color: #990099;
   background-image: -webkit-linear-gradient(-270deg, #990099, #b340b3);
   background-image: linear-gradient(0deg,#990099, #b340b3);
 }
-.btn.purple:active, .btn.purple.active, button.purple:active, button.purple.active, input[type="button"].purple:active, input[type="button"].purple.active, input[type="reset"].purple:active, input[type="reset"].purple.active, input[type="submit"].purple:active, input[type="submit"].purple.active {
+.btn.purple:active, .btn.purple.active, button.purple:active, button.purple.active, input[type=button].purple:active, input[type=button].purple.active, input[type=reset].purple:active, input[type=reset].purple.active, input[type=submit].purple:active, input[type=submit].purple.active {
   background-color: #990099;
   background-image: -webkit-linear-gradient(-450deg, #990099, #b340b3);
   background-image: linear-gradient(180deg,#990099, #b340b3);
 }
-.btn.purple:visited, .btn.purple.visited, button.purple:visited, button.purple.visited, input[type="button"].purple:visited, input[type="button"].purple.visited, input[type="reset"].purple:visited, input[type="reset"].purple.visited, input[type="submit"].purple:visited, input[type="submit"].purple.visited {
+.btn.purple:visited, .btn.purple.visited, button.purple:visited, button.purple.visited, input[type=button].purple:visited, input[type=button].purple.visited, input[type=reset].purple:visited, input[type=reset].purple.visited, input[type=submit].purple:visited, input[type=submit].purple.visited {
   color: #FFFFFF;
 }
-.btn.purple[disabled], .btn.purple.disabled, button.purple[disabled], button.purple.disabled, input[type="button"].purple[disabled], input[type="button"].purple.disabled, input[type="reset"].purple[disabled], input[type="reset"].purple.disabled, input[type="submit"].purple[disabled], input[type="submit"].purple.disabled {
+.btn.purple[disabled], .btn.purple.disabled, button.purple[disabled], button.purple.disabled, input[type=button].purple[disabled], input[type=button].purple.disabled, input[type=reset].purple[disabled], input[type=reset].purple.disabled, input[type=submit].purple[disabled], input[type=submit].purple.disabled {
   background: #990099;
   color: #E0B2E0;
   cursor: no-drop;
 }
-.btn.purple.text, button.purple.text, input[type="button"].purple.text, input[type="reset"].purple.text, input[type="submit"].purple.text {
+.btn.purple.text, button.purple.text, input[type=button].purple.text, input[type=reset].purple.text, input[type=submit].purple.text {
   color: #990099;
 }
-.btn.purple.text:active, .btn.purple.text:hover, button.purple.text:active, button.purple.text:hover, input[type="button"].purple.text:active, input[type="button"].purple.text:hover, input[type="reset"].purple.text:active, input[type="reset"].purple.text:hover, input[type="submit"].purple.text:active, input[type="submit"].purple.text:hover {
+.btn.purple.text:active, .btn.purple.text:hover, button.purple.text:active, button.purple.text:hover, input[type=button].purple.text:active, input[type=button].purple.text:hover, input[type=reset].purple.text:active, input[type=reset].purple.text:hover, input[type=submit].purple.text:active, input[type=submit].purple.text:hover {
   background: none;
 }
-.btn.purple .bdg, button.purple .bdg, input[type="button"].purple .bdg, input[type="reset"].purple .bdg, input[type="submit"].purple .bdg {
+.btn.purple .bdg, button.purple .bdg, input[type=button].purple .bdg, input[type=reset].purple .bdg, input[type=submit].purple .bdg {
   background-color: #FFFFFF;
   color: #730073;
 }
-.btn.orange, button.orange, input[type="button"].orange, input[type="reset"].orange, input[type="submit"].orange {
+.btn.orange, button.orange, input[type=button].orange, input[type=reset].orange, input[type=submit].orange {
   color: #FFFFFF;
   border-color: #bf4d00;
   background-color: #FF6600;
   background-image: -webkit-linear-gradient(-270deg, #FF6600, #ff8c40);
   background-image: linear-gradient(0deg,#FF6600, #ff8c40);
 }
-.btn.orange:active, .btn.orange.active, button.orange:active, button.orange.active, input[type="button"].orange:active, input[type="button"].orange.active, input[type="reset"].orange:active, input[type="reset"].orange.active, input[type="submit"].orange:active, input[type="submit"].orange.active {
+.btn.orange:active, .btn.orange.active, button.orange:active, button.orange.active, input[type=button].orange:active, input[type=button].orange.active, input[type=reset].orange:active, input[type=reset].orange.active, input[type=submit].orange:active, input[type=submit].orange.active {
   background-color: #FF6600;
   background-image: -webkit-linear-gradient(-450deg, #FF6600, #ff8c40);
   background-image: linear-gradient(180deg,#FF6600, #ff8c40);
 }
-.btn.orange:visited, .btn.orange.visited, button.orange:visited, button.orange.visited, input[type="button"].orange:visited, input[type="button"].orange.visited, input[type="reset"].orange:visited, input[type="reset"].orange.visited, input[type="submit"].orange:visited, input[type="submit"].orange.visited {
+.btn.orange:visited, .btn.orange.visited, button.orange:visited, button.orange.visited, input[type=button].orange:visited, input[type=button].orange.visited, input[type=reset].orange:visited, input[type=reset].orange.visited, input[type=submit].orange:visited, input[type=submit].orange.visited {
   color: #FFFFFF;
 }
-.btn.orange[disabled], .btn.orange.disabled, button.orange[disabled], button.orange.disabled, input[type="button"].orange[disabled], input[type="button"].orange.disabled, input[type="reset"].orange[disabled], input[type="reset"].orange.disabled, input[type="submit"].orange[disabled], input[type="submit"].orange.disabled {
+.btn.orange[disabled], .btn.orange.disabled, button.orange[disabled], button.orange.disabled, input[type=button].orange[disabled], input[type=button].orange.disabled, input[type=reset].orange[disabled], input[type=reset].orange.disabled, input[type=submit].orange[disabled], input[type=submit].orange.disabled {
   background: #FF6600;
   color: #FFCFAE;
   cursor: no-drop;
 }
-.btn.orange.text, button.orange.text, input[type="button"].orange.text, input[type="reset"].orange.text, input[type="submit"].orange.text {
+.btn.orange.text, button.orange.text, input[type=button].orange.text, input[type=reset].orange.text, input[type=submit].orange.text {
   color: #FF6600;
 }
-.btn.orange.text:active, .btn.orange.text:hover, button.orange.text:active, button.orange.text:hover, input[type="button"].orange.text:active, input[type="button"].orange.text:hover, input[type="reset"].orange.text:active, input[type="reset"].orange.text:hover, input[type="submit"].orange.text:active, input[type="submit"].orange.text:hover {
+.btn.orange.text:active, .btn.orange.text:hover, button.orange.text:active, button.orange.text:hover, input[type=button].orange.text:active, input[type=button].orange.text:hover, input[type=reset].orange.text:active, input[type=reset].orange.text:hover, input[type=submit].orange.text:active, input[type=submit].orange.text:hover {
   background: none;
 }
-.btn.orange .bdg, button.orange .bdg, input[type="button"].orange .bdg, input[type="reset"].orange .bdg, input[type="submit"].orange .bdg {
+.btn.orange .bdg, button.orange .bdg, input[type=button].orange .bdg, input[type=reset].orange .bdg, input[type=submit].orange .bdg {
   background-color: #FFFFFF;
   color: #bf4d00;
 }
-.btn.text, button.text, input[type="button"].text, input[type="reset"].text, input[type="submit"].text {
+.btn.text, button.text, input[type=button].text, input[type=reset].text, input[type=submit].text {
   border-color: transparent;
   background: none;
   box-shadow: none;
