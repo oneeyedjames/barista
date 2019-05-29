@@ -1,19 +1,34 @@
-%section#typography
+%section#typography.nav
 	%h3.section Typography
 
-	%h4 Headings
-
-	%h1 Heading 1
-	%h2 Heading 2
-	%h3 Heading 3
-	%h4 Heading 4
-	%h5 Heading 5
-	%h6 Heading 6
-
 	%p.lead Lead Text
+	%p Main Body Text
+	%a{ :href => '#' } Hyperlink
+
+	%h4.section Headings
+
+	%h1
+		Heading 1
+		%small Small text
+	%h2
+		Heading 2
+		%small Small text
+	%h3
+		Heading 3
+		%small Small text
+	%h4
+		Heading 4
+		%small Small text
+	%h5
+		Heading 5
+		%small Small text
+	%h6
+		Heading 6
+		%small Small text
+
+	%h4.section Hyperlinks
 
 	%p
-		%a{ :href => '#' } Hyperlink
 		%a.red{ :href => '#' } Red
 		%a.green{ :href => '#' } Green
 		%a.blue{ :href => '#' } Blue
@@ -22,3 +37,41 @@
 		%a.yellow{ :href => '#' } Yellow
 		%a.purple{ :href => '#' } Purple
 		%a.orange{ :href => '#' } Orange
+
+	%h4.section Blockquotes
+	%p Blockquotes can have transparent or shaded backgrounds.
+	%blockquote Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.
+	%blockquote.shaded Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.
+	%pre.demo
+		%code
+			= "&lt;blockquote&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;\n\n"
+			= "&lt;blockquote class=\"shaded\"&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;"
+	%p Blockquotes can also be assigned a color scheme.
+	.row
+		.col-md-6.col-lg-4
+			%blockquote.primary This is a primary blockquote.
+			%blockquote.primary.shaded This is a shaded primary blockquote.
+		.col-md-6.col-lg-4
+			%blockquote.success This is a success blockquote.
+			%blockquote.success.shaded This is a shaded success blockquote.
+		.col-md-6.col-lg-4
+			%blockquote.error This is an error blockquote.
+			%blockquote.error.shaded This is a shaded error blockquote.
+		.col-md-6.col-lg-4
+			%blockquote.warning This is a warning blockquote.
+			%blockquote.warning.shaded This is a shaded warning blockquote.
+		.col-md-6.col-lg-4
+			%blockquote.info This is an information blockquote.
+			%blockquote.info.shaded This is a shaded information blockquote.
+	%pre.demo
+		%code
+			= "&lt;blockquote class=\"primary\"&gt;This is a primary blockquote.&lt;/blockquote&gt;\n"
+			= "&lt;blockquote class=\"primary shaded\"&gt;This is a shaded primary blockquote.&lt;/blockquote&gt;\n\n"
+			= "&lt;blockquote class=\"success\"&gt;This is a success blockquote.&lt;/blockquote&gt;\n"
+			= "&lt;blockquote class=\"success shaded\"&gt;This is a shaded success blockquote.&lt;/blockquote&gt;\n\n"
+			= "&lt;blockquote class=\"error\"&gt;This is an error blockquote.&lt;/blockquote&gt;\n"
+			= "&lt;blockquote class=\"error shaded\"&gt;This is a shaded error blockquote.&lt;/blockquote&gt;\n\n"
+			= "&lt;blockquote class=\"warning\"&gt;This is a warning blockquote.&lt;/blockquote&gt;\n"
+			= "&lt;blockquote class=\"warning shaded\"&gt;This is a shaded warning blockquote.&lt;/blockquote&gt;\n\n"
+			= "&lt;blockquote class=\"info\"&gt;This is an information blockquote.&lt;/blockquote&gt;\n"
+			= "&lt;blockquote class=\"info shaded\"&gt;This is a shaded information blockquote.&lt;/blockquote&gt;"

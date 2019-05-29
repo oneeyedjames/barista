@@ -1,13 +1,45 @@
 %head
 	%title Barista Framework
 
-	%link{ :rel => 'stylesheet', :href => '../../lib/fontawesome/css/font-awesome.min.css' }
+	%link{ :rel => 'stylesheet', :href => '../../node_modules/fontawesome/css/font-awesome.min.css' }
 	%link{ :rel => 'stylesheet', :href => '../css/barista.css' }
 	-# %link{ :rel => 'stylesheet', :href => '../css/barista-effects.css' }
 
-	%script{ :src => '../../lib/jquery/dist/jquery.min.js' }
+	%script{ :src => '../../node_modules/jquery/dist/jquery.min.js' }
 	%script{ :src => '../js/barista.js' }
 
 	:css
-		h3.section { border-bottom: 1px solid #999; }
+		.section { border-bottom: 1px solid #CCC; }
 		.demo { border: 2px solid #CCC; padding: 1.5em; }
+		.highlight { background-color: #FEB; padding: 0 .25em; }
+		pre { white-space: pre-wrap; }
+
+	:javascript
+		document.addEventListener('DOMContentLoaded', function(e) {
+			let toggle = function(url) {
+				let sections = document.getElementsByTagName('section');
+
+				for (let section of sections) {
+					if (section.classList.contains('nav')) {
+						section.style.display = 'none';
+					}
+				}
+
+				let match = url.match(/(index|normalize)\.html#([A-Z]*)/i);
+				if (match)
+					document.getElementById(match[2]).style.display = 'block';
+				else
+					sections[0].style.display = 'block';
+			}
+
+			toggle(e.target.URL);
+
+			let links = document.getElementsByTagName('a');
+			for (let link of links) {
+				if (link.classList.contains('nav')) {
+					link.addEventListener('click', function() {
+						toggle(link.href);
+					});
+				}
+			}
+		});

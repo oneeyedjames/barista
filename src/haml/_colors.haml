@@ -1,0 +1,80 @@
+%section#colors.nav
+	%h3.section Colors
+	%p Many elements in the Barista Framework can be assigned a color scheme. The preferred method of specifying a color scheme is by purpose.
+	%p.txt.primary
+		%code primary
+		%br
+		A blue color scheme for identifying important actions and elements
+	%p.txt.success
+		%code success
+		%br
+		A green color scheme for reporting successful actions and events
+	%p.txt.error
+		%code error
+		%br
+		A red color scheme for reporting fatal errors or warning of destructive actions.
+		%em This color scheme can also be referenced as
+		%code danger
+	%p.txt.warning
+		%code warning
+		%br
+		A yellow color scheme for reporting non-fatal errors or unexpected results
+	%p.txt.info
+		%code info
+		%br
+		A cyan color scheme for reporting relevant information
+	%pre.demo
+		%code
+			= "&lt;p class=\"txt primary\"&gt;\n"
+			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
+			= "\tA blue color scheme for identifying important actions and elements\n"
+			= "&lt;/p&gt;\n\n"
+			= "&lt;p class=\"txt success\"&gt;\n"
+			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
+			= "\tA green color scheme for reporting successful actions and events\n"
+			= "&lt;/p&gt;\n\n"
+			= "&lt;p class=\"txt error\"&gt;\n"
+			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
+			= "\tA red color scheme for reporting fatal errors or warning of destructive actions.\n"
+			= "\t&lt;em&gt;This color scheme can also be referenced as&lt;/em&gt; &lt;code&gt;danger&lt;/code&gt;\n"
+			= "&lt;/p&gt;\n\n"
+			= "&lt;p class=\"txt warning\"&gt;\n"
+			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
+			= "\tA yellow color scheme for reporting non-fatal errors or unexpected results\n"
+			= "&lt;/p&gt;\n\n"
+			= "&lt;p class=\"txt info\"&gt;\n"
+			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
+			= "\tA cyan color scheme for reporting relevant information\n"
+			= "&lt;/p&gt;"
+	%p Color schemes can also be referenced by color names. For brevity, these colors will not be demonstrated elsewhere in these documents but any element which can be assigned a color scheme by purpose can also be assigned a color scheme by name.
+	.row
+		.col-sm-6.col-md-4.col-lg-3
+			%p.txt.code.red red
+		.col-sm-6.col-md-4.col-lg-3
+			%p.txt.code.green green
+		.col-sm-6.col-md-4.col-lg-3
+			%p.txt.code.blue blue
+		.col-sm-6.col-md-4.col-lg-3
+			%p.txt.code.cyan cyan
+		.col-sm-6.col-md-4.col-lg-3
+			%p.txt.code.magenta magenta
+		.col-sm-6.col-md-4.col-lg-3
+			%p.txt.code.yellow yellow
+		.col-sm-6.col-md-4.col-lg-3
+			%p.txt.code.purple purple
+		.col-sm-6.col-md-4.col-lg-3
+			%p.txt.code.orange orange
+	%pre.demo
+		%code
+			= "&lt;p class=\"txt red\"&gt;red&lt;/p&gt;\n"
+			= "&lt;p class=\"txt green\"&gt;green&lt;/p&gt;\n"
+			= "&lt;p class=\"txt blue\"&gt;blue&lt;/p&gt;\n"
+			= "&lt;p class=\"txt cyan\"&gt;cyan&lt;/p&gt;\n"
+			= "&lt;p class=\"txt magenta\"&gt;magenta&lt;/p&gt;\n"
+			= "&lt;p class=\"txt yellow\"&gt;yellow&lt;/p&gt;\n"
+			= "&lt;p class=\"txt purple\"&gt;purple&lt;/p&gt;\n"
+			= "&lt;p class=\"txt orange\"&gt;orange&lt;/p&gt;"
+	:css
+		p.txt { padding: .25em .5em; }
+		p.txt code { font-weight: bold; }
+		p.txt.code { font-weight: bold; font-family: monospace; }

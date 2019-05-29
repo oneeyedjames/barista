@@ -97,6 +97,67 @@ blockquote {
   margin: 40px 0;
   padding: 0 0 0 30px;
   border-left: 10px solid #999999;
+  border-left-color: #999999;
+}
+blockquote.shaded {
+  background-color: #DDDDDD;
+  color: #444444;
+}
+blockquote.red, blockquote.error, blockquote.danger {
+  border-left-color: #DC3912;
+}
+blockquote.red.shaded, blockquote.error.shaded, blockquote.danger.shaded {
+  background-color: #F4C3B7;
+  color: #7e210a;
+}
+blockquote.green, blockquote.success {
+  border-left-color: #109618;
+}
+blockquote.green.shaded, blockquote.success.shaded {
+  background-color: #B6DFB9;
+  color: #063a09;
+}
+blockquote.blue, blockquote.primary {
+  border-left-color: #3366CC;
+}
+blockquote.blue.shaded, blockquote.primary.shaded {
+  background-color: #C1D0EF;
+  color: #1a3366;
+}
+blockquote.cyan, blockquote.info {
+  border-left-color: #48ACDB;
+}
+blockquote.cyan.shaded, blockquote.info.shaded {
+  background-color: #BBE6F7;
+  color: #175673;
+}
+blockquote.magenta {
+  border-left-color: #CD51AD;
+}
+blockquote.magenta.shaded {
+  background-color: #F7B4E4;
+  color: #7b2364;
+}
+blockquote.yellow, blockquote.warning {
+  border-left-color: #FFB800;
+}
+blockquote.yellow.shaded, blockquote.warning.shaded {
+  background-color: #FEE0B2;
+  color: #664a00;
+}
+blockquote.purple {
+  border-left-color: #990099;
+}
+blockquote.purple.shaded {
+  background-color: #E0B2E0;
+  color: #330033;
+}
+blockquote.orange {
+  border-left-color: #FF6600;
+}
+blockquote.orange.shaded {
+  background-color: #FFCFAE;
+  color: #662900;
 }
 
 dl > dt {

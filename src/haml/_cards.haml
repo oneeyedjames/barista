@@ -1,110 +1,93 @@
-%section#cards
+%section#cards.nav
 	%h3.section Cards
-
+	%p Cards are generic containers with a header and footer.
+	.card
+		%header Card
+		%p Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.
+		%footer Footer
+	%pre.demo
+		%code
+			= "&lt;div class=\"card\"&gt;\n"
+			= "\t&lt;header&gt;Card&lt;/header&gt;\n"
+			= "\t&lt;p&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/p&gt;\n"
+			= "\t&lt;footer&gt;Footer&lt;/footer&gt;\n"
+			= "&lt;/div&gt;"
+	%p Cards can also be assigned a color scheme.
 	.row
-		.col-xs-12
-			.card.collapsible
-				%header Card
-				%p Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.
-				%footer Footer
-		.col-xs-6.col-md-4.col-lg-3
-			.card.red
-				%header Red
+		.col-md-6.col-lg-4
+			.card.primary
+				%header Primary
 				Content
 				%footer Footer
-		.col-xs-6.col-md-4.col-lg-3
-			.card.green
-				%header Green
+		.col-md-6.col-lg-4
+			.card.success
+				%header Success
 				Content
 				%footer Footer
-		.col-xs-6.col-md-4.col-lg-3
-			.card.blue
-				%header Blue
+		.col-md-6.col-lg-4
+			.card.error
+				%header Error
 				Content
 				%footer Footer
-		.col-xs-6.col-md-4.col-lg-3
-			.card.cyan
-				%header Cyan
+		.col-md-6.col-lg-4
+			.card.warning
+				%header Warning
 				Content
 				%footer Footer
-		.col-xs-6.col-md-4.col-lg-3
-			.card.magenta
-				%header Magenta
+		.col-md-6.col-lg-4
+			.card.info
+				%header Information
 				Content
 				%footer Footer
-		.col-xs-6.col-md-4.col-lg-3
-			.card.yellow
-				%header Yellow
-				Content
-				%footer Footer
-		.col-xs-6.col-md-4.col-lg-3
-			.card.purple
-				%header Purple
-				Content
-				%footer Footer
-		.col-xs-6.col-md-4.col-lg-3
-			.card.orange
-				%header Orange
-				Content
-				%footer Footer
+	%pre.demo
+		%code
+			= "&lt;div class=\"card primary\"&gt;\n"
+			= "\t&lt;header&gt;Primary&lt;/header&gt;\n"
+			= "\tContent\n"
+			= "\t&lt;footer&gt;Footer&lt;/footer&gt;\n"
+			= "&lt;/div&gt;\n\n"
+			= "&lt;div class=\"card success\"&gt;\n"
+			= "\t&lt;header&gt;Success&lt;/header&gt;\n"
+			= "\tContent\n"
+			= "\t&lt;footer&gt;Footer&lt;/footer&gt;\n"
+			= "&lt;/div&gt;\n\n"
+			= "&lt;div class=\"card error\"&gt;\n"
+			= "\t&lt;header&gt;Error&lt;/header&gt;\n"
+			= "\tContent\n"
+			= "\t&lt;footer&gt;Footer&lt;/footer&gt;\n"
+			= "&lt;/div&gt;\n\n"
+			= "&lt;div class=\"card warning\"&gt;\n"
+			= "\t&lt;header&gt;Warning&lt;/header&gt;\n"
+			= "\tContent\n"
+			= "\t&lt;footer&gt;Footer&lt;/footer&gt;\n"
+			= "&lt;/div&gt;\n\n"
+			= "&lt;div class=\"card info\"&gt;\n"
+			= "\t&lt;header&gt;Information&lt;/header&gt;\n"
+			= "\tContent\n"
+			= "\t&lt;footer&gt;Footer&lt;/footer&gt;\n"
+			= "&lt;/div&gt;\n\n"
 
+	%h4 Alerts
+	%p Alerts are a simplified variant of cards for content that does not need a header or footer.
+	.card.alert This is a default alert.
+	%pre.demo
+		%code &lt;div class="card alert"&gt;This is a default alert.&lt/div&gt;
+	%p Alerts can also be assigned a color scheme.
 	.row
-		.col-xs-12
-			.card.alert Alert
-		.col-xs-6.col-md-4.col-lg-3
-			.card.alert.red Red
-		.col-xs-6.col-md-4.col-lg-3
-			.card.alert.green Green
-		.col-xs-6.col-md-4.col-lg-3
-			.card.alert.blue Blue
-		.col-xs-6.col-md-4.col-lg-3
-			.card.alert.cyan Cyan
-		.col-xs-6.col-md-4.col-lg-3
-			.card.alert.magenta Magenta
-		.col-xs-6.col-md-4.col-lg-3
-			.card.alert.yellow Yellow
-		.col-xs-6.col-md-4.col-lg-3
-			.card.alert.purple Purple
-		.col-xs-6.col-md-4.col-lg-3
-			.card.alert.orange Orange
-
-	%h4#modals Modals
-
-	%ul
-		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-success', 'data-overlay' => 'false', 'data-duration' => 1300 } Success
-		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-warning', 'data-overlay' => 'static' } Warning
-		%li
-			%a{ 'data-action' => 'modal', 'data-target' => '#modal-error', 'data-overlay' => 'true' } Error
-
-	#modal-success.card.modal.green.alert
-		You were successful!
-
-	#modal-error.card.modal.red
-		%header
-			%i.fa.fa-exclamation-circle
-			Error
-			%i.close.fa.fa-close
-		This is an error message
-		%footer.btns
-			%button.btn.ok Ok
-
-	#modal-warning.card.modal.yellow
-		%header
-			%i.fa.fa-exclamation-triangle
-			Warning
-		Are you sure about that?
-		%footer.btns
-			%button.btn.cancel Cancel
-			%button.btn.red.ok Do it!
-
-	:coffee
-		$ '#modal-warning'
-		.on 'ok', ->
-			setTimeout ->
-				$ '#modal-success'
-				.modal
-					alert: true
-					timeout: 1300
-			, 700
+		.col-md-6.col-lg-4
+			.card.alert.primary Primary message
+		.col-md-6.col-lg-4
+			.card.alert.success Success message
+		.col-md-6.col-lg-4
+			.card.alert.error Error message
+		.col-md-6.col-lg-4
+			.card.alert.warning Warning message
+		.col-md-6.col-lg-4
+			.card.alert.info Information message
+	%pre.demo
+		%code
+			= "&lt;div class=\"card alert primary\"&gt;Primary message&lt/div&gt;\n"
+			= "&lt;div class=\"card alert success\"&gt;Success message&lt/div&gt;\n"
+			= "&lt;div class=\"card alert error\"&gt;Error message&lt/div&gt;\n"
+			= "&lt;div class=\"card alert warning\"&gt;Warning message&lt/div&gt;\n"
+			= "&lt;div class=\"card alert info\"&gt;Information message&lt/div&gt;\n"
