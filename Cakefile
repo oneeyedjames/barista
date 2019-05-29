@@ -43,13 +43,16 @@ task 'build:js', 'Build CoffeeScript files into JS', ->
 task 'build:css', 'Build Sass files into CSS', ->
 	invoke 'clean:css'
 	record 'build:css', ->
+		sassVer = proc.execSync "sass --version"
+		flag = if sassVer.includes "Ruby Sass" then "t" else "s"
+
 		inFile  = "#{sass_src}/#{sass_root}.sass"
 		outFile = "#{sass_dest}/#{sass_root}.css"
 		minFile = "#{sass_dest}/#{sass_root}.min.css"
 
 		try
-			proc.execSync "sass -s expanded --trace #{inFile} > #{outFile}"
-			proc.execSync "sass -s compressed  --trace #{inFile} > #{minFile}"
+			proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
@@ -58,8 +61,8 @@ task 'build:css', 'Build Sass files into CSS', ->
 		minFile = "#{sass_dest}/#{sass_root}-effects.min.css"
 
 		try
-			proc.execSync "sass -s expanded --trace #{inFile} > #{outFile}"
-			proc.execSync "sass -s compressed  --trace #{inFile} > #{minFile}"
+			proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
@@ -73,8 +76,8 @@ task 'build:css', 'Build Sass files into CSS', ->
 			minFile = "#{sass_dest}/#{sass_root}-#{plugin}.min.css"
 
 			try
-				proc.execSync "sass -s expanded --trace #{inFile} > #{outFile}"
-				proc.execSync "sass -s compressed  --trace #{inFile} > #{minFile}"
+				proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
+				proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
 			catch err
 				console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
