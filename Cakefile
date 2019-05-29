@@ -48,8 +48,8 @@ task 'build:css', 'Build Sass files into CSS', ->
 		minFile = "#{sass_dest}/#{sass_root}.min.css"
 
 		try
-			proc.execSync "sass -t expanded --trace #{inFile} > #{outFile}"
-			proc.execSync "sass -t compressed  --trace #{inFile} > #{minFile}"
+			proc.execSync "sass -s expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -s compressed  --trace #{inFile} > #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
@@ -58,8 +58,8 @@ task 'build:css', 'Build Sass files into CSS', ->
 		minFile = "#{sass_dest}/#{sass_root}-effects.min.css"
 
 		try
-			proc.execSync "sass -t expanded --trace #{inFile} > #{outFile}"
-			proc.execSync "sass -t compressed  --trace #{inFile} > #{minFile}"
+			proc.execSync "sass -s expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -s compressed  --trace #{inFile} > #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
@@ -73,8 +73,8 @@ task 'build:css', 'Build Sass files into CSS', ->
 			minFile = "#{sass_dest}/#{sass_root}-#{plugin}.min.css"
 
 			try
-				proc.execSync "sass -t expanded --trace #{inFile} > #{outFile}"
-				proc.execSync "sass -t compressed  --trace #{inFile} > #{minFile}"
+				proc.execSync "sass -s expanded --trace #{inFile} > #{outFile}"
+				proc.execSync "sass -s compressed  --trace #{inFile} > #{minFile}"
 			catch err
 				console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
