@@ -347,7 +347,12 @@ A yellow color scheme for reporting non-fatal errors or unexpected results
 <br>
 A cyan color scheme for reporting relevant information
 </p>
-<pre class='demo'><code>&lt;p class="txt primary"&gt;
+<pre class='demo'><code>&lt;p class="txt"&gt;
+	&lt;code&gt;default&lt;/code&gt;&lt;br&gt;
+	A gray color scheme, applied to all color-themed elements by default
+&lt;/p&gt;
+
+&lt;p class="txt primary"&gt;
 	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
 	A blue color scheme for identifying important actions and elements
 &lt;/p&gt;
@@ -373,40 +378,24 @@ A cyan color scheme for reporting relevant information
 	A cyan color scheme for reporting relevant information
 &lt;/p&gt;</code></pre>
 <p>Color schemes can also be referenced by color names. For brevity, these colors will not be demonstrated elsewhere in these documents but any element which can be assigned a color scheme by purpose can also be assigned a color scheme by name.</p>
-<div class='row'>
-<div class='col-sm-6 col-md-4 col-lg-3'>
-<p class='txt code red'>red</p>
-</div>
-<div class='col-sm-6 col-md-4 col-lg-3'>
-<p class='txt code green'>green</p>
-</div>
-<div class='col-sm-6 col-md-4 col-lg-3'>
-<p class='txt code blue'>blue</p>
-</div>
-<div class='col-sm-6 col-md-4 col-lg-3'>
-<p class='txt code cyan'>cyan</p>
-</div>
-<div class='col-sm-6 col-md-4 col-lg-3'>
-<p class='txt code magenta'>magenta</p>
-</div>
-<div class='col-sm-6 col-md-4 col-lg-3'>
-<p class='txt code yellow'>yellow</p>
-</div>
-<div class='col-sm-6 col-md-4 col-lg-3'>
-<p class='txt code purple'>purple</p>
-</div>
-<div class='col-sm-6 col-md-4 col-lg-3'>
-<p class='txt code orange'>orange</p>
-</div>
-</div>
-<pre class='demo'><code>&lt;p class="txt red"&gt;red&lt;/p&gt;
-&lt;p class="txt green"&gt;green&lt;/p&gt;
-&lt;p class="txt blue"&gt;blue&lt;/p&gt;
-&lt;p class="txt cyan"&gt;cyan&lt;/p&gt;
-&lt;p class="txt magenta"&gt;magenta&lt;/p&gt;
-&lt;p class="txt yellow"&gt;yellow&lt;/p&gt;
-&lt;p class="txt purple"&gt;purple&lt;/p&gt;
-&lt;p class="txt orange"&gt;orange&lt;/p&gt;</code></pre>
+<p>
+<div class='lbl red'>red</div>
+<div class='lbl green'>green</div>
+<div class='lbl blue'>blue</div>
+<div class='lbl cyan'>cyan</div>
+<div class='lbl magenta'>magenta</div>
+<div class='lbl yellow'>yellow</div>
+<div class='lbl purple'>purple</div>
+<div class='lbl orange'>orange</div>
+</p>
+<pre class='demo'><code>&lt;div class="lbl red"&gt;red&lt;/div&gt;
+&lt;div class="lbl green"&gt;green&lt;/div&gt;
+&lt;div class="lbl blue"&gt;blue&lt;/div&gt;
+&lt;div class="lbl cyan"&gt;cyan&lt;/div&gt;
+&lt;div class="lbl magenta"&gt;magenta&lt;/div&gt;
+&lt;div class="lbl yellow"&gt;yellow&lt;/div&gt;
+&lt;div class="lbl purple"&gt;purple&lt;/div&gt;
+&lt;div class="lbl orange"&gt;orange&lt;/div&gt;</code></pre>
 <style>
   p.txt { padding: .25em .5em; }
   p.txt code { font-weight: bold; }

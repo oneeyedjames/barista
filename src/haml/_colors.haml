@@ -29,6 +29,10 @@
 		A cyan color scheme for reporting relevant information
 	%pre.demo
 		%code
+			= "&lt;p class=\"txt\"&gt;\n"
+			= "\t&lt;code&gt;default&lt;/code&gt;&lt;br&gt;\n"
+			= "\tA gray color scheme, applied to all color-themed elements by default\n"
+			= "&lt;/p&gt;\n\n"
 			= "&lt;p class=\"txt primary\"&gt;\n"
 			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
 			= "\tA blue color scheme for identifying important actions and elements\n"
@@ -51,33 +55,25 @@
 			= "\tA cyan color scheme for reporting relevant information\n"
 			= "&lt;/p&gt;"
 	%p Color schemes can also be referenced by color names. For brevity, these colors will not be demonstrated elsewhere in these documents but any element which can be assigned a color scheme by purpose can also be assigned a color scheme by name.
-	.row
-		.col-sm-6.col-md-4.col-lg-3
-			%p.txt.code.red red
-		.col-sm-6.col-md-4.col-lg-3
-			%p.txt.code.green green
-		.col-sm-6.col-md-4.col-lg-3
-			%p.txt.code.blue blue
-		.col-sm-6.col-md-4.col-lg-3
-			%p.txt.code.cyan cyan
-		.col-sm-6.col-md-4.col-lg-3
-			%p.txt.code.magenta magenta
-		.col-sm-6.col-md-4.col-lg-3
-			%p.txt.code.yellow yellow
-		.col-sm-6.col-md-4.col-lg-3
-			%p.txt.code.purple purple
-		.col-sm-6.col-md-4.col-lg-3
-			%p.txt.code.orange orange
+	%p
+		.lbl.red red
+		.lbl.green green
+		.lbl.blue blue
+		.lbl.cyan cyan
+		.lbl.magenta magenta
+		.lbl.yellow yellow
+		.lbl.purple purple
+		.lbl.orange orange
 	%pre.demo
 		%code
-			= "&lt;p class=\"txt red\"&gt;red&lt;/p&gt;\n"
-			= "&lt;p class=\"txt green\"&gt;green&lt;/p&gt;\n"
-			= "&lt;p class=\"txt blue\"&gt;blue&lt;/p&gt;\n"
-			= "&lt;p class=\"txt cyan\"&gt;cyan&lt;/p&gt;\n"
-			= "&lt;p class=\"txt magenta\"&gt;magenta&lt;/p&gt;\n"
-			= "&lt;p class=\"txt yellow\"&gt;yellow&lt;/p&gt;\n"
-			= "&lt;p class=\"txt purple\"&gt;purple&lt;/p&gt;\n"
-			= "&lt;p class=\"txt orange\"&gt;orange&lt;/p&gt;"
+			= "&lt;div class=\"lbl red\"&gt;red&lt;/div&gt;\n"
+			= "&lt;div class=\"lbl green\"&gt;green&lt;/div&gt;\n"
+			= "&lt;div class=\"lbl blue\"&gt;blue&lt;/div&gt;\n"
+			= "&lt;div class=\"lbl cyan\"&gt;cyan&lt;/div&gt;\n"
+			= "&lt;div class=\"lbl magenta\"&gt;magenta&lt;/div&gt;\n"
+			= "&lt;div class=\"lbl yellow\"&gt;yellow&lt;/div&gt;\n"
+			= "&lt;div class=\"lbl purple\"&gt;purple&lt;/div&gt;\n"
+			= "&lt;div class=\"lbl orange\"&gt;orange&lt;/div&gt;"
 	:css
 		p.txt { padding: .25em .5em; }
 		p.txt code { font-weight: bold; }
