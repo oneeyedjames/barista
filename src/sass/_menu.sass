@@ -28,4 +28,28 @@ ul.menu
 			margin-bottom: $base-margin-bottom
 			border-bottom: $base-border
 
-	+menu-color($blue, $light-blue)
+	+menu-color($gray, $light-gray)
+
+	&.red, &.danger, &.error
+		+menu-color($red, $light-red)
+
+	&.green, &.success
+		+menu-color($green, $light-green)
+
+	&.blue, &.primary
+		+menu-color($blue, $light-blue)
+
+	&.cyan, &.info
+		+menu-color($cyan, $light-cyan)
+
+	&.magenta
+		+menu-color($magenta, $light-magenta)
+
+	&.yellow, &.warning
+		+menu-color($yellow, $light-yellow)
+
+	&.purple
+		+menu-color($purple, $light-purple)
+
+	&.orange
+		+menu-color($orange, $light-orange)
