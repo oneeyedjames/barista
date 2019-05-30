@@ -1,38 +1,3 @@
-=btn-color($color, $light)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	border-color: $darker
-
-	+text-shadow($darker)
-
-	&:active, &.active
-		+text-shadow($darker, -$text-shadow-top)
-
-		&:hover, &.hover
-			box-shadow: inset 0 0 6px 2px $light
-
-	&:hover, &.hover
-		box-shadow: inset 0 0 6px 2px $light
-
-	&[disabled], &.disabled
-		box-shadow: none
-		text-shadow: none
-
-		&:active, &:hover
-			box-shadow: none
-			text-shadow: none
-
-	&.text
-		+text-shadow($light)
-
-		&:active, &.active
-			+text-shadow($light, -$text-shadow-top)
-
-		&:active, &:hover
-			background: none
-			box-shadow: none
-
 .btn, #{$all-buttons}
 	border-width: $base-border-width
 

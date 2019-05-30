@@ -1,26 +1,3 @@
-=table-color($color, $light, $dark)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	border-color: $darker
-
-	thead
-		+linear-gradient(0deg, $color, $lighter)
-
-		th, td
-			color: $white
-
-	tbody
-		th, td
-			border-color: $lighter
-
-	&.striped
-		tbody
-			tr:nth-child(even)
-				th, td
-					background-color: $light
-					color: $dark
-
 table.table
 	width: 100%
 	margin-bottom: $base-margin-bottom

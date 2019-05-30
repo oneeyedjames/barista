@@ -1,32 +1,3 @@
-=tab-color($color, $light)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	$lighter-gray: tint($gray, 25%)
-	$darker-gray: shade($gray, 25%)
-
-	.tab
-		border-color: $darker-gray
-		color: $white
-
-		+linear-gradient(0deg, $gray, $lighter-gray)
-
-		&:active, &.active
-			border-color: $darker
-
-			+linear-gradient(180deg, $color, $lighter)
-
-		&[disabled], &.disabled
-			background: $gray
-			color: $light-gray
-			cursor: no-drop
-
-			&:active, &.active, &:hover, &.hover
-				border-color: $darker-gray
-
-	.panel
-		border-color: $darker
-
 .tabbar
 	margin-right: $base-padding-horizontal
 	margin-bottom: $base-margin-bottom

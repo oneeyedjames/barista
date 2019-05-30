@@ -1,22 +1,3 @@
-=card-color($color, $light, $dark)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	border-color: $darker
-
-	header
-		+linear-gradient(0deg, $color, $lighter)
-
-	header, footer
-		border-color: $lighter
-
-	footer, &.alert
-		background-color: $light
-		color: $dark
-
-	footer.btns
-		background-color: $white
-
 =card-width($screen, $cols, $margin: $block-spacing)
 	width: #{$screen / $grid-columns * $cols - $margin * 2}
 

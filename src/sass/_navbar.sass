@@ -1,21 +1,3 @@
-=navbar-color($color)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	border-bottom: 1px solid $darker
-
-	+linear-gradient(0deg, $color, $lighter)
-
-	ul.nav ul
-		border-left: 1px solid $darker
-		border-right: 1px solid $darker
-		border-bottom: 1px solid $darker
-
-		+linear-gradient(0deg, $lighter, $color)
-
-		li.sep
-			background-color: $darker
-
 .navbar
 	position: fixed
 	top: 0

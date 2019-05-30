@@ -1,21 +1,3 @@
-=breadcrumb-color($color, $light, $dark)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	background-color: $light
-
-	a
-		color: $color
-
-		&:visited
-			color: $darker
-
-	li
-		color: $dark
-
-	li::before
-		color: $lighter
-
 .breadcrumb
 	margin: 0 0 $base-margin-bottom
 	padding: $base-padding

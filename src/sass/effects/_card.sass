@@ -1,13 +1,3 @@
-=card-color($color, $light, $dark)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	header
-		+text-shadow($darker)
-
-		.close:active
-			+text-shadow($darker, -$text-shadow-top)
-
 .card
 	border: $base-border
 
