@@ -193,43 +193,19 @@ dl > dt {
   background-color: #DDDDDD;
   color: #444444;
 }
-.txt.primary {
-  background-color: #C1D0EF;
-  color: #1a3366;
+.txt.red, .txt.danger, .txt.error {
+  background-color: #F4C3B7;
+  color: #7e210a;
 }
-.txt.success {
+.txt.green, .txt.success {
   background-color: #B6DFB9;
   color: #063a09;
 }
-.txt.danger {
-  background-color: #F4C3B7;
-  color: #7e210a;
-}
-.txt.error {
-  background-color: #F4C3B7;
-  color: #7e210a;
-}
-.txt.warning {
-  background-color: #FEE0B2;
-  color: #664a00;
-}
-.txt.info {
-  background-color: #BBE6F7;
-  color: #175673;
-}
-.txt.red {
-  background-color: #F4C3B7;
-  color: #7e210a;
-}
-.txt.green {
-  background-color: #B6DFB9;
-  color: #063a09;
-}
-.txt.blue {
+.txt.blue, .txt.primary {
   background-color: #C1D0EF;
   color: #1a3366;
 }
-.txt.cyan {
+.txt.cyan, .txt.info {
   background-color: #BBE6F7;
   color: #175673;
 }
@@ -237,7 +213,7 @@ dl > dt {
   background-color: #F7B4E4;
   color: #7b2364;
 }
-.txt.yellow {
+.txt.yellow, .txt.warning {
   background-color: #FEE0B2;
   color: #664a00;
 }
