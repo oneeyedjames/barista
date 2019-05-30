@@ -72,8 +72,23 @@ task 'build:css', 'Build Sass files into CSS', ->
 
 		for plugin in plugins
 			inFile  = "#{sass_src}/plugins/#{plugin}.sass"
-			outFile = "#{sass_dest}/#{sass_root}-#{plugin}.css"
-			minFile = "#{sass_dest}/#{sass_root}-#{plugin}.min.css"
+			outFile = "#{sass_dest}/#{sass_root}-#{plugin}-plugin.css"
+			minFile = "#{sass_dest}/#{sass_root}-#{plugin}-plugin.min.css"
+
+			try
+				proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
+				proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
+			catch err
+				console.error "[#{new Date}] : Error executing '#{err.cmd}'"
+
+		themeDir = "#{sass_src}/themes"
+		themes = fs.readdirSync themeDir
+		.map (file) -> file.replace /\.sass$/, ""
+
+		for theme in themes
+			inFile  = "#{sass_src}/themes/#{theme}.sass"
+			outFile = "#{sass_dest}/#{sass_root}-#{theme}-theme.css"
+			minFile = "#{sass_dest}/#{sass_root}-#{theme}-theme.min.css"
 
 			try
 				proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"

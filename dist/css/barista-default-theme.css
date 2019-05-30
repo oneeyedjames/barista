@@ -1,0 +1,24 @@
+.txt.primary {
+  background-color: #C1D0EF;
+  color: #1a3366;
+}
+.txt.success {
+  background-color: #B6DFB9;
+  color: #063a09;
+}
+.txt.danger {
+  background-color: #F4C3B7;
+  color: #7e210a;
+}
+.txt.error {
+  background-color: #F4C3B7;
+  color: #7e210a;
+}
+.txt.warning {
+  background-color: #FEE0B2;
+  color: #664a00;
+}
+.txt.info {
+  background-color: #BBE6F7;
+  color: #175673;
+}
