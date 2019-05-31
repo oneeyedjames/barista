@@ -6,11 +6,7 @@
   background-color: #B6DFB9;
   color: #063a09;
 }
-.txt.danger {
-  background-color: #F4C3B7;
-  color: #7e210a;
-}
-.txt.error {
+.txt.error, .txt.danger {
   background-color: #F4C3B7;
   color: #7e210a;
 }

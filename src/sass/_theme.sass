@@ -1,21 +1,21 @@
 $primary-color: $blue !default
 $success-color: $green !default
-$danger-color: $red !default
 $error-color: $red !default
+// $danger-color: $error-color
 $warning-color: $yellow !default
 $info-color: $cyan !default
 
 $light-primary-color: $light-blue !default
 $light-success-color: $light-green !default
-$light-danger-color: $light-red !default
 $light-error-color: $light-red !default
+// $light-danger-color: $light-error-color
 $light-warning-color: $light-yellow !default
 $light-info-color: $light-cyan !default
 
 $dark-primary-color: $dark-blue !default
 $dark-success-color: $dark-green !default
-$dark-danger-color: $dark-red !default
 $dark-error-color: $dark-red !default
+// $dark-danger-color: $dark-error-color
 $dark-warning-color: $dark-yellow !default
 $dark-info-color: $dark-cyan !default
 
@@ -26,10 +26,7 @@ $dark-info-color: $dark-cyan !default
 	&.success
 		+txt-color($light-success-color, $dark-success-color)
 
-	&.danger
-		+txt-color($light-danger-color, $dark-danger-color)
-
-	&.error
+	&.error, &.danger
 		+txt-color($light-error-color, $dark-error-color)
 
 	&.warning
