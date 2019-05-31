@@ -7,7 +7,7 @@
 	z-index: 100
 	color: $background-color
 
-	+navbar-color($gray)
+	+navbar-color($gray, $light-gray, $dark-gray)
 
 	a
 		color: $background-color
@@ -59,28 +59,28 @@
 						margin: 0 $block-spacing / 2
 
 	&.red, &.danger, &.error
-		+navbar-color($red)
+		+navbar-color($red, $light-red, $dark-red)
 
 	&.green, &.success
-		+navbar-color($green)
+		+navbar-color($green, $light-green, $dark-green)
 
 	&.blue, &.primary
-		+navbar-color($blue)
+		+navbar-color($blue, $light-blue, $dark-blue)
 
 	&.cyan, &.info
-		+navbar-color($cyan)
+		+navbar-color($cyan, $light-cyan, $dark-cyan)
 
 	&.magenta
-		+navbar-color($magenta)
+		+navbar-color($magenta, $light-magenta, $dark-magenta)
 
 	&.yellow, &.warning
-		+navbar-color($yellow)
+		+navbar-color($yellow, $light-yellow, $dark-yellow)
 
 	&.purple
-		+navbar-color($purple)
+		+navbar-color($purple, $light-purple, $dark-purple)
 
 	&.orange
-		+navbar-color($orange)
+		+navbar-color($orange, $light-orange, $dark-orange)
 
 .navbar + .wrapper
 	margin-top: 3 * $block-spacing

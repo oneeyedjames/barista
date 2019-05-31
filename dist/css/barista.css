@@ -826,67 +826,83 @@ table.table.orange.striped tbody tr:nth-child(even) th, table.table.orange.strip
   margin-bottom: 0.1875em;
   padding: 0.375em 0.75em;
   border-radius: 0.5em;
-  color: #FFFFFF;
   font-weight: 500;
   background-color: #999999;
+  color: #FFFFFF;
 }
 .lbl.red, .lbl.danger, .lbl.error {
   background-color: #DC3912;
+  color: #FFFFFF;
 }
 .lbl.green, .lbl.success {
   background-color: #109618;
+  color: #FFFFFF;
 }
 .lbl.blue, .lbl.primary {
   background-color: #3366CC;
+  color: #FFFFFF;
 }
 .lbl.cyan, .lbl.info {
   background-color: #48ACDB;
+  color: #FFFFFF;
 }
 .lbl.magenta {
   background-color: #CD51AD;
+  color: #FFFFFF;
 }
 .lbl.yellow, .lbl.warning {
   background-color: #FFB800;
+  color: #FFFFFF;
 }
 .lbl.purple {
   background-color: #990099;
+  color: #FFFFFF;
 }
 .lbl.orange {
   background-color: #FF6600;
+  color: #FFFFFF;
 }
 
 .bdg {
   display: inline-block;
   padding: 0 0.5em;
   border-radius: 0.7142857143em;
-  color: #FFFFFF;
   font-weight: 500;
   font-style: normal;
   background-color: #999999;
+  color: #FFFFFF;
 }
 .bdg.red, .bdg.danger, .bdg.error {
   background-color: #DC3912;
+  color: #FFFFFF;
 }
 .bdg.green, .bdg.success {
   background-color: #109618;
+  color: #FFFFFF;
 }
 .bdg.blue, .bdg.primary {
   background-color: #3366CC;
+  color: #FFFFFF;
 }
 .bdg.cyan, .bdg.info {
   background-color: #48ACDB;
+  color: #FFFFFF;
 }
 .bdg.magenta {
   background-color: #CD51AD;
+  color: #FFFFFF;
 }
 .bdg.yellow, .bdg.warning {
   background-color: #FFB800;
+  color: #FFFFFF;
 }
 .bdg.purple {
   background-color: #990099;
+  color: #FFFFFF;
 }
 .bdg.orange {
   background-color: #FF6600;
+  color: #FFFFFF;
 }
 
 .card {

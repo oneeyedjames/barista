@@ -1,20 +1,22 @@
-=a-color($color, $dark)
+=a-color($color, $light, $dark)
 	color: $color
 
 	&:visited
 		color: $dark
 
-=txt-color($light, $dark)
+=txt-color($color, $light, $dark)
 	background-color: $light
 	color: $dark
 
-=lbl-color($color)
+=lbl-color($color, $light, $dark)
 	background-color: $color
+	color: $background-color
 
-=bdg-color($color)
+=bdg-color($color, $light, $dark)
 	background-color: $color
+	color: $background-color
 
-=btn-color($color, $light)
+=btn-color($color, $light, $dark)
 	$lighter: tint($color, 25%)
 	$darker: shade($color, 25%)
 
@@ -44,7 +46,7 @@
 		background-color: $background-color
 		color: $darker
 
-=tab-color($color, $light)
+=tab-color($color, $light, $dark)
 	$lighter: tint($color, 25%)
 	$darker: shade($color, 25%)
 
@@ -135,7 +137,7 @@
 					background-color: $light
 					color: $dark
 
-=navbar-color($color)
+=navbar-color($color, $light, $dark)
 	$lighter: tint($color, 25%)
 	$darker: shade($color, 25%)
 
@@ -153,7 +155,7 @@
 		li.sep
 			background-color: $darker
 
-=menu-color($color, $light)
+=menu-color($color, $light, $dark)
 	li
 		color: $color
 
@@ -197,7 +199,7 @@
 		background-color: $light
 		color: $dark
 
-=tooltip-color($color)
+=tooltip-color($color, $light, $dark)
 	.message
 		background: $color
 

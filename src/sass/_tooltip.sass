@@ -2,7 +2,7 @@
 	position: absolute
 	display: inline-block
 
-	+tooltip-color($foreground-color)
+	+tooltip-color($foreground-color, $light-gray, $dark-gray)
 
 	&.left, &.right
 		.pointer
@@ -43,28 +43,28 @@
 			border-top-width: 0
 
 	&.red, &.error, &.danger
-		+tooltip-color($red)
+		+tooltip-color($red, $light-red, $dark-red)
 
 	&.green, &.success
-		+tooltip-color($green)
+		+tooltip-color($green, $light-green, $dark-green)
 
 	&.blue, &.primary
-		+tooltip-color($blue)
+		+tooltip-color($blue, $light-blue, $dark-blue)
 
 	&.cyan, &.info
-		+tooltip-color($cyan)
+		+tooltip-color($cyan, $light-cyan, $dark-cyan)
 
 	&.magenta
-		+tooltip-color($magenta)
+		+tooltip-color($magenta, $light-magenta, $dark-magenta)
 
 	&.yellow, &.warning
-		+tooltip-color($yellow)
+		+tooltip-color($yellow, $light-yellow, $dark-yellow)
 
 	&.purple
-		+tooltip-color($purple)
+		+tooltip-color($purple, $light-purple, $dark-purple)
 
 	&.orange
-		+tooltip-color($orange)
+		+tooltip-color($orange, $light-orange, $dark-orange)
 
 	.message
 		border-radius: $base-border-radius
