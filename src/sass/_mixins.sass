@@ -18,7 +18,7 @@
 	$lighter: tint($color, 25%)
 	$darker: shade($color, 25%)
 
-	color: $white
+	color: $background-color
 	border-color: $darker
 
 	+linear-gradient(0deg, $color, $lighter)
@@ -27,7 +27,7 @@
 		+linear-gradient(180deg, $color, $lighter)
 
 	&:visited, &.visited
-		color: $white
+		color: $background-color
 
 	&[disabled], &.disabled
 		background: $color
@@ -41,7 +41,7 @@
 			background: none
 
 	.bdg
-		background-color: $white
+		background-color: $background-color
 		color: $darker
 
 =tab-color($color, $light)
@@ -53,7 +53,7 @@
 
 	.tab
 		border-color: $darker-gray
-		color: $white
+		color: $background-color
 
 		+linear-gradient(0deg, $gray, $lighter-gray)
 
@@ -90,7 +90,7 @@
 		color: $dark
 
 	footer.btns
-		background-color: $white
+		background-color: $background-color
 
 =list-color($color, $light, $dark)
 	$lighter: tint($color, 25%)
@@ -110,7 +110,7 @@
 			color: $dark
 
 		li.header
-			color: $white
+			color: $background-color
 
 =table-color($color, $light, $dark)
 	$lighter: tint($color, 25%)
@@ -122,7 +122,7 @@
 		+linear-gradient(0deg, $color, $lighter)
 
 		th, td
-			color: $white
+			color: $background-color
 
 	tbody
 		th, td
@@ -167,7 +167,7 @@
 			background-color: $color
 
 			a
-				color: $white
+				color: $background-color
 
 	&.tabs
 		border-color: $color
