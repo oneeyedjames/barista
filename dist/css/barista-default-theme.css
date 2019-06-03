@@ -889,3 +889,141 @@ a.info:visited {
 .breadcrumb.info li::before {
   color: #76c1e4;
 }
+
+.blockquote.primary, blockquote.primary {
+  border-left-color: #3366CC;
+}
+.blockquote.primary.shaded, blockquote.primary.shaded {
+  background-color: #C1D0EF;
+  color: #1a3366;
+}
+.blockquote.success, blockquote.success {
+  border-left-color: #109618;
+}
+.blockquote.success.shaded, blockquote.success.shaded {
+  background-color: #B6DFB9;
+  color: #063a09;
+}
+.blockquote.error, .blockquote.danger, blockquote.error, blockquote.danger {
+  border-left-color: #DC3912;
+}
+.blockquote.error.shaded, .blockquote.danger.shaded, blockquote.error.shaded, blockquote.danger.shaded {
+  background-color: #F4C3B7;
+  color: #7e210a;
+}
+.blockquote.warning, blockquote.warning {
+  border-left-color: #FFB800;
+}
+.blockquote.warning.shaded, blockquote.warning.shaded {
+  background-color: #FEE0B2;
+  color: #664a00;
+}
+.blockquote.info, blockquote.info {
+  border-left-color: #48ACDB;
+}
+.blockquote.info.shaded, blockquote.info.shaded {
+  background-color: #BBE6F7;
+  color: #175673;
+}
+
+.tooltip.primary .message {
+  background: #3366CC;
+}
+.tooltip.primary.top .pointer {
+  border-top-color: #3366CC;
+}
+.tooltip.primary.left .pointer {
+  border-left-color: #3366CC;
+}
+.tooltip.primary.right .pointer {
+  border-right-color: #3366CC;
+}
+.tooltip.primary.bottom .pointer {
+  border-bottom-color: #3366CC;
+}
+.tooltip.success .message {
+  background: #109618;
+}
+.tooltip.success.top .pointer {
+  border-top-color: #109618;
+}
+.tooltip.success.left .pointer {
+  border-left-color: #109618;
+}
+.tooltip.success.right .pointer {
+  border-right-color: #109618;
+}
+.tooltip.success.bottom .pointer {
+  border-bottom-color: #109618;
+}
+.tooltip.error .message, .tooltip.danger .message {
+  background: #DC3912;
+}
+.tooltip.error.top .pointer, .tooltip.danger.top .pointer {
+  border-top-color: #DC3912;
+}
+.tooltip.error.left .pointer, .tooltip.danger.left .pointer {
+  border-left-color: #DC3912;
+}
+.tooltip.error.right .pointer, .tooltip.danger.right .pointer {
+  border-right-color: #DC3912;
+}
+.tooltip.error.bottom .pointer, .tooltip.danger.bottom .pointer {
+  border-bottom-color: #DC3912;
+}
+.tooltip.warning .message {
+  background: #FFB800;
+}
+.tooltip.warning.top .pointer {
+  border-top-color: #FFB800;
+}
+.tooltip.warning.left .pointer {
+  border-left-color: #FFB800;
+}
+.tooltip.warning.right .pointer {
+  border-right-color: #FFB800;
+}
+.tooltip.warning.bottom .pointer {
+  border-bottom-color: #FFB800;
+}
+.tooltip.info .message {
+  background: #48ACDB;
+}
+.tooltip.info.top .pointer {
+  border-top-color: #48ACDB;
+}
+.tooltip.info.left .pointer {
+  border-left-color: #48ACDB;
+}
+.tooltip.info.right .pointer {
+  border-right-color: #48ACDB;
+}
+.tooltip.info.bottom .pointer {
+  border-bottom-color: #48ACDB;
+}
+
+.input-group .addon.primary {
+  background-color: #C1D0EF;
+  border-color: #3366CC;
+  color: #1a3366;
+}
+.input-group .addon.success {
+  background-color: #B6DFB9;
+  border-color: #109618;
+  color: #063a09;
+}
+.input-group .addon.error, .input-group .addon.danger {
+  background-color: #F4C3B7;
+  border-color: #DC3912;
+  color: #7e210a;
+}
+.input-group .addon.warning {
+  background-color: #FEE0B2;
+  border-color: #FFB800;
+  color: #664a00;
+}
+.input-group .addon.info {
+  background-color: #BBE6F7;
+  border-color: #48ACDB;
+  color: #175673;
+}
