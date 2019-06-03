@@ -56,7 +56,7 @@ task 'build:css', 'Build Sass files into CSS', ->
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
-		inFile  = "#{sass_src}/effects/effects.sass"
+		inFile  = "#{sass_src}/#{sass_root}-effects.sass"
 		outFile = "#{sass_dest}/#{sass_root}-effects.css"
 		minFile = "#{sass_dest}/#{sass_root}-effects.min.css"
 
