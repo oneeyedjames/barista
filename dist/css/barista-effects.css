@@ -312,83 +312,83 @@
   border-width: 1px 1px 0;
   border-style: solid;
 }
-.tabbar.red .tab {
+.tabbar.red .tab, .tabbar.danger .tab, .tabbar.error .tab {
   text-shadow: 0px -1px 1px #737373;
 }
-.tabbar.red .tab:active, .tabbar.red .tab.active {
+.tabbar.red .tab:active, .tabbar.red .tab.active, .tabbar.danger .tab:active, .tabbar.danger .tab.active, .tabbar.error .tab:active, .tabbar.error .tab.active {
   text-shadow: 0px 1px 1px #a52b0e;
 }
-.tabbar.red .tab:active:hover, .tabbar.red .tab:active.hover, .tabbar.red .tab.active:hover, .tabbar.red .tab.active.hover {
+.tabbar.red .tab:active:hover, .tabbar.red .tab:active.hover, .tabbar.red .tab.active:hover, .tabbar.red .tab.active.hover, .tabbar.danger .tab:active:hover, .tabbar.danger .tab:active.hover, .tabbar.danger .tab.active:hover, .tabbar.danger .tab.active.hover, .tabbar.error .tab:active:hover, .tabbar.error .tab:active.hover, .tabbar.error .tab.active:hover, .tabbar.error .tab.active.hover {
   box-shadow: inset 0 0 6px 2px #F4C3B7;
 }
-.tabbar.red .tab:hover, .tabbar.red .tab.hover {
+.tabbar.red .tab:hover, .tabbar.red .tab.hover, .tabbar.danger .tab:hover, .tabbar.danger .tab.hover, .tabbar.error .tab:hover, .tabbar.error .tab.hover {
   box-shadow: inset 0 0 6px 2px #DDDDDD;
 }
-.tabbar.red .tab[disabled], .tabbar.red .tab.disabled {
+.tabbar.red .tab[disabled], .tabbar.red .tab.disabled, .tabbar.danger .tab[disabled], .tabbar.danger .tab.disabled, .tabbar.error .tab[disabled], .tabbar.error .tab.disabled {
   box-shadow: none;
   text-shadow: none;
 }
-.tabbar.red .tab[disabled]:active, .tabbar.red .tab[disabled].active, .tabbar.red .tab[disabled]:hover, .tabbar.red .tab[disabled].hover, .tabbar.red .tab.disabled:active, .tabbar.red .tab.disabled.active, .tabbar.red .tab.disabled:hover, .tabbar.red .tab.disabled.hover {
+.tabbar.red .tab[disabled]:active, .tabbar.red .tab[disabled].active, .tabbar.red .tab[disabled]:hover, .tabbar.red .tab[disabled].hover, .tabbar.red .tab.disabled:active, .tabbar.red .tab.disabled.active, .tabbar.red .tab.disabled:hover, .tabbar.red .tab.disabled.hover, .tabbar.danger .tab[disabled]:active, .tabbar.danger .tab[disabled].active, .tabbar.danger .tab[disabled]:hover, .tabbar.danger .tab[disabled].hover, .tabbar.danger .tab.disabled:active, .tabbar.danger .tab.disabled.active, .tabbar.danger .tab.disabled:hover, .tabbar.danger .tab.disabled.hover, .tabbar.error .tab[disabled]:active, .tabbar.error .tab[disabled].active, .tabbar.error .tab[disabled]:hover, .tabbar.error .tab[disabled].hover, .tabbar.error .tab.disabled:active, .tabbar.error .tab.disabled.active, .tabbar.error .tab.disabled:hover, .tabbar.error .tab.disabled.hover {
   box-shadow: none;
   text-shadow: none;
 }
-.tabbar.green .tab {
+.tabbar.green .tab, .tabbar.success .tab {
   text-shadow: 0px -1px 1px #737373;
 }
-.tabbar.green .tab:active, .tabbar.green .tab.active {
+.tabbar.green .tab:active, .tabbar.green .tab.active, .tabbar.success .tab:active, .tabbar.success .tab.active {
   text-shadow: 0px 1px 1px #0c7112;
 }
-.tabbar.green .tab:active:hover, .tabbar.green .tab:active.hover, .tabbar.green .tab.active:hover, .tabbar.green .tab.active.hover {
+.tabbar.green .tab:active:hover, .tabbar.green .tab:active.hover, .tabbar.green .tab.active:hover, .tabbar.green .tab.active.hover, .tabbar.success .tab:active:hover, .tabbar.success .tab:active.hover, .tabbar.success .tab.active:hover, .tabbar.success .tab.active.hover {
   box-shadow: inset 0 0 6px 2px #B6DFB9;
 }
-.tabbar.green .tab:hover, .tabbar.green .tab.hover {
+.tabbar.green .tab:hover, .tabbar.green .tab.hover, .tabbar.success .tab:hover, .tabbar.success .tab.hover {
   box-shadow: inset 0 0 6px 2px #DDDDDD;
 }
-.tabbar.green .tab[disabled], .tabbar.green .tab.disabled {
+.tabbar.green .tab[disabled], .tabbar.green .tab.disabled, .tabbar.success .tab[disabled], .tabbar.success .tab.disabled {
   box-shadow: none;
   text-shadow: none;
 }
-.tabbar.green .tab[disabled]:active, .tabbar.green .tab[disabled].active, .tabbar.green .tab[disabled]:hover, .tabbar.green .tab[disabled].hover, .tabbar.green .tab.disabled:active, .tabbar.green .tab.disabled.active, .tabbar.green .tab.disabled:hover, .tabbar.green .tab.disabled.hover {
+.tabbar.green .tab[disabled]:active, .tabbar.green .tab[disabled].active, .tabbar.green .tab[disabled]:hover, .tabbar.green .tab[disabled].hover, .tabbar.green .tab.disabled:active, .tabbar.green .tab.disabled.active, .tabbar.green .tab.disabled:hover, .tabbar.green .tab.disabled.hover, .tabbar.success .tab[disabled]:active, .tabbar.success .tab[disabled].active, .tabbar.success .tab[disabled]:hover, .tabbar.success .tab[disabled].hover, .tabbar.success .tab.disabled:active, .tabbar.success .tab.disabled.active, .tabbar.success .tab.disabled:hover, .tabbar.success .tab.disabled.hover {
   box-shadow: none;
   text-shadow: none;
 }
-.tabbar.blue .tab {
+.tabbar.blue .tab, .tabbar.primary .tab {
   text-shadow: 0px -1px 1px #737373;
 }
-.tabbar.blue .tab:active, .tabbar.blue .tab.active {
+.tabbar.blue .tab:active, .tabbar.blue .tab.active, .tabbar.primary .tab:active, .tabbar.primary .tab.active {
   text-shadow: 0px 1px 1px #264d99;
 }
-.tabbar.blue .tab:active:hover, .tabbar.blue .tab:active.hover, .tabbar.blue .tab.active:hover, .tabbar.blue .tab.active.hover {
+.tabbar.blue .tab:active:hover, .tabbar.blue .tab:active.hover, .tabbar.blue .tab.active:hover, .tabbar.blue .tab.active.hover, .tabbar.primary .tab:active:hover, .tabbar.primary .tab:active.hover, .tabbar.primary .tab.active:hover, .tabbar.primary .tab.active.hover {
   box-shadow: inset 0 0 6px 2px #C1D0EF;
 }
-.tabbar.blue .tab:hover, .tabbar.blue .tab.hover {
+.tabbar.blue .tab:hover, .tabbar.blue .tab.hover, .tabbar.primary .tab:hover, .tabbar.primary .tab.hover {
   box-shadow: inset 0 0 6px 2px #DDDDDD;
 }
-.tabbar.blue .tab[disabled], .tabbar.blue .tab.disabled {
+.tabbar.blue .tab[disabled], .tabbar.blue .tab.disabled, .tabbar.primary .tab[disabled], .tabbar.primary .tab.disabled {
   box-shadow: none;
   text-shadow: none;
 }
-.tabbar.blue .tab[disabled]:active, .tabbar.blue .tab[disabled].active, .tabbar.blue .tab[disabled]:hover, .tabbar.blue .tab[disabled].hover, .tabbar.blue .tab.disabled:active, .tabbar.blue .tab.disabled.active, .tabbar.blue .tab.disabled:hover, .tabbar.blue .tab.disabled.hover {
+.tabbar.blue .tab[disabled]:active, .tabbar.blue .tab[disabled].active, .tabbar.blue .tab[disabled]:hover, .tabbar.blue .tab[disabled].hover, .tabbar.blue .tab.disabled:active, .tabbar.blue .tab.disabled.active, .tabbar.blue .tab.disabled:hover, .tabbar.blue .tab.disabled.hover, .tabbar.primary .tab[disabled]:active, .tabbar.primary .tab[disabled].active, .tabbar.primary .tab[disabled]:hover, .tabbar.primary .tab[disabled].hover, .tabbar.primary .tab.disabled:active, .tabbar.primary .tab.disabled.active, .tabbar.primary .tab.disabled:hover, .tabbar.primary .tab.disabled.hover {
   box-shadow: none;
   text-shadow: none;
 }
-.tabbar.cyan .tab {
+.tabbar.cyan .tab, .tabbar.info .tab {
   text-shadow: 0px -1px 1px #737373;
 }
-.tabbar.cyan .tab:active, .tabbar.cyan .tab.active {
+.tabbar.cyan .tab:active, .tabbar.cyan .tab.active, .tabbar.info .tab:active, .tabbar.info .tab.active {
   text-shadow: 0px 1px 1px #3681a4;
 }
-.tabbar.cyan .tab:active:hover, .tabbar.cyan .tab:active.hover, .tabbar.cyan .tab.active:hover, .tabbar.cyan .tab.active.hover {
+.tabbar.cyan .tab:active:hover, .tabbar.cyan .tab:active.hover, .tabbar.cyan .tab.active:hover, .tabbar.cyan .tab.active.hover, .tabbar.info .tab:active:hover, .tabbar.info .tab:active.hover, .tabbar.info .tab.active:hover, .tabbar.info .tab.active.hover {
   box-shadow: inset 0 0 6px 2px #BBE6F7;
 }
-.tabbar.cyan .tab:hover, .tabbar.cyan .tab.hover {
+.tabbar.cyan .tab:hover, .tabbar.cyan .tab.hover, .tabbar.info .tab:hover, .tabbar.info .tab.hover {
   box-shadow: inset 0 0 6px 2px #DDDDDD;
 }
-.tabbar.cyan .tab[disabled], .tabbar.cyan .tab.disabled {
+.tabbar.cyan .tab[disabled], .tabbar.cyan .tab.disabled, .tabbar.info .tab[disabled], .tabbar.info .tab.disabled {
   box-shadow: none;
   text-shadow: none;
 }
-.tabbar.cyan .tab[disabled]:active, .tabbar.cyan .tab[disabled].active, .tabbar.cyan .tab[disabled]:hover, .tabbar.cyan .tab[disabled].hover, .tabbar.cyan .tab.disabled:active, .tabbar.cyan .tab.disabled.active, .tabbar.cyan .tab.disabled:hover, .tabbar.cyan .tab.disabled.hover {
+.tabbar.cyan .tab[disabled]:active, .tabbar.cyan .tab[disabled].active, .tabbar.cyan .tab[disabled]:hover, .tabbar.cyan .tab[disabled].hover, .tabbar.cyan .tab.disabled:active, .tabbar.cyan .tab.disabled.active, .tabbar.cyan .tab.disabled:hover, .tabbar.cyan .tab.disabled.hover, .tabbar.info .tab[disabled]:active, .tabbar.info .tab[disabled].active, .tabbar.info .tab[disabled]:hover, .tabbar.info .tab[disabled].hover, .tabbar.info .tab.disabled:active, .tabbar.info .tab.disabled.active, .tabbar.info .tab.disabled:hover, .tabbar.info .tab.disabled.hover {
   box-shadow: none;
   text-shadow: none;
 }
@@ -412,23 +412,23 @@
   box-shadow: none;
   text-shadow: none;
 }
-.tabbar.yellow .tab {
+.tabbar.yellow .tab, .tabbar.warning .tab {
   text-shadow: 0px -1px 1px #737373;
 }
-.tabbar.yellow .tab:active, .tabbar.yellow .tab.active {
+.tabbar.yellow .tab:active, .tabbar.yellow .tab.active, .tabbar.warning .tab:active, .tabbar.warning .tab.active {
   text-shadow: 0px 1px 1px #bf8a00;
 }
-.tabbar.yellow .tab:active:hover, .tabbar.yellow .tab:active.hover, .tabbar.yellow .tab.active:hover, .tabbar.yellow .tab.active.hover {
+.tabbar.yellow .tab:active:hover, .tabbar.yellow .tab:active.hover, .tabbar.yellow .tab.active:hover, .tabbar.yellow .tab.active.hover, .tabbar.warning .tab:active:hover, .tabbar.warning .tab:active.hover, .tabbar.warning .tab.active:hover, .tabbar.warning .tab.active.hover {
   box-shadow: inset 0 0 6px 2px #FEE0B2;
 }
-.tabbar.yellow .tab:hover, .tabbar.yellow .tab.hover {
+.tabbar.yellow .tab:hover, .tabbar.yellow .tab.hover, .tabbar.warning .tab:hover, .tabbar.warning .tab.hover {
   box-shadow: inset 0 0 6px 2px #DDDDDD;
 }
-.tabbar.yellow .tab[disabled], .tabbar.yellow .tab.disabled {
+.tabbar.yellow .tab[disabled], .tabbar.yellow .tab.disabled, .tabbar.warning .tab[disabled], .tabbar.warning .tab.disabled {
   box-shadow: none;
   text-shadow: none;
 }
-.tabbar.yellow .tab[disabled]:active, .tabbar.yellow .tab[disabled].active, .tabbar.yellow .tab[disabled]:hover, .tabbar.yellow .tab[disabled].hover, .tabbar.yellow .tab.disabled:active, .tabbar.yellow .tab.disabled.active, .tabbar.yellow .tab.disabled:hover, .tabbar.yellow .tab.disabled.hover {
+.tabbar.yellow .tab[disabled]:active, .tabbar.yellow .tab[disabled].active, .tabbar.yellow .tab[disabled]:hover, .tabbar.yellow .tab[disabled].hover, .tabbar.yellow .tab.disabled:active, .tabbar.yellow .tab.disabled.active, .tabbar.yellow .tab.disabled:hover, .tabbar.yellow .tab.disabled.hover, .tabbar.warning .tab[disabled]:active, .tabbar.warning .tab[disabled].active, .tabbar.warning .tab[disabled]:hover, .tabbar.warning .tab[disabled].hover, .tabbar.warning .tab.disabled:active, .tabbar.warning .tab.disabled.active, .tabbar.warning .tab.disabled:hover, .tabbar.warning .tab.disabled.hover {
   box-shadow: none;
   text-shadow: none;
 }
