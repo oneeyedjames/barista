@@ -636,3 +636,256 @@ a.info:visited {
   background-color: #BBE6F7;
   color: #175673;
 }
+
+.navbar.primary {
+  border-bottom: 1px solid #264d99;
+  background-color: #3366CC;
+  background-image: -webkit-linear-gradient(-270deg, #3366CC, #668cd9);
+  background-image: linear-gradient(0deg,#3366CC, #668cd9);
+}
+.navbar.primary ul.nav ul {
+  border-left: 1px solid #264d99;
+  border-right: 1px solid #264d99;
+  border-bottom: 1px solid #264d99;
+  background-color: #668cd9;
+  background-image: -webkit-linear-gradient(-270deg, #668cd9, #3366CC);
+  background-image: linear-gradient(0deg,#668cd9, #3366CC);
+}
+.navbar.primary ul.nav ul li.sep {
+  background-color: #264d99;
+}
+.navbar.success {
+  border-bottom: 1px solid #0c7112;
+  background-color: #109618;
+  background-image: -webkit-linear-gradient(-270deg, #109618, #4cb052);
+  background-image: linear-gradient(0deg,#109618, #4cb052);
+}
+.navbar.success ul.nav ul {
+  border-left: 1px solid #0c7112;
+  border-right: 1px solid #0c7112;
+  border-bottom: 1px solid #0c7112;
+  background-color: #4cb052;
+  background-image: -webkit-linear-gradient(-270deg, #4cb052, #109618);
+  background-image: linear-gradient(0deg,#4cb052, #109618);
+}
+.navbar.success ul.nav ul li.sep {
+  background-color: #0c7112;
+}
+.navbar.error, .navbar.danger {
+  border-bottom: 1px solid #a52b0e;
+  background-color: #DC3912;
+  background-image: -webkit-linear-gradient(-270deg, #DC3912, #e56b4d);
+  background-image: linear-gradient(0deg,#DC3912, #e56b4d);
+}
+.navbar.error ul.nav ul, .navbar.danger ul.nav ul {
+  border-left: 1px solid #a52b0e;
+  border-right: 1px solid #a52b0e;
+  border-bottom: 1px solid #a52b0e;
+  background-color: #e56b4d;
+  background-image: -webkit-linear-gradient(-270deg, #e56b4d, #DC3912);
+  background-image: linear-gradient(0deg,#e56b4d, #DC3912);
+}
+.navbar.error ul.nav ul li.sep, .navbar.danger ul.nav ul li.sep {
+  background-color: #a52b0e;
+}
+.navbar.warning {
+  border-bottom: 1px solid #bf8a00;
+  background-color: #FFB800;
+  background-image: -webkit-linear-gradient(-270deg, #FFB800, #ffca40);
+  background-image: linear-gradient(0deg,#FFB800, #ffca40);
+}
+.navbar.warning ul.nav ul {
+  border-left: 1px solid #bf8a00;
+  border-right: 1px solid #bf8a00;
+  border-bottom: 1px solid #bf8a00;
+  background-color: #ffca40;
+  background-image: -webkit-linear-gradient(-270deg, #ffca40, #FFB800);
+  background-image: linear-gradient(0deg,#ffca40, #FFB800);
+}
+.navbar.warning ul.nav ul li.sep {
+  background-color: #bf8a00;
+}
+.navbar.info {
+  border-bottom: 1px solid #3681a4;
+  background-color: #48ACDB;
+  background-image: -webkit-linear-gradient(-270deg, #48ACDB, #76c1e4);
+  background-image: linear-gradient(0deg,#48ACDB, #76c1e4);
+}
+.navbar.info ul.nav ul {
+  border-left: 1px solid #3681a4;
+  border-right: 1px solid #3681a4;
+  border-bottom: 1px solid #3681a4;
+  background-color: #76c1e4;
+  background-image: -webkit-linear-gradient(-270deg, #76c1e4, #48ACDB);
+  background-image: linear-gradient(0deg,#76c1e4, #48ACDB);
+}
+.navbar.info ul.nav ul li.sep {
+  background-color: #3681a4;
+}
+
+.menu.primary li {
+  color: #3366CC;
+}
+.menu.primary li a {
+  color: #3366CC;
+}
+.menu.primary li:hover {
+  background-color: #C1D0EF;
+}
+.menu.primary li.active {
+  background-color: #3366CC;
+}
+.menu.primary li.active a {
+  color: #FFFFFF;
+}
+.menu.primary.tabs {
+  border-color: #3366CC;
+}
+.menu.success li {
+  color: #109618;
+}
+.menu.success li a {
+  color: #109618;
+}
+.menu.success li:hover {
+  background-color: #B6DFB9;
+}
+.menu.success li.active {
+  background-color: #109618;
+}
+.menu.success li.active a {
+  color: #FFFFFF;
+}
+.menu.success.tabs {
+  border-color: #109618;
+}
+.menu.error li, .menu.danger li {
+  color: #DC3912;
+}
+.menu.error li a, .menu.danger li a {
+  color: #DC3912;
+}
+.menu.error li:hover, .menu.danger li:hover {
+  background-color: #F4C3B7;
+}
+.menu.error li.active, .menu.danger li.active {
+  background-color: #DC3912;
+}
+.menu.error li.active a, .menu.danger li.active a {
+  color: #FFFFFF;
+}
+.menu.error.tabs, .menu.danger.tabs {
+  border-color: #DC3912;
+}
+.menu.warning li {
+  color: #FFB800;
+}
+.menu.warning li a {
+  color: #FFB800;
+}
+.menu.warning li:hover {
+  background-color: #FEE0B2;
+}
+.menu.warning li.active {
+  background-color: #FFB800;
+}
+.menu.warning li.active a {
+  color: #FFFFFF;
+}
+.menu.warning.tabs {
+  border-color: #FFB800;
+}
+.menu.info li {
+  color: #48ACDB;
+}
+.menu.info li a {
+  color: #48ACDB;
+}
+.menu.info li:hover {
+  background-color: #BBE6F7;
+}
+.menu.info li.active {
+  background-color: #48ACDB;
+}
+.menu.info li.active a {
+  color: #FFFFFF;
+}
+.menu.info.tabs {
+  border-color: #48ACDB;
+}
+
+.breadcrumb.primary {
+  background-color: #C1D0EF;
+}
+.breadcrumb.primary a {
+  color: #3366CC;
+}
+.breadcrumb.primary a:visited {
+  color: #264d99;
+}
+.breadcrumb.primary li {
+  color: #1a3366;
+}
+.breadcrumb.primary li::before {
+  color: #668cd9;
+}
+.breadcrumb.success {
+  background-color: #B6DFB9;
+}
+.breadcrumb.success a {
+  color: #109618;
+}
+.breadcrumb.success a:visited {
+  color: #0c7112;
+}
+.breadcrumb.success li {
+  color: #063a09;
+}
+.breadcrumb.success li::before {
+  color: #4cb052;
+}
+.breadcrumb.error, .breadcrumb.danger {
+  background-color: #F4C3B7;
+}
+.breadcrumb.error a, .breadcrumb.danger a {
+  color: #DC3912;
+}
+.breadcrumb.error a:visited, .breadcrumb.danger a:visited {
+  color: #a52b0e;
+}
+.breadcrumb.error li, .breadcrumb.danger li {
+  color: #7e210a;
+}
+.breadcrumb.error li::before, .breadcrumb.danger li::before {
+  color: #e56b4d;
+}
+.breadcrumb.warning {
+  background-color: #FEE0B2;
+}
+.breadcrumb.warning a {
+  color: #FFB800;
+}
+.breadcrumb.warning a:visited {
+  color: #bf8a00;
+}
+.breadcrumb.warning li {
+  color: #664a00;
+}
+.breadcrumb.warning li::before {
+  color: #ffca40;
+}
+.breadcrumb.info {
+  background-color: #BBE6F7;
+}
+.breadcrumb.info a {
+  color: #48ACDB;
+}
+.breadcrumb.info a:visited {
+  color: #3681a4;
+}
+.breadcrumb.info li {
+  color: #175673;
+}
+.breadcrumb.info li::before {
+  color: #76c1e4;
+}
