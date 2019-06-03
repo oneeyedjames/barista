@@ -70,11 +70,6 @@ task 'build:css', 'Build Sass files into CSS', ->
 		plugins = fs.readdirSync pluginDir
 		.map (file) -> file.replace /\.sass$/, ""
 
-		try
-			proc.execSync "mkdir #{sass_dest}/plugins"
-		catch
-			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
-
 		for plugin in plugins
 			inFile  = "#{sass_src}/plugins/#{plugin}.sass"
 			outFile = "#{sass_dest}/plugins/#{sass_root}-#{plugin}.css"
@@ -89,11 +84,6 @@ task 'build:css', 'Build Sass files into CSS', ->
 		themeDir = "#{sass_src}/themes"
 		themes = fs.readdirSync themeDir
 		.map (file) -> file.replace /\.sass$/, ""
-
-		try
-			proc.execSync "mkdir #{sass_dest}/themes"
-		catch
-			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
 		for theme in themes
 			inFile  = "#{sass_src}/themes/#{theme}.sass"
@@ -129,7 +119,10 @@ task 'clean:js', 'Clean JS files from distribution folder', ->
 	record 'clean:js', -> clean coffee_dest
 
 task 'clean:css', 'Clean CSS files from distribution folder', ->
-	record 'clean:css', -> clean sass_dest
+	record 'clean:css', ->
+		clean sass_dest
+		clean "#{sass_dest}/plugins"
+		clean "#{sass_dest}/themes"
 
 task 'clean:html', 'Clean HTML files from distribution folder', ->
 	record 'clean:html', -> clean haml_dest
@@ -162,7 +155,10 @@ clean = (dir) ->
 	files = fs.readdirSync dir
 	.map (file) -> "#{dir}/#{file}"
 
-	fs.unlinkSync file for file in files
+	try
+		fs.unlinkSync file for file in files
+	catch err
+		console.error "[#{new Date}] : #{err}"
 
 watch = (dir, task) ->
 	invoke task
