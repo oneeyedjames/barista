@@ -1,24 +1,8 @@
-=menu-color($color, $light)
-	li
-		color: $color
-
-		a
-			color: $color
-
-		&:hover
-			background-color: $light
-
-		&.active
-			background-color: $color
-
-	&.tabs
-		border-color: $color
-
 ul.menu
 	margin: (-$base-spacing / 4) 0
 	padding: 0
 	list-style: none
-	background-color: $white
+	background-color: $background-color
 
 	li
 		margin: ($base-spacing / 4) 0
@@ -29,10 +13,10 @@ ul.menu
 			text-decoration: none
 
 		&.active
-			color: $white
+			color: $background-color
 
 			a
-				color: $white
+				color: $background-color
 
 	&.inline
 		+clearfix
@@ -44,4 +28,28 @@ ul.menu
 			margin-bottom: $base-margin-bottom
 			border-bottom: $base-border
 
-	+menu-color($blue, $light-blue)
+	+menu-color($gray, $light-gray, $dark-gray)
+
+	&.red, &.danger, &.error
+		+menu-color($red, $light-red, $dark-red)
+
+	&.green, &.success
+		+menu-color($green, $light-green, $dark-green)
+
+	&.blue, &.primary
+		+menu-color($blue, $light-blue, $dark-blue)
+
+	&.cyan, &.info
+		+menu-color($cyan, $light-cyan, $dark-cyan)
+
+	&.magenta
+		+menu-color($magenta, $light-magenta, $dark-magenta)
+
+	&.yellow, &.warning
+		+menu-color($yellow, $light-yellow, $dark-yellow)
+
+	&.purple
+		+menu-color($purple, $light-purple, $dark-purple)
+
+	&.orange
+		+menu-color($orange, $light-orange, $dark-orange)

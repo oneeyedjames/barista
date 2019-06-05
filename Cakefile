@@ -10,9 +10,12 @@ sass_src  = 'src/sass'
 sass_dest = 'dist/css'
 sass_root = 'barista'
 
-haml_src  = './src/haml'
-haml_dest = './dist/html'
+haml_src  = 'src/haml'
+haml_dest = 'dist/html'
 haml_root = 'index'
+
+sass_ver  = proc.execSync 'sass --version'
+sass_flag = if sass_ver.includes 'Ruby Sass' then 't' else 's'
 
 task 'build', 'Build all source files', ->
 	record 'build', ->
@@ -41,43 +44,67 @@ task 'build:js', 'Build CoffeeScript files into JS', ->
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
 task 'build:css', 'Build Sass files into CSS', ->
-	invoke 'clean:css'
 	record 'build:css', ->
-		sassVer = proc.execSync "sass --version"
-		flag = if sassVer.includes "Ruby Sass" then "t" else "s"
+		invoke 'build:css:core'
+		invoke 'build:css:plugins'
+		invoke 'build:css:themes'
 
+task 'build:css:core', 'Build core Sass files into CSS', ->
+	invoke 'clean:css:core'
+	record 'build:css:core', ->
 		inFile  = "#{sass_src}/#{sass_root}.sass"
 		outFile = "#{sass_dest}/#{sass_root}.css"
 		minFile = "#{sass_dest}/#{sass_root}.min.css"
 
 		try
-			proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
-			proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
+			proc.execSync "sass -#{sass_flag} expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -#{sass_flag} compressed --trace #{inFile} > #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
-		inFile  = "#{sass_src}/effects/effects.sass"
+		inFile  = "#{sass_src}/#{sass_root}-effects.sass"
 		outFile = "#{sass_dest}/#{sass_root}-effects.css"
 		minFile = "#{sass_dest}/#{sass_root}-effects.min.css"
 
 		try
-			proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
-			proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
+			proc.execSync "sass -#{sass_flag} expanded --trace #{inFile} > #{outFile}"
+			proc.execSync "sass -#{sass_flag} compressed --trace #{inFile} > #{minFile}"
 		catch err
 			console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
+task 'build:css:plugins', 'Build Sass plugin files into CSS', ->
+	invoke 'clean:css:plugins'
+	record 'build:css:plugins', ->
 		pluginDir = "#{sass_src}/plugins"
 		plugins = fs.readdirSync pluginDir
 		.map (file) -> file.replace /\.sass$/, ""
 
 		for plugin in plugins
 			inFile  = "#{sass_src}/plugins/#{plugin}.sass"
-			outFile = "#{sass_dest}/#{sass_root}-#{plugin}.css"
-			minFile = "#{sass_dest}/#{sass_root}-#{plugin}.min.css"
+			outFile = "#{sass_dest}/plugins/#{sass_root}-#{plugin}.css"
+			minFile = "#{sass_dest}/plugins/#{sass_root}-#{plugin}.min.css"
 
 			try
-				proc.execSync "sass -#{flag} expanded --trace #{inFile} > #{outFile}"
-				proc.execSync "sass -#{flag} compressed --trace #{inFile} > #{minFile}"
+				proc.execSync "sass -#{sass_flag} expanded --trace #{inFile} > #{outFile}"
+				proc.execSync "sass -#{sass_flag} compressed --trace #{inFile} > #{minFile}"
+			catch err
+				console.error "[#{new Date}] : Error executing '#{err.cmd}'"
+
+task 'build:css:themes', 'Build Sass theme files into CSS', ->
+	invoke 'clean:css:themes'
+	record 'build:css:themes', ->
+		themeDir = "#{sass_src}/themes"
+		themes = fs.readdirSync themeDir
+		.map (file) -> file.replace /\.sass$/, ""
+
+		for theme in themes
+			inFile  = "#{sass_src}/themes/#{theme}.sass"
+			outFile = "#{sass_dest}/themes/#{sass_root}-#{theme}.css"
+			minFile = "#{sass_dest}/themes/#{sass_root}-#{theme}.min.css"
+
+			try
+				proc.execSync "sass -#{sass_flag} expanded --trace #{inFile} > #{outFile}"
+				proc.execSync "sass -#{sass_flag} compressed --trace #{inFile} > #{minFile}"
 			catch err
 				console.error "[#{new Date}] : Error executing '#{err.cmd}'"
 
@@ -104,7 +131,22 @@ task 'clean:js', 'Clean JS files from distribution folder', ->
 	record 'clean:js', -> clean coffee_dest
 
 task 'clean:css', 'Clean CSS files from distribution folder', ->
-	record 'clean:css', -> clean sass_dest
+	record 'clean:css', ->
+		invoke 'clean:css:core'
+		invoke 'clean:css:plugins'
+		invoke 'clean:css:themes'
+
+task 'clean:css:core', 'Clean core CSS files from distribution folder', ->
+	record 'clean:css:core', ->
+		clean sass_dest
+
+task 'clean:css:plugins', 'Clean CSS plugin files from distribution folder', ->
+	record 'clean:css:plugins', ->
+		clean "#{sass_dest}/plugins"
+
+task 'clean:css:themes', 'Clean CSS theme files from distribution folder', ->
+	record 'clean:css:themes', ->
+		clean "#{sass_dest}/themes"
 
 task 'clean:html', 'Clean HTML files from distribution folder', ->
 	record 'clean:html', -> clean haml_dest
@@ -137,7 +179,10 @@ clean = (dir) ->
 	files = fs.readdirSync dir
 	.map (file) -> "#{dir}/#{file}"
 
-	fs.unlinkSync file for file in files
+	try
+		fs.unlinkSync file for file in files
+	catch err
+		console.error "[#{new Date}] : #{err}"
 
 watch = (dir, task) ->
 	invoke task

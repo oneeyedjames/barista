@@ -1,58 +1,31 @@
-=tab-color($color, $light)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	$lighter-gray: tint($gray, 25%)
-	$darker-gray: shade($gray, 25%)
-
-	.tab
-		+text-shadow($darker-gray)
-
-		&:active, &.active
-			+text-shadow($darker, -$text-shadow-top)
-
-			&:hover, &.hover
-				box-shadow: inset 0 0 6px 2px $light
-
-		&:hover, &.hover
-			box-shadow: inset 0 0 6px 2px $light-gray
-
-		&[disabled], &.disabled
-			box-shadow: none
-			text-shadow: none
-
-			&:active, &.active, &:hover, &.hover
-				box-shadow: none
-				text-shadow: none
-
 .tabbar
-	+tab-color($gray, $light-gray)
-	
+	+tab-color-effects($gray, $light-gray, $dark-gray)
+
 	.tab
 		margin-right: -1px
 		border-width: $base-border-width $base-border-width 0
 		border-style: $base-border-style
 
-	&.red
-		+tab-color($red, $light-red)
+	&.red, &.danger, &.error
+		+tab-color-effects($red, $light-red, $dark-red)
 
-	&.green
-		+tab-color($green, $light-green)
+	&.green, &.success
+		+tab-color-effects($green, $light-green, $dark-green)
 
-	&.blue
-		+tab-color($blue, $light-blue)
+	&.blue, &.primary
+		+tab-color-effects($blue, $light-blue, $dark-blue)
 
-	&.cyan
-		+tab-color($cyan, $light-cyan)
+	&.cyan, &.info
+		+tab-color-effects($cyan, $light-cyan, $dark-cyan)
 
 	&.magenta
-		+tab-color($magenta, $light-magenta)
+		+tab-color-effects($magenta, $light-magenta, $dark-magenta)
 
-	&.yellow
-		+tab-color($yellow, $light-yellow)
+	&.yellow, &.warning
+		+tab-color-effects($yellow, $light-yellow, $dark-yellow)
 
 	&.purple
-		+tab-color($purple, $light-purple)
+		+tab-color-effects($purple, $light-purple, $dark-purple)
 
 	&.orange
-		+tab-color($orange, $light-orange)
+		+tab-color-effects($orange, $light-orange, $dark-orange)

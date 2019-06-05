@@ -1,33 +1,3 @@
-=btn-color($color, $light)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	color: $white
-	border-color: $darker
-
-	+linear-gradient(0deg, $color, $lighter)
-
-	&:active, &.active
-		+linear-gradient(180deg, $color, $lighter)
-
-	&:visited, &.visited
-		color: $white
-
-	&[disabled], &.disabled
-		background: $color
-		color: $light
-		cursor: no-drop
-
-	&.text
-		color: $color
-
-		&:active, &:hover
-			background: none
-
-	.bdg
-		background-color: $white
-		color: $darker
-
 .btn, #{$all-buttons}
 	display: inline-block
 	//margin-right: $base-spacing / 4
@@ -42,10 +12,10 @@
 	font-family: $base-font-family
 	font-size: $base-font-size
 
-	+btn-color($gray, $light-gray)
+	+btn-color($gray, $light-gray, $dark-gray)
 
 	&:visited
-		color: $white
+		color: $background-color
 
 	&.sm
 		padding: $small-padding
@@ -56,28 +26,28 @@
 		border-radius: $small-border-radius
 
 	&.red, &.danger, &.error
-		+btn-color($red, $light-red)
+		+btn-color($red, $light-red, $dark-red)
 
 	&.green, &.success
-		+btn-color($green, $light-green)
+		+btn-color($green, $light-green, $dark-green)
 
 	&.blue, &.primary
-		+btn-color($blue, $light-blue)
+		+btn-color($blue, $light-blue, $dark-blue)
 
 	&.cyan, &.info
-		+btn-color($cyan, $light-cyan)
+		+btn-color($cyan, $light-cyan, $dark-cyan)
 
 	&.magenta
-		+btn-color($magenta, $light-magenta)
+		+btn-color($magenta, $light-magenta, $dark-magenta)
 
 	&.yellow, &.warning
-		+btn-color($yellow, $light-yellow)
+		+btn-color($yellow, $light-yellow, $dark-yellow)
 
 	&.purple
-		+btn-color($purple, $light-purple)
+		+btn-color($purple, $light-purple, $dark-purple)
 
 	&.orange
-		+btn-color($orange, $light-orange)
+		+btn-color($orange, $light-orange, $dark-orange)
 
 	&.text
 		border-color: transparent

@@ -189,6 +189,10 @@ dl > dt {
   overflow: hidden;
 }
 
+.txt {
+  background-color: #DDDDDD;
+  color: #444444;
+}
 .txt.red, .txt.danger, .txt.error {
   background-color: #F4C3B7;
   color: #7e210a;
@@ -822,67 +826,83 @@ table.table.orange.striped tbody tr:nth-child(even) th, table.table.orange.strip
   margin-bottom: 0.1875em;
   padding: 0.375em 0.75em;
   border-radius: 0.5em;
-  color: #FFFFFF;
   font-weight: 500;
   background-color: #999999;
+  color: #FFFFFF;
 }
 .lbl.red, .lbl.danger, .lbl.error {
   background-color: #DC3912;
+  color: #FFFFFF;
 }
 .lbl.green, .lbl.success {
   background-color: #109618;
+  color: #FFFFFF;
 }
 .lbl.blue, .lbl.primary {
   background-color: #3366CC;
+  color: #FFFFFF;
 }
 .lbl.cyan, .lbl.info {
   background-color: #48ACDB;
+  color: #FFFFFF;
 }
 .lbl.magenta {
   background-color: #CD51AD;
+  color: #FFFFFF;
 }
 .lbl.yellow, .lbl.warning {
   background-color: #FFB800;
+  color: #FFFFFF;
 }
 .lbl.purple {
   background-color: #990099;
+  color: #FFFFFF;
 }
 .lbl.orange {
   background-color: #FF6600;
+  color: #FFFFFF;
 }
 
 .bdg {
   display: inline-block;
   padding: 0 0.5em;
   border-radius: 0.7142857143em;
-  color: #FFFFFF;
   font-weight: 500;
   font-style: normal;
   background-color: #999999;
+  color: #FFFFFF;
 }
 .bdg.red, .bdg.danger, .bdg.error {
   background-color: #DC3912;
+  color: #FFFFFF;
 }
 .bdg.green, .bdg.success {
   background-color: #109618;
+  color: #FFFFFF;
 }
 .bdg.blue, .bdg.primary {
   background-color: #3366CC;
+  color: #FFFFFF;
 }
 .bdg.cyan, .bdg.info {
   background-color: #48ACDB;
+  color: #FFFFFF;
 }
 .bdg.magenta {
   background-color: #CD51AD;
+  color: #FFFFFF;
 }
 .bdg.yellow, .bdg.warning {
   background-color: #FFB800;
+  color: #FFFFFF;
 }
 .bdg.purple {
   background-color: #990099;
+  color: #FFFFFF;
 }
 .bdg.orange {
   background-color: #FF6600;
+  color: #FFFFFF;
 }
 
 .card {
@@ -1279,19 +1299,166 @@ ul.menu.inline.tabs {
   border-bottom: 1px solid #999999;
 }
 ul.menu li {
-  color: #3366CC;
+  color: #999999;
 }
 ul.menu li a {
-  color: #3366CC;
+  color: #999999;
 }
 ul.menu li:hover {
-  background-color: #C1D0EF;
+  background-color: #DDDDDD;
 }
 ul.menu li.active {
-  background-color: #3366CC;
+  background-color: #999999;
+}
+ul.menu li.active a {
+  color: #FFFFFF;
 }
 ul.menu.tabs {
+  border-color: #999999;
+}
+ul.menu.red li, ul.menu.danger li, ul.menu.error li {
+  color: #DC3912;
+}
+ul.menu.red li a, ul.menu.danger li a, ul.menu.error li a {
+  color: #DC3912;
+}
+ul.menu.red li:hover, ul.menu.danger li:hover, ul.menu.error li:hover {
+  background-color: #F4C3B7;
+}
+ul.menu.red li.active, ul.menu.danger li.active, ul.menu.error li.active {
+  background-color: #DC3912;
+}
+ul.menu.red li.active a, ul.menu.danger li.active a, ul.menu.error li.active a {
+  color: #FFFFFF;
+}
+ul.menu.red.tabs, ul.menu.danger.tabs, ul.menu.error.tabs {
+  border-color: #DC3912;
+}
+ul.menu.green li, ul.menu.success li {
+  color: #109618;
+}
+ul.menu.green li a, ul.menu.success li a {
+  color: #109618;
+}
+ul.menu.green li:hover, ul.menu.success li:hover {
+  background-color: #B6DFB9;
+}
+ul.menu.green li.active, ul.menu.success li.active {
+  background-color: #109618;
+}
+ul.menu.green li.active a, ul.menu.success li.active a {
+  color: #FFFFFF;
+}
+ul.menu.green.tabs, ul.menu.success.tabs {
+  border-color: #109618;
+}
+ul.menu.blue li, ul.menu.primary li {
+  color: #3366CC;
+}
+ul.menu.blue li a, ul.menu.primary li a {
+  color: #3366CC;
+}
+ul.menu.blue li:hover, ul.menu.primary li:hover {
+  background-color: #C1D0EF;
+}
+ul.menu.blue li.active, ul.menu.primary li.active {
+  background-color: #3366CC;
+}
+ul.menu.blue li.active a, ul.menu.primary li.active a {
+  color: #FFFFFF;
+}
+ul.menu.blue.tabs, ul.menu.primary.tabs {
   border-color: #3366CC;
+}
+ul.menu.cyan li, ul.menu.info li {
+  color: #48ACDB;
+}
+ul.menu.cyan li a, ul.menu.info li a {
+  color: #48ACDB;
+}
+ul.menu.cyan li:hover, ul.menu.info li:hover {
+  background-color: #BBE6F7;
+}
+ul.menu.cyan li.active, ul.menu.info li.active {
+  background-color: #48ACDB;
+}
+ul.menu.cyan li.active a, ul.menu.info li.active a {
+  color: #FFFFFF;
+}
+ul.menu.cyan.tabs, ul.menu.info.tabs {
+  border-color: #48ACDB;
+}
+ul.menu.magenta li {
+  color: #CD51AD;
+}
+ul.menu.magenta li a {
+  color: #CD51AD;
+}
+ul.menu.magenta li:hover {
+  background-color: #F7B4E4;
+}
+ul.menu.magenta li.active {
+  background-color: #CD51AD;
+}
+ul.menu.magenta li.active a {
+  color: #FFFFFF;
+}
+ul.menu.magenta.tabs {
+  border-color: #CD51AD;
+}
+ul.menu.yellow li, ul.menu.warning li {
+  color: #FFB800;
+}
+ul.menu.yellow li a, ul.menu.warning li a {
+  color: #FFB800;
+}
+ul.menu.yellow li:hover, ul.menu.warning li:hover {
+  background-color: #FEE0B2;
+}
+ul.menu.yellow li.active, ul.menu.warning li.active {
+  background-color: #FFB800;
+}
+ul.menu.yellow li.active a, ul.menu.warning li.active a {
+  color: #FFFFFF;
+}
+ul.menu.yellow.tabs, ul.menu.warning.tabs {
+  border-color: #FFB800;
+}
+ul.menu.purple li {
+  color: #990099;
+}
+ul.menu.purple li a {
+  color: #990099;
+}
+ul.menu.purple li:hover {
+  background-color: #E0B2E0;
+}
+ul.menu.purple li.active {
+  background-color: #990099;
+}
+ul.menu.purple li.active a {
+  color: #FFFFFF;
+}
+ul.menu.purple.tabs {
+  border-color: #990099;
+}
+ul.menu.orange li {
+  color: #FF6600;
+}
+ul.menu.orange li a {
+  color: #FF6600;
+}
+ul.menu.orange li:hover {
+  background-color: #FFCFAE;
+}
+ul.menu.orange li.active {
+  background-color: #FF6600;
+}
+ul.menu.orange li.active a {
+  color: #FFFFFF;
+}
+ul.menu.orange.tabs {
+  border-color: #FF6600;
 }
 
 .row {

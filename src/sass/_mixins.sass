@@ -1,0 +1,221 @@
+=a-color($color, $light, $dark)
+	color: $color
+
+	&:visited
+		color: $dark
+
+=txt-color($color, $light, $dark)
+	background-color: $light
+	color: $dark
+
+=lbl-color($color, $light, $dark)
+	background-color: $color
+	color: $background-color
+
+=bdg-color($color, $light, $dark)
+	background-color: $color
+	color: $background-color
+
+=btn-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	color: $background-color
+	border-color: $darker
+
+	+linear-gradient(0deg, $color, $lighter)
+
+	&:active, &.active
+		+linear-gradient(180deg, $color, $lighter)
+
+	&:visited, &.visited
+		color: $background-color
+
+	&[disabled], &.disabled
+		background: $color
+		color: $light
+		cursor: no-drop
+
+	&.text
+		color: $color
+
+		&:active, &:hover
+			background: none
+
+	.bdg
+		background-color: $background-color
+		color: $darker
+
+=tab-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	$lighter-gray: tint($gray, 25%)
+	$darker-gray: shade($gray, 25%)
+
+	.tab
+		border-color: $darker-gray
+		color: $background-color
+
+		+linear-gradient(0deg, $gray, $lighter-gray)
+
+		&:active, &.active
+			border-color: $darker
+
+			+linear-gradient(180deg, $color, $lighter)
+
+		&[disabled], &.disabled
+			background: $gray
+			color: $light-gray
+			cursor: no-drop
+
+			&:active, &.active, &:hover, &.hover
+				border-color: $darker-gray
+
+	.panel
+		border-color: $darker
+
+=card-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	border-color: $darker
+
+	header
+		+linear-gradient(0deg, $color, $lighter)
+
+	header, footer
+		border-color: $lighter
+
+	footer, &.alert
+		background-color: $light
+		color: $dark
+
+	footer.btns
+		background-color: $background-color
+
+=list-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	border-color: $darker
+
+	li
+		border-color: $lighter
+
+		&.header
+			+linear-gradient(0deg, $color, $lighter)
+
+	&.striped
+		li:nth-child(odd)
+			background-color: $light
+			color: $dark
+
+		li.header
+			color: $background-color
+
+=table-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	border-color: $darker
+
+	thead
+		+linear-gradient(0deg, $color, $lighter)
+
+		th, td
+			color: $background-color
+
+	tbody
+		th, td
+			border-color: $lighter
+
+	&.striped
+		tbody
+			tr:nth-child(even)
+				th, td
+					background-color: $light
+					color: $dark
+
+=navbar-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	border-bottom: 1px solid $darker
+
+	+linear-gradient(0deg, $color, $lighter)
+
+	ul.nav ul
+		border-left: 1px solid $darker
+		border-right: 1px solid $darker
+		border-bottom: 1px solid $darker
+
+		+linear-gradient(0deg, $lighter, $color)
+
+		li.sep
+			background-color: $darker
+
+=menu-color($color, $light, $dark)
+	li
+		color: $color
+
+		a
+			color: $color
+
+		&:hover
+			background-color: $light
+
+		&.active
+			background-color: $color
+
+			a
+				color: $background-color
+
+	&.tabs
+		border-color: $color
+
+=breadcrumb-color($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	background-color: $light
+
+	a
+		color: $color
+
+		&:visited
+			color: $darker
+
+	li
+		color: $dark
+
+	li::before
+		color: $lighter
+
+=blockquote-color($color, $light, $dark)
+	border-left-color: $color
+
+	&.shaded
+		background-color: $light
+		color: $dark
+
+=tooltip-color($color, $light, $dark)
+	.message
+		background: $color
+
+	&.top .pointer
+		border-top-color: $color
+
+	&.left .pointer
+		border-left-color: $color
+
+	&.right .pointer
+		border-right-color: $color
+
+	&.bottom .pointer
+		border-bottom-color: $color
+
+=addon-color($color, $light, $dark)
+	background-color: $light
+	border-color: $color
+	color: $dark

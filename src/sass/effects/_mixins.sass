@@ -1,0 +1,110 @@
+=btn-color-effects($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	border-color: $darker
+
+	+text-shadow($darker)
+
+	&:active, &.active
+		+text-shadow($darker, -$text-shadow-top)
+
+		&:hover, &.hover
+			box-shadow: inset 0 0 6px 2px $light
+
+	&:hover, &.hover
+		box-shadow: inset 0 0 6px 2px $light
+
+	&[disabled], &.disabled
+		box-shadow: none
+		text-shadow: none
+
+		&:active, &:hover
+			box-shadow: none
+			text-shadow: none
+
+	&.text
+		+text-shadow($light)
+
+		&:active, &.active
+			+text-shadow($light, -$text-shadow-top)
+
+		&:active, &:hover
+			background: none
+			box-shadow: none
+
+=tab-color-effects($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	$lighter-gray: tint($gray, 25%)
+	$darker-gray: shade($gray, 25%)
+
+	.tab
+		+text-shadow($darker-gray)
+
+		&:active, &.active
+			+text-shadow($darker, -$text-shadow-top)
+
+			&:hover, &.hover
+				box-shadow: inset 0 0 6px 2px $light
+
+		&:hover, &.hover
+			box-shadow: inset 0 0 6px 2px $light-gray
+
+		&[disabled], &.disabled
+			box-shadow: none
+			text-shadow: none
+
+			&:active, &.active, &:hover, &.hover
+				box-shadow: none
+				text-shadow: none
+
+=card-color-effects($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	header
+		+text-shadow($darker)
+
+		.close:active
+			+text-shadow($darker, -$text-shadow-top)
+
+=list-color-effects($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	li
+		&:hover
+			background-color: $light
+
+		&.header
+			+text-shadow($darker)
+
+	&.striped
+		li:hover
+			background-color: darken($light, 15%)
+			color: $foreground-color
+
+		li.header
+			color: $background-color
+
+=table-color-effects($color, $light, $dark)
+	$lighter: tint($color, 25%)
+	$darker: shade($color, 25%)
+
+	thead
+		th, td
+			+text-shadow($darker)
+
+	tbody
+		tr:hover
+			th, td
+				background-color: $light
+
+	&.striped
+		tbody
+			tr:hover
+				th, td
+					background-color: darken($light, 15%)
+					color: $foreground-color

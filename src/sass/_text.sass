@@ -1,62 +1,54 @@
-=a-color($color, $dark)
-	color: $color
-
-	&:visited
-		color: $dark
-
-=txt-color($light, $dark)
-	background-color: $light
-	color: $dark
-
 .txt
+	+txt-color($gray, $light-gray, $dark-gray)
+
 	&.red, &.danger, &.error
-		+txt-color($light-red, $dark-red)
+		+txt-color($red, $light-red, $dark-red)
 
 	&.green, &.success
-		+txt-color($light-green, $dark-green)
+		+txt-color($green, $light-green, $dark-green)
 
 	&.blue, &.primary
-		+txt-color($light-blue, $dark-blue)
+		+txt-color($blue, $light-blue, $dark-blue)
 
 	&.cyan, &.info
-		+txt-color($light-cyan, $dark-cyan)
+		+txt-color($cyan, $light-cyan, $dark-cyan)
 
 	&.magenta
-		+txt-color($light-magenta, $dark-magenta)
+		+txt-color($magenta, $light-magenta, $dark-magenta)
 
 	&.yellow, &.warning
-		+txt-color($light-yellow, $dark-yellow)
+		+txt-color($yellow, $light-yellow, $dark-yellow)
 
 	&.purple
-		+txt-color($light-purple, $dark-purple)
+		+txt-color($purple, $light-purple, $dark-purple)
 
 	&.orange
-		+txt-color($light-orange, $dark-orange)
+		+txt-color($orange, $light-orange, $dark-orange)
 
 a
 	text-decoration: underline
-	+a-color($blue, $dark-blue)
+	+a-color($blue, $light-blue, $dark-blue)
 
 	&.red, &.danger, &.error
-		+a-color($red, $dark-red)
+		+a-color($red, $light-red, $dark-red)
 
 	&.green, &.success
-		+a-color($green, $dark-green)
+		+a-color($green, $light-green, $dark-green)
 
 	&.blue, &.primary
-		+a-color($blue, $dark-blue)
+		+a-color($blue, $light-blue, $dark-blue)
 
 	&.cyan, &.info
-		+a-color($cyan, $dark-cyan)
+		+a-color($cyan, $light-cyan, $dark-cyan)
 
 	&.magenta
-		+a-color($magenta, $dark-magenta)
+		+a-color($magenta, $light-magenta, $dark-magenta)
 
 	&.yellow, &.warning
-		+a-color($yellow, $dark-yellow)
+		+a-color($yellow, $light-yellow, $dark-yellow)
 
 	&.purple
-		+a-color($purple, $dark-purple)
+		+a-color($purple, $light-purple, $dark-purple)
 
 	&.orange
-		+a-color($orange, $dark-orange)
+		+a-color($orange, $light-orange, $dark-orange)

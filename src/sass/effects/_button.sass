@@ -1,66 +1,31 @@
-=btn-color($color, $light)
-	$lighter: tint($color, 25%)
-	$darker: shade($color, 25%)
-
-	border-color: $darker
-
-	+text-shadow($darker)
-
-	&:active, &.active
-		+text-shadow($darker, -$text-shadow-top)
-
-		&:hover, &.hover
-			box-shadow: inset 0 0 6px 2px $light
-
-	&:hover, &.hover
-		box-shadow: inset 0 0 6px 2px $light
-
-	&[disabled], &.disabled
-		box-shadow: none
-		text-shadow: none
-
-		&:active, &:hover
-			box-shadow: none
-			text-shadow: none
-
-	&.text
-		+text-shadow($light)
-
-		&:active, &.active
-			+text-shadow($light, -$text-shadow-top)
-
-		&:active, &:hover
-			background: none
-			box-shadow: none
-
 .btn, #{$all-buttons}
 	border-width: $base-border-width
 
-	+btn-color($gray, $light-gray)
+	+btn-color-effects($gray, $light-gray, $dark-gray)
 
 	&.red, &.danger, &.error
-		+btn-color($red, $light-red)
+		+btn-color-effects($red, $light-red, $dark-red)
 
 	&.green, &.success
-		+btn-color($green, $light-green)
+		+btn-color-effects($green, $light-green, $dark-green)
 
 	&.blue, &.primary
-		+btn-color($blue, $light-blue)
+		+btn-color-effects($blue, $light-blue, $dark-blue)
 
 	&.cyan, &.info
-		+btn-color($cyan, $light-cyan)
+		+btn-color-effects($cyan, $light-cyan, $dark-cyan)
 
 	&.magenta
-		+btn-color($magenta, $light-magenta)
+		+btn-color-effects($magenta, $light-magenta, $dark-magenta)
 
 	&.yellow, &.warning
-		+btn-color($yellow, $light-yellow)
+		+btn-color-effects($yellow, $light-yellow, $dark-yellow)
 
 	&.purple
-		+btn-color($purple, $light-purple)
+		+btn-color-effects($purple, $light-purple, $dark-purple)
 
 	&.orange
-		+btn-color($orange, $light-orange)
+		+btn-color-effects($orange, $light-orange, $dark-orange)
 
 .btn-group
 	.btn, .btn:first-child

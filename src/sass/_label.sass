@@ -1,36 +1,32 @@
-=lbl-color($color)
-	background-color: $color
-
 .lbl
 	display: inline-block
 	margin-bottom: $base-spacing / 4
 	padding: $base-padding
 	border-radius: $base-border-radius
-	color: $white
 	font-weight: $semi-bold
 
-	+lbl-color($gray)
+	+lbl-color($gray, $light-gray, $dark-gray)
 
 	&.red, &.danger, &.error
-		+lbl-color($red)
+		+lbl-color($red, $light-red, $dark-red)
 
 	&.green, &.success
-		+lbl-color($green)
+		+lbl-color($green, $light-green, $dark-green)
 
 	&.blue, &.primary
-		+lbl-color($blue)
+		+lbl-color($blue, $light-blue, $dark-blue)
 
 	&.cyan, &.info
-		+lbl-color($cyan)
+		+lbl-color($cyan, $light-cyan, $dark-cyan)
 
 	&.magenta
-		+lbl-color($magenta)
+		+lbl-color($magenta, $light-magenta, $dark-magenta)
 
 	&.yellow, &.warning
-		+lbl-color($yellow)
+		+lbl-color($yellow, $light-yellow, $dark-yellow)
 
 	&.purple
-		+lbl-color($purple)
+		+lbl-color($purple, $light-purple, $dark-purple)
 
 	&.orange
-		+lbl-color($orange)
+		+lbl-color($orange, $light-orange, $dark-orange)
