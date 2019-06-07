@@ -19,36 +19,5 @@ small, .small
 	font-weight: normal
 	line-height: inherit
 
-blockquote
-	margin: (2 * $block-spacing) 0
-	padding: 0 0 0 (1.5 * $block-spacing)
-	border-left: (.5 * $block-spacing) solid $gray
-
-	+blockquote-color($gray, $light-gray, $dark-gray)
-
-	&.red, &.error, &.danger
-		+blockquote-color($red, $light-red, $dark-red)
-
-	&.green, &.success
-		+blockquote-color($green, $light-green, $dark-green)
-
-	&.blue, &.primary
-		+blockquote-color($blue, $light-blue, $dark-blue)
-
-	&.cyan, &.info
-		+blockquote-color($cyan, $light-cyan, $dark-cyan)
-
-	&.magenta
-		+blockquote-color($magenta, $light-magenta, $dark-magenta)
-
-	&.yellow, &.warning
-		+blockquote-color($yellow, $light-yellow, $dark-yellow)
-
-	&.purple
-		+blockquote-color($purple, $light-purple, $dark-purple)
-
-	&.orange
-		+blockquote-color($orange, $light-orange, $dark-orange)
-
 dl > dt
 	font-weight: $semi-bold
