@@ -1,4 +1,31 @@
+table
+	// Normalized tables
+
+	border-collapse: separate
+	border-spacing: 0
+
+	thead
+		th, td
+			padding: $base-padding
+			border-bottom: 1px solid $gray
+
+		th
+			font-weight: $semi-bold
+	tbody
+		th, td
+			padding: $base-padding
+			border-top: 1px solid $light-gray
+
+		th
+			font-weight: normal
+
+		tr:first-child
+			th, td
+				border: none
+
 table.table
+	// Customized tables
+
 	width: 100%
 	margin-bottom: $base-margin-bottom
 	border-radius: $base-border-radius
