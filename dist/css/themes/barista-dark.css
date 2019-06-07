@@ -58,21 +58,41 @@ a.info:visited {
 .lbl.primary {
   background-color: #990099;
   color: #333333;
+  text-decoration: none;
+}
+.lbl.primary:visited {
+  color: #333333;
 }
 .lbl.success {
   background-color: #109618;
+  color: #333333;
+  text-decoration: none;
+}
+.lbl.success:visited {
   color: #333333;
 }
 .lbl.error, .lbl.danger {
   background-color: #DC3912;
   color: #333333;
+  text-decoration: none;
+}
+.lbl.error:visited, .lbl.danger:visited {
+  color: #333333;
 }
 .lbl.warning {
   background-color: #FF6600;
   color: #333333;
+  text-decoration: none;
+}
+.lbl.warning:visited {
+  color: #333333;
 }
 .lbl.info {
   background-color: #3366CC;
+  color: #333333;
+  text-decoration: none;
+}
+.lbl.info:visited {
   color: #333333;
 }
 
