@@ -1,17 +1,17 @@
 %head
 	%title Barista Framework
 
-	%link{ :rel => 'stylesheet', :href => '../../node_modules/fontawesome/css/font-awesome.min.css' }
-	%link{ :rel => 'stylesheet', :href => '../css/barista-effects.css' }
+	%link{ :rel => 'stylesheet', :href => '../../node_modules/font-awesome/css/font-awesome.css' }
+	%link{ :rel => 'stylesheet', :href => '../css/barista.css' }
 
-	%script{ :src => '../../node_modules/jquery/dist/jquery.min.js' }
+	%script{ :src => '../../node_modules/jquery/dist/jquery.js' }
 	%script{ :src => '../js/barista.js' }
 
 	:css
 		.section { border-bottom: 1px solid #CCC; }
-		.demo { border: 2px solid #CCC; padding: 1.5em; }
+		.demo { border: 2px solid #CCC; padding: 1.5em; margin-bottom: 1em; }
 		.highlight { background-color: #FEB; padding: 0 .25em; }
-		pre { white-space: pre-wrap; }
+		pre, code.demo { white-space: pre-wrap; display: block; }
 
 	:javascript
 		document.addEventListener('DOMContentLoaded', function(e) {
@@ -19,14 +19,13 @@
 				let sections = document.getElementsByTagName('section');
 
 				for (let section of sections) {
-					if (section.classList.contains('nav')) {
+					if (section.classList.contains('nav'))
 						section.style.display = 'none';
-					}
 				}
 
-				let match = url.match(/(index|normalize)\.html#([A-Z]*)/i);
+				let match = url.match(/\.html#([A-Z]*)/i);
 				if (match)
-					document.getElementById(match[2]).style.display = 'block';
+					document.getElementById(match[1]).style.display = 'block';
 				else
 					sections[0].style.display = 'block';
 			}

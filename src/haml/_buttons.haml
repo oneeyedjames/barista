@@ -1,72 +1,97 @@
 %section#buttons.nav
-    %h3.section Buttons
-    %p
-        %a.btn Default
-        %a.btn.red Red
-        %a.btn.green Green
-        %a.btn.blue Blue
-        %a.btn.cyan Cyan
-        %a.btn.magenta Magenta
-        %a.btn.yellow Yellow
-        %a.btn.purple Purple
-        %a.btn.orange Orange
-    %p
-        %a.btn.toggle Toggle
-        %a.btn.red.toggle Red
-        %a.btn.green.toggle Green
-        %a.btn.blue.toggle Blue
-        %a.btn.cyan.toggle Cyan
-        %a.btn.magenta.toggle Magenta
-        %a.btn.yellow.toggle Yellow
-        %a.btn.purple.toggle Purple
-        %a.btn.orange.toggle Orange
-    %p
-        %a.btn.text Text
-        %a.btn.red.text Red
-        %a.btn.green.text Green
-        %a.btn.blue.text Blue
-        %a.btn.cyan.text Cyan
-        %a.btn.magenta.text Magenta
-        %a.btn.yellow.text Yellow
-        %a.btn.purple.text Purple
-        %a.btn.orange.text Orange
+	%h3.section Buttons
+	%p
+		Buttons can be generated with
+		%code button
+		tags or any generic element with the
+		%code .btn
+		class.
+	%p
+		%button Button
+		%a.btn Link
+		%span.btn Text
+	%code.demo
+		= "&lt;button&gt;Button&lt;/button&gt;\n"
+		= "&lt;a class=\"btn\"&gt;Link&lt;/a&gt;\n"
+		= "&lt;span class=\"btn\"&gt;Text&lt;/span&gt;\n"
 
-    %h4 Sizes
-    %p
-        %a.btn.lg Large
-        %a.btn Default
-        %a.btn.sm Small
+	%h4 Styles
+	%p Buttons also come in toggle and text styles
+	%p
+		%a.btn Default
+		%a.btn.toggle Toggle
+		%a.btn.text Text
+	%code.demo
+		= "&lt;a class=\"btn\"&gt;Default&lt;/a&gt;\n"
+		= "&lt;a class=\"btn toggle\"&gt;Toggle&lt;/a&gt;\n"
+		= "&lt;a class=\"btn text\"&gt;Text&lt;/a&gt;\n"
 
-    %h4 Groups
-    .btn-group
-        %a.btn First
-        %a.btn Second
-        %a.btn Third
-    .btn-group.single
-        %a.btn Single
-        %a.btn Select
-        %a.btn Group
+	%h4 Sizes
+	%p Buttons also come in large and small sizes
+	%p
+		%a.btn.lg Large
+		%a.btn Default
+		%a.btn.sm Small
+	%code.demo
+		= "&lt;a class=\"btn lg\"&gt;Large&lt;/a&gt;\n"
+		= "&lt;a class=\"btn\"&gt;Default&lt;/a&gt;\n"
+		= "&lt;a class=\"btn sm\"&gt;Small&lt;/a&gt;\n"
 
-    %h4 Badges
-    %p
-        %a.btn
-            = "Default"
-            %i.bdg.red 0
-        %a.btn.blue
-            = "Blue"
-            %i.bdg 0
-        %a.btn.red
-            = "Red"
-            %i.bdg 0
-        %a.btn.yellow
-            = "Yellow"
-            %i.bdg 0
-        %a.btn.green
-            = "Green"
-            %i.bdg 0
-        %a.btn.purple
-            = "Purple"
-            %i.bdg 0
-        %a.btn.orange
-            = "Orange"
-            %i.bdg 0
+	%h4 Colors
+	%p Buttons can also be assigned a color scheme
+	%h5 Default style
+	%p
+		%a.btn.primary Primary
+		%a.btn.success Success
+		%a.btn.error Error
+		%a.btn.warning Warning
+		%a.btn.info Info
+	%code.demo
+		= "&lt;a class=\"btn primary\"&gt;Primary&lt;/a&gt;\n"
+		= "&lt;a class=\"btn success\"&gt;Success&lt;/a&gt;\n"
+		= "&lt;a class=\"btn error\"&gt;Error&lt;/a&gt;\n"
+		= "&lt;a class=\"btn Warning\"&gt;Warning&lt;/a&gt;\n"
+		= "&lt;a class=\"btn info\"&gt;Info&lt;/a&gt;\n"
+	%h5 Text style
+	%p
+		%a.btn.text.primary Primary
+		%a.btn.text.success Success
+		%a.btn.text.error Error
+		%a.btn.text.warning Warning
+		%a.btn.text.info Info
+	%code.demo
+		= "&lt;a class=\"btn text primary\"&gt;Primary&lt;/a&gt;\n"
+		= "&lt;a class=\"btn text success\"&gt;Success&lt;/a&gt;\n"
+		= "&lt;a class=\"btn text error\"&gt;Error&lt;/a&gt;\n"
+		= "&lt;a class=\"btn text Warning\"&gt;Warning&lt;/a&gt;\n"
+		= "&lt;a class=\"btn text info\"&gt;Info&lt;/a&gt;\n"
+
+	%h4 Groups
+	.btn-group
+		%a.btn First
+		%a.btn Second
+		%a.btn Third
+	.btn-group.toggle
+		%a.btn Toggle
+		%a.btn Select
+		%a.btn Group
+	.btn-group.single
+		%a.btn Single
+		%a.btn Select
+		%a.btn Group
+	%code.demo
+		= "&lt;div class=\"btn-group\"&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;First&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;Second&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;Third&lt;/a&gt;\n"
+		= "&lt;/div&gt;\n"
+		= "&lt;div class=\"btn-group toggle\"&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;Toggle&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;Select&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;Group&lt;/a&gt;\n"
+		= "&lt;/div&gt;\n"
+		= "&lt;div class=\"btn-group single\"&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;Single&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;Select&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;Group&lt;/a&gt;\n"
+		= "&lt;/div&gt;"

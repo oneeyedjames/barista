@@ -1,12 +1,15 @@
 %section#typography.nav
 	%h3.section Typography
-
-	%p.lead Lead Text
 	%p Main Body Text
-	%a{ :href => '#' } Hyperlink
+	%p.lead Lead Text
+	%p
+		%a{ :href => 'other.html' } Hyperlink
+	%code.demo
+		= "&lt;p&gt;Main Body Text&lt;/p&gt;\n"
+		= "&lt;p class=\"lead\"&gt;Lead Text&lt;/p&gt;\n"
+		= "&lt;p&gt;&lt;a href=\"other.html\"&gt;Hyperlink&lt;/a&gt;&lt;/p&gt;"
 
 	%h4.section Headings
-
 	%h1
 		Heading 1
 		%small Small text
@@ -25,53 +28,46 @@
 	%h6
 		Heading 6
 		%small Small text
+	%code.demo
+		= "&lt;h1&gt;Heading 1 &lt;small&gt;Small text&lt;/small&gt;&lt;/h1&gt;\n"
+		= "&lt;h2&gt;Heading 2 &lt;small&gt;Small text&lt;/small&gt;&lt;/h2&gt;\n"
+		= "&lt;h3&gt;Heading 3 &lt;small&gt;Small text&lt;/small&gt;&lt;/h3&gt;\n"
+		= "&lt;h4&gt;Heading 4 &lt;small&gt;Small text&lt;/small&gt;&lt;/h4&gt;\n"
+		= "&lt;h5&gt;Heading 5 &lt;small&gt;Small text&lt;/small&gt;&lt;/h5&gt;\n"
+		= "&lt;h6&gt;Heading 6 &lt;small&gt;Small text&lt;/small&gt;&lt;/h6&gt;\n"
 
 	%h4.section Hyperlinks
-
-	%p
-		%a.red{ :href => '#' } Red
-		%a.green{ :href => '#' } Green
-		%a.blue{ :href => '#' } Blue
-		%a.cyan{ :href => '#' } Cyan
-		%a.magenta{ :href => '#' } Magenta
-		%a.yellow{ :href => '#' } Yellow
-		%a.purple{ :href => '#' } Purple
-		%a.orange{ :href => '#' } Orange
-
-	%h4.section Blockquotes
-	%p Blockquotes can have transparent or shaded backgrounds.
-	%blockquote Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.
-	%blockquote.shaded Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.
-	%pre.demo
-		%code
-			= "&lt;blockquote&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;\n\n"
-			= "&lt;blockquote class=\"shaded\"&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;"
-	%p Blockquotes can also be assigned a color scheme.
-	.row
-		.col-md-6.col-lg-4
-			%blockquote.primary This is a primary blockquote.
-			%blockquote.primary.shaded This is a shaded primary blockquote.
-		.col-md-6.col-lg-4
-			%blockquote.success This is a success blockquote.
-			%blockquote.success.shaded This is a shaded success blockquote.
-		.col-md-6.col-lg-4
-			%blockquote.error This is an error blockquote.
-			%blockquote.error.shaded This is a shaded error blockquote.
-		.col-md-6.col-lg-4
-			%blockquote.warning This is a warning blockquote.
-			%blockquote.warning.shaded This is a shaded warning blockquote.
-		.col-md-6.col-lg-4
-			%blockquote.info This is an information blockquote.
-			%blockquote.info.shaded This is a shaded information blockquote.
-	%pre.demo
-		%code
-			= "&lt;blockquote class=\"primary\"&gt;This is a primary blockquote.&lt;/blockquote&gt;\n"
-			= "&lt;blockquote class=\"primary shaded\"&gt;This is a shaded primary blockquote.&lt;/blockquote&gt;\n\n"
-			= "&lt;blockquote class=\"success\"&gt;This is a success blockquote.&lt;/blockquote&gt;\n"
-			= "&lt;blockquote class=\"success shaded\"&gt;This is a shaded success blockquote.&lt;/blockquote&gt;\n\n"
-			= "&lt;blockquote class=\"error\"&gt;This is an error blockquote.&lt;/blockquote&gt;\n"
-			= "&lt;blockquote class=\"error shaded\"&gt;This is a shaded error blockquote.&lt;/blockquote&gt;\n\n"
-			= "&lt;blockquote class=\"warning\"&gt;This is a warning blockquote.&lt;/blockquote&gt;\n"
-			= "&lt;blockquote class=\"warning shaded\"&gt;This is a shaded warning blockquote.&lt;/blockquote&gt;\n\n"
-			= "&lt;blockquote class=\"info\"&gt;This is an information blockquote.&lt;/blockquote&gt;\n"
-			= "&lt;blockquote class=\"info shaded\"&gt;This is a shaded information blockquote.&lt;/blockquote&gt;"
+	%dl
+		%dt Unvisited Links
+		%dd
+			%a.primary{ :href => 'other.html' } Primary
+			%a.success{ :href => 'other.html' } Success
+			%a.error{ :href => 'other.html' } Error
+			%a.warning{ :href => 'other.html' } Warning
+			%a.info{ :href => 'other.html' } Info
+		%dt Visited Links
+		%dd
+			%a.primary{ :href => 'index.html' } Primary
+			%a.success{ :href => 'index.html' } Success
+			%a.error{ :href => 'index.html' } Error
+			%a.warning{ :href => 'index.html' } Warning
+			%a.info{ :href => 'index.html' } Info
+	%code.demo
+		= "&lt;dl&gt;\n"
+		= "\t&lt;dt&gt;Unvisited Links&lt;/dt&gt;\n"
+		= "\t&lt;dd&gt;\n"
+		= "\t\t&lt;a href=\"other.html\" class=\"primary\"&gt;Primary&lt;/a&gt;\n"
+		= "\t\t&lt;a href=\"other.html\" class=\"success\"&gt;Success&lt;/a&gt;\n"
+		= "\t\t&lt;a href=\"other.html\" class=\"error\"&gt;Error&lt;/a&gt;\n"
+		= "\t\t&lt;a href=\"other.html\" class=\"warning\"&gt;Warning&lt;/a&gt;\n"
+		= "\t\t&lt;a href=\"other.html\" class=\"info\"&gt;Info&lt;/a&gt;\n"
+		= "\t&lt;/dd&gt;\n"
+		= "\t&lt;dt&gt;Visited Links&lt;/dt&gt;\n"
+		= "\t&lt;dd&gt;\n"
+		= "\t\t&lt;a href=\"index.html\" class=\"primary\"&gt;Primary&lt;/a&gt;\n"
+		= "\t\t&lt;a href=\"index.html\" class=\"success\"&gt;Success&lt;/a&gt;\n"
+		= "\t\t&lt;a href=\"index.html\" class=\"error\"&gt;Error&lt;/a&gt;\n"
+		= "\t\t&lt;a href=\"index.html\" class=\"warning\"&gt;Warning&lt;/a&gt;\n"
+		= "\t\t&lt;a href=\"index.html\" class=\"info\"&gt;Info&lt;/a&gt;\n"
+		= "\t&lt;/dd&gt;\n"
+		= "&lt;/dl&gt;"

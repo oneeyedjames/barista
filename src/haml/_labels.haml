@@ -1,14 +1,22 @@
 %section#labels.nav
-    %h3.section Labels
+	%h3.section Labels
 
-    %p
-        Some text
-        %span.lbl Default
-        %span.lbl.red Red
-        %span.lbl.green Green
-        %span.lbl.blue Blue
-        %span.lbl.cyan Cyan
-        %span.lbl.magenta Magenta
-        %span.lbl.yellow Yellow
-        %span.lbl.purple Purple
-        %span.lbl.orange Orange
+	%p
+		Labels can be plain text
+		%span.lbl Default
+		%span.lbl.primary Primary
+		%span.lbl.success Success
+		%span.lbl.error Error
+		%span.lbl.warning Warning
+		%span.lbl.info Info
+	%p
+		Labels can also be clickable
+		%a.lbl{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Default
+		%a.lbl.primary{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Primary
+		%a.lbl.success{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Success
+		%a.lbl.error{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Error
+		%a.lbl.warning{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Warning
+		%a.lbl.info{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Info
+
+	#label-modal.card.success.modal.alert
+		You clicked it!

@@ -2,78 +2,94 @@
 	%h3.section Colors
 	%p Many elements in the Barista Framework can be assigned a color scheme. The preferred method of specifying a color scheme is by purpose.
 	%p.txt
-		%code default
-		%br
+		%code.lbl default
 		A gray color scheme, applied to all color-themed elements by default
 	%p.txt.primary
-		%code primary
-		%br
+		%code.lbl.primary primary
 		A blue color scheme for identifying important actions and elements
 	%p.txt.success
-		%code success
-		%br
+		%code.lbl.success success
 		A green color scheme for reporting successful actions and events
 	%p.txt.error
-		%code error
-		%br
+		%code.lbl.error error
 		A red color scheme for reporting fatal errors or warning of destructive actions.
 		%em This color scheme can also be referenced as
 		%code danger
 	%p.txt.warning
-		%code warning
-		%br
+		%code.lbl.warning warning
 		A yellow color scheme for reporting non-fatal errors or unexpected results
 	%p.txt.info
-		%code info
-		%br
+		%code.lbl.info info
 		A cyan color scheme for reporting relevant information
-	%pre.demo
-		%code
-			= "&lt;p class=\"txt\"&gt;\n"
-			= "\t&lt;code&gt;default&lt;/code&gt;&lt;br&gt;\n"
-			= "\tA gray color scheme, applied to all color-themed elements by default\n"
-			= "&lt;/p&gt;\n\n"
-			= "&lt;p class=\"txt primary\"&gt;\n"
-			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
-			= "\tA blue color scheme for identifying important actions and elements\n"
-			= "&lt;/p&gt;\n\n"
-			= "&lt;p class=\"txt success\"&gt;\n"
-			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
-			= "\tA green color scheme for reporting successful actions and events\n"
-			= "&lt;/p&gt;\n\n"
-			= "&lt;p class=\"txt error\"&gt;\n"
-			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
-			= "\tA red color scheme for reporting fatal errors or warning of destructive actions.\n"
-			= "\t&lt;em&gt;This color scheme can also be referenced as&lt;/em&gt; &lt;code&gt;danger&lt;/code&gt;\n"
-			= "&lt;/p&gt;\n\n"
-			= "&lt;p class=\"txt warning\"&gt;\n"
-			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
-			= "\tA yellow color scheme for reporting non-fatal errors or unexpected results\n"
-			= "&lt;/p&gt;\n\n"
-			= "&lt;p class=\"txt info\"&gt;\n"
-			= "\t&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;\n"
-			= "\tA cyan color scheme for reporting relevant information\n"
-			= "&lt;/p&gt;"
+	%code.demo
+		= "&lt;p class=\"txt\"&gt;\n"
+		= "\t&lt;code class=\"lbl\"&gt;default&lt;/code&gt;\n"
+		= "\tA gray color scheme, applied to all color-themed elements by default\n"
+		= "&lt;/p&gt;\n"
+		= "&lt;p class=\"txt primary\"&gt;\n"
+		= "\t&lt;code class=\"lbl primary\"&gt;primary&lt;/code&gt;\n"
+		= "\tA blue color scheme for identifying important actions and elements\n"
+		= "&lt;/p&gt;\n"
+		= "&lt;p class=\"txt success\"&gt;\n"
+		= "\t&lt;code class=\"lbl success\"&gt;primary&lt;/code&gt;\n"
+		= "\tA green color scheme for reporting successful actions and events\n"
+		= "&lt;/p&gt;\n"
+		= "&lt;p class=\"txt error\"&gt;\n"
+		= "\t&lt;code class=\"lbl error\"&gt;primary&lt;/code&gt;\n"
+		= "\tA red color scheme for reporting fatal errors or warning of destructive actions.\n"
+		= "\t&lt;em&gt;This color scheme can also be referenced as&lt;/em&gt; &lt;code&gt;danger&lt;/code&gt;\n"
+		= "&lt;/p&gt;\n"
+		= "&lt;p class=\"txt warning\"&gt;\n"
+		= "\t&lt;code class=\"lbl warning\"&gt;primary&lt;/code&gt;\n"
+		= "\tA yellow color scheme for reporting non-fatal errors or unexpected results\n"
+		= "&lt;/p&gt;\n"
+		= "&lt;p class=\"txt info\"&gt;\n"
+		= "\t&lt;code class=\"lbl info\"&gt;primary&lt;/code&gt;\n"
+		= "\tA cyan color scheme for reporting relevant information\n"
+		= "&lt;/p&gt;"
 	%p Color schemes can also be referenced by color names. For brevity, these colors will not be demonstrated elsewhere in these documents but any element which can be assigned a color scheme by purpose can also be assigned a color scheme by name.
-	%p
-		.lbl.red red
-		.lbl.green green
-		.lbl.blue blue
-		.lbl.cyan cyan
-		.lbl.magenta magenta
-		.lbl.yellow yellow
-		.lbl.purple purple
-		.lbl.orange orange
-	%pre.demo
-		%code
-			= "&lt;div class=\"lbl red\"&gt;red&lt;/div&gt;\n"
-			= "&lt;div class=\"lbl green\"&gt;green&lt;/div&gt;\n"
-			= "&lt;div class=\"lbl blue\"&gt;blue&lt;/div&gt;\n"
-			= "&lt;div class=\"lbl cyan\"&gt;cyan&lt;/div&gt;\n"
-			= "&lt;div class=\"lbl magenta\"&gt;magenta&lt;/div&gt;\n"
-			= "&lt;div class=\"lbl yellow\"&gt;yellow&lt;/div&gt;\n"
-			= "&lt;div class=\"lbl purple\"&gt;purple&lt;/div&gt;\n"
-			= "&lt;div class=\"lbl orange\"&gt;orange&lt;/div&gt;"
+	.row
+		.col-md-6.col-lg-3
+			%p.txt.red
+				%code.lbl.red red
+				Color Scheme
+		.col-md-6.col-lg-3
+			%p.txt.green
+				%code.lbl.green green
+				Color Scheme
+		.col-md-6.col-lg-3
+			%p.txt.blue
+				%code.lbl.blue blue
+				Color Scheme
+		.col-md-6.col-lg-3
+			%p.txt.cyan
+				%code.lbl.cyan cyan
+				Color Scheme
+		.col-md-6.col-lg-3
+			%p.txt.magenta
+				%code.lbl.magenta magenta
+				Color Scheme
+		.col-md-6.col-lg-3
+			%p.txt.yellow
+				%code.lbl.yellow yellow
+				Color Scheme
+		.col-md-6.col-lg-3
+			%p.txt.purple
+				%code.lbl.purple purple
+				Color Scheme
+		.col-md-6.col-lg-3
+			%p.txt.orange
+				%code.lbl.orange orange
+				Color Scheme
+	%code.demo
+		= "&lt;div class=\"lbl red\"&gt;red&lt;/div&gt;\n"
+		= "&lt;div class=\"lbl green\"&gt;green&lt;/div&gt;\n"
+		= "&lt;div class=\"lbl blue\"&gt;blue&lt;/div&gt;\n"
+		= "&lt;div class=\"lbl cyan\"&gt;cyan&lt;/div&gt;\n"
+		= "&lt;div class=\"lbl magenta\"&gt;magenta&lt;/div&gt;\n"
+		= "&lt;div class=\"lbl yellow\"&gt;yellow&lt;/div&gt;\n"
+		= "&lt;div class=\"lbl purple\"&gt;purple&lt;/div&gt;\n"
+		= "&lt;div class=\"lbl orange\"&gt;orange&lt;/div&gt;"
 	:css
 		p.txt { padding: .25em .5em; }
 		p.txt code { font-weight: bold; }

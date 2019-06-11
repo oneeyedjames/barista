@@ -6,15 +6,14 @@
 		class to the card and using a link or button to target the card.
 	%p
 		%button{ 'data-action' => 'modal', 'data-target' => '#modal-default' } Default
-	%pre.demo
-		%code
-			= "&lt;div class=\"card modal\" id=\"modal-default\"&gt;\n"
-			= "\t&lt;header&gt;Default Modal Card&lt;/header&gt;\n"
-			= "\t&lt;p&gt;This is the default style for modal cards.&lt;/p&gt;\n"
-			= "\t&lt;a class=\"ok\"&gt;Dismiss&lt;a&gt;\n"
-			= "\t&lt;footer&gt;Default card footer&lt;/footer&gt;\n"
-			= "&lt;/div&gt;\n\n"
-			= "&lt;button data-action=\"modal\" data-target=\"#modal-default\"&gt;Default&lt;/button&gt;"
+	%code.demo
+		= "&lt;div class=\"card modal\" id=\"modal-default\"&gt;\n"
+		= "\t&lt;header&gt;Default Modal Card&lt;/header&gt;\n"
+		= "\t&lt;p&gt;This is the default style for modal cards.&lt;/p&gt;\n"
+		= "\t&lt;a class=\"ok\"&gt;Dismiss&lt;a&gt;\n"
+		= "\t&lt;footer&gt;Default card footer&lt;/footer&gt;\n"
+		= "&lt;/div&gt;\n\n"
+		= "&lt;button data-action=\"modal\" data-target=\"#modal-default\"&gt;Default&lt;/button&gt;"
 
 	%h4 Overlay
 	%p
@@ -23,16 +22,16 @@
 		attribute on the targetting link or button.
 	%p
 		%button{ 'data-action' => 'modal', 'data-target' => '#modal-default', 'data-overlay' => 'false' } No Overlay
-	%pre.demo
-		%code &lt;button data-action="modal" data-target="#modal-default" data-overlay="false"&gt;No Overlay&lt;/button&gt;
+	%code.demo
+		&lt;button data-action="modal" data-target="#modal-default" data-overlay="false"&gt;No Overlay&lt;/button&gt;
 	%p
 		By default, clicking outside the card will dismiss the modal. This can be disabled using the
 		%code.highlight data-overlay="static"
 		attribute on the targetting link or button.
 	%p
 		%button{ 'data-action' => 'modal', 'data-target' => '#modal-default', 'data-overlay' => 'static' } Static Overlay
-	%pre.demo
-		%code &lt;button data-action="modal" data-target="#modal-default" data-overlay="static"&gt;Static Overlay&lt;/button&gt;
+	%code.demo
+		&lt;button data-action="modal" data-target="#modal-default" data-overlay="static"&gt;Static Overlay&lt;/button&gt;
 
 	%h4 Duration
 	%p
@@ -42,8 +41,8 @@
 		attribute on the targetting link or button. The duration is specified in milliseconds.
 	%p
 		%button{ 'data-action' => 'modal', 'data-target' => '#modal-default', 'data-duration' => 1300 } Auto-dismiss
-	%pre.demo
-		%code &lt;button data-action="modal" data-target="#modal-default" data-duration="1300"&gt;Auto-dismiss&lt;/button&gt;
+	%code.demo
+		&lt;button data-action="modal" data-target="#modal-default" data-duration="1300"&gt;Auto-dismiss&lt;/button&gt;
 
 	%h4 Action Buttons
 	%p
@@ -57,24 +56,23 @@
 		will trigger an event of the same names on the card.
 	%p
 		%button.warning{ 'data-action' => 'modal', 'data-target' => '#modal-warning', 'data-overlay' => 'static' } Dialog
-	%pre.demo
-		%code
-			= "&lt;div class=\"card modal warning\" id=\"modal-warning\"&gt;\n"
-			= "\t&lt;header&gt;Warning Modal Card&lt;/header&gt;\n"
-			= "\t&lt;p&gt;Are you sure you want to do this thing?&lt;/p&gt;\n"
-			= "\t&lt;footer class=\"btns\"&gt;\n"
-			= "\t\t&lt;button class=\"cancel\"&gt;Cancel&lt;/button&gt;\n"
-			= "\t\t&lt;button class=\"ok\"&gt;Do it!&lt;/button&gt;\n"
-			= "\t&lt;/footer&gt;\n"
-			= "&lt;/div&gt;\n\n"
-			= "&lt;button data-action=\"modal\" data-target=\"#modal-warning\"&gt;Dialog&lt;/button&gt;\n\n"
-			= "&lt;script type=\"text/javascript\"&gt;\n"
-			= "\t$('#modal-warning').on('ok', function() {\n"
-			= "\t\tsetTimeout(function() {\n"
-			= "\t\t\t$('#modal-success').modal({ overlay: false, duration: 1300 });\n"
-			= "\t\t}, 700);\n"
-			= "\t});\n"
-			= "&lt;/script&gt;"
+	%code.demo
+		= "&lt;div class=\"card modal warning\" id=\"modal-warning\"&gt;\n"
+		= "\t&lt;header&gt;Warning Modal Card&lt;/header&gt;\n"
+		= "\t&lt;p&gt;Are you sure you want to do this thing?&lt;/p&gt;\n"
+		= "\t&lt;footer class=\"btns\"&gt;\n"
+		= "\t\t&lt;button class=\"cancel\"&gt;Cancel&lt;/button&gt;\n"
+		= "\t\t&lt;button class=\"ok\"&gt;Do it!&lt;/button&gt;\n"
+		= "\t&lt;/footer&gt;\n"
+		= "&lt;/div&gt;\n\n"
+		= "&lt;button data-action=\"modal\" data-target=\"#modal-warning\"&gt;Dialog&lt;/button&gt;\n\n"
+		= "&lt;script type=\"text/javascript\"&gt;\n"
+		= "\t$('#modal-warning').on('ok', function() {\n"
+		= "\t\tsetTimeout(function() {\n"
+		= "\t\t\t$('#modal-success').modal({ overlay: false, duration: 1300 });\n"
+		= "\t\t}, 700);\n"
+		= "\t});\n"
+		= "&lt;/script&gt;"
 
 	#modal-default.card.modal
 		%header Default Modal Card

@@ -2,15 +2,15 @@
 <html>
 <head>
 <title>Barista Framework</title>
-<link href='../../node_modules/fontawesome/css/font-awesome.min.css' rel='stylesheet'>
-<link href='../css/barista-effects.css' rel='stylesheet'>
-<script src='../../node_modules/jquery/dist/jquery.min.js'></script>
+<link href='../../node_modules/font-awesome/css/font-awesome.css' rel='stylesheet'>
+<link href='../css/barista.css' rel='stylesheet'>
+<script src='../../node_modules/jquery/dist/jquery.js'></script>
 <script src='../js/barista.js'></script>
 <style>
   .section { border-bottom: 1px solid #CCC; }
-  .demo { border: 2px solid #CCC; padding: 1.5em; }
+  .demo { border: 2px solid #CCC; padding: 1.5em; margin-bottom: 1em; }
   .highlight { background-color: #FEB; padding: 0 .25em; }
-  pre { white-space: pre-wrap; }
+  pre, code.demo { white-space: pre-wrap; display: block; }
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function(e) {
@@ -18,14 +18,13 @@
   		let sections = document.getElementsByTagName('section');
   
   		for (let section of sections) {
-  			if (section.classList.contains('nav')) {
+  			if (section.classList.contains('nav'))
   				section.style.display = 'none';
-  			}
   		}
   
-  		let match = url.match(/(index|normalize)\.html#([A-Z]*)/i);
+  		let match = url.match(/\.html#([A-Z]*)/i);
   		if (match)
-  			document.getElementById(match[2]).style.display = 'block';
+  			document.getElementById(match[1]).style.display = 'block';
   		else
   			sections[0].style.display = 'block';
   	}
@@ -100,6 +99,9 @@
 <strong>Normalize</strong>
 <ul>
 <li>
+<a class='nav' href='index.html#colors'>Colors</a>
+</li>
+<li>
 <a class='nav' href='index.html#typography'>Typography</a>
 </li>
 <li>
@@ -110,9 +112,6 @@
 </li>
 <li>
 <a class='nav' href='index.html#forms'>Forms</a>
-</li>
-<li>
-<a class='nav' href='index.html#colors'>Colors</a>
 </li>
 </ul>
 <strong>Elements</strong>
@@ -127,10 +126,7 @@
 <a class='nav' href='index.html#badges'>Badges</a>
 </li>
 <li>
-<a class='nav' href='index.html#tooltip'>Tooltips</a>
-</li>
-<li>
-<a class='nav' href='index.html#menu'>Menus</a>
+<a class='nav' href='index.html#blockquote'>Blockquote</a>
 </li>
 </ul>
 <strong>Containers</strong>
@@ -144,13 +140,23 @@
 <li>
 <a class='nav' href='index.html#cards'>Cards</a>
 </li>
-<ul>
-<li>
-<a class='nav' href='index.html#modal'>Modals</a>
-</li>
-</ul>
 <li>
 <a class='nav' href='index.html#tabs'>Tabs</a>
+</li>
+<li>
+<a class='nav' href='index.html#menu'>Menus</a>
+</li>
+</ul>
+<strong>Behaviors</strong>
+<ul>
+<li>
+<a class='nav' href='index.html#collapse'>Collapse</a>
+</li>
+<li>
+<a class='nav' href='index.html#modal'>Modal</a>
+</li>
+<li>
+<a class='nav' href='index.html#tooltip'>Tooltip</a>
 </li>
 </ul>
 </nav>
@@ -160,9 +166,14 @@
 <div class='col-md-8 col-lg-9'>
 <section class='nav' id='typography'>
 <h3 class='section'>Typography</h3>
-<p class='lead'>Lead Text</p>
 <p>Main Body Text</p>
-<a href='#'>Hyperlink</a>
+<p class='lead'>Lead Text</p>
+<p>
+<a href='other.html'>Hyperlink</a>
+</p>
+<code class='demo'>&lt;p&gt;Main Body Text&lt;/p&gt;
+&lt;p class="lead"&gt;Lead Text&lt;/p&gt;
+&lt;p&gt;&lt;a href="other.html"&gt;Hyperlink&lt;/a&gt;&lt;/p&gt;</code>
 <h4 class='section'>Headings</h4>
 <h1>
 Heading 1
@@ -188,24 +199,60 @@ Heading 5
 Heading 6
 <small>Small text</small>
 </h6>
+<code class='demo'>&lt;h1&gt;Heading 1 &lt;small&gt;Small text&lt;/small&gt;&lt;/h1&gt;
+&lt;h2&gt;Heading 2 &lt;small&gt;Small text&lt;/small&gt;&lt;/h2&gt;
+&lt;h3&gt;Heading 3 &lt;small&gt;Small text&lt;/small&gt;&lt;/h3&gt;
+&lt;h4&gt;Heading 4 &lt;small&gt;Small text&lt;/small&gt;&lt;/h4&gt;
+&lt;h5&gt;Heading 5 &lt;small&gt;Small text&lt;/small&gt;&lt;/h5&gt;
+&lt;h6&gt;Heading 6 &lt;small&gt;Small text&lt;/small&gt;&lt;/h6&gt;
+</code>
 <h4 class='section'>Hyperlinks</h4>
-<p>
-<a class='red' href='#'>Red</a>
-<a class='green' href='#'>Green</a>
-<a class='blue' href='#'>Blue</a>
-<a class='cyan' href='#'>Cyan</a>
-<a class='magenta' href='#'>Magenta</a>
-<a class='yellow' href='#'>Yellow</a>
-<a class='purple' href='#'>Purple</a>
-<a class='orange' href='#'>Orange</a>
-</p>
-<h4 class='section'>Blockquotes</h4>
+<dl>
+<dt>Unvisited Links</dt>
+<dd>
+<a class='primary' href='other.html'>Primary</a>
+<a class='success' href='other.html'>Success</a>
+<a class='error' href='other.html'>Error</a>
+<a class='warning' href='other.html'>Warning</a>
+<a class='info' href='other.html'>Info</a>
+</dd>
+<dt>Visited Links</dt>
+<dd>
+<a class='primary' href='index.html'>Primary</a>
+<a class='success' href='index.html'>Success</a>
+<a class='error' href='index.html'>Error</a>
+<a class='warning' href='index.html'>Warning</a>
+<a class='info' href='index.html'>Info</a>
+</dd>
+</dl>
+<code class='demo'>&lt;dl&gt;
+	&lt;dt&gt;Unvisited Links&lt;/dt&gt;
+	&lt;dd&gt;
+		&lt;a href="other.html" class="primary"&gt;Primary&lt;/a&gt;
+		&lt;a href="other.html" class="success"&gt;Success&lt;/a&gt;
+		&lt;a href="other.html" class="error"&gt;Error&lt;/a&gt;
+		&lt;a href="other.html" class="warning"&gt;Warning&lt;/a&gt;
+		&lt;a href="other.html" class="info"&gt;Info&lt;/a&gt;
+	&lt;/dd&gt;
+	&lt;dt&gt;Visited Links&lt;/dt&gt;
+	&lt;dd&gt;
+		&lt;a href="index.html" class="primary"&gt;Primary&lt;/a&gt;
+		&lt;a href="index.html" class="success"&gt;Success&lt;/a&gt;
+		&lt;a href="index.html" class="error"&gt;Error&lt;/a&gt;
+		&lt;a href="index.html" class="warning"&gt;Warning&lt;/a&gt;
+		&lt;a href="index.html" class="info"&gt;Info&lt;/a&gt;
+	&lt;/dd&gt;
+&lt;/dl&gt;</code>
+</section>
+
+<section class='nav' id='blockquote'>
+<h3 class='section'>Blockquotes</h3>
 <p>Blockquotes can have transparent or shaded backgrounds.</p>
 <blockquote>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</blockquote>
 <blockquote class='shaded'>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</blockquote>
-<pre class='demo'><code>&lt;blockquote&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;
+<code class='demo'>&lt;blockquote&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;
 
-&lt;blockquote class="shaded"&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;</code></pre>
+&lt;blockquote class="shaded"&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;</code>
 <p>Blockquotes can also be assigned a color scheme.</p>
 <div class='row'>
 <div class='col-md-6 col-lg-4'>
@@ -229,7 +276,7 @@ Heading 6
 <blockquote class='info shaded'>This is a shaded information blockquote.</blockquote>
 </div>
 </div>
-<pre class='demo'><code>&lt;blockquote class="primary"&gt;This is a primary blockquote.&lt;/blockquote&gt;
+<code class='demo'>&lt;blockquote class="primary"&gt;This is a primary blockquote.&lt;/blockquote&gt;
 &lt;blockquote class="primary shaded"&gt;This is a shaded primary blockquote.&lt;/blockquote&gt;
 
 &lt;blockquote class="success"&gt;This is a success blockquote.&lt;/blockquote&gt;
@@ -242,7 +289,7 @@ Heading 6
 &lt;blockquote class="warning shaded"&gt;This is a shaded warning blockquote.&lt;/blockquote&gt;
 
 &lt;blockquote class="info"&gt;This is an information blockquote.&lt;/blockquote&gt;
-&lt;blockquote class="info shaded"&gt;This is a shaded information blockquote.&lt;/blockquote&gt;</code></pre>
+&lt;blockquote class="info shaded"&gt;This is a shaded information blockquote.&lt;/blockquote&gt;</code>
 </section>
 
 <section class='nav' id='normlists'>
@@ -262,7 +309,9 @@ Heading 6
 <dl>
 <dt>Definition</dt>
 <dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
-<dt>List Items</dt>
+<dt>List</dt>
+<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
+<dt>Items</dt>
 <dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
 </dl>
 </div>
@@ -316,86 +365,115 @@ Heading 6
 <h3 class='section'>Colors</h3>
 <p>Many elements in the Barista Framework can be assigned a color scheme. The preferred method of specifying a color scheme is by purpose.</p>
 <p class='txt'>
-<code>default</code>
-<br>
+<code class='lbl'>default</code>
 A gray color scheme, applied to all color-themed elements by default
 </p>
 <p class='txt primary'>
-<code>primary</code>
-<br>
+<code class='lbl primary'>primary</code>
 A blue color scheme for identifying important actions and elements
 </p>
 <p class='txt success'>
-<code>success</code>
-<br>
+<code class='lbl success'>success</code>
 A green color scheme for reporting successful actions and events
 </p>
 <p class='txt error'>
-<code>error</code>
-<br>
+<code class='lbl error'>error</code>
 A red color scheme for reporting fatal errors or warning of destructive actions.
 <em>This color scheme can also be referenced as</em>
 <code>danger</code>
 </p>
 <p class='txt warning'>
-<code>warning</code>
-<br>
+<code class='lbl warning'>warning</code>
 A yellow color scheme for reporting non-fatal errors or unexpected results
 </p>
 <p class='txt info'>
-<code>info</code>
-<br>
+<code class='lbl info'>info</code>
 A cyan color scheme for reporting relevant information
 </p>
-<pre class='demo'><code>&lt;p class="txt"&gt;
-	&lt;code&gt;default&lt;/code&gt;&lt;br&gt;
+<code class='demo'>&lt;p class="txt"&gt;
+	&lt;code class="lbl"&gt;default&lt;/code&gt;
 	A gray color scheme, applied to all color-themed elements by default
 &lt;/p&gt;
-
 &lt;p class="txt primary"&gt;
-	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	&lt;code class="lbl primary"&gt;primary&lt;/code&gt;
 	A blue color scheme for identifying important actions and elements
 &lt;/p&gt;
-
 &lt;p class="txt success"&gt;
-	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	&lt;code class="lbl success"&gt;primary&lt;/code&gt;
 	A green color scheme for reporting successful actions and events
 &lt;/p&gt;
-
 &lt;p class="txt error"&gt;
-	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	&lt;code class="lbl error"&gt;primary&lt;/code&gt;
 	A red color scheme for reporting fatal errors or warning of destructive actions.
 	&lt;em&gt;This color scheme can also be referenced as&lt;/em&gt; &lt;code&gt;danger&lt;/code&gt;
 &lt;/p&gt;
-
 &lt;p class="txt warning"&gt;
-	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	&lt;code class="lbl warning"&gt;primary&lt;/code&gt;
 	A yellow color scheme for reporting non-fatal errors or unexpected results
 &lt;/p&gt;
-
 &lt;p class="txt info"&gt;
-	&lt;code&gt;primary&lt;/code&gt;&lt;br&gt;
+	&lt;code class="lbl info"&gt;primary&lt;/code&gt;
 	A cyan color scheme for reporting relevant information
-&lt;/p&gt;</code></pre>
+&lt;/p&gt;</code>
 <p>Color schemes can also be referenced by color names. For brevity, these colors will not be demonstrated elsewhere in these documents but any element which can be assigned a color scheme by purpose can also be assigned a color scheme by name.</p>
-<p>
-<div class='lbl red'>red</div>
-<div class='lbl green'>green</div>
-<div class='lbl blue'>blue</div>
-<div class='lbl cyan'>cyan</div>
-<div class='lbl magenta'>magenta</div>
-<div class='lbl yellow'>yellow</div>
-<div class='lbl purple'>purple</div>
-<div class='lbl orange'>orange</div>
+<div class='row'>
+<div class='col-md-6 col-lg-3'>
+<p class='txt red'>
+<code class='lbl red'>red</code>
+Color Scheme
 </p>
-<pre class='demo'><code>&lt;div class="lbl red"&gt;red&lt;/div&gt;
+</div>
+<div class='col-md-6 col-lg-3'>
+<p class='txt green'>
+<code class='lbl green'>green</code>
+Color Scheme
+</p>
+</div>
+<div class='col-md-6 col-lg-3'>
+<p class='txt blue'>
+<code class='lbl blue'>blue</code>
+Color Scheme
+</p>
+</div>
+<div class='col-md-6 col-lg-3'>
+<p class='txt cyan'>
+<code class='lbl cyan'>cyan</code>
+Color Scheme
+</p>
+</div>
+<div class='col-md-6 col-lg-3'>
+<p class='txt magenta'>
+<code class='lbl magenta'>magenta</code>
+Color Scheme
+</p>
+</div>
+<div class='col-md-6 col-lg-3'>
+<p class='txt yellow'>
+<code class='lbl yellow'>yellow</code>
+Color Scheme
+</p>
+</div>
+<div class='col-md-6 col-lg-3'>
+<p class='txt purple'>
+<code class='lbl purple'>purple</code>
+Color Scheme
+</p>
+</div>
+<div class='col-md-6 col-lg-3'>
+<p class='txt orange'>
+<code class='lbl orange'>orange</code>
+Color Scheme
+</p>
+</div>
+</div>
+<code class='demo'>&lt;div class="lbl red"&gt;red&lt;/div&gt;
 &lt;div class="lbl green"&gt;green&lt;/div&gt;
 &lt;div class="lbl blue"&gt;blue&lt;/div&gt;
 &lt;div class="lbl cyan"&gt;cyan&lt;/div&gt;
 &lt;div class="lbl magenta"&gt;magenta&lt;/div&gt;
 &lt;div class="lbl yellow"&gt;yellow&lt;/div&gt;
 &lt;div class="lbl purple"&gt;purple&lt;/div&gt;
-&lt;div class="lbl orange"&gt;orange&lt;/div&gt;</code></pre>
+&lt;div class="lbl orange"&gt;orange&lt;/div&gt;</code>
 <style>
   p.txt { padding: .25em .5em; }
   p.txt code { font-weight: bold; }
@@ -406,117 +484,149 @@ A cyan color scheme for reporting relevant information
 <section class='nav' id='buttons'>
 <h3 class='section'>Buttons</h3>
 <p>
+Buttons can be generated with
+<code>button</code>
+tags or any generic element with the
+<code>.btn</code>
+class.
+</p>
+<p>
+<button>Button</button>
+<a class='btn'>Link</a>
+<span class='btn'>Text</span>
+</p>
+<code class='demo'>&lt;button&gt;Button&lt;/button&gt;
+&lt;a class="btn"&gt;Link&lt;/a&gt;
+&lt;span class="btn"&gt;Text&lt;/span&gt;
+</code>
+<h4>Styles</h4>
+<p>Buttons also come in toggle and text styles</p>
+<p>
 <a class='btn'>Default</a>
-<a class='btn red'>Red</a>
-<a class='btn green'>Green</a>
-<a class='btn blue'>Blue</a>
-<a class='btn cyan'>Cyan</a>
-<a class='btn magenta'>Magenta</a>
-<a class='btn yellow'>Yellow</a>
-<a class='btn purple'>Purple</a>
-<a class='btn orange'>Orange</a>
-</p>
-<p>
 <a class='btn toggle'>Toggle</a>
-<a class='btn red toggle'>Red</a>
-<a class='btn green toggle'>Green</a>
-<a class='btn blue toggle'>Blue</a>
-<a class='btn cyan toggle'>Cyan</a>
-<a class='btn magenta toggle'>Magenta</a>
-<a class='btn yellow toggle'>Yellow</a>
-<a class='btn purple toggle'>Purple</a>
-<a class='btn orange toggle'>Orange</a>
-</p>
-<p>
 <a class='btn text'>Text</a>
-<a class='btn red text'>Red</a>
-<a class='btn green text'>Green</a>
-<a class='btn blue text'>Blue</a>
-<a class='btn cyan text'>Cyan</a>
-<a class='btn magenta text'>Magenta</a>
-<a class='btn yellow text'>Yellow</a>
-<a class='btn purple text'>Purple</a>
-<a class='btn orange text'>Orange</a>
 </p>
+<code class='demo'>&lt;a class="btn"&gt;Default&lt;/a&gt;
+&lt;a class="btn toggle"&gt;Toggle&lt;/a&gt;
+&lt;a class="btn text"&gt;Text&lt;/a&gt;
+</code>
 <h4>Sizes</h4>
+<p>Buttons also come in large and small sizes</p>
 <p>
 <a class='btn lg'>Large</a>
 <a class='btn'>Default</a>
 <a class='btn sm'>Small</a>
 </p>
+<code class='demo'>&lt;a class="btn lg"&gt;Large&lt;/a&gt;
+&lt;a class="btn"&gt;Default&lt;/a&gt;
+&lt;a class="btn sm"&gt;Small&lt;/a&gt;
+</code>
+<h4>Colors</h4>
+<p>Buttons can also be assigned a color scheme</p>
+<h5>Default style</h5>
+<p>
+<a class='btn primary'>Primary</a>
+<a class='btn success'>Success</a>
+<a class='btn error'>Error</a>
+<a class='btn warning'>Warning</a>
+<a class='btn info'>Info</a>
+</p>
+<code class='demo'>&lt;a class="btn primary"&gt;Primary&lt;/a&gt;
+&lt;a class="btn success"&gt;Success&lt;/a&gt;
+&lt;a class="btn error"&gt;Error&lt;/a&gt;
+&lt;a class="btn Warning"&gt;Warning&lt;/a&gt;
+&lt;a class="btn info"&gt;Info&lt;/a&gt;
+</code>
+<h5>Text style</h5>
+<p>
+<a class='btn text primary'>Primary</a>
+<a class='btn text success'>Success</a>
+<a class='btn text error'>Error</a>
+<a class='btn text warning'>Warning</a>
+<a class='btn text info'>Info</a>
+</p>
+<code class='demo'>&lt;a class="btn text primary"&gt;Primary&lt;/a&gt;
+&lt;a class="btn text success"&gt;Success&lt;/a&gt;
+&lt;a class="btn text error"&gt;Error&lt;/a&gt;
+&lt;a class="btn text Warning"&gt;Warning&lt;/a&gt;
+&lt;a class="btn text info"&gt;Info&lt;/a&gt;
+</code>
 <h4>Groups</h4>
 <div class='btn-group'>
 <a class='btn'>First</a>
 <a class='btn'>Second</a>
 <a class='btn'>Third</a>
 </div>
+<div class='btn-group toggle'>
+<a class='btn'>Toggle</a>
+<a class='btn'>Select</a>
+<a class='btn'>Group</a>
+</div>
 <div class='btn-group single'>
 <a class='btn'>Single</a>
 <a class='btn'>Select</a>
 <a class='btn'>Group</a>
 </div>
-<h4>Badges</h4>
-<p>
-<a class='btn'>
-Default
-<i class='bdg red'>0</i>
-</a>
-<a class='btn blue'>
-Blue
-<i class='bdg'>0</i>
-</a>
-<a class='btn red'>
-Red
-<i class='bdg'>0</i>
-</a>
-<a class='btn yellow'>
-Yellow
-<i class='bdg'>0</i>
-</a>
-<a class='btn green'>
-Green
-<i class='bdg'>0</i>
-</a>
-<a class='btn purple'>
-Purple
-<i class='bdg'>0</i>
-</a>
-<a class='btn orange'>
-Orange
-<i class='bdg'>0</i>
-</a>
-</p>
+<code class='demo'>&lt;div class="btn-group"&gt;
+	&lt;a class="btn"&gt;First&lt;/a&gt;
+	&lt;a class="btn"&gt;Second&lt;/a&gt;
+	&lt;a class="btn"&gt;Third&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="btn-group toggle"&gt;
+	&lt;a class="btn"&gt;Toggle&lt;/a&gt;
+	&lt;a class="btn"&gt;Select&lt;/a&gt;
+	&lt;a class="btn"&gt;Group&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="btn-group single"&gt;
+	&lt;a class="btn"&gt;Single&lt;/a&gt;
+	&lt;a class="btn"&gt;Select&lt;/a&gt;
+	&lt;a class="btn"&gt;Group&lt;/a&gt;
+&lt;/div&gt;</code>
 </section>
 
 <section class='nav' id='labels'>
 <h3 class='section'>Labels</h3>
 <p>
-Some text
+Labels can be plain text
 <span class='lbl'>Default</span>
-<span class='lbl red'>Red</span>
-<span class='lbl green'>Green</span>
-<span class='lbl blue'>Blue</span>
-<span class='lbl cyan'>Cyan</span>
-<span class='lbl magenta'>Magenta</span>
-<span class='lbl yellow'>Yellow</span>
-<span class='lbl purple'>Purple</span>
-<span class='lbl orange'>Orange</span>
+<span class='lbl primary'>Primary</span>
+<span class='lbl success'>Success</span>
+<span class='lbl error'>Error</span>
+<span class='lbl warning'>Warning</span>
+<span class='lbl info'>Info</span>
 </p>
+<p>
+Labels can also be clickable
+<a class='lbl' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Default</a>
+<a class='lbl primary' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Primary</a>
+<a class='lbl success' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Success</a>
+<a class='lbl error' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Error</a>
+<a class='lbl warning' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Warning</a>
+<a class='lbl info' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Info</a>
+</p>
+<div class='card success modal alert' id='label-modal'>
+You clicked it!
+</div>
 </section>
 
 <section class='nav' id='badges'>
 <h3 class='section'>Badges</h3>
+<p>Badges call out imporant details.</p>
 <p>
 Some text
 <span class='bdg'>0</span>
-<span class='bdg red'>1</span>
-<span class='bdg green'>2</span>
-<span class='bdg blue'>3</span>
-<span class='bdg cyan'>4</span>
-<span class='bdg magenta'>5</span>
-<span class='bdg yellow'>6</span>
-<span class='bdg purple'>7</span>
-<span class='bdg orange'>8</span>
+<span class='bdg primary'>1</span>
+<span class='bdg success'>2</span>
+<span class='bdg error'>3</span>
+<span class='bdg warning'>4</span>
+<span class='bdg info'>5</span>
+</p>
+<h4>Buttons</h4>
+<p>
+<a class='btn'>
+Default
+<i class='bdg'>0</i>
+</a>
 </p>
 </section>
 
@@ -831,11 +941,11 @@ Item
 <p>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</p>
 <footer>Footer</footer>
 </div>
-<pre class='demo'><code>&lt;div class="card"&gt;
+<code class='demo'>&lt;div class="card"&gt;
 	&lt;header&gt;Card&lt;/header&gt;
 	&lt;p&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/p&gt;
 	&lt;footer&gt;Footer&lt;/footer&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code>
 <p>Cards can also be assigned a color scheme.</p>
 <div class='row'>
 <div class='col-md-6 col-lg-4'>
@@ -874,7 +984,7 @@ Content
 </div>
 </div>
 </div>
-<pre class='demo'><code>&lt;div class="card primary"&gt;
+<code class='demo'>&lt;div class="card primary"&gt;
 	&lt;header&gt;Primary&lt;/header&gt;
 	Content
 	&lt;footer&gt;Footer&lt;/footer&gt;
@@ -904,11 +1014,11 @@ Content
 	&lt;footer&gt;Footer&lt;/footer&gt;
 &lt;/div&gt;
 
-</code></pre>
+</code>
 <h4>Alerts</h4>
 <p>Alerts are a simplified variant of cards for content that does not need a header or footer.</p>
 <div class='card alert'>This is a default alert.</div>
-<pre class='demo'><code>&lt;div class="card alert"&gt;This is a default alert.&lt/div&gt;</code></pre>
+<code class='demo'>&lt;div class="card alert"&gt;This is a default alert.&lt/div&gt;</code>
 <p>Alerts can also be assigned a color scheme.</p>
 <div class='row'>
 <div class='col-md-6 col-lg-4'>
@@ -927,12 +1037,12 @@ Content
 <div class='card alert info'>Information message</div>
 </div>
 </div>
-<pre class='demo'><code>&lt;div class="card alert primary"&gt;Primary message&lt/div&gt;
+<code class='demo'>&lt;div class="card alert primary"&gt;Primary message&lt/div&gt;
 &lt;div class="card alert success"&gt;Success message&lt/div&gt;
 &lt;div class="card alert error"&gt;Error message&lt/div&gt;
 &lt;div class="card alert warning"&gt;Warning message&lt/div&gt;
 &lt;div class="card alert info"&gt;Information message&lt/div&gt;
-</code></pre>
+</code>
 </section>
 
 <section class='nav' id='tabs'>
@@ -1052,118 +1162,6 @@ Content
 </div>
 </section>
 
-<section class='nav' id='modal'>
-<h3 class='section'>Modal Cards</h3>
-<p>
-Cards can be displayed as modal views by adding the
-<code class='highlight'>modal</code>
-class to the card and using a link or button to target the card.
-</p>
-<p>
-<button data-action='modal' data-target='#modal-default'>Default</button>
-</p>
-<pre class='demo'><code>&lt;div class="card modal" id="modal-default"&gt;
-	&lt;header&gt;Default Modal Card&lt;/header&gt;
-	&lt;p&gt;This is the default style for modal cards.&lt;/p&gt;
-	&lt;a class="ok"&gt;Dismiss&lt;a&gt;
-	&lt;footer&gt;Default card footer&lt;/footer&gt;
-&lt;/div&gt;
-
-&lt;button data-action="modal" data-target="#modal-default"&gt;Default&lt;/button&gt;</code></pre>
-<h4>Overlay</h4>
-<p>
-By default, the dimmed overlay will appear behind the modal card. This can be disabled using the
-<code class='highlight'>data-overlay="false"</code>
-attribute on the targetting link or button.
-</p>
-<p>
-<button data-action='modal' data-overlay='false' data-target='#modal-default'>No Overlay</button>
-</p>
-<pre class='demo'><code>&lt;button data-action="modal" data-target="#modal-default" data-overlay="false"&gt;No Overlay&lt;/button&gt;</code></pre>
-<p>
-By default, clicking outside the card will dismiss the modal. This can be disabled using the
-<code class='highlight'>data-overlay="static"</code>
-attribute on the targetting link or button.
-</p>
-<p>
-<button data-action='modal' data-overlay='static' data-target='#modal-default'>Static Overlay</button>
-</p>
-<pre class='demo'><code>&lt;button data-action="modal" data-target="#modal-default" data-overlay="static"&gt;Static Overlay&lt;/button&gt;</code></pre>
-<h4>Duration</h4>
-<p>
-By default, the modal card will remain visible until it is dismissed. A modal can be automatically dismissed
-after a specified delay using the
-<code class='highlight'>data-duration</code>
-attribute on the targetting link or button. The duration is specified in milliseconds.
-</p>
-<p>
-<button data-action='modal' data-duration='1300' data-target='#modal-default'>Auto-dismiss</button>
-</p>
-<pre class='demo'><code>&lt;button data-action="modal" data-target="#modal-default" data-duration="1300"&gt;Auto-dismiss&lt;/button&gt;</code></pre>
-<h4>Action Buttons</h4>
-<p>
-Modal cards can trigger actions using buttons in the card footer. Adding the
-<code class='highlight'>btns</code>
-class to the card footer will evenly distribute any buttons it contains.
-Buttons with a class of
-<code class='highlight'>ok</code>
-or
-<code class='highlight'>cancel</code>
-will trigger an event of the same names on the card.
-</p>
-<p>
-<button class='warning' data-action='modal' data-overlay='static' data-target='#modal-warning'>Dialog</button>
-</p>
-<pre class='demo'><code>&lt;div class="card modal warning" id="modal-warning"&gt;
-	&lt;header&gt;Warning Modal Card&lt;/header&gt;
-	&lt;p&gt;Are you sure you want to do this thing?&lt;/p&gt;
-	&lt;footer class="btns"&gt;
-		&lt;button class="cancel"&gt;Cancel&lt;/button&gt;
-		&lt;button class="ok"&gt;Do it!&lt;/button&gt;
-	&lt;/footer&gt;
-&lt;/div&gt;
-
-&lt;button data-action="modal" data-target="#modal-warning"&gt;Dialog&lt;/button&gt;
-
-&lt;script type="text/javascript"&gt;
-	$('#modal-warning').on('ok', function() {
-		setTimeout(function() {
-			$('#modal-success').modal({ overlay: false, duration: 1300 });
-		}, 700);
-	});
-&lt;/script&gt;</code></pre>
-<div class='card modal' id='modal-default'>
-<header>Default Modal Card</header>
-<p>This is the default style for modal cards.</p>
-<a class='ok'>Dismiss</a>
-<footer>Default card footer</footer>
-</div>
-<div class='card modal warning' id='modal-warning'>
-<header>Warning Modal Card</header>
-Are you sure you want to do this thing?
-<footer class='btns'>
-<button class='btn cancel'>Cancel</button>
-<button class='btn red ok'>Do it!</button>
-</footer>
-</div>
-<div class='card modal success alert' id='modal-success'>
-You were successful!
-</div>
-<script>
-  (function() {
-    $('#modal-warning').on('ok', function() {
-      return setTimeout(function() {
-        return $('#modal-success').modal({
-          overlay: false,
-          duration: 1300
-        });
-      }, 700);
-    });
-  
-  }).call(this);
-</script>
-</section>
-
 <section class='nav' id='forms'>
 <h3 class='section'>Forms</h3>
 <form>
@@ -1249,6 +1247,8 @@ Option 3
 
 <section class='nav' id='menu'>
 <h3 class='section'>Menu</h3>
+<div class='row'>
+<div class='col-sm-md-6 col-lg-4'>
 <ul class='menu'>
 <li>
 <a href='#'>Menu Item</a>
@@ -1260,6 +1260,8 @@ Option 3
 <a href='#'>Menu Item</a>
 </li>
 </ul>
+</div>
+<div class='col-sm-md-6 col-lg-4'>
 <ul class='menu primary'>
 <li>
 <a href='#'>Menu Item</a>
@@ -1271,6 +1273,8 @@ Option 3
 <a href='#'>Menu Item</a>
 </li>
 </ul>
+</div>
+<div class='col-sm-md-6 col-lg-4'>
 <ul class='menu success'>
 <li>
 <a href='#'>Menu Item</a>
@@ -1282,6 +1286,8 @@ Option 3
 <a href='#'>Menu Item</a>
 </li>
 </ul>
+</div>
+<div class='col-sm-md-6 col-lg-4'>
 <ul class='menu error'>
 <li>
 <a href='#'>Menu Item</a>
@@ -1293,6 +1299,8 @@ Option 3
 <a href='#'>Menu Item</a>
 </li>
 </ul>
+</div>
+<div class='col-sm-md-6 col-lg-4'>
 <ul class='menu warning'>
 <li>
 <a href='#'>Menu Item</a>
@@ -1304,6 +1312,8 @@ Option 3
 <a href='#'>Menu Item</a>
 </li>
 </ul>
+</div>
+<div class='col-sm-md-6 col-lg-4'>
 <ul class='menu info'>
 <li>
 <a href='#'>Menu Item</a>
@@ -1315,6 +1325,8 @@ Option 3
 <a href='#'>Menu Item</a>
 </li>
 </ul>
+</div>
+</div>
 <h4 class='section'>Inline Menus</h4>
 <ul class='menu inline'>
 <li>
@@ -1382,6 +1394,131 @@ Option 3
 <a href='#'>Menu Item</a>
 </li>
 </ul>
+</section>
+
+<section class='nav' id='collapse'>
+<h3 class='section'>Collapse</h3>
+<p class='demo' id='collapse-text'>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</p>
+<button data-action='collapse' data-target='#collapse-text'>Collapse Text</button>
+<h4>Cards</h4>
+<div class='card collapsible' id='collapse-card'>
+<header>Card</header>
+<p>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</p>
+<footer>Footer</footer>
+</div>
+<button data-action='collapse' data-target='#collapse-card'>Collapse Card</button>
+</section>
+
+<section class='nav' id='modal'>
+<h3 class='section'>Modal Cards</h3>
+<p>
+Cards can be displayed as modal views by adding the
+<code class='highlight'>modal</code>
+class to the card and using a link or button to target the card.
+</p>
+<p>
+<button data-action='modal' data-target='#modal-default'>Default</button>
+</p>
+<code class='demo'>&lt;div class="card modal" id="modal-default"&gt;
+	&lt;header&gt;Default Modal Card&lt;/header&gt;
+	&lt;p&gt;This is the default style for modal cards.&lt;/p&gt;
+	&lt;a class="ok"&gt;Dismiss&lt;a&gt;
+	&lt;footer&gt;Default card footer&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;button data-action="modal" data-target="#modal-default"&gt;Default&lt;/button&gt;</code>
+<h4>Overlay</h4>
+<p>
+By default, the dimmed overlay will appear behind the modal card. This can be disabled using the
+<code class='highlight'>data-overlay="false"</code>
+attribute on the targetting link or button.
+</p>
+<p>
+<button data-action='modal' data-overlay='false' data-target='#modal-default'>No Overlay</button>
+</p>
+<code class='demo'>&lt;button data-action="modal" data-target="#modal-default" data-overlay="false"&gt;No Overlay&lt;/button&gt;</code>
+<p>
+By default, clicking outside the card will dismiss the modal. This can be disabled using the
+<code class='highlight'>data-overlay="static"</code>
+attribute on the targetting link or button.
+</p>
+<p>
+<button data-action='modal' data-overlay='static' data-target='#modal-default'>Static Overlay</button>
+</p>
+<code class='demo'>&lt;button data-action="modal" data-target="#modal-default" data-overlay="static"&gt;Static Overlay&lt;/button&gt;</code>
+<h4>Duration</h4>
+<p>
+By default, the modal card will remain visible until it is dismissed. A modal can be automatically dismissed
+after a specified delay using the
+<code class='highlight'>data-duration</code>
+attribute on the targetting link or button. The duration is specified in milliseconds.
+</p>
+<p>
+<button data-action='modal' data-duration='1300' data-target='#modal-default'>Auto-dismiss</button>
+</p>
+<code class='demo'>&lt;button data-action="modal" data-target="#modal-default" data-duration="1300"&gt;Auto-dismiss&lt;/button&gt;</code>
+<h4>Action Buttons</h4>
+<p>
+Modal cards can trigger actions using buttons in the card footer. Adding the
+<code class='highlight'>btns</code>
+class to the card footer will evenly distribute any buttons it contains.
+Buttons with a class of
+<code class='highlight'>ok</code>
+or
+<code class='highlight'>cancel</code>
+will trigger an event of the same names on the card.
+</p>
+<p>
+<button class='warning' data-action='modal' data-overlay='static' data-target='#modal-warning'>Dialog</button>
+</p>
+<code class='demo'>&lt;div class="card modal warning" id="modal-warning"&gt;
+	&lt;header&gt;Warning Modal Card&lt;/header&gt;
+	&lt;p&gt;Are you sure you want to do this thing?&lt;/p&gt;
+	&lt;footer class="btns"&gt;
+		&lt;button class="cancel"&gt;Cancel&lt;/button&gt;
+		&lt;button class="ok"&gt;Do it!&lt;/button&gt;
+	&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;button data-action="modal" data-target="#modal-warning"&gt;Dialog&lt;/button&gt;
+
+&lt;script type="text/javascript"&gt;
+	$('#modal-warning').on('ok', function() {
+		setTimeout(function() {
+			$('#modal-success').modal({ overlay: false, duration: 1300 });
+		}, 700);
+	});
+&lt;/script&gt;</code>
+<div class='card modal' id='modal-default'>
+<header>Default Modal Card</header>
+<p>This is the default style for modal cards.</p>
+<a class='ok'>Dismiss</a>
+<footer>Default card footer</footer>
+</div>
+<div class='card modal warning' id='modal-warning'>
+<header>Warning Modal Card</header>
+Are you sure you want to do this thing?
+<footer class='btns'>
+<button class='btn cancel'>Cancel</button>
+<button class='btn red ok'>Do it!</button>
+</footer>
+</div>
+<div class='card modal success alert' id='modal-success'>
+You were successful!
+</div>
+<script>
+  (function() {
+    $('#modal-warning').on('ok', function() {
+      return setTimeout(function() {
+        return $('#modal-success').modal({
+          overlay: false,
+          duration: 1300
+        });
+      }, 700);
+    });
+  
+  }).call(this);
+</script>
 </section>
 
 </div>
