@@ -18,3 +18,10 @@ $ '.btn-group.single'
 
 		buttons.removeClass 'active'
 		button.toggleClass 'active', !isActive
+
+$ '.btn-group.toggle'
+.each ->
+	group = $ this
+
+	buttons = group.find '.btn'
+	buttons.addClass 'toggle'

@@ -6,5 +6,5 @@ $.fn.center = ->
 	hOffset = (viewport.width()  - element.outerWidth() ) / 2
 
 	element.css
-		'top'  : "#{vOffset}px"
-		'left' : "#{hOffset}px"
+		top  : "#{vOffset}px"
+		left : "#{hOffset}px"
