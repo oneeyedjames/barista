@@ -1,34 +1,49 @@
 $.fn.collapse = (min) ->
 	box = $ this
 
-	if box.hasClass 'collapsed'
-		box.css 'overflow', 'hidden'
-		box.css 'padding', ''
+	if box.hasClass 'card'
+		if box.hasClass 'collapsed'
+			box.css 'height', ''
+		else
+			header = box.children 'header'
+			height = do header.innerHeight
+			box.css 'height', "#{height}px"
 	else
-		height = do box.innerHeight
-		box.css 'max-height', "#{height}px"
-		box.css 'padding', '0'
+		if box.hasClass 'collapsed'
+			box.css 'overflow', 'hidden'
+			box.css 'padding', ''
+		else
+			height = do box.innerHeight
+			box.css 'max-height', "#{height}px"
+			box.css 'padding', '0'
 
 	box.toggleClass 'collapsed'
+	box.trigger 'collapse', box.hasClass 'collapsed'
 
 	this
 
 $ '*[data-action="collapse"]'
-.click (event) ->
-	do event.preventDefault
-
+.each ->
 	button = $ this
 	target = $ button.data 'target'
-
-	do target.collapse
 
 	caret = button.find '.caret'
 
 	if caret.length > 0
-		collapsed = target .hasClass 'collapsed'
-		caret
+		collapsed = target.hasClass 'collapsed'
+
+		caret.addClass 'fa'
 		.toggleClass 'fa-caret-down', collapsed
 		.toggleClass 'fa-caret-up', ! collapsed
+
+		target.on 'collapse', (target, collapsed) ->
+			caret
+			.toggleClass 'fa-caret-down', collapsed
+			.toggleClass 'fa-caret-up', ! collapsed
+
+	button.click (event) ->
+		do event.preventDefault
+		do target.collapse
 
 $ '.card.collapsible header'
 .each ->
@@ -39,25 +54,21 @@ $ '.card.collapsible header'
 
 	if caret.length == 0
 		caret = $ '<i>'
-		.addClass 'caret'
+		.addClass 'fa caret'
 
 		header.append caret
 
-	caret
-	.addClass 'fa fa-caret-up'
-	.click (event) ->
+	collapsed = card.hasClass 'collapsed'
+
+	caret.addClass 'fa'
+	.toggleClass 'fa-caret-down', collapsed
+	.toggleClass 'fa-caret-up', ! collapsed
+
+	card.on 'collapse', (card, collapsed) ->
+		caret
+		.toggleClass 'fa-caret-down', collapsed
+		.toggleClass 'fa-caret-up', ! collapsed
+
+	header.click (event) ->
 		do event.preventDefault
-
-		if card.hasClass 'collapsed'
-			card.css 'height', ''
-		else
-			height = do header.innerHeight
-			card.css 'height', "#{height}px"
-
-		card.toggleClass 'collapsed'
-
-		active = card.hasClass 'collapsed'
-
-		header.children '.caret'
-		.toggleClass 'fa-caret-down', active
-		.toggleClass 'fa-caret-up', ! active
+		do card.collapse
