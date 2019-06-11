@@ -1034,6 +1034,9 @@ a.lbl {
   visibility: visible;
   opacity: 1;
 }
+.card.collapsible header {
+  cursor: pointer;
+}
 .card.alert header, .card.alert footer {
   display: none;
 }

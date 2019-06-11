@@ -21,53 +21,71 @@ jQuery(function($) {
       return button.toggleClass('active', !isActive);
     });
   });
+  $('.btn-group.toggle').each(function() {
+    var buttons, group;
+    group = $(this);
+    buttons = group.find('.btn');
+    return buttons.addClass('toggle');
+  });
   $.fn.collapse = function(min) {
-    var box, height;
+    var box, header, height;
     box = $(this);
-    if (box.hasClass('collapsed')) {
-      box.css('overflow', 'hidden');
-      box.css('padding', '');
+    if (box.hasClass('card')) {
+      if (box.hasClass('collapsed')) {
+        box.css('height', '');
+      } else {
+        header = box.children('header');
+        height = header.innerHeight();
+        box.css('height', height + "px");
+      }
     } else {
-      height = box.innerHeight();
-      box.css('max-height', height + "px");
-      box.css('padding', '0');
+      if (box.hasClass('collapsed')) {
+        box.css('overflow', 'hidden');
+        box.css('padding', '');
+      } else {
+        height = box.innerHeight();
+        box.css('max-height', height + "px");
+        box.css('padding', '0');
+      }
     }
     box.toggleClass('collapsed');
+    box.trigger('collapse', box.hasClass('collapsed'));
     return this;
   };
-  $('*[data-action="collapse"]').click(function(event) {
+  $('*[data-action="collapse"]').each(function() {
     var button, caret, collapsed, target;
-    event.preventDefault();
     button = $(this);
     target = $(button.data('target'));
-    target.collapse();
     caret = button.find('.caret');
     if (caret.length > 0) {
       collapsed = target.hasClass('collapsed');
-      return caret.toggleClass('fa-caret-down', collapsed).toggleClass('fa-caret-up', !collapsed);
+      caret.addClass('fa').toggleClass('fa-caret-down', collapsed).toggleClass('fa-caret-up', !collapsed);
+      target.on('collapse', function(target, collapsed) {
+        return caret.toggleClass('fa-caret-down', collapsed).toggleClass('fa-caret-up', !collapsed);
+      });
     }
+    return button.click(function(event) {
+      event.preventDefault();
+      return target.collapse();
+    });
   });
   $('.card.collapsible header').each(function() {
-    var card, caret, header;
+    var card, caret, collapsed, header;
     header = $(this);
     card = header.parent();
     caret = header.find('.caret');
     if (caret.length === 0) {
-      caret = $('<i>').addClass('caret');
+      caret = $('<i>').addClass('fa caret');
       header.append(caret);
     }
-    return caret.addClass('fa fa-caret-up').click(function(event) {
-      var active, height;
+    collapsed = card.hasClass('collapsed');
+    caret.addClass('fa').toggleClass('fa-caret-down', collapsed).toggleClass('fa-caret-up', !collapsed);
+    card.on('collapse', function(card, collapsed) {
+      return caret.toggleClass('fa-caret-down', collapsed).toggleClass('fa-caret-up', !collapsed);
+    });
+    return header.click(function(event) {
       event.preventDefault();
-      if (card.hasClass('collapsed')) {
-        card.css('height', '');
-      } else {
-        height = header.innerHeight();
-        card.css('height', height + "px");
-      }
-      card.toggleClass('collapsed');
-      active = card.hasClass('collapsed');
-      return header.children('.caret').toggleClass('fa-caret-down', active).toggleClass('fa-caret-up', !active);
+      return card.collapse();
     });
   });
   $('form[data-confirm]').submit(function(event) {
@@ -130,17 +148,6 @@ jQuery(function($) {
       return menu.refreshTabs();
     }
   });
-  $.fn.center = function() {
-    var element, hOffset, vOffset, viewport;
-    viewport = $(window);
-    element = $(this);
-    vOffset = (viewport.height() - element.outerHeight()) / 2;
-    hOffset = (viewport.width() - element.outerWidth()) / 2;
-    return element.css({
-      top: vOffset + "px",
-      left: hOffset + "px"
-    });
-  };
   $.fn.modal = function(settings) {
     var body, dialog, dismiss, overlay;
     settings = $.extend({}, $.fn.modal.defaults, settings);
@@ -339,8 +346,8 @@ jQuery(function($) {
     vOffset = (viewport.height() - element.outerHeight()) / 2;
     hOffset = (viewport.width() - element.outerWidth()) / 2;
     return element.css({
-      'top': vOffset + "px",
-      'left': hOffset + "px"
+      top: vOffset + "px",
+      left: hOffset + "px"
     });
   };
 });
