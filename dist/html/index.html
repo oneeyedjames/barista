@@ -156,6 +156,9 @@
 <a class='nav' href='index.html#modal'>Modal</a>
 </li>
 <li>
+<a class='nav' href='index.html#confirm'>Confirm</a>
+</li>
+<li>
 <a class='nav' href='index.html#tooltip'>Tooltip</a>
 </li>
 </ul>
@@ -1519,6 +1522,58 @@ You were successful!
   
   }).call(this);
 </script>
+</section>
+
+<section class='nav' id='confirm'>
+<h3 class='section'>Confirm</h3>
+<p>Forms can have a built-in confirm message.</p>
+<form data-confirm='Are you sure you want to do this?'>
+<div class='input-group'>
+<input placeholder='Search Terms...'>
+<button type='submit'>Search</button>
+</div>
+</form>
+<code class='demo'>&lt;form data-confirm="Are you sure you want to do this?"&gt;
+	&lt;div class="input-group"&gt;
+		&lt;input placeholder="Search Terms..."&gt;
+		&lt;input type="submit" value="Search"&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code>
+<h4>Overlay</h4>
+<p>
+By default, the dimmed overlay will appear behind the modal card. This can be disabled using the
+<code class='highlight'>data-overlay="false"</code>
+attribute on the form.
+</p>
+<form data-confirm='Are you sure?' data-overlay='false'>
+<div class='input-group'>
+<input placeholder='Search Terms...'>
+<button type='submit'>Search</button>
+</div>
+</form>
+<code class='demo'>&lt;form data-confirm="Are you sure?" data-overlay="false"&gt;
+	&lt;div class="input-group"&gt;
+		&lt;input placeholder="Search Terms..."&gt;
+		&lt;input type="submit" value="Search"&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code>
+<p>
+By default, clicking outside the card will dismiss the modal. This can be disabled using the
+<code class='highlight'>data-overlay="static"</code>
+attribute on the form.
+</p>
+<form data-confirm='Are you sure?' data-overlay='static'>
+<div class='input-group'>
+<input placeholder='Search Terms...'>
+<button type='submit'>Search</button>
+</div>
+</form>
+<code class='demo'>&lt;form data-confirm="Are you sure?" data-overlay="static"&gt;
+	&lt;div class="input-group"&gt;
+		&lt;input placeholder="Search Terms..."&gt;
+		&lt;input type="submit" value="Search"&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code>
 </section>
 
 </div>

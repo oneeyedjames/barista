@@ -1,0 +1,46 @@
+%section#confirm.nav
+	%h3.section Confirm
+	%p Forms can have a built-in confirm message.
+	%form{ 'data-confirm' => 'Are you sure you want to do this?' }
+		.input-group
+			%input{ :placeholder => 'Search Terms...' }
+			%button{ :type => 'submit' } Search
+	%code.demo
+		= "&lt;form data-confirm=\"Are you sure you want to do this?\"&gt;\n"
+		= "\t&lt;div class=\"input-group\"&gt;\n"
+		= "\t\t&lt;input placeholder=\"Search Terms...\"&gt;\n"
+		= "\t\t&lt;input type=\"submit\" value=\"Search\"&gt;\n"
+		= "\t&lt;/div&gt;\n"
+		= "&lt;/form&gt;"
+
+	%h4 Overlay
+	%p
+		By default, the dimmed overlay will appear behind the modal card. This can be disabled using the
+		%code.highlight data-overlay="false"
+		attribute on the form.
+	%form{ 'data-confirm' => 'Are you sure?', 'data-overlay' => 'false' }
+		.input-group
+			%input{ :placeholder => 'Search Terms...' }
+			%button{ :type => 'submit' } Search
+	%code.demo
+		= "&lt;form data-confirm=\"Are you sure?\" data-overlay=\"false\"&gt;\n"
+		= "\t&lt;div class=\"input-group\"&gt;\n"
+		= "\t\t&lt;input placeholder=\"Search Terms...\"&gt;\n"
+		= "\t\t&lt;input type=\"submit\" value=\"Search\"&gt;\n"
+		= "\t&lt;/div&gt;\n"
+		= "&lt;/form&gt;"
+	%p
+		By default, clicking outside the card will dismiss the modal. This can be disabled using the
+		%code.highlight data-overlay="static"
+		attribute on the form.
+	%form{ 'data-confirm' => 'Are you sure?', 'data-overlay' => 'static' }
+		.input-group
+			%input{ :placeholder => 'Search Terms...' }
+			%button{ :type => 'submit' } Search
+	%code.demo
+		= "&lt;form data-confirm=\"Are you sure?\" data-overlay=\"static\"&gt;\n"
+		= "\t&lt;div class=\"input-group\"&gt;\n"
+		= "\t\t&lt;input placeholder=\"Search Terms...\"&gt;\n"
+		= "\t\t&lt;input type=\"submit\" value=\"Search\"&gt;\n"
+		= "\t&lt;/div&gt;\n"
+		= "&lt;/form&gt;"
