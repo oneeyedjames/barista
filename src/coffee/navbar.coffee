@@ -1,17 +1,16 @@
-$.fn.extend
-	toggleMenu : (button) ->
-		active = $ this
-		.hasClass 'active'
+$.fn.toggleMenu = (button) ->
+	active = $ this
+	.hasClass 'active'
 
-		$ '.navbar ul.nav ul'
-		.removeClass 'active'
+	$ '.navbar ul.nav ul'
+	.removeClass 'active'
 
-		$ this
-		.toggleClass 'active', ! active
+	$ this
+	.toggleClass 'active', ! active
 
-		button.children '.caret'
-		.toggleClass 'fa-caret-down', active
-		.toggleClass 'fa-caret-up', ! active
+	button.children '.caret'
+	.toggleClass 'fa-caret-down', active
+	.toggleClass 'fa-caret-up', ! active
 
 $ '.navbar *[data-action="menu"]'
 .each ->

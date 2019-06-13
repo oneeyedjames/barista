@@ -110,17 +110,15 @@ jQuery(function($) {
     $('body').append(dialog);
     return dialog.modal(data);
   });
-  $.fn.extend({
-    refreshTabs: function() {
-      return $(this).children('li').each(function() {
-        var tab;
-        tab = $(this);
-        return tab.children('a').each(function() {
-          return $(this.hash).toggle(tab.hasClass('active'));
-        });
+  $.fn.refreshTabs = function() {
+    return $(this).children('li').each(function() {
+      var tab;
+      tab = $(this);
+      return tab.children('a').each(function() {
+        return $(this.hash).toggle(tab.hasClass('active'));
       });
-    }
-  });
+    });
+  };
   $('ul.menu').each(function() {
     var active, hashed, menu;
     menu = $(this);
@@ -199,15 +197,13 @@ jQuery(function($) {
       return $(button.data('target')).modal(button.data());
     }
   });
-  $.fn.extend({
-    toggleMenu: function(button) {
-      var active;
-      active = $(this).hasClass('active');
-      $('.navbar ul.nav ul').removeClass('active');
-      $(this).toggleClass('active', !active);
-      return button.children('.caret').toggleClass('fa-caret-down', active).toggleClass('fa-caret-up', !active);
-    }
-  });
+  $.fn.toggleMenu = function(button) {
+    var active;
+    active = $(this).hasClass('active');
+    $('.navbar ul.nav ul').removeClass('active');
+    $(this).toggleClass('active', !active);
+    return button.children('.caret').toggleClass('fa-caret-down', active).toggleClass('fa-caret-up', !active);
+  };
   $('.navbar *[data-action="menu"]').each(function() {
     return $(this).children('.caret').addClass('fa fa-caret-down');
   });

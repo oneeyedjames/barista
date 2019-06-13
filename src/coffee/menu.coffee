@@ -1,13 +1,12 @@
-$.fn.extend
-	refreshTabs : ->
-		$ this
-		.children 'li'
+$.fn.refreshTabs = ->
+	$ this
+	.children 'li'
+	.each ->
+		tab = $ this
+		tab.children 'a'
 		.each ->
-			tab = $ this
-			tab.children 'a'
-			.each ->
-				$ this.hash
-				.toggle tab.hasClass 'active'
+			$ this.hash
+			.toggle tab.hasClass 'active'
 
 $ 'ul.menu'
 .each ->
