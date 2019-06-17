@@ -1,17 +1,62 @@
 %section#badges.nav
 	%h3.section Badges
 	%p Badges call out imporant details.
-	%p
-		Some text
-		%span.bdg 0
-		%span.bdg.primary 1
-		%span.bdg.success 2
-		%span.bdg.error 3
-		%span.bdg.warning 4
-		%span.bdg.info 5
+	%ul
+		%li
+			Default
+			%sup.bdg 0
+		%li
+			Primary
+			%sup.bdg.primary 1
+		%li
+			Success
+			%sup.bdg.success 2
+		%li
+			Error
+			%sup.bdg.error 3
+		%li
+			Warning
+			%sup.bdg.warning 4
+		%li
+			Info
+			%sup.bdg.info 5
+	%code.demo
+		= "&lt;ul&gt;\n"
+		= "\t&lt;li&gt;Default &lt;sup class=\"bdg\"&gt;0&lt;/sup&gt;&lt;/li&gt;\n"
+		= "\t&lt;li&gt;Primary &lt;sup class=\"bdg primary\"&gt;1&lt;/sup&gt;&lt;/li&gt;\n"
+		= "\t&lt;li&gt;Success &lt;sup class=\"bdg success\"&gt;2&lt;/sup&gt;&lt;/li&gt;\n"
+		= "\t&lt;li&gt;Error &lt;sup class=\"bdg error\"&gt;3&lt;/sup&gt;&lt;/li&gt;\n"
+		= "\t&lt;li&gt;Warning &lt;sup class=\"bdg warning\"&gt;4&lt;/sup&gt;&lt;/li&gt;\n"
+		= "\t&lt;li&gt;Info &lt;sup class=\"bdg info\"&gt;5&lt;/sup&gt;&lt;/li&gt;\n"
+		= "&lt;/ul&gt;"
 
 	%h4 Buttons
+	%p Badges can also be nested in buttons.
 	%p
 		%a.btn
-			= "Default"
-			%i.bdg 0
+			Default
+			%sup.bdg 0
+		%a.btn.primary
+			Primary
+			%sup.bdg 1
+		%a.btn.success
+			Success
+			%sup.bdg 2
+		%a.btn.error
+			Error
+			%sup.bdg 3
+		%a.btn.warning
+			Warning
+			%sup.bdg 4
+		%a.btn.info
+			Info
+			%sup.bdg 5
+	%code.demo
+		= "&lt;p&gt;\n"
+		= "\t&lt;a class=\"btn\"&gt;Default &lt;sup class=\"bdg\"&gt;0&lt;/sup&gt;&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn primary\"&gt;Primary &lt;sup class=\"bdg\"&gt;1&lt;/sup&gt;&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn success\"&gt;Success &lt;sup class=\"bdg\"&gt;2&lt;/sup&gt;&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn error\"&gt;Error &lt;sup class=\"bdg\"&gt;3&lt;/sup&gt;&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn warning\"&gt;Warning &lt;sup class=\"bdg\"&gt;4&lt;/sup&gt;&lt;/a&gt;\n"
+		= "\t&lt;a class=\"btn info\"&gt;Info &lt;sup class=\"bdg\"&gt;5&lt;/sup&gt;&lt;/a&gt;\n"
+		= "&lt;/p&gt;"

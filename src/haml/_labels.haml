@@ -1,22 +1,38 @@
 %section#labels.nav
 	%h3.section Labels
-
+	%p Labels can be plain text
 	%p
-		Labels can be plain text
 		%span.lbl Default
 		%span.lbl.primary Primary
 		%span.lbl.success Success
 		%span.lbl.error Error
 		%span.lbl.warning Warning
 		%span.lbl.info Info
+	%code.demo
+		= "&lt;p&gt;Labels can be plain text&lt;/p&gt;\n"
+		= "&lt;p&gt;\n"
+		= "\t&lt;span class=\"lbl\"&gt;Default&lt;/span&gt;\n"
+		= "\t&lt;span class=\"lbl primary\"&gt;Primary&lt;/span&gt;\n"
+		= "\t&lt;span class=\"lbl success\"&gt;Success&lt;/span&gt;\n"
+		= "\t&lt;span class=\"lbl error\"&gt;Error&lt;/span&gt;\n"
+		= "\t&lt;span class=\"lbl warning\"&gt;Warning&lt;/span&gt;\n"
+		= "\t&lt;span class=\"lbl info\"&gt;Info&lt;/span&gt;\n"
+		= "&lt;/p&gt;"
+	%p Labels can also be clickable
 	%p
-		Labels can also be clickable
-		%a.lbl{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Default
-		%a.lbl.primary{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Primary
-		%a.lbl.success{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Success
-		%a.lbl.error{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Error
-		%a.lbl.warning{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Warning
-		%a.lbl.info{ 'data-action' => 'modal', 'data-target' => '#label-modal', 'data-overlay' => 'false', 'data-duration' => 1300 } Info
-
-	#label-modal.card.success.modal.alert
-		You clicked it!
+		%a.lbl{ :href => 'index.html' } Default
+		%a.lbl.primary{ :href => 'index.html' } Primary
+		%a.lbl.success{ :href => 'index.html' } Success
+		%a.lbl.error{ :href => 'index.html' } Error
+		%a.lbl.warning{ :href => 'index.html' } Warning
+		%a.lbl.info{ :href => 'index.html' } Info
+	%code.demo
+		= "&lt;p&gt;Labels can also be clickable&lt;/p&gt;\n"
+		= "&lt;p&gt;\n"
+		= "\t&lt;a href=\"index.html\" class=\"lbl\"&gt;Default&lt;/a&gt;\n"
+		= "\t&lt;a href=\"index.html\" class=\"lbl primary\"&gt;Primary&lt;/a&gt;\n"
+		= "\t&lt;a href=\"index.html\" class=\"lbl success\"&gt;Success&lt;/a&gt;\n"
+		= "\t&lt;a href=\"index.html\" class=\"lbl error\"&gt;Error&lt;/a&gt;\n"
+		= "\t&lt;a href=\"index.html\" class=\"lbl warning\"&gt;Warning&lt;/a&gt;\n"
+		= "\t&lt;a href=\"index.html\" class=\"lbl info\"&gt;Info&lt;/a&gt;\n"
+		= "&lt;/p&gt;"
