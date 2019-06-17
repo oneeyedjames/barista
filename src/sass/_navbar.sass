@@ -33,8 +33,14 @@
 		&.right
 			float: right
 
+			li
+				ul
+					position: absolute
+					right: $block-spacing / 2
+
 		li
 			float: left
+			position: relative
 			padding: 0 $block-spacing / 2
 			line-height: 2 * $block-spacing
 
@@ -57,6 +63,10 @@
 					&.sep
 						height: 1px
 						margin: 0 $block-spacing / 2
+
+					a
+						display: block
+						white-space: nowrap
 
 	&.red, &.danger, &.error
 		+navbar-color($red, $light-red, $dark-red)
@@ -86,6 +96,7 @@
 	margin-top: 3 * $block-spacing
 
 .wrapper
+	position: relative
 	margin: 0 $block-spacing
 
 	&.fluid

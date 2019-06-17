@@ -2471,8 +2471,13 @@ ul.menu.orange.tabs {
 .navbar ul.nav.right {
   float: right;
 }
+.navbar ul.nav.right li ul {
+  position: absolute;
+  right: 10px;
+}
 .navbar ul.nav li {
   float: left;
+  position: relative;
   padding: 0 10px;
   line-height: 40px;
 }
@@ -2495,6 +2500,10 @@ ul.menu.orange.tabs {
 .navbar ul.nav li ul li.sep {
   height: 1px;
   margin: 0 10px;
+}
+.navbar ul.nav li ul li a {
+  display: block;
+  white-space: nowrap;
 }
 .navbar.red, .navbar.danger, .navbar.error {
   border-bottom: 1px solid #a52b0e;
@@ -2638,6 +2647,7 @@ ul.menu.orange.tabs {
 }
 
 .wrapper {
+  position: relative;
   margin: 0 20px;
 }
 .wrapper.fluid {
