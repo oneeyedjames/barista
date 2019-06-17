@@ -1,0 +1,93 @@
+%section#forms.nav
+	%h3.section Forms
+
+	%form
+		%label Text
+		%input{ 'type' => 'text' }
+		%label Textarea
+		%textarea{ 'rows' => 4 }
+		%label Select
+		%select
+			%option - Make a Selection -
+			%option Option 1
+			%option Option 2
+		%code.demo
+			= "&lt;label&gt;Text&lt;/form&gt;\n"
+			= "&lt;input type=\"text\"&gt;\n"
+			= "&lt;label&gt;Textarea&lt;/form&gt;\n"
+			= "&lt;textarea rows=\"4\"&gt;&lt/textarea&gt;\n"
+			= "&lt;label&gt;Select&lt;/form&gt;\n"
+			= "&lt;select&gt;\n"
+			= "\t&lt;option&gt;- Make a Selection -&lt;/option&gt;\n"
+			= "\t&lt;option&gt;Option 1&lt;/option&gt;\n"
+			= "\t&lt;option&gt;Option 2&lt;/option&gt;\n"
+			= "&lt/select&gt;"
+		%label Checkboxes
+		.checkbox
+			%label
+				%input{ 'type' => 'checkbox', 'name' => 'checkbox' }
+				= 'Option 1'
+			%label
+				%input{ 'type' => 'checkbox', 'name' => 'checkbox' }
+				= 'Option 2'
+			%label
+				%input{ 'type' => 'checkbox', 'name' => 'checkbox' }
+				= 'Option 3'
+		%code.demo
+			= "&lt;label&gt;Checkboxes&lt;/label&gt;\n"
+			= "&lt;div class=\"checkbox\"&gt;\n"
+			= "\t&lt;label&gt;\n"
+			= "\t\t&lt;input type=\"checkbox\" name=\"checkbox\"&gt;\n"
+			= "\t\tOption 1\n"
+			= "\t&lt;/label&gt;\n"
+			= "\t&lt;label&gt;\n"
+			= "\t\t&lt;input type=\"checkbox\" name=\"checkbox\"&gt;\n"
+			= "\t\tOption 2\n"
+			= "\t&lt;/label&gt;\n"
+			= "\t&lt;label&gt;\n"
+			= "\t\t&lt;input type=\"checkbox\" name=\"checkbox\"&gt;\n"
+			= "\t\tOption 3\n"
+			= "\t&lt;/label&gt;\n"
+			= "&lt;/div&gt;"
+		%label Radio Buttons
+		.radio
+			%label
+				%input{ 'type' => 'radio', 'name' => 'radio' }
+				= 'Option 1'
+			%label
+				%input{ 'type' => 'radio', 'name' => 'radio' }
+				= 'Option 2'
+			%label
+				%input{ 'type' => 'radio', 'name' => 'radio' }
+				= 'Option 3'
+		%code.demo
+			= "&lt;label&gt;Radio Buttons&lt;/label&gt;\n"
+			= "&lt;div class=\"radio\"&gt;\n"
+			= "\t&lt;label&gt;\n"
+			= "\t\t&lt;input type=\"radio\" name=\"radio\"&gt;\n"
+			= "\t\tOption 1\n"
+			= "\t&lt;/label&gt;\n"
+			= "\t&lt;label&gt;\n"
+			= "\t\t&lt;input type=\"radio\" name=\"radio\"&gt;\n"
+			= "\t\tOption 2\n"
+			= "\t&lt;/label&gt;\n"
+			= "\t&lt;label&gt;\n"
+			= "\t\t&lt;input type=\"radio\" name=\"radio\"&gt;\n"
+			= "\t\tOption 3\n"
+			= "\t&lt;/label&gt;\n"
+			= "&lt;/div&gt;"
+
+	%h4 Input Groups
+	%form
+		.input-group
+			.addon An Add-On
+			.addon Another Add-On
+			%input{ 'type' => 'text' }
+			%button{ 'type' => 'button' } Go
+		%code.demo
+			= "&lt;div class=\"input-group\"&gt;\n"
+			= "\t&lt;div class=\"addon\"&gt;An Add-On&lt;/div&gt;\n"
+			= "\t&lt;div class=\"addon\"&gt;Another Add-On&lt;/div&gt;\n"
+			= "\t&lt;input type=\"text\"&gt;\n"
+			= "\t&lt;button type=\"button\"&gt;Go&lt;/button&gt;\n"
+			= "&lt;/div&gt;"

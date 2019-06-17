@@ -1,0 +1,57 @@
+%section#normlists.nav
+	%h3.section Lists
+	%p Top margins have been removed from lists
+	%div.demo
+		%ol
+			%li Numbered
+			%li List
+			%li Items
+		%ul
+			%li Bulleted
+			%li List
+			%li Items
+		%dl
+			%dt Definition
+			%dd Lorem ipsum dolor sit amet contectetur adipiscing elit
+			%dt List
+			%dd Lorem ipsum dolor sit amet contectetur adipiscing elit
+			%dt Items
+			%dd Lorem ipsum dolor sit amet contectetur adipiscing elit
+	%code.demo
+		= "&lt;ol&gt;\n"
+		= "\t&lt;li&gt;Numbered&lt;/li&gt;\n"
+		= "\t&lt;li&gt;List&lt;/li&gt;\n"
+		= "\t&lt;li&gt;Items&lt;/li&gt;\n"
+		= "&lt;/ol&gt;\n\n"
+		= "&lt;ul&gt;\n"
+		= "\t&lt;li&gt;Bulleted&lt;/li&gt;\n"
+		= "\t&lt;li&gt;List&lt;/li&gt;\n"
+		= "\t&lt;li&gt;Items&lt;/li&gt;\n"
+		= "&lt;/ul&gt;\n\n"
+		= "&lt;dl&gt;\n"
+		= "\t&lt;dt&gt;Definition&lt;/dt&gt;\n"
+		= "\t&lt;dd&gt;Lorem ipsum dolor sit amet contectetur adipiscing elit&lt;/dd&gt;\n"
+		= "\t&lt;dt&gt;List&lt;/dt&gt;\n"
+		= "\t&lt;dd&gt;Lorem ipsum dolor sit amet contectetur adipiscing elit&lt;/dd&gt;\n"
+		= "\t&lt;dt&gt;Items&lt;/dt&gt;\n"
+		= "\t&lt;dd&gt;Lorem ipsum dolor sit amet contectetur adipiscing elit&lt;/dd&gt;\n"
+		= "&lt;/dl&gt;"
+
+	%h4 Nested Lists
+	%p Bottom margins have been removed from nested lists
+	%div.demo
+		%ul
+			%li Nested
+			%ul
+				%li List
+				%li Items
+			%li And more...
+	%code.demo
+		= "&lt;ul&gt;\n"
+		= "\t&lt;li&gt;Nested&lt;/li&gt;\n"
+		= "\t&lt;ul&gt;\n"
+		= "\t\t&lt;li&gt;List&lt;/li&gt;\n"
+		= "\t\t&lt;li&gt;Items&lt;/li&gt;\n"
+		= "\t&lt;/ul&gt;\n"
+		= "\t&lt;li&gt;And more...&lt;/li&gt;\n"
+		= "&lt;/ul&gt;\n\n"
