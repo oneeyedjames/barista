@@ -2763,100 +2763,100 @@ ul.menu.orange.tabs {
 .tabbar .panel.active {
   display: block;
 }
-.tabbar.red .tab {
+.tabbar.red .tab, .tabbar.error .tab, .tabbar.danger .tab {
   border-color: #737373;
   color: #FFFFFF;
   background-color: #999999;
   background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
   background-image: linear-gradient(0deg,#999999, #b3b3b3);
 }
-.tabbar.red .tab:active, .tabbar.red .tab.active {
+.tabbar.red .tab:active, .tabbar.red .tab.active, .tabbar.error .tab:active, .tabbar.error .tab.active, .tabbar.danger .tab:active, .tabbar.danger .tab.active {
   border-color: #a52b0e;
   background-color: #DC3912;
   background-image: -webkit-linear-gradient(-450deg, #DC3912, #e56b4d);
   background-image: linear-gradient(180deg,#DC3912, #e56b4d);
 }
-.tabbar.red .tab[disabled], .tabbar.red .tab.disabled {
+.tabbar.red .tab[disabled], .tabbar.red .tab.disabled, .tabbar.error .tab[disabled], .tabbar.error .tab.disabled, .tabbar.danger .tab[disabled], .tabbar.danger .tab.disabled {
   background: #999999;
   color: #DDDDDD;
   cursor: no-drop;
 }
-.tabbar.red .tab[disabled]:active, .tabbar.red .tab[disabled].active, .tabbar.red .tab[disabled]:hover, .tabbar.red .tab[disabled].hover, .tabbar.red .tab.disabled:active, .tabbar.red .tab.disabled.active, .tabbar.red .tab.disabled:hover, .tabbar.red .tab.disabled.hover {
+.tabbar.red .tab[disabled]:active, .tabbar.red .tab[disabled].active, .tabbar.red .tab[disabled]:hover, .tabbar.red .tab[disabled].hover, .tabbar.red .tab.disabled:active, .tabbar.red .tab.disabled.active, .tabbar.red .tab.disabled:hover, .tabbar.red .tab.disabled.hover, .tabbar.error .tab[disabled]:active, .tabbar.error .tab[disabled].active, .tabbar.error .tab[disabled]:hover, .tabbar.error .tab[disabled].hover, .tabbar.error .tab.disabled:active, .tabbar.error .tab.disabled.active, .tabbar.error .tab.disabled:hover, .tabbar.error .tab.disabled.hover, .tabbar.danger .tab[disabled]:active, .tabbar.danger .tab[disabled].active, .tabbar.danger .tab[disabled]:hover, .tabbar.danger .tab[disabled].hover, .tabbar.danger .tab.disabled:active, .tabbar.danger .tab.disabled.active, .tabbar.danger .tab.disabled:hover, .tabbar.danger .tab.disabled.hover {
   border-color: #737373;
 }
-.tabbar.red .panel {
+.tabbar.red .panel, .tabbar.error .panel, .tabbar.danger .panel {
   border-color: #a52b0e;
 }
-.tabbar.green .tab {
+.tabbar.green .tab, .tabbar.success .tab {
   border-color: #737373;
   color: #FFFFFF;
   background-color: #999999;
   background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
   background-image: linear-gradient(0deg,#999999, #b3b3b3);
 }
-.tabbar.green .tab:active, .tabbar.green .tab.active {
+.tabbar.green .tab:active, .tabbar.green .tab.active, .tabbar.success .tab:active, .tabbar.success .tab.active {
   border-color: #0c7112;
   background-color: #109618;
   background-image: -webkit-linear-gradient(-450deg, #109618, #4cb052);
   background-image: linear-gradient(180deg,#109618, #4cb052);
 }
-.tabbar.green .tab[disabled], .tabbar.green .tab.disabled {
+.tabbar.green .tab[disabled], .tabbar.green .tab.disabled, .tabbar.success .tab[disabled], .tabbar.success .tab.disabled {
   background: #999999;
   color: #DDDDDD;
   cursor: no-drop;
 }
-.tabbar.green .tab[disabled]:active, .tabbar.green .tab[disabled].active, .tabbar.green .tab[disabled]:hover, .tabbar.green .tab[disabled].hover, .tabbar.green .tab.disabled:active, .tabbar.green .tab.disabled.active, .tabbar.green .tab.disabled:hover, .tabbar.green .tab.disabled.hover {
+.tabbar.green .tab[disabled]:active, .tabbar.green .tab[disabled].active, .tabbar.green .tab[disabled]:hover, .tabbar.green .tab[disabled].hover, .tabbar.green .tab.disabled:active, .tabbar.green .tab.disabled.active, .tabbar.green .tab.disabled:hover, .tabbar.green .tab.disabled.hover, .tabbar.success .tab[disabled]:active, .tabbar.success .tab[disabled].active, .tabbar.success .tab[disabled]:hover, .tabbar.success .tab[disabled].hover, .tabbar.success .tab.disabled:active, .tabbar.success .tab.disabled.active, .tabbar.success .tab.disabled:hover, .tabbar.success .tab.disabled.hover {
   border-color: #737373;
 }
-.tabbar.green .panel {
+.tabbar.green .panel, .tabbar.success .panel {
   border-color: #0c7112;
 }
-.tabbar.blue .tab {
+.tabbar.blue .tab, .tabbar.primary .tab {
   border-color: #737373;
   color: #FFFFFF;
   background-color: #999999;
   background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
   background-image: linear-gradient(0deg,#999999, #b3b3b3);
 }
-.tabbar.blue .tab:active, .tabbar.blue .tab.active {
+.tabbar.blue .tab:active, .tabbar.blue .tab.active, .tabbar.primary .tab:active, .tabbar.primary .tab.active {
   border-color: #264d99;
   background-color: #3366CC;
   background-image: -webkit-linear-gradient(-450deg, #3366CC, #668cd9);
   background-image: linear-gradient(180deg,#3366CC, #668cd9);
 }
-.tabbar.blue .tab[disabled], .tabbar.blue .tab.disabled {
+.tabbar.blue .tab[disabled], .tabbar.blue .tab.disabled, .tabbar.primary .tab[disabled], .tabbar.primary .tab.disabled {
   background: #999999;
   color: #DDDDDD;
   cursor: no-drop;
 }
-.tabbar.blue .tab[disabled]:active, .tabbar.blue .tab[disabled].active, .tabbar.blue .tab[disabled]:hover, .tabbar.blue .tab[disabled].hover, .tabbar.blue .tab.disabled:active, .tabbar.blue .tab.disabled.active, .tabbar.blue .tab.disabled:hover, .tabbar.blue .tab.disabled.hover {
+.tabbar.blue .tab[disabled]:active, .tabbar.blue .tab[disabled].active, .tabbar.blue .tab[disabled]:hover, .tabbar.blue .tab[disabled].hover, .tabbar.blue .tab.disabled:active, .tabbar.blue .tab.disabled.active, .tabbar.blue .tab.disabled:hover, .tabbar.blue .tab.disabled.hover, .tabbar.primary .tab[disabled]:active, .tabbar.primary .tab[disabled].active, .tabbar.primary .tab[disabled]:hover, .tabbar.primary .tab[disabled].hover, .tabbar.primary .tab.disabled:active, .tabbar.primary .tab.disabled.active, .tabbar.primary .tab.disabled:hover, .tabbar.primary .tab.disabled.hover {
   border-color: #737373;
 }
-.tabbar.blue .panel {
+.tabbar.blue .panel, .tabbar.primary .panel {
   border-color: #264d99;
 }
-.tabbar.cyan .tab {
+.tabbar.cyan .tab, .tabbar.info .tab {
   border-color: #737373;
   color: #FFFFFF;
   background-color: #999999;
   background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
   background-image: linear-gradient(0deg,#999999, #b3b3b3);
 }
-.tabbar.cyan .tab:active, .tabbar.cyan .tab.active {
+.tabbar.cyan .tab:active, .tabbar.cyan .tab.active, .tabbar.info .tab:active, .tabbar.info .tab.active {
   border-color: #3681a4;
   background-color: #48ACDB;
   background-image: -webkit-linear-gradient(-450deg, #48ACDB, #76c1e4);
   background-image: linear-gradient(180deg,#48ACDB, #76c1e4);
 }
-.tabbar.cyan .tab[disabled], .tabbar.cyan .tab.disabled {
+.tabbar.cyan .tab[disabled], .tabbar.cyan .tab.disabled, .tabbar.info .tab[disabled], .tabbar.info .tab.disabled {
   background: #999999;
   color: #DDDDDD;
   cursor: no-drop;
 }
-.tabbar.cyan .tab[disabled]:active, .tabbar.cyan .tab[disabled].active, .tabbar.cyan .tab[disabled]:hover, .tabbar.cyan .tab[disabled].hover, .tabbar.cyan .tab.disabled:active, .tabbar.cyan .tab.disabled.active, .tabbar.cyan .tab.disabled:hover, .tabbar.cyan .tab.disabled.hover {
+.tabbar.cyan .tab[disabled]:active, .tabbar.cyan .tab[disabled].active, .tabbar.cyan .tab[disabled]:hover, .tabbar.cyan .tab[disabled].hover, .tabbar.cyan .tab.disabled:active, .tabbar.cyan .tab.disabled.active, .tabbar.cyan .tab.disabled:hover, .tabbar.cyan .tab.disabled.hover, .tabbar.info .tab[disabled]:active, .tabbar.info .tab[disabled].active, .tabbar.info .tab[disabled]:hover, .tabbar.info .tab[disabled].hover, .tabbar.info .tab.disabled:active, .tabbar.info .tab.disabled.active, .tabbar.info .tab.disabled:hover, .tabbar.info .tab.disabled.hover {
   border-color: #737373;
 }
-.tabbar.cyan .panel {
+.tabbar.cyan .panel, .tabbar.info .panel {
   border-color: #3681a4;
 }
 .tabbar.magenta .tab {
@@ -2883,28 +2883,28 @@ ul.menu.orange.tabs {
 .tabbar.magenta .panel {
   border-color: #9a3d82;
 }
-.tabbar.yellow .tab {
+.tabbar.yellow .tab, .tabbar.warning .tab {
   border-color: #737373;
   color: #FFFFFF;
   background-color: #999999;
   background-image: -webkit-linear-gradient(-270deg, #999999, #b3b3b3);
   background-image: linear-gradient(0deg,#999999, #b3b3b3);
 }
-.tabbar.yellow .tab:active, .tabbar.yellow .tab.active {
+.tabbar.yellow .tab:active, .tabbar.yellow .tab.active, .tabbar.warning .tab:active, .tabbar.warning .tab.active {
   border-color: #bf8a00;
   background-color: #FFB800;
   background-image: -webkit-linear-gradient(-450deg, #FFB800, #ffca40);
   background-image: linear-gradient(180deg,#FFB800, #ffca40);
 }
-.tabbar.yellow .tab[disabled], .tabbar.yellow .tab.disabled {
+.tabbar.yellow .tab[disabled], .tabbar.yellow .tab.disabled, .tabbar.warning .tab[disabled], .tabbar.warning .tab.disabled {
   background: #999999;
   color: #DDDDDD;
   cursor: no-drop;
 }
-.tabbar.yellow .tab[disabled]:active, .tabbar.yellow .tab[disabled].active, .tabbar.yellow .tab[disabled]:hover, .tabbar.yellow .tab[disabled].hover, .tabbar.yellow .tab.disabled:active, .tabbar.yellow .tab.disabled.active, .tabbar.yellow .tab.disabled:hover, .tabbar.yellow .tab.disabled.hover {
+.tabbar.yellow .tab[disabled]:active, .tabbar.yellow .tab[disabled].active, .tabbar.yellow .tab[disabled]:hover, .tabbar.yellow .tab[disabled].hover, .tabbar.yellow .tab.disabled:active, .tabbar.yellow .tab.disabled.active, .tabbar.yellow .tab.disabled:hover, .tabbar.yellow .tab.disabled.hover, .tabbar.warning .tab[disabled]:active, .tabbar.warning .tab[disabled].active, .tabbar.warning .tab[disabled]:hover, .tabbar.warning .tab[disabled].hover, .tabbar.warning .tab.disabled:active, .tabbar.warning .tab.disabled.active, .tabbar.warning .tab.disabled:hover, .tabbar.warning .tab.disabled.hover {
   border-color: #737373;
 }
-.tabbar.yellow .panel {
+.tabbar.yellow .panel, .tabbar.warning .panel {
   border-color: #bf8a00;
 }
 .tabbar.purple .tab {
