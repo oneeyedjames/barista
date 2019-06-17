@@ -2140,6 +2140,9 @@ ul.menu.orange.tabs {
   background-color: #FFFFFF;
   color: #737373;
 }
+.btn .bdg, button .bdg, input[type=button] .bdg, input[type=reset] .bdg, input[type=submit] .bdg {
+  margin-right: -0.5em;
+}
 .btn.sm, button.sm, input[type=button].sm, input[type=reset].sm, input[type=submit].sm {
   padding: 0.1875em 0.375em;
   border-radius: 0.375em;
