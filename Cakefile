@@ -26,17 +26,28 @@ task 'build', 'Build all source files', ->
 task 'build:js', 'Build CoffeeScript files into JS', ->
 	invoke 'clean:js'
 	record 'build:js', ->
+		inFile  = "#{coffee_src}/#{coffee_root}.coffee"
 		outFile = "#{coffee_dest}/#{coffee_root}.js"
 		minFile = "#{coffee_dest}/#{coffee_root}.min.js"
 
 		try
-			source = fs.readdirSync coffee_src
-			.map (file) -> fs.readFileSync "#{coffee_src}/#{file}", 'utf8'
-			.join '\n'
-			.split '\n'
-			.join '\n\t'
+			source = parse "#{coffee_src}/barista.coffee", (line) ->
+				match = line.match /^(\s*)#import\s([0-9A-Z/\\-_.]+$)/i
 
-			source  = "jQuery ($) ->\n\t#{source}\n\treturn"
+				return line unless match
+
+				lead = match[1]
+				file = match[2].replace '\\', '/'
+
+				dir  = path.dirname file
+				base = path.basename file, '.coffee'
+				file = path.resolve coffee_src, dir, base
+
+				unless fs.existsSync "#{file}.coffee"
+					file = path.resolve coffee_src, dir, "_#{base}"
+
+				if fs.existsSync "#{file}.coffee"
+					return parse "#{file}.coffee", (line) -> "#{lead}#{line}"
 
 			proc.execSync "coffee -sbp > #{outFile}", input: source
 			proc.execSync "uglifyjs #{outFile} -cmo #{minFile}"
@@ -194,3 +205,10 @@ watch = (dir, task) ->
 		invoke task
 	.on 'error', (err) ->
 		console.error err
+
+parse = (file, transform) ->
+	fs.readFileSync file
+	.toString()
+	.split /[\r\n]+/
+	.map transform
+	.join '\n'
