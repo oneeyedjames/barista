@@ -31,7 +31,7 @@ task 'build:js', 'Build CoffeeScript files into JS', ->
 		minFile = "#{coffee_dest}/#{coffee_root}.min.js"
 
 		try
-			source = parse "#{coffee_src}/barista.coffee", (line) ->
+			source = parse inFile, (line) ->
 				match = line.match /^(\s*)#import\s([0-9A-Z/\\-_.]+$)/i
 
 				return line unless match
