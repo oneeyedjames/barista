@@ -2148,7 +2148,7 @@ ul.menu.orange.tabs {
   border-radius: 0.375em;
 }
 .btn.lg, button.lg, input[type=button].lg, input[type=reset].lg, input[type=submit].lg {
-  padding: 0.75em 1.125em;
+  padding: 0.75em 2.25em;
   border-radius: 0.375em;
 }
 .btn.red, .btn.danger, .btn.error, button.red, button.danger, button.error, input[type=button].red, input[type=button].danger, input[type=button].error, input[type=reset].red, input[type=reset].danger, input[type=reset].error, input[type=submit].red, input[type=submit].danger, input[type=submit].error {

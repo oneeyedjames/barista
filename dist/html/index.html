@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+<base href='../..'>
 <title>Barista Framework</title>
-<link href='../../node_modules/font-awesome/css/font-awesome.css' rel='stylesheet'>
-<link href='../css/barista.css' rel='stylesheet'>
-<script src='../../node_modules/jquery/dist/jquery.js'></script>
-<script src='../js/barista.js'></script>
+<link href='node_modules/font-awesome/css/font-awesome.css' rel='stylesheet'>
+<link href='dist/css/barista.css' rel='stylesheet'>
+<script src='node_modules/jquery/dist/jquery.js'></script>
+<script src='dist/js/barista.js'></script>
 <style>
   .section { border-bottom: 1px solid #CCC; }
   .demo { border: 2px solid #CCC; padding: 1.5em; margin-bottom: 1em; }
   .highlight { background-color: #FEB; padding: 0 .25em; }
   pre, code.demo { white-space: pre-wrap; display: block; }
+  code.demo { background-color: #333; color: #ccc; }
+  a.nav { display: block }
+  nav.sidebar {
+  	position: fixed;
+  	width: 25%;
+  	padding-right: 2em;
+  	box-sizing: border-box;
+  	max-height: 100%;
+  	top: 0;
+  	padding: 60px 30px 20px 0;
+  	overflow-y: auto;
+  }
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function(e) {
   	let toggle = function(url) {
   		let sections = document.getElementsByTagName('section');
-  
   		for (let section of sections) {
   			if (section.classList.contains('nav'))
   				section.style.display = 'none';
@@ -31,12 +43,22 @@
   
   	toggle(e.target.URL);
   
+  	let menuLinks = [];
   	let links = document.getElementsByTagName('a');
   	for (let link of links) {
   		if (link.classList.contains('nav')) {
-  			link.addEventListener('click', function() {
+  			link.addEventListener('click', function(e) {
+  				e.preventDefault();
+  
   				toggle(link.href);
+  
+  				for (let menuLink of menuLinks)
+  					menuLink.parentElement.classList.remove('active');
+  
+  				link.parentElement.classList.add('active');
   			});
+  
+  			menuLinks.push(link);
   		}
   	}
   });
@@ -44,8 +66,8 @@
 </head>
 
 <body>
-<header class='navbar'>
-<div class='wrapper'>
+<header class='navbar primary'>
+<div class='wrapper fluid'>
 <div class='icon'>
 <a>Home</a>
 </div>
@@ -80,7 +102,23 @@
 </a>
 <ul>
 <li>
-<a>Sub-Item</a>
+<a>Short Sub-Item</a>
+</li>
+<li>
+<a>Really, Really Long Sub-Item</a>
+</li>
+</ul>
+</li>
+<li>
+<a>
+<span class='navlbl'>Special Item</span>
+</a>
+<ul>
+<li>
+<a>Short Sub-Item</a>
+</li>
+<li>
+<a>Really, Really Long Sub-Item</a>
 </li>
 </ul>
 </li>
@@ -95,9 +133,9 @@
 <article class='wrapper fluid'>
 <div class='row'>
 <div class='col-md-4 col-lg-3'>
-<nav style='position: fixed'>
-<strong>Normalize</strong>
-<ul>
+<nav class='sidebar'>
+<ul class='menu primary'>
+<h4>Normalize</h4>
 <li>
 <a class='nav' href='index.html#colors'>Colors</a>
 </li>
@@ -113,9 +151,7 @@
 <li>
 <a class='nav' href='index.html#forms'>Forms</a>
 </li>
-</ul>
-<strong>Elements</strong>
-<ul>
+<h4>Elements</h4>
 <li>
 <a class='nav' href='index.html#buttons'>Buttons</a>
 </li>
@@ -128,9 +164,7 @@
 <li>
 <a class='nav' href='index.html#blockquote'>Blockquote</a>
 </li>
-</ul>
-<strong>Containers</strong>
-<ul>
+<h4>Containers</h4>
 <li>
 <a class='nav' href='index.html#tables'>Tables</a>
 </li>
@@ -146,9 +180,7 @@
 <li>
 <a class='nav' href='index.html#menu'>Menus</a>
 </li>
-</ul>
-<strong>Behaviors</strong>
-<ul>
+<h4>Behaviors</h4>
 <li>
 <a class='nav' href='index.html#collapse'>Collapse</a>
 </li>
@@ -161,209 +193,15 @@
 <li>
 <a class='nav' href='index.html#tooltip'>Tooltip</a>
 </li>
+<li>
+<a class='nav' href='index.html#target'>Target</a>
+</li>
 </ul>
 </nav>
 <span style='font-size: 0; line-height: 0'>&nbsp;</span>
 
 </div>
 <div class='col-md-8 col-lg-9'>
-<section class='nav' id='typography'>
-<h3 class='section'>Typography</h3>
-<p>Main Body Text</p>
-<p class='lead'>Lead Text</p>
-<p>
-<a href='other.html'>Hyperlink</a>
-</p>
-<code class='demo'>&lt;p&gt;Main Body Text&lt;/p&gt;
-&lt;p class="lead"&gt;Lead Text&lt;/p&gt;
-&lt;p&gt;&lt;a href="other.html"&gt;Hyperlink&lt;/a&gt;&lt;/p&gt;</code>
-<h4 class='section'>Headings</h4>
-<h1>
-Heading 1
-<small>Small text</small>
-</h1>
-<h2>
-Heading 2
-<small>Small text</small>
-</h2>
-<h3>
-Heading 3
-<small>Small text</small>
-</h3>
-<h4>
-Heading 4
-<small>Small text</small>
-</h4>
-<h5>
-Heading 5
-<small>Small text</small>
-</h5>
-<h6>
-Heading 6
-<small>Small text</small>
-</h6>
-<code class='demo'>&lt;h1&gt;Heading 1 &lt;small&gt;Small text&lt;/small&gt;&lt;/h1&gt;
-&lt;h2&gt;Heading 2 &lt;small&gt;Small text&lt;/small&gt;&lt;/h2&gt;
-&lt;h3&gt;Heading 3 &lt;small&gt;Small text&lt;/small&gt;&lt;/h3&gt;
-&lt;h4&gt;Heading 4 &lt;small&gt;Small text&lt;/small&gt;&lt;/h4&gt;
-&lt;h5&gt;Heading 5 &lt;small&gt;Small text&lt;/small&gt;&lt;/h5&gt;
-&lt;h6&gt;Heading 6 &lt;small&gt;Small text&lt;/small&gt;&lt;/h6&gt;
-</code>
-<h4 class='section'>Hyperlinks</h4>
-<dl>
-<dt>Unvisited Links</dt>
-<dd>
-<a class='primary' href='other.html'>Primary</a>
-<a class='success' href='other.html'>Success</a>
-<a class='error' href='other.html'>Error</a>
-<a class='warning' href='other.html'>Warning</a>
-<a class='info' href='other.html'>Info</a>
-</dd>
-<dt>Visited Links</dt>
-<dd>
-<a class='primary' href='index.html'>Primary</a>
-<a class='success' href='index.html'>Success</a>
-<a class='error' href='index.html'>Error</a>
-<a class='warning' href='index.html'>Warning</a>
-<a class='info' href='index.html'>Info</a>
-</dd>
-</dl>
-<code class='demo'>&lt;dl&gt;
-	&lt;dt&gt;Unvisited Links&lt;/dt&gt;
-	&lt;dd&gt;
-		&lt;a href="other.html" class="primary"&gt;Primary&lt;/a&gt;
-		&lt;a href="other.html" class="success"&gt;Success&lt;/a&gt;
-		&lt;a href="other.html" class="error"&gt;Error&lt;/a&gt;
-		&lt;a href="other.html" class="warning"&gt;Warning&lt;/a&gt;
-		&lt;a href="other.html" class="info"&gt;Info&lt;/a&gt;
-	&lt;/dd&gt;
-	&lt;dt&gt;Visited Links&lt;/dt&gt;
-	&lt;dd&gt;
-		&lt;a href="index.html" class="primary"&gt;Primary&lt;/a&gt;
-		&lt;a href="index.html" class="success"&gt;Success&lt;/a&gt;
-		&lt;a href="index.html" class="error"&gt;Error&lt;/a&gt;
-		&lt;a href="index.html" class="warning"&gt;Warning&lt;/a&gt;
-		&lt;a href="index.html" class="info"&gt;Info&lt;/a&gt;
-	&lt;/dd&gt;
-&lt;/dl&gt;</code>
-</section>
-
-<section class='nav' id='blockquote'>
-<h3 class='section'>Blockquotes</h3>
-<p>Blockquotes can have transparent or shaded backgrounds.</p>
-<blockquote>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</blockquote>
-<blockquote class='shaded'>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</blockquote>
-<code class='demo'>&lt;blockquote&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;
-
-&lt;blockquote class="shaded"&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;</code>
-<p>Blockquotes can also be assigned a color scheme.</p>
-<div class='row'>
-<div class='col-md-6 col-lg-4'>
-<blockquote class='primary'>This is a primary blockquote.</blockquote>
-<blockquote class='primary shaded'>This is a shaded primary blockquote.</blockquote>
-</div>
-<div class='col-md-6 col-lg-4'>
-<blockquote class='success'>This is a success blockquote.</blockquote>
-<blockquote class='success shaded'>This is a shaded success blockquote.</blockquote>
-</div>
-<div class='col-md-6 col-lg-4'>
-<blockquote class='error'>This is an error blockquote.</blockquote>
-<blockquote class='error shaded'>This is a shaded error blockquote.</blockquote>
-</div>
-<div class='col-md-6 col-lg-4'>
-<blockquote class='warning'>This is a warning blockquote.</blockquote>
-<blockquote class='warning shaded'>This is a shaded warning blockquote.</blockquote>
-</div>
-<div class='col-md-6 col-lg-4'>
-<blockquote class='info'>This is an information blockquote.</blockquote>
-<blockquote class='info shaded'>This is a shaded information blockquote.</blockquote>
-</div>
-</div>
-<code class='demo'>&lt;blockquote class="primary"&gt;This is a primary blockquote.&lt;/blockquote&gt;
-&lt;blockquote class="primary shaded"&gt;This is a shaded primary blockquote.&lt;/blockquote&gt;
-
-&lt;blockquote class="success"&gt;This is a success blockquote.&lt;/blockquote&gt;
-&lt;blockquote class="success shaded"&gt;This is a shaded success blockquote.&lt;/blockquote&gt;
-
-&lt;blockquote class="error"&gt;This is an error blockquote.&lt;/blockquote&gt;
-&lt;blockquote class="error shaded"&gt;This is a shaded error blockquote.&lt;/blockquote&gt;
-
-&lt;blockquote class="warning"&gt;This is a warning blockquote.&lt;/blockquote&gt;
-&lt;blockquote class="warning shaded"&gt;This is a shaded warning blockquote.&lt;/blockquote&gt;
-
-&lt;blockquote class="info"&gt;This is an information blockquote.&lt;/blockquote&gt;
-&lt;blockquote class="info shaded"&gt;This is a shaded information blockquote.&lt;/blockquote&gt;</code>
-</section>
-
-<section class='nav' id='normlists'>
-<h3 class='section'>Lists</h3>
-<p>Top margins have been removed from lists</p>
-<div class='demo'>
-<ol>
-<li>Numbered</li>
-<li>List</li>
-<li>Items</li>
-</ol>
-<ul>
-<li>Bulleted</li>
-<li>List</li>
-<li>Items</li>
-</ul>
-<dl>
-<dt>Definition</dt>
-<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
-<dt>List</dt>
-<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
-<dt>Items</dt>
-<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
-</dl>
-</div>
-<h4>Nested Lists</h4>
-<p>Bottom margins have been removed from nested lists</p>
-<div class='demo'>
-<ul>
-<li>Nested</li>
-<ul>
-<li>List</li>
-<li>Items</li>
-</ul>
-<li>And more...</li>
-</ul>
-</div>
-</section>
-<section class='nav' id='normtables'>
-<h3 class='section'>Tables</h3>
-<p>Tables have been given horizontal lines by default</p>
-<div class='demo'>
-<table style='width: 100%'>
-<thead>
-<tr>
-<th>Column 1</th>
-<th>Column 2</th>
-<th>Column 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Cell 1</td>
-<td>Cell 2</td>
-<td>Cell 3</td>
-</tr>
-<tr>
-<td>Cell 1</td>
-<td>Cell 2</td>
-<td>Cell 3</td>
-</tr>
-<tr>
-<td>Cell 1</td>
-<td>Cell 2</td>
-<td>Cell 3</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-
 <section class='nav' id='colors'>
 <h3 class='section'>Colors</h3>
 <p>Many elements in the Barista Framework can be assigned a color scheme. The preferred method of specifying a color scheme is by purpose.</p>
@@ -484,6 +322,314 @@ Color Scheme
 </style>
 </section>
 
+<section class='nav' id='typography'>
+<h3 class='section'>Typography</h3>
+<p>Main Body Text</p>
+<p class='lead'>Lead Text</p>
+<p>
+<a href='other.html'>Hyperlink</a>
+</p>
+<code class='demo'>&lt;p&gt;Main Body Text&lt;/p&gt;
+&lt;p class="lead"&gt;Lead Text&lt;/p&gt;
+&lt;p&gt;&lt;a href="other.html"&gt;Hyperlink&lt;/a&gt;&lt;/p&gt;</code>
+<h4 class='section'>Headings</h4>
+<h1>
+Heading 1
+<small>Small text</small>
+</h1>
+<h2>
+Heading 2
+<small>Small text</small>
+</h2>
+<h3>
+Heading 3
+<small>Small text</small>
+</h3>
+<h4>
+Heading 4
+<small>Small text</small>
+</h4>
+<h5>
+Heading 5
+<small>Small text</small>
+</h5>
+<h6>
+Heading 6
+<small>Small text</small>
+</h6>
+<code class='demo'>&lt;h1&gt;Heading 1 &lt;small&gt;Small text&lt;/small&gt;&lt;/h1&gt;
+&lt;h2&gt;Heading 2 &lt;small&gt;Small text&lt;/small&gt;&lt;/h2&gt;
+&lt;h3&gt;Heading 3 &lt;small&gt;Small text&lt;/small&gt;&lt;/h3&gt;
+&lt;h4&gt;Heading 4 &lt;small&gt;Small text&lt;/small&gt;&lt;/h4&gt;
+&lt;h5&gt;Heading 5 &lt;small&gt;Small text&lt;/small&gt;&lt;/h5&gt;
+&lt;h6&gt;Heading 6 &lt;small&gt;Small text&lt;/small&gt;&lt;/h6&gt;
+</code>
+<h4 class='section'>Hyperlinks</h4>
+<dl>
+<dt>Unvisited Links</dt>
+<dd>
+<a class='primary' href='other.html'>Primary</a>
+<a class='success' href='other.html'>Success</a>
+<a class='error' href='other.html'>Error</a>
+<a class='warning' href='other.html'>Warning</a>
+<a class='info' href='other.html'>Info</a>
+</dd>
+<dt>Visited Links</dt>
+<dd>
+<a class='primary' href='index.html'>Primary</a>
+<a class='success' href='index.html'>Success</a>
+<a class='error' href='index.html'>Error</a>
+<a class='warning' href='index.html'>Warning</a>
+<a class='info' href='index.html'>Info</a>
+</dd>
+</dl>
+<code class='demo'>&lt;dl&gt;
+	&lt;dt&gt;Unvisited Links&lt;/dt&gt;
+	&lt;dd&gt;
+		&lt;a href="other.html" class="primary"&gt;Primary&lt;/a&gt;
+		&lt;a href="other.html" class="success"&gt;Success&lt;/a&gt;
+		&lt;a href="other.html" class="error"&gt;Error&lt;/a&gt;
+		&lt;a href="other.html" class="warning"&gt;Warning&lt;/a&gt;
+		&lt;a href="other.html" class="info"&gt;Info&lt;/a&gt;
+	&lt;/dd&gt;
+	&lt;dt&gt;Visited Links&lt;/dt&gt;
+	&lt;dd&gt;
+		&lt;a href="index.html" class="primary"&gt;Primary&lt;/a&gt;
+		&lt;a href="index.html" class="success"&gt;Success&lt;/a&gt;
+		&lt;a href="index.html" class="error"&gt;Error&lt;/a&gt;
+		&lt;a href="index.html" class="warning"&gt;Warning&lt;/a&gt;
+		&lt;a href="index.html" class="info"&gt;Info&lt;/a&gt;
+	&lt;/dd&gt;
+&lt;/dl&gt;</code>
+</section>
+
+<section class='nav' id='normlists'>
+<h3 class='section'>Lists</h3>
+<p>Top margins have been removed from lists</p>
+<div class='demo'>
+<ol>
+<li>Numbered</li>
+<li>List</li>
+<li>Items</li>
+</ol>
+<ul>
+<li>Bulleted</li>
+<li>List</li>
+<li>Items</li>
+</ul>
+<dl>
+<dt>Definition</dt>
+<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
+<dt>List</dt>
+<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
+<dt>Items</dt>
+<dd>Lorem ipsum dolor sit amet contectetur adipiscing elit</dd>
+</dl>
+</div>
+<code class='demo'>&lt;ol&gt;
+	&lt;li&gt;Numbered&lt;/li&gt;
+	&lt;li&gt;List&lt;/li&gt;
+	&lt;li&gt;Items&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Bulleted&lt;/li&gt;
+	&lt;li&gt;List&lt;/li&gt;
+	&lt;li&gt;Items&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;dl&gt;
+	&lt;dt&gt;Definition&lt;/dt&gt;
+	&lt;dd&gt;Lorem ipsum dolor sit amet contectetur adipiscing elit&lt;/dd&gt;
+	&lt;dt&gt;List&lt;/dt&gt;
+	&lt;dd&gt;Lorem ipsum dolor sit amet contectetur adipiscing elit&lt;/dd&gt;
+	&lt;dt&gt;Items&lt;/dt&gt;
+	&lt;dd&gt;Lorem ipsum dolor sit amet contectetur adipiscing elit&lt;/dd&gt;
+&lt;/dl&gt;</code>
+<h4>Nested Lists</h4>
+<p>Bottom margins have been removed from nested lists</p>
+<div class='demo'>
+<ul>
+<li>Nested</li>
+<ul>
+<li>List</li>
+<li>Items</li>
+</ul>
+<li>And more...</li>
+</ul>
+</div>
+<code class='demo'>&lt;ul&gt;
+	&lt;li&gt;Nested&lt;/li&gt;
+	&lt;ul&gt;
+		&lt;li&gt;List&lt;/li&gt;
+		&lt;li&gt;Items&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;li&gt;And more...&lt;/li&gt;
+&lt;/ul&gt;
+
+</code>
+</section>
+
+<section class='nav' id='normtables'>
+<h3 class='section'>Tables</h3>
+<p>Tables have been given horizontal lines by default</p>
+<div class='demo'>
+<table style='width: 100%'>
+<thead>
+<tr>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<code class='demo'>&lt;table style="width: 100%"&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Column 1&lt;/th&gt;
+			&lt;th&gt;Column 2&lt;/th&gt;
+			&lt;th&gt;Column 3&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Cell 1&lt;/td&gt;
+			&lt;td&gt;Cell 2&lt;/td&gt;
+			&lt;td&gt;Cell 3&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Cell 1&lt;/td&gt;
+			&lt;td&gt;Cell 2&lt;/td&gt;
+			&lt;td&gt;Cell 3&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Cell 1&lt;/td&gt;
+			&lt;td&gt;Cell 2&lt;/td&gt;
+			&lt;td&gt;Cell 3&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code>
+</section>
+
+<section class='nav' id='forms'>
+<h3 class='section'>Forms</h3>
+<form>
+<label>Text</label>
+<input type='text'>
+<label>Textarea</label>
+<textarea rows='4'></textarea>
+<label>Select</label>
+<select>
+<option>- Make a Selection -</option>
+<option>Option 1</option>
+<option>Option 2</option>
+</select>
+<code class='demo'>&lt;label&gt;Text&lt;/form&gt;
+&lt;input type="text"&gt;
+&lt;label&gt;Textarea&lt;/form&gt;
+&lt;textarea rows="4"&gt;&lt/textarea&gt;
+&lt;label&gt;Select&lt;/form&gt;
+&lt;select&gt;
+	&lt;option&gt;- Make a Selection -&lt;/option&gt;
+	&lt;option&gt;Option 1&lt;/option&gt;
+	&lt;option&gt;Option 2&lt;/option&gt;
+&lt/select&gt;</code>
+<label>Checkboxes</label>
+<div class='checkbox'>
+<label>
+<input name='checkbox' type='checkbox'>
+Option 1
+</label>
+<label>
+<input name='checkbox' type='checkbox'>
+Option 2
+</label>
+<label>
+<input name='checkbox' type='checkbox'>
+Option 3
+</label>
+</div>
+<code class='demo'>&lt;label&gt;Checkboxes&lt;/label&gt;
+&lt;div class="checkbox"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="checkbox"&gt;
+		Option 1
+	&lt;/label&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="checkbox"&gt;
+		Option 2
+	&lt;/label&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="checkbox"&gt;
+		Option 3
+	&lt;/label&gt;
+&lt;/div&gt;</code>
+<label>Radio Buttons</label>
+<div class='radio'>
+<label>
+<input name='radio' type='radio'>
+Option 1
+</label>
+<label>
+<input name='radio' type='radio'>
+Option 2
+</label>
+<label>
+<input name='radio' type='radio'>
+Option 3
+</label>
+</div>
+<code class='demo'>&lt;label&gt;Radio Buttons&lt;/label&gt;
+&lt;div class="radio"&gt;
+	&lt;label&gt;
+		&lt;input type="radio" name="radio"&gt;
+		Option 1
+	&lt;/label&gt;
+	&lt;label&gt;
+		&lt;input type="radio" name="radio"&gt;
+		Option 2
+	&lt;/label&gt;
+	&lt;label&gt;
+		&lt;input type="radio" name="radio"&gt;
+		Option 3
+	&lt;/label&gt;
+&lt;/div&gt;</code>
+</form>
+<h4>Input Groups</h4>
+<form>
+<div class='input-group'>
+<div class='addon'>An Add-On</div>
+<div class='addon'>Another Add-On</div>
+<input type='text'>
+<button type='button'>Go</button>
+</div>
+<code class='demo'>&lt;div class="input-group"&gt;
+	&lt;div class="addon"&gt;An Add-On&lt;/div&gt;
+	&lt;div class="addon"&gt;Another Add-On&lt;/div&gt;
+	&lt;input type="text"&gt;
+	&lt;button type="button"&gt;Go&lt;/button&gt;
+&lt;/div&gt;</code>
+</form>
+</section>
+
 <section class='nav' id='buttons'>
 <h3 class='section'>Buttons</h3>
 <p>
@@ -497,6 +643,17 @@ class.
 <button>Button</button>
 <a class='btn'>Link</a>
 <span class='btn'>Text</span>
+<div class='dropdown'>
+<a class='btn'>
+Menu
+<i class='caret fa fa-caret-up'></i>
+</a>
+<ul>
+<li class='item'>Item #1</li>
+<li class='item'>Item #2</li>
+<li class='item'>Item #3</li>
+</ul>
+</div>
 </p>
 <code class='demo'>&lt;button&gt;Button&lt;/button&gt;
 &lt;a class="btn"&gt;Link&lt;/a&gt;
@@ -528,13 +685,15 @@ class.
 <p>Buttons can also be assigned a color scheme</p>
 <h5>Default style</h5>
 <p>
+<a class='btn'>Default</a>
 <a class='btn primary'>Primary</a>
 <a class='btn success'>Success</a>
 <a class='btn error'>Error</a>
 <a class='btn warning'>Warning</a>
 <a class='btn info'>Info</a>
 </p>
-<code class='demo'>&lt;a class="btn primary"&gt;Primary&lt;/a&gt;
+<code class='demo'>&lt;a class="btn"&gt;Default&lt;/a&gt;
+&lt;a class="btn primary"&gt;Primary&lt;/a&gt;
 &lt;a class="btn success"&gt;Success&lt;/a&gt;
 &lt;a class="btn error"&gt;Error&lt;/a&gt;
 &lt;a class="btn Warning"&gt;Warning&lt;/a&gt;
@@ -542,13 +701,15 @@ class.
 </code>
 <h5>Text style</h5>
 <p>
+<a class='btn text'>Default</a>
 <a class='btn text primary'>Primary</a>
 <a class='btn text success'>Success</a>
 <a class='btn text error'>Error</a>
 <a class='btn text warning'>Warning</a>
 <a class='btn text info'>Info</a>
 </p>
-<code class='demo'>&lt;a class="btn text primary"&gt;Primary&lt;/a&gt;
+<code class='demo'>&lt;a class="btn text"&gt;Default&lt;/a&gt;
+&lt;a class="btn text primary"&gt;Primary&lt;/a&gt;
 &lt;a class="btn text success"&gt;Success&lt;/a&gt;
 &lt;a class="btn text error"&gt;Error&lt;/a&gt;
 &lt;a class="btn text Warning"&gt;Warning&lt;/a&gt;
@@ -589,8 +750,8 @@ class.
 
 <section class='nav' id='labels'>
 <h3 class='section'>Labels</h3>
+<p>Labels can be plain text</p>
 <p>
-Labels can be plain text
 <span class='lbl'>Default</span>
 <span class='lbl primary'>Primary</span>
 <span class='lbl success'>Success</span>
@@ -598,39 +759,155 @@ Labels can be plain text
 <span class='lbl warning'>Warning</span>
 <span class='lbl info'>Info</span>
 </p>
+<code class='demo'>&lt;p&gt;Labels can be plain text&lt;/p&gt;
+&lt;p&gt;
+	&lt;span class="lbl"&gt;Default&lt;/span&gt;
+	&lt;span class="lbl primary"&gt;Primary&lt;/span&gt;
+	&lt;span class="lbl success"&gt;Success&lt;/span&gt;
+	&lt;span class="lbl error"&gt;Error&lt;/span&gt;
+	&lt;span class="lbl warning"&gt;Warning&lt;/span&gt;
+	&lt;span class="lbl info"&gt;Info&lt;/span&gt;
+&lt;/p&gt;</code>
+<p>Labels can also be clickable</p>
 <p>
-Labels can also be clickable
-<a class='lbl' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Default</a>
-<a class='lbl primary' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Primary</a>
-<a class='lbl success' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Success</a>
-<a class='lbl error' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Error</a>
-<a class='lbl warning' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Warning</a>
-<a class='lbl info' data-action='modal' data-duration='1300' data-overlay='false' data-target='#label-modal'>Info</a>
+<a class='lbl' href='index.html'>Default</a>
+<a class='lbl primary' href='index.html'>Primary</a>
+<a class='lbl success' href='index.html'>Success</a>
+<a class='lbl error' href='index.html'>Error</a>
+<a class='lbl warning' href='index.html'>Warning</a>
+<a class='lbl info' href='index.html'>Info</a>
 </p>
-<div class='card success modal alert' id='label-modal'>
-You clicked it!
-</div>
+<code class='demo'>&lt;p&gt;Labels can also be clickable&lt;/p&gt;
+&lt;p&gt;
+	&lt;a href="index.html" class="lbl"&gt;Default&lt;/a&gt;
+	&lt;a href="index.html" class="lbl primary"&gt;Primary&lt;/a&gt;
+	&lt;a href="index.html" class="lbl success"&gt;Success&lt;/a&gt;
+	&lt;a href="index.html" class="lbl error"&gt;Error&lt;/a&gt;
+	&lt;a href="index.html" class="lbl warning"&gt;Warning&lt;/a&gt;
+	&lt;a href="index.html" class="lbl info"&gt;Info&lt;/a&gt;
+&lt;/p&gt;</code>
 </section>
 
 <section class='nav' id='badges'>
 <h3 class='section'>Badges</h3>
 <p>Badges call out imporant details.</p>
-<p>
-Some text
-<span class='bdg'>0</span>
-<span class='bdg primary'>1</span>
-<span class='bdg success'>2</span>
-<span class='bdg error'>3</span>
-<span class='bdg warning'>4</span>
-<span class='bdg info'>5</span>
-</p>
+<ul>
+<li>
+Default
+<sup class='bdg'>0</sup>
+</li>
+<li>
+Primary
+<sup class='bdg primary'>1</sup>
+</li>
+<li>
+Success
+<sup class='bdg success'>2</sup>
+</li>
+<li>
+Error
+<sup class='bdg error'>3</sup>
+</li>
+<li>
+Warning
+<sup class='bdg warning'>4</sup>
+</li>
+<li>
+Info
+<sup class='bdg info'>5</sup>
+</li>
+</ul>
+<code class='demo'>&lt;ul&gt;
+	&lt;li&gt;Default &lt;sup class="bdg"&gt;0&lt;/sup&gt;&lt;/li&gt;
+	&lt;li&gt;Primary &lt;sup class="bdg primary"&gt;1&lt;/sup&gt;&lt;/li&gt;
+	&lt;li&gt;Success &lt;sup class="bdg success"&gt;2&lt;/sup&gt;&lt;/li&gt;
+	&lt;li&gt;Error &lt;sup class="bdg error"&gt;3&lt;/sup&gt;&lt;/li&gt;
+	&lt;li&gt;Warning &lt;sup class="bdg warning"&gt;4&lt;/sup&gt;&lt;/li&gt;
+	&lt;li&gt;Info &lt;sup class="bdg info"&gt;5&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;</code>
 <h4>Buttons</h4>
+<p>Badges can also be nested in buttons.</p>
 <p>
 <a class='btn'>
 Default
-<i class='bdg'>0</i>
+<sup class='bdg'>0</sup>
+</a>
+<a class='btn primary'>
+Primary
+<sup class='bdg'>1</sup>
+</a>
+<a class='btn success'>
+Success
+<sup class='bdg'>2</sup>
+</a>
+<a class='btn error'>
+Error
+<sup class='bdg'>3</sup>
+</a>
+<a class='btn warning'>
+Warning
+<sup class='bdg'>4</sup>
+</a>
+<a class='btn info'>
+Info
+<sup class='bdg'>5</sup>
 </a>
 </p>
+<code class='demo'>&lt;p&gt;
+	&lt;a class="btn"&gt;Default &lt;sup class="bdg"&gt;0&lt;/sup&gt;&lt;/a&gt;
+	&lt;a class="btn primary"&gt;Primary &lt;sup class="bdg"&gt;1&lt;/sup&gt;&lt;/a&gt;
+	&lt;a class="btn success"&gt;Success &lt;sup class="bdg"&gt;2&lt;/sup&gt;&lt;/a&gt;
+	&lt;a class="btn error"&gt;Error &lt;sup class="bdg"&gt;3&lt;/sup&gt;&lt;/a&gt;
+	&lt;a class="btn warning"&gt;Warning &lt;sup class="bdg"&gt;4&lt;/sup&gt;&lt;/a&gt;
+	&lt;a class="btn info"&gt;Info &lt;sup class="bdg"&gt;5&lt;/sup&gt;&lt;/a&gt;
+&lt;/p&gt;</code>
+</section>
+
+<section class='nav' id='blockquote'>
+<h3 class='section'>Blockquotes</h3>
+<p>Blockquotes can have transparent or shaded backgrounds.</p>
+<blockquote>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</blockquote>
+<blockquote class='shaded'>Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.</blockquote>
+<code class='demo'>&lt;blockquote&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;
+
+&lt;blockquote class="shaded"&gt;Before they sold out pickled bicycle rights pabst. Biodiesel slow-carb cardigan ugh swag pop-up. Hella ethical etsy bushwick tofu forage. Hoodie cray cred, master cleanse squid brunch marfa polaroid man bun. Keytar forage synth mlkshk neutra. Sustainable gastropub pork belly, single-origin coffee 8-bit freegan cornhole wolf kale chips ennui direct trade fap franzen lomo. Kitsch tacos tote bag ramps, normcore before they sold out try-hard.&lt;/blockquote&gt;</code>
+<p>Blockquotes can also be assigned a color scheme.</p>
+<div class='row'>
+<div class='col-md-6 col-lg-4'>
+<blockquote class='primary'>This is a primary blockquote.</blockquote>
+<blockquote class='primary shaded'>This is a shaded primary blockquote.</blockquote>
+</div>
+<div class='col-md-6 col-lg-4'>
+<blockquote class='success'>This is a success blockquote.</blockquote>
+<blockquote class='success shaded'>This is a shaded success blockquote.</blockquote>
+</div>
+<div class='col-md-6 col-lg-4'>
+<blockquote class='error'>This is an error blockquote.</blockquote>
+<blockquote class='error shaded'>This is a shaded error blockquote.</blockquote>
+</div>
+<div class='col-md-6 col-lg-4'>
+<blockquote class='warning'>This is a warning blockquote.</blockquote>
+<blockquote class='warning shaded'>This is a shaded warning blockquote.</blockquote>
+</div>
+<div class='col-md-6 col-lg-4'>
+<blockquote class='info'>This is an information blockquote.</blockquote>
+<blockquote class='info shaded'>This is a shaded information blockquote.</blockquote>
+</div>
+</div>
+<code class='demo'>&lt;blockquote class="primary"&gt;This is a primary blockquote.&lt;/blockquote&gt;
+&lt;blockquote class="primary shaded"&gt;This is a shaded primary blockquote.&lt;/blockquote&gt;
+
+&lt;blockquote class="success"&gt;This is a success blockquote.&lt;/blockquote&gt;
+&lt;blockquote class="success shaded"&gt;This is a shaded success blockquote.&lt;/blockquote&gt;
+
+&lt;blockquote class="error"&gt;This is an error blockquote.&lt;/blockquote&gt;
+&lt;blockquote class="error shaded"&gt;This is a shaded error blockquote.&lt;/blockquote&gt;
+
+&lt;blockquote class="warning"&gt;This is a warning blockquote.&lt;/blockquote&gt;
+&lt;blockquote class="warning shaded"&gt;This is a shaded warning blockquote.&lt;/blockquote&gt;
+
+&lt;blockquote class="info"&gt;This is an information blockquote.&lt;/blockquote&gt;
+&lt;blockquote class="info shaded"&gt;This is a shaded information blockquote.&lt;/blockquote&gt;</code>
 </section>
 
 <section class='nav' id='tables'>
@@ -1051,35 +1328,21 @@ Content
 <section class='nav' id='tabs'>
 <h3 class='section'>Tabs</h3>
 <div class='row'>
-<div class='col-xs-12'>
+<div class='col-xs-6 col-md-4'>
 <div class='tabbar'>
 <div class='tab'>Tab 1</div>
 <div class='tab'>Tab 2</div>
 <div class='tab'>Tab 3</div>
 <div class='tab'>Tab 4</div>
-<div class='tab'>Tab 5</div>
 <div class='tab disabled'>Disabled</div>
 <div class='panel'>Panel 1</div>
 <div class='panel'>Panel 2</div>
 <div class='panel'>Panel 3</div>
 <div class='panel'>Panel 4</div>
-<div class='panel'>Panel 5</div>
 </div>
 </div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='tabbar red'>
-<div class='tab'>Tab</div>
-<div class='tab'>Tab</div>
-<div class='tab'>Tab</div>
-<div class='tab'>Tab</div>
-<div class='panel'>Panel</div>
-<div class='panel'>Panel</div>
-<div class='panel'>Panel</div>
-<div class='panel'>Panel</div>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='tabbar green'>
+<div class='col-xs-6 col-md-4'>
+<div class='tabbar primary'>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
@@ -1090,8 +1353,8 @@ Content
 <div class='panel'>Panel</div>
 </div>
 </div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='tabbar blue'>
+<div class='col-xs-6 col-md-4'>
+<div class='tabbar success'>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
@@ -1102,8 +1365,8 @@ Content
 <div class='panel'>Panel</div>
 </div>
 </div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='tabbar cyan'>
+<div class='col-xs-6 col-md-4'>
+<div class='tabbar error'>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
@@ -1114,8 +1377,8 @@ Content
 <div class='panel'>Panel</div>
 </div>
 </div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='tabbar magenta'>
+<div class='col-xs-6 col-md-4'>
+<div class='tabbar warning'>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
@@ -1126,32 +1389,8 @@ Content
 <div class='panel'>Panel</div>
 </div>
 </div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='tabbar yellow'>
-<div class='tab'>Tab</div>
-<div class='tab'>Tab</div>
-<div class='tab'>Tab</div>
-<div class='tab'>Tab</div>
-<div class='panel'>Panel</div>
-<div class='panel'>Panel</div>
-<div class='panel'>Panel</div>
-<div class='panel'>Panel</div>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='tabbar purple'>
-<div class='tab'>Tab</div>
-<div class='tab'>Tab</div>
-<div class='tab'>Tab</div>
-<div class='tab'>Tab</div>
-<div class='panel'>Panel</div>
-<div class='panel'>Panel</div>
-<div class='panel'>Panel</div>
-<div class='panel'>Panel</div>
-</div>
-</div>
-<div class='col-xs-6 col-md-4 col-lg-3'>
-<div class='tabbar orange'>
+<div class='col-xs-6 col-md-4'>
+<div class='tabbar info'>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
 <div class='tab'>Tab</div>
@@ -1163,89 +1402,6 @@ Content
 </div>
 </div>
 </div>
-</section>
-
-<section class='nav' id='forms'>
-<h3 class='section'>Forms</h3>
-<form>
-<div class='row'>
-<div class='col-xs-6'>
-<label>Text</label>
-<input type='text'>
-<label>Textarea</label>
-<textarea rows='1'></textarea>
-<label>Select</label>
-<select>
-<option>- Make a Selection -</option>
-</select>
-</div>
-<div class='col-xs-6'>
-<label>Checkboxes</label>
-<div class='checkbox'>
-<label>
-<input name='checkbox' type='checkbox'>
-Option 1
-</label>
-<label>
-<input name='checkbox' type='checkbox'>
-Option 2
-</label>
-<label>
-<input name='checkbox' type='checkbox'>
-Option 3
-</label>
-</div>
-<label>Radio Buttons</label>
-<div class='radio'>
-<label>
-<input name='radio' type='radio'>
-Option 1
-</label>
-<label>
-<input name='radio' type='radio'>
-Option 2
-</label>
-<label>
-<input name='radio' type='radio'>
-Option 3
-</label>
-</div>
-</div>
-</div>
-</form>
-<h4>Input Groups</h4>
-<form>
-<div class='input-group'>
-<div class='addon'>An Add-On</div>
-<div class='addon'>Another Add-On</div>
-<input type='text'>
-<button type='button'>Go</button>
-</div>
-</form>
-<h4>Form Confirmation</h4>
-<form data-cancel='Nope' data-confirm='Are you sure?' data-ok='Yep'>
-<button type='submit'>Submit</button>
-</form>
-</section>
-
-<section class='nav' id='tooltip'>
-<h3 class='section'>Tooltip</h3>
-<p>
-<a data-hover='tooltip' title='Tooltip above'>Hover above</a>
-<a data-hover='tooltip' data-side='bottom' title='Tooltip below'>Hover below</a>
-<a data-hover='tooltip' data-side='right' title='Tooltip right'>Hover right</a>
-<a data-hover='tooltip' data-side='left' title='Tooltip left'>Hover left</a>
-</p>
-<p>
-<a class='red' data-color='red' data-hover='tooltip' title='Red Tooltip'>Hover</a>
-<a class='green' data-color='green' data-hover='tooltip' title='Green Tooltip'>Hover</a>
-<a class='blue' data-color='blue' data-hover='tooltip' title='Blue Tooltip'>Hover</a>
-<a class='cyan' data-color='cyan' data-hover='tooltip' title='Cyan Tooltip'>Hover</a>
-<a class='magenta' data-color='magenta' data-hover='tooltip' title='Magenta Tooltip'>Hover</a>
-<a class='yellow' data-color='yellow' data-hover='tooltip' title='Yellow Tooltip'>Hover</a>
-<a class='purple' data-color='purple' data-hover='tooltip' title='Purple Tooltip'>Hover</a>
-<a class='orange' data-color='orange' data-hover='tooltip' title='Orange Tooltip'>Hover</a>
-</p>
 </section>
 
 <section class='nav' id='menu'>
@@ -1539,6 +1695,44 @@ You were successful!
 		&lt;input type="submit" value="Search"&gt;
 	&lt;/div&gt;
 &lt;/form&gt;</code>
+<h4>Title</h4>
+<p>
+The dialog title can be overridden using the
+<code class='highlight'>data-header</code>
+attribute on the form.
+</p>
+<form data-confirm='Are you sure?' data-header='Hold On!'>
+<div class='input-group'>
+<input placeholder='Search Terms...'>
+<button type='submit'>Search</button>
+</div>
+</form>
+<code class='demo'>&lt;form data-confirm="Are you sure?" data-header="Hold On!"&gt;
+	&lt;div class="input-group"&gt;
+		&lt;input placeholder="Search Terms..."&gt;
+		&lt;input type="submit" value="Search"&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code>
+<h4>Buttons</h4>
+<p>
+The standard button labels can be overridden using the
+<code class='highlight'>data-ok</code>
+and/or
+<code class='highlight'>data-cancel</code>
+attributes on the form.
+</p>
+<form data-cancel='Nope' data-confirm='Are you sure?' data-ok='Yep'>
+<div class='input-group'>
+<input placeholder='Search Terms...'>
+<button type='submit'>Search</button>
+</div>
+</form>
+<code class='demo'>&lt;form data-confirm="Are you sure?" data-ok="Yep" data-cancel="Nope"&gt;
+	&lt;div class="input-group"&gt;
+		&lt;input placeholder="Search Terms..."&gt;
+		&lt;input type="submit" value="Search"&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code>
 <h4>Overlay</h4>
 <p>
 By default, the dimmed overlay will appear behind the modal card. This can be disabled using the
@@ -1574,6 +1768,35 @@ attribute on the form.
 		&lt;input type="submit" value="Search"&gt;
 	&lt;/div&gt;
 &lt;/form&gt;</code>
+</section>
+
+<section class='nav' id='tooltip'>
+<h3 class='section'>Tooltip</h3>
+<p>
+<a data-hover='tooltip' title='Tooltip above'>Hover above</a>
+<a data-hover='tooltip' data-side='bottom' title='Tooltip below'>Hover below</a>
+<a data-hover='tooltip' data-side='right' title='Tooltip right'>Hover right</a>
+<a data-hover='tooltip' data-side='left' title='Tooltip left'>Hover left</a>
+</p>
+<p>
+<a class='red' data-color='red' data-hover='tooltip' title='Red Tooltip'>Hover</a>
+<a class='green' data-color='green' data-hover='tooltip' title='Green Tooltip'>Hover</a>
+<a class='blue' data-color='blue' data-hover='tooltip' title='Blue Tooltip'>Hover</a>
+<a class='cyan' data-color='cyan' data-hover='tooltip' title='Cyan Tooltip'>Hover</a>
+<a class='magenta' data-color='magenta' data-hover='tooltip' title='Magenta Tooltip'>Hover</a>
+<a class='yellow' data-color='yellow' data-hover='tooltip' title='Yellow Tooltip'>Hover</a>
+<a class='purple' data-color='purple' data-hover='tooltip' title='Purple Tooltip'>Hover</a>
+<a class='orange' data-color='orange' data-hover='tooltip' title='Orange Tooltip'>Hover</a>
+</p>
+</section>
+
+<section class='nav' id='target'>
+<h3 class='section'>Target</h3>
+<p>Link tags can load their hyperlink references into a targetted element instead of navigating to a new page.</p>
+<p>
+<a href='index.html' target='#link-target'>Click Me</a>
+</p>
+<div class='demo' id='link-target'></div>
 </section>
 
 </div>

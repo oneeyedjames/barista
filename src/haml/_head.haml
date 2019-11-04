@@ -1,23 +1,35 @@
 %head
+	%base{ :href => '../..'}
 	%title Barista Framework
 
-	%link{ :rel => 'stylesheet', :href => '../../node_modules/font-awesome/css/font-awesome.css' }
-	%link{ :rel => 'stylesheet', :href => '../css/barista.css' }
+	%link{ :rel => 'stylesheet', :href => 'node_modules/font-awesome/css/font-awesome.css' }
+	%link{ :rel => 'stylesheet', :href => 'dist/css/barista.css' }
 
-	%script{ :src => '../../node_modules/jquery/dist/jquery.js' }
-	%script{ :src => '../js/barista.js' }
+	%script{ :src => 'node_modules/jquery/dist/jquery.js' }
+	%script{ :src => 'dist/js/barista.js' }
 
 	:css
 		.section { border-bottom: 1px solid #CCC; }
 		.demo { border: 2px solid #CCC; padding: 1.5em; margin-bottom: 1em; }
 		.highlight { background-color: #FEB; padding: 0 .25em; }
 		pre, code.demo { white-space: pre-wrap; display: block; }
+		code.demo { background-color: #333; color: #ccc; }
+		a.nav { display: block }
+		nav.sidebar {
+			position: fixed;
+			width: 25%;
+			padding-right: 2em;
+			box-sizing: border-box;
+			max-height: 100%;
+			top: 0;
+			padding: 60px 30px 20px 0;
+			overflow-y: auto;
+		}
 
 	:javascript
 		document.addEventListener('DOMContentLoaded', function(e) {
 			let toggle = function(url) {
 				let sections = document.getElementsByTagName('section');
-
 				for (let section of sections) {
 					if (section.classList.contains('nav'))
 						section.style.display = 'none';
@@ -32,12 +44,22 @@
 
 			toggle(e.target.URL);
 
+			let menuLinks = [];
 			let links = document.getElementsByTagName('a');
 			for (let link of links) {
 				if (link.classList.contains('nav')) {
-					link.addEventListener('click', function() {
+					link.addEventListener('click', function(e) {
+						e.preventDefault();
+
 						toggle(link.href);
+
+						for (let menuLink of menuLinks)
+							menuLink.parentElement.classList.remove('active');
+
+						link.parentElement.classList.add('active');
 					});
+
+					menuLinks.push(link);
 				}
 			}
 		});

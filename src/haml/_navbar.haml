@@ -1,5 +1,5 @@
-%header.navbar
-	.wrapper
+%header.navbar.primary
+	.wrapper.fluid
 		.icon
 			%a Home
 		#main-menu.menu
@@ -23,6 +23,16 @@
 						%span.navlbl Special Item
 					%ul
 						%li
-							%a Sub-Item
+							%a Short Sub-Item
+						%li
+							%a Really, Really Long Sub-Item
+				%li
+					%a
+						%span.navlbl Special Item
+					%ul
+						%li
+							%a Short Sub-Item
+						%li
+							%a Really, Really Long Sub-Item
 		%a.icon.more{ 'data-target' => '#main-menu', 'data-action' => 'toggle' }
 			%i.fa.fa-bars

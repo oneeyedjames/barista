@@ -13,6 +13,42 @@
 		= "\t&lt;/div&gt;\n"
 		= "&lt;/form&gt;"
 
+	%h4 Title
+	%p
+		The dialog title can be overridden using the
+		%code.highlight data-header
+		attribute on the form.
+	%form{ 'data-confirm' => 'Are you sure?', 'data-header' => 'Hold On!' }
+		.input-group
+			%input{ :placeholder => 'Search Terms...' }
+			%button{ :type => 'submit' } Search
+	%code.demo
+		= "&lt;form data-confirm=\"Are you sure?\" data-header=\"Hold On!\"&gt;\n"
+		= "\t&lt;div class=\"input-group\"&gt;\n"
+		= "\t\t&lt;input placeholder=\"Search Terms...\"&gt;\n"
+		= "\t\t&lt;input type=\"submit\" value=\"Search\"&gt;\n"
+		= "\t&lt;/div&gt;\n"
+		= "&lt;/form&gt;"
+
+	%h4 Buttons
+	%p
+		The standard button labels can be overridden using the
+		%code.highlight data-ok
+		and/or
+		%code.highlight data-cancel
+		attributes on the form.
+	%form{ 'data-confirm' => 'Are you sure?', 'data-ok' => 'Yep', 'data-cancel' => 'Nope' }
+		.input-group
+			%input{ :placeholder => 'Search Terms...' }
+			%button{ :type => 'submit' } Search
+	%code.demo
+		= "&lt;form data-confirm=\"Are you sure?\" data-ok=\"Yep\" data-cancel=\"Nope\"&gt;\n"
+		= "\t&lt;div class=\"input-group\"&gt;\n"
+		= "\t\t&lt;input placeholder=\"Search Terms...\"&gt;\n"
+		= "\t\t&lt;input type=\"submit\" value=\"Search\"&gt;\n"
+		= "\t&lt;/div&gt;\n"
+		= "&lt;/form&gt;"
+
 	%h4 Overlay
 	%p
 		By default, the dimmed overlay will appear behind the modal card. This can be disabled using the
