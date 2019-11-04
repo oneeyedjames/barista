@@ -10,21 +10,21 @@
 
 =lbl-color($color, $light, $dark)
 	background-color: $color
-	color: $background-color
+	color: $button-text-color
 	text-decoration: none
 
 	&:visited
-		color: $background-color
+		color: $button-text-color
 
 =bdg-color($color, $light, $dark)
 	background-color: $color
-	color: $background-color
+	color: $button-text-color
 
 =btn-color($color, $light, $dark)
 	$lighter: tint($color, 25%)
 	$darker: shade($color, 25%)
 
-	color: $background-color
+	color: $button-text-color
 	border-color: $darker
 
 	+linear-gradient(0deg, $color, $lighter)
@@ -33,7 +33,7 @@
 		+linear-gradient(180deg, $color, $lighter)
 
 	&:visited, &.visited
-		color: $background-color
+		color: $button-text-color
 
 	&[disabled], &.disabled
 		background: $color
@@ -47,7 +47,7 @@
 			background: none
 
 	.bdg
-		background-color: $background-color
+		background-color: $button-text-color
 		color: $darker
 
 =tab-color($color, $light, $dark)
@@ -59,7 +59,7 @@
 
 	.tab
 		border-color: $darker-gray
-		color: $background-color
+		color: $button-text-color
 
 		+linear-gradient(0deg, $gray, $lighter-gray)
 
@@ -116,7 +116,7 @@
 			color: $dark
 
 		li.header
-			color: $background-color
+			color: $button-text-color
 
 =table-color($color, $light, $dark)
 	$lighter: tint($color, 25%)
@@ -128,7 +128,7 @@
 		+linear-gradient(0deg, $color, $lighter)
 
 		th, td
-			color: $background-color
+			color: $button-text-color
 
 	tbody
 		th, td
@@ -167,13 +167,17 @@
 			color: $color
 
 		&:hover
+			color: $dark
 			background-color: $light
+
+			a
+				color: $dark
 
 		&.active
 			background-color: $color
 
 			a
-				color: $background-color
+				color: $button-text-color
 
 	&.tabs
 		border-color: $color
