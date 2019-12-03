@@ -58,7 +58,7 @@ task 'build:css', 'Build Sass files into CSS', ->
 	record 'build:css', ->
 		invoke 'build:css:core'
 		invoke 'build:css:plugins'
-		invoke 'build:css:themes'
+		# invoke 'build:css:themes'
 
 task 'build:css:core', 'Build core Sass files into CSS', ->
 	invoke 'clean:css:core'
@@ -145,7 +145,7 @@ task 'clean:css', 'Clean CSS files from distribution folder', ->
 	record 'clean:css', ->
 		invoke 'clean:css:core'
 		invoke 'clean:css:plugins'
-		invoke 'clean:css:themes'
+		# invoke 'clean:css:themes'
 
 task 'clean:css:core', 'Clean core CSS files from distribution folder', ->
 	record 'clean:css:core', ->

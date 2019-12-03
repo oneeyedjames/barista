@@ -31,3 +31,13 @@
 @import "tabbar"
 @import "tooltip"
 @import "breadcrumb"
+
+@media only screen and (prefers-color-scheme: dark)
+	@import "variables/color-dark"
+	@import "theme"
+
+	a
+		+a-color($orange, $light-orange, $dark-orange)
+
+	.card
+		background: $background-color
