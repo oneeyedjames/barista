@@ -15,6 +15,11 @@
 		+btn-color-effects($info-color, $light-info-color, $dark-info-color)
 
 .card
+	+box-shadow($shadow-color)
+
+	&.modal
+		+box-shadow($shadow-color, 6px, 4px, 12px, 6px)
+
 	&.primary
 		+card-color-effects($primary-color, $light-primary-color, $dark-primary-color)
 
@@ -29,6 +34,9 @@
 
 	&.info
 		+card-color-effects($info-color, $light-info-color, $dark-info-color)
+
+ul.list
+	+box-shadow($shadow-color)
 
 .tabbar
 	&.primary
@@ -45,3 +53,10 @@
 
 	&.info
 		+tab-color-effects($info-color, $light-info-color, $dark-info-color)
+
+#{$all-text-inputs}, select
+	&:hover
+		+box-shadow($shadow-color, 0, 0, 2px, 1px)
+
+	&:focus
+		+box-shadow($shadow-color)

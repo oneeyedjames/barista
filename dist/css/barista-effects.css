@@ -761,6 +761,12 @@ input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, inp
     box-shadow: none;
   }
 
+  .card {
+    box-shadow: 2px 3px 1px 0px #555;
+  }
+  .card.modal {
+    box-shadow: 4px 6px 12px 6px #555;
+  }
   .card.primary header {
     text-shadow: 0px -1px 1px #bf4d00;
   }
@@ -790,6 +796,10 @@ input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, inp
   }
   .card.info header .close:active {
     text-shadow: 0px 1px 1px #9a3d82;
+  }
+
+  ul.list {
+    box-shadow: 2px 3px 1px 0px #555;
   }
 
   .tabbar.primary .tab {
@@ -891,5 +901,12 @@ input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, inp
   .tabbar.info .tab[disabled]:active, .tabbar.info .tab[disabled].active, .tabbar.info .tab[disabled]:hover, .tabbar.info .tab[disabled].hover, .tabbar.info .tab.disabled:active, .tabbar.info .tab.disabled.active, .tabbar.info .tab.disabled:hover, .tabbar.info .tab.disabled.hover {
     box-shadow: none;
     text-shadow: none;
+  }
+
+  input[type=color]:hover, input[type=date]:hover, input[type=datetime]:hover, input[type=datetime-local]:hover, input[type=email]:hover, input[type=month]:hover, input[type=number]:hover, input[type=password]:hover, input[type=search]:hover, input[type=tel]:hover, input[type=text]:hover, input[type=time]:hover, input[type=url]:hover, input[type=week]:hover, input:not([type]):hover, textarea:hover, select:hover {
+    box-shadow: 0 0 2px 1px #555;
+  }
+  input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, input:not([type]):focus, textarea:focus, select:focus {
+    box-shadow: 2px 3px 1px 0px #555;
   }
 }
